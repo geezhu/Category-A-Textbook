@@ -1,3 +1,9 @@
+#下载链接
+[微积分和平面解析几何](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1)
+[化学全三册甲种本](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1c)
+[物理全两册乙种本](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1p)
+
+
 # 项目由来
 
 最近在思考为啥故乡资中为何10多年来，无一清北，而在上世纪80年代的校友榜上存在很多清北名单。
