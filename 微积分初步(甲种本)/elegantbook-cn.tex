@@ -5210,6 +5210,5008 @@ f\left( x\right) = \left\{ \begin{array}{ll} {x}^{2}, & x \leq 1; \\ {ax} + b, &
 
 30. 从上口直径为 12 厘米, 深为 18 厘米的锥形漏斗中流出溶液, 当液面高度从 10 厘米下降到 9.8 厘米时, 求流出溶液的容积的近似值。
 
+\chapter{导数的应用}
+
+\section*{一阶导数的应用}
+
+我们在初中研究了二次函数的极值问题. 在高中学过可以根据函数的图象,说出函数 \(f\left( x\right)\) 的单调区间. 现在我们学习了导数, 就可以利用导数来直接判断一般函数的单调性和极值. 为此, 先讲预备知识.
+
+\section{预备知识}
+
+定理 1 (罗尔 \(\Theta\) 中值定理) 如果函数 \(f\left( x\right)\) 在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上连续,在开区间 \(\left( {\mathbf{a},\mathbf{b}}\right)\) 内可导,且在两端点的函数值相等, 即 \(f\left( a\right) = f\left( b\right)\) ,那么至少存在一点 \(\xi \in \left( {a,b}\right)\) ,使 \({f}^{\prime }\left( \xi \right) = 0\) .
+
+罗尔定理的几何意义是明显的. 若函数 \(f\left( x\right)\) 满足罗尔定理的条件,这就告诉我们,在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上有一条连续曲线 \(y = f\left( x\right)\) ,且过曲线上每一点 (端点除外)都可以作一条切线, 当曲线两端点的纵坐标相等时, 那么在曲线上至少能找到一点 \(\left( {\xi ,f\left( \xi \right) }\right) ,\xi \in \left( {a,b}\right)\) ,使曲线在该点的切线平行于 \(x\) 轴 (图 3-1(1)).
+
+如果函数 \(y = f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上罗尔定理的条件不全满足,那么在区间 \(\left( {a,b}\right)\) 内就可能任何点的切线都不与 \(x\) 轴平行(图 3-1(2)).
+
+\customfootnote{
+
+\begin{itemize}
+\item 罗尔 (M. Rolle, 1652-1719 年), 法国数学家.
+\end{itemize}
+
+}
+
+\begin{center}
+\includegraphics[max width=1.0\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_131_852004.jpg}
+\end{center}
+
+图 3-1
+
+*证明: 令 \(f\left( a\right) = f\left( b\right) = k\) ,分如下三种情况证明:
+
+1. 在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上,恒有 \(f\left( x\right) = k\) 的情况
+
+这时, \(f\left( x\right)\) 是 \(\left\lbrack {a,b}\right\rbrack\) 上的常数函数,于是 \({f}^{\prime }\left( x\right) = 0\) ,因此罗尔定理对开区间 \(\left( {a,b}\right)\) 内任何点皆成立.
+
+2. 在 \(\left\lbrack {a,b}\right\rbrack\) 上有点 \(x\) ,使得 \(f\left( x\right) > k\) 的情况
+
+因为 \(f\left( x\right)\) 为 \(\left\lbrack {a,b}\right\rbrack\) 上的连续函数,根据连续函数性质 1, 得知在 \(\left\lbrack {a,b}\right\rbrack\) 上存在点 \(\left( {{\xi }_{1},f\left( {\xi }_{1}\right) }\right)\) 为 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上的最大值,即 当 \(a \leq x \leq b\) 时,
+
+\[
+f\left( x\right) \leq f\left( {\xi }_{1}\right) , \tag{1}
+\]
+
+又因在 \(\left\lbrack {a,b}\right\rbrack\) 上有点 \(x\) ,使得
+
+\[
+f\left( x\right) > k, \tag{2}
+\]
+
+由 (1)、(2) 式得 \(f\left( {\xi }_{1}\right) > k\) ,这说明点 \({\xi }_{1}\) 不可能是 \(\left\lbrack {a,b}\right\rbrack\) 的端点,从而 \(a < {\xi }_{1} < b\) . 现证
+
+\[
+{f}^{\prime }\left( {\xi }_{1}\right) = 0\text{.}
+\]
+
+当 \(a \leq {\xi }_{1} + {\Delta x} \leq b\) 时,对于 \({\Delta x} > 0\) (或 \({\Delta x} < 0\) ) 由 (1) 式总有
+
+\[
+{\Delta y} = f\left( {{\xi }_{1} + {\Delta x}}\right) - f\left( {\xi }_{1}\right) \leq 0,
+\]
+
+设 \({\Delta x} > 0\) ,则 \(\frac{\Delta y}{\Delta x} \leq 0\) ,于是 \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 + }}\frac{\Delta y}{\Delta x} \leq 0\) .
+
+若 \({\Delta x} < 0\) ,则 \(\frac{\Delta y}{\Delta x} \geq 0\) ,于是 \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} \geq 0\) .
+
+又因 \(a < {\xi }_{1} < b\) ,根据定理的条件可知 \({f}^{\prime }\left( {\xi }_{1}\right)\) 存在,所以 \({f}^{\prime }\left( {\xi }_{1}\right) = 0\) . 取 \(\xi = {\xi }_{1}\) ,定理得证.
+
+3. 在 \(\left\lbrack {a,b}\right\rbrack\) 上有点 \(x\) ,使得 \(f\left( x\right) < k\) 的情况
+
+由连续函数性质 1,得知在 \(\left\lbrack {a,b}\right\rbrack\) 上存在点 \({\xi }_{2},f\left( {\xi }_{2}\right)\) 为 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上的最小值. 与情况 2 类似,容易证明
+
+\[
+{f}^{\prime }\left( {\xi }_{2}\right) = 0
+\]
+
+再取 \(\xi = {\xi }_{2}\) ,定理证完.
+
+这个定理告诉我们, 如果定理所要求的条件满足, 那么方程
+
+\[
+{f}^{\prime }\left( x\right) = 0,
+\]
+
+在 \(\left( {a,b}\right)\) 内至少有一个实数根. 我们把方程 \({f}^{\prime }\left( x\right) = 0\) 的根称为函数 \(f\left( x\right)\) 的驻点(图 3-1(1)).
+
+例 1 验证函数 \(f\left( x\right) = {x}^{2} - {4x}\) 在区间 \(\left\lbrack {1,3}\right\rbrack\) 上是否满足罗尔定理的条件,如果满足,求区间 \(\left( {1,3}\right)\) 内满足罗尔定理的 \(\xi\) 值.
+
+解: 函数 \(f\left( x\right) = {x}^{2} - {4x}\) 在闭区间 \(\left\lbrack {1,3}\right\rbrack\) 上连续,在 \(\left( {1,3}\right)\) 内可导,故满足罗尔定理的所有条件,且 \({f}^{\prime }\left( x\right) = {2x} - 4\) ,所以, 根据定理至少存在一点 \(\xi ,\xi \in \left( {1,3}\right)\) ,为方程 \({f}^{\prime }\left( x\right) = {2x} - 4 = 0\) 的根. 因此 \(x = 2\) 就是所求的 \(\xi\) 。
+
+定理 2 (拉格朗日 \(\mathbf{O}\) 中值定理) 如果函数 \(f\left( x\right)\) 在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上连续,在开区间 \(\left( {a,b}\right)\) 内可导,那么在 \(\left( {a,b}\right)\) 内至少有一点 \(\xi\) ,使得
+
+\[
+{f}^{\prime }\left( \xi \right) = \frac{f\left( b\right) - f\left( a\right) }{b - a}.
+\]
+
+这个定理的几何意义也是明显的. 因为已知导数 \({f}^{\prime }\left( \xi \right)\) 的几何意义是曲线 \(y = f\left( x\right)\) 在点 \(\left( {\xi ,f\left( \xi \right) }\right)\) 处切线的斜率,而 \(\frac{f\left( b\right) - f\left( a\right) }{b - a}\) 表示 \({AB}\) 弦的斜率. 这样如果函数 \(f\left( x\right)\) 满足拉格朗日定理的条件,这就告诉我们,在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上有一连续曲线,且过曲线 \(y = f\left( x\right)\) 上每一点(端点除外)都可以作一条切线, 那么在曲线上至少有一点 \(M\left( {\xi ,f\left( \xi \right) }\right) ,\xi \in \left( {a,b}\right)\) ,使得过点 \(M\) 的切线与弦 \({AB}\) 平行 (图 \(3 - 2)\) .
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_133_982068.jpg}
+\end{center}
+
+图 3-2
+
+分析: 从罗尔定理和拉格朗日定理的条件与几何解释可以看出, 罗尔定理是拉格朗日定理的特殊情形. 因为如果函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上满足拉格朗日定理条件,且 \(f\left( x\right)\) 在两端点的函数值相等,即 \(f\left( a\right) = f\left( b\right)\) 时,函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上也满足罗尔定理条件, 所以这种情形的拉格朗日定理就是罗尔定理. 下边就利用罗尔定理来证明拉格朗日定理. 为此, 我们作个辅助函数:
+
+\[
+\varphi \left( x\right) = f\left( x\right) - {kx},
+\]
+
+并适当选择待定系数 \(k\) ,使函数 \(\varphi \left( x\right)\) 满足罗尔定理的所有条件.
+
+\customfootnote{
+
+拉格朗日 (J. L. Lagrange, 1736-1813 年), 法国数学家.
+
+}
+
+因 \(f\left( x\right) \text{、}{kx}\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上连续,在 \(\left( {a,b}\right)\) 内可导,所以函数 \(\varphi \left( x\right) = f\left( x\right) - {kx}\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上连续,在 \(\left( {a,b}\right)\) 内可导,为了使 \(\varphi \left( a\right) = \varphi \left( b\right)\) 也成立,则必须且只须使
+
+\[
+f\left( a\right) - {ka} = f\left( b\right) - {kb},
+\]
+
+即
+
+\[
+k = \frac{f\left( b\right) - f\left( a\right) }{b - a}.
+\]
+
+证明: 作辅助函数:
+
+\[
+\varphi \left( x\right) = f\left( x\right) - \frac{f\left( b\right) - f\left( a\right) }{b - a}x,
+\]
+
+由前面分析可知, \(\varphi \left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上连续,在 \(\left( {a,b}\right)\) 内可导,且 \(\varphi \left( a\right) = \varphi \left( b\right)\) ,即罗尔定理的条件皆满足,根据罗尔定理可知, 至少存在一点 \(\xi \in \left( {a,b}\right)\) ,使 \({\varphi }^{\prime }\left( \xi \right) = 0\) ,
+
+但
+
+\[
+{\varphi }^{\prime }\left( x\right) = {f}^{\prime }\left( x\right) - \frac{f\left( b\right) - f\left( a\right) }{b - a},
+\]
+
+于是
+
+\[
+{\varphi }^{\prime }\left( \xi \right) = {f}^{\prime }\left( \xi \right) - \frac{f\left( b\right) - f\left( a\right) }{b - a} = 0,
+\]
+
+所以证得
+
+\[
+{f}^{\prime }\left( \xi \right) = \frac{f\left( b\right) - f\left( a\right) }{b - a}.
+\]
+
+\begin{itemize}
+\item 这个定理告诉我们, 如果定理所要求的条件已满足, 那么,在 \(\left( {a,b}\right)\) 内至少存在一个点 \(\xi\) ,当 \(x = \xi\) 时,等式
+\end{itemize}
+
+\[
+{f}^{\prime }\left( \xi \right) = \frac{f\left( b\right) - f\left( a\right) }{b - a}
+\]
+
+成立, 也就是说方程
+
+\[
+{f}^{\prime }\left( x\right) = \frac{f\left( b\right) - f\left( a\right) }{b - a}
+\]
+
+在 \(\left( {a,b}\right)\) 内至少有一个实根.
+
+为了便于应用, 拉格朗日定理的结论, 通常写成如下形式:
+
+\[
+f\left( b\right) - f\left( a\right) = {f}^{\prime }\left( \xi \right) \left( {b - a}\right) ,\;a < \xi < b.
+\]
+
+例 2 求函数 \(f\left( x\right) = {x}^{3}\) 在 \(\left( {-1,2}\right)\) 内,满足中值定理 \(f\left( b\right) - f\left( a\right) = {f}^{\prime }\left( \xi \right) \left( {b - a}\right)\) 的点 \(\xi\) 的值.
+
+解: 因为 \({f}^{\prime }\left( x\right) = 3{x}^{2},f\left( 2\right) = 8,f\left( {-1}\right) = - 1\) , 满足中值定理的 \(\xi\) 应有,
+
+\[
+f\left( 2\right) - f\left( {-1}\right) = 3{\xi }^{2}\left\lbrack {2 - \left( {-1}\right) }\right\rbrack ,
+\]
+
+即
+
+\[
+9 = 9{\xi }^{2}
+\]
+
+得
+
+\[
+\xi = \pm 1\text{.}
+\]
+
+\[
+1 \in \left( {-1,2}\right) , - 1 \notin \left( {-1,2}\right) ,
+\]
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_135_695444.jpg}
+\end{center}
+
+图 3-3
+
+所以 \(\xi = 1\) .
+
+*例3 当 \(x > 1\) 时,证明不等式 \({e}^{x} > {ex}\) 成立.
+
+解: 令 \(f\left( x\right) = {e}^{x}\) ,
+
+则 \({f}^{\prime }\left( x\right) = {e}^{x}\) ,
+
+由于函数 \(f\left( x\right) = {e}^{x}\) 在区间 \(\left\lbrack {1,x}\right\rbrack\)
+
+上满足拉格朗日定理条件, 所以
+
+在 \(\left( {1,x}\right)\) 内至少存在一点 \(\xi\) ,使
+
+\[
+{e}^{x} - {e}^{1} = {e}^{\xi }\left( {x - 1}\right) \tag{1}
+\]
+
+成立,又 \({e}^{x}\) 为增函数,且 \(1 < \xi < x\) ,于是
+
+\[
+{e}^{1} < {e}^{\xi } \tag{2}
+\]
+
+将 (2) 式代入 (1) 式得 \({e}^{x} - e > e\left( {x - 1}\right)\) .
+
+即
+
+\[
+{e}^{x} > {ex}\text{.}
+\]
+
+\begin{problemset}[练习]
+
+\item 说明下列函数在给定区间上, 罗尔定理是否成立. 如果成立,求 \(\xi\) 值; 如果不成立,说明理由:
+
+(1) \(f\left( x\right) = \sin x,x \in \left\lbrack {0,{2\pi }}\right\rbrack\) ;
+
+(2) \(f\left( x\right) = \left| x\right| ,x \in \left\lbrack {-1,1}\right\rbrack\) ;
+
+(3) \(f\left( x\right) = {x}^{3},x \in \left\lbrack {0,1}\right\rbrack\) ; (4) \(f\left( x\right) = \left\{ \begin{array}{ll} {x}^{2}, & x \in (0,1\rbrack , \\ 1, & x = 0. \end{array}\right.\)
+
+\item 如果函数 \(f\left( x\right)\) 满足下列条件之一,讨论拉格朗日中值定理是否成立:
+
+（1）函数 \(f\left( x\right)\) 在 \(\left( {a,b}\right)\) 内可导;
+
+（2）函数 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上可导;
+
+（3）函数 \(f\left( x\right)\) 在 \((a,b\rbrack\) 可导;
+
+（4）函数 \(f\left( x\right)\) 在 \(\lbrack a,b)\) 可导.
+
+\item 求函数 \(f\left( x\right) = {x}^{3} + {2x}\) 在下列区间内,满足拉格朗日中值定理的 \(\xi\) 值.
+
+(1) \(\left\lbrack {0,1}\right\rbrack\) ; (2) \(\left\lbrack {1,2}\right\rbrack\) ; (3) \(\left\lbrack {-1,2}\right\rbrack\) .
+
+\end{problemset}
+
+\begin{problemset}[习 题 九]
+
+\item 对下列函数检验罗尔定理是否成立:
+
+(1) \(f\left( x\right) = \left( {x - 1}\right) \left( {x - 2}\right) ,\;x \in \left\lbrack {1,2}\right\rbrack\) ;
+
+(2) \(f\left( x\right) = \left| x\right| - 1\) , \(\;x \in \left\lbrack {-1,1}\right\rbrack\) ;
+
+(3) \(f\left( x\right) = \sqrt[3]{{x}^{2}},\;x \in \left\lbrack {-1,1}\right\rbrack\) ;
+
+(4) \(f\left( x\right) = x - \left\lbrack x\right\rbrack ,\;x \in \left\lbrack {0,1}\right\rbrack\) .
+
+\item 求出函数 \(f\left( x\right) = {x}^{3}\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 内,满足拉格朗日中值定理的 \(\xi\) 值。
+
+\item 求下列函数满足 \(f\left( b\right) - f\left( a\right) = {f}^{\prime }\left( \xi \right) \left( {b - a}\right) ,a < \xi < b\) 的 \(\xi\) 值:
+
+(1) \(f\left( x\right) = {x}^{2} - {2x} + 2,\;a = - 1,\;b = 1\) ;
+
+(2) \(f\left( x\right) = {x}^{3} - {x}^{2},\;a = 0,\;b = 1\) ;
+
+(3) \(f\left( x\right) = \frac{6}{x},\;a = 2,\;b = 3\) .
+
+\item 利用拉格朗日中值定理, 证明下列不等式:
+
+(1) \(\left| {\sin {x}_{1} - \sin {x}_{2}}\right| \leq \left| {{x}_{1} - {x}_{2}}\right|\) ;
+
+(2) \(\left| {\operatorname{arctg}{x}_{1} - \operatorname{arctg}{x}_{2}}\right| \leq \left| {{x}_{1} - {x}_{2}}\right|\) ;
+
+（3）当 \(0 \leq a < b\) 时,
+
+\[
+{e}^{b} - {e}^{a} > b - a.
+\]
+
+\item 证明: 若函数 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上有二阶导数,且 \(f\left( a\right) =\) \(f\left( b\right) = 0,f\left( c\right) = 0\left( {a < c < b}\right)\) ,则在 \(\left( {a,b}\right)\) 内至少存在一点 \(\xi\) , 使得 \({f}^{\prime \prime }\left( \xi \right) = 0\) .
+
+\end{problemset}
+
+\section{函数的单调性}
+
+我们已经学过增函数与减函数的概念, 现在学习利用导数来判断函数的增减性(即函数的单调性). 有如下一个重要的定理.
+
+定理 设函数 \(f\left( x\right)\) 在区间 \(\left( {\mathbf{a},\mathbf{b}}\right)\) 内可导. 如果在 \(\left( {\mathbf{a},\mathbf{b}}\right)\) 内 \({f}^{\prime }\left( x\right) > 0\) ,那么 \(f\left( x\right)\) 在 \(\left( {a,b}\right)\) 内是增函数; 如果在 \(\left( {a,b}\right)\) 内 \({f}^{\prime }\left( x\right) < 0\) ,那么 \(f\left( x\right)\) 在 \(\left( {a,b}\right)\) 内是减函数.
+
+如果在 \(\left( {\mathbf{a},\mathbf{b}}\right)\) 内恒有 \({\mathbf{f}}^{\prime }\left( \mathbf{x}\right) = \mathbf{0}\) ,那么 \(\mathbf{f}\left( \mathbf{x}\right)\) 在 \(\left( {\mathbf{a},\mathbf{b}}\right)\) 内是常数.
+
+证明: 在区间 \(\left( {a,b}\right)\) 内任取两点 \({x}_{1},{x}_{2}\) ,且使 \({x}_{1} < {x}_{2}\) ,根据拉格朗日中值定理, 可得
+
+\[
+f\left( {x}_{2}\right) - f\left( {x}_{1}\right) = {f}^{\prime }\left( \xi \right) \left( {{x}_{2} - {x}_{1}}\right) ,\;\left( {{x}_{1} < \xi < {x}_{2}}\right) . \tag{1}
+\]
+
+如果在区间 \(\left( {a,b}\right)\) 内 \({f}^{\prime }\left( x\right) > 0\) ,则 \(\left( 1\right)\) 式中的 \({f}^{\prime }\left( \xi \right) > 0\) ,而 \({x}_{2} - {x}_{1} > 0\) ,因此由 (1) 式可知 \(f\left( {x}_{2}\right) > f\left( {x}_{1}\right)\) . 这就是说, \(f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内是增函数.
+
+如果在区间 \(\left( {a,b}\right)\) 内 \({f}^{\prime }\left( x\right) < 0\) ,则 \(\left( 1\right)\) 式中的 \({f}^{\prime }\left( \xi \right) < 0\) ,而 \({x}_{2} - {x}_{1} > 0\) ,因此由 (1) 式可知 \(f\left( {x}_{2}\right) < f\left( {x}_{1}\right)\) . 这就是说, \(f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内是减函数.
+
+如果在区间 \(\left( {a,b}\right)\) 内恒有 \({f}^{\prime }\left( x\right) = 0\) ,则 \(\left( 1\right)\) 式中的 \({f}^{\prime }\left( \xi \right) =\) 0,因此由 (1) 式可知 \(f\left( {x}_{2}\right) = f\left( {x}_{1}\right)\) . 这就是说,在区间 \(\left( {a,b}\right)\) 内,任意两点的函数值相等. 因此, \(f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内是常数.
+
+例 1 确定函数 \(y = {x}^{2} - {2x} + 4\) 在哪个区间内 是增函数, 哪个区间内是减函数.
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_138_431329.jpg}
+\end{center}
+
+图 3-4
+
+解: 将 \(y\) 对 \(x\) 求导,得
+
+\[
+{y}^{\prime } = {2x} - 2
+\]
+
+解不等式 \({y}^{\prime } = {2x} - 2 > 0\) , 得 \(x > 1\) ,因此 \(y\) 在 \(\left( {1, + \infty }\right)\) 内是增函数;
+
+解不等式 \({y}^{\prime } = {2x} - 2 < 0\) , 得 \(x < 1\) ,因此 \(y\) 在 \(\left( {-\infty ,1}\right)\) 内是减函数 (图 3-4).
+
+例 2 确定函数 \(y = \frac{2}{a}\left( {x \neq 0}\right)\) 的增减范围,
+
+解: \({y}^{\prime } = - \frac{2}{{x}^{2}}\) .
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_139_324623.jpg}
+\end{center}
+
+图 3-5
+
+由于 \(x \neq 0\) 时,有 \(- \frac{2}{{x}^{2}} < 0\) ,
+
+\(y\) 在 \(\left( {-\infty ,0}\right) ,\left( {0, + \infty }\right)\) 内都是减函数 (图 3-5).
+
+*例 3 当 \(x > 0\) 时,证明不等式
+
+\[
+\ln \left( {1 + x}\right) > x - \frac{1}{2}{x}^{2}
+\]
+
+成立.
+
+证明: 设 \(f\left( x\right) = \ln \left( {1 + x}\right) - x + \frac{1}{2}{x}^{2}\) ,
+
+则
+
+\[
+{f}^{\prime }\left( x\right) = \frac{1}{1 + x} - 1 + x = \frac{{x}^{2}}{1 + x}.
+\]
+
+当 \(x > 0\) 时, \({f}^{\prime }\left( x\right) > 0\) ,因此 \(f\left( x\right)\) 在 \(\left( {0, + \infty }\right)\) 内为增函数. 又 \(f\left( x\right)\) 在点 \(x = 0\) 处连续,所以 \(f\left( x\right)\) 在 \(\lbrack 0, + \infty )\) 上也是增函数. 于是当 \(x > 0\) 时, \(f\left( x\right) > f\left( 0\right)\) ,
+
+\[
+\because f\left( 0\right) = 0,\;\therefore f\left( x\right) > 0,
+\]
+
+即
+
+\[
+\ln \left( {1 + x}\right) - x + \frac{1}{2}{x}^{2} > 0,
+\]
+
+于是证得
+
+\[
+\ln \left( {1 + x}\right) > x - \frac{1}{2}{x}^{2}
+\]
+
+\section{练 习}
+
+1. 根据三角函数在各象限内的值的符号, 利用导数证明函数 \(y = \cos x\) 在开区间 \(\left( {\frac{\pi }{2},\pi }\right)\) 内是减函数.
+
+2. 确定下列函数的增减范围 (不必画出图象):
+
+(1) \(y = \frac{1}{2{x}^{2}}\left( {x \neq 0}\right)\) ; (2) \(y = x - {x}^{3}\) ;
+
+(3) \(y = \ln \left( {{2x} - 1}\right)\) ; (4) \(y = - {e}^{x}\) .
+
+3. 已知函数 \(y = a{x}^{2}\left( {a \neq 0}\right)\) 当 \(x > 0\) 时是减函数,利用求导数的方法确定 \(a\) 的值的范围.
+
+4. 求下列函数的驻点:
+
+(1) \(y = 5{x}^{2} - {4x} + 1\) ; (2) \(y = {x}^{3} - {27x}\) .
+
+*5. 当 \(x > 0\) 时,证明下列不等式成立:
+
+(1) \(\sin x > x - \frac{{x}^{3}}{6}\) ;
+
+(2) \(\cos x < 1 - \frac{{x}^{2}}{2} + \frac{{x}^{4}}{24}\)
+
+(3) \({\mathrm{e}}^{x} > 1 + x + \frac{{x}^{2}}{2}\) .
+
+\section{函数的极大值与极小值}
+
+如果函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处连续,并且 \({x}_{0}\) 不是其定义区间的端点. 若对 \({x}_{0}\) 附近的所有点 \(x\left( {x \neq {x}_{0}}\right)\) ,都有
+
+\[
+f\left( x\right) < f\left( {x}_{0}\right) \;\text{ (或 }f\left( x\right) > f\left( {x}_{0}\right) \text{ ),}
+\]
+
+我们就说函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处取极大值 (或极小值). 也可以说 \(f\left( {x}_{0}\right)\) 是函数 \(f\left( x\right)\) 的一个极大值 (或极小值),记作 \({y}_{\text{极大 }} =\) \(f\left( {x}_{0}\right)\) (或 \({y}_{\text{极小 }1} = f\left( {x}_{0}\right)\) ),并把点 \({x}_{0}\) 称为函数 \(f\left( x\right)\) 的一个极大点(或极小点). 极大值与极小值统称为极值. 极大点与极小点统称为极值点. 图 3-6 和图 3-7 分别显示了可导函数在点 \({x}_{0}\) 处取极大值与极小值的情况.
+
+从图 3-6-和图 3-7 可以看出,可导函数 \(f\left( x\right)\) 的曲线在它
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_141_386711.jpg}
+\end{center}
+
+图 3-6
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_141_950727.jpg}
+\end{center}
+
+图 3-7
+
+的极值点 \({x}_{0}\) 处的切线都平行于 \(x\) 轴,即 \({f}^{\prime }\left( {x}_{0}\right) = 0\) . 换句话说, 可导函数的极值点一定是它的驻点. 但是, 反过来, 可导函数的驻点, 却不一定是它的极值点. 如 \(f\left( x\right) = {x}^{3}\) 的导数是 \({f}^{\prime }\left( x\right) = 3{x}^{2}\) ,在 \(x = 0\) 处有 \({f}^{\prime }\left( 0\right) = 0\) ,即点 \(x = 0\) 是函数 \(f\left( x\right) = {x}^{3}\) 的驻点, 但并不是它的极值点 (图 3- 8).
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_141_203287.jpg}
+\end{center}
+
+图 3-8
+
+因此, 在求可导函数的极值时, 除了 \({f}^{\prime }\left( x\right) = 0\) 的条件外,还要考虑 \({f}^{\prime }\left( x\right)\) 在驻点 \({x}_{0}\) 两侧的正负情况: 如果 \({f}^{\prime }\left( {x}_{0}\right) = 0\) ,并且 \(x\) 由小变大经过 \({x}_{0}\) 时, \({f}^{\prime }\left( x\right)\) 由正变为负 (或由负变为正),那么 \(f\left( x\right)\) 在点 \({x}_{0}\) 必然取得极大值 (或极小值).
+
+综上所述, 并根据上节定理 (参看图 3-6 和图 3-7), 我们得到求可导函数 \(f\left( x\right)\) 的极值的方法如下:
+
+1. 求导数 \({f}^{\prime }\left( x\right)\) ;
+
+2. 求 \(f\left( x\right)\) 在定义域内的驻点;
+
+3. 检查 \({f}^{\prime }\left( x\right)\) 在驻点左右的符号,如果左正右负,那么 \(f\left( x\right)\) 在这个驻点取极大值;
+
+如果左负右正,那么 \(f\left( x\right)\) 在这个驻点取极小值;
+
+如果左右同号,那么 \(f\left( x\right)\) 在这个驻点的函数值不是极值.
+
+例 1 求函数 \(f\left( x\right) = \frac{1}{3}{x}^{3} - {4x} + 4\) 的极值.
+
+解: \(f\left( x\right)\) 是可导函数,令
+
+\[
+{f}^{\prime }\left( x\right) = {x}^{2} - 4 = \left( {x + 2}\right) \left( {x - 2}\right) = 0,
+\]
+
+解得驻点为 \({x}_{1} = - 2,{x}_{2} = 2\) .
+
+当 \(x\) 变化时, \({f}^{\prime }\left( x\right) ,f\left( x\right)\) 的变化状态如下表:
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\(x\) & \(\left( {-\infty , - 2}\right)\) & \(- 2\) & \(\left( {-2,2}\right)\) & 2 & \(\left( {2, + \infty }\right)\) \\
+\hline
+\({f}^{\prime }\left( x\right)\) & \(+\) & 0 & \(-\) & 0 & \(+\) \\
+\hline
+\(f\left( x\right)\) & 1 & 极大值 \(9\frac{1}{3}\) & / & 极小值 \(- 1\frac{1}{3}\) & 1 \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+因此当 \(x = - 2\) 时,函数 \(f\left( x\right)\) 有极大值,且
+
+\[
+f\left( {-2}\right) = \frac{1}{3}{\left( -2\right) }^{3} - 4\left( {-2}\right) + 4 = 9\frac{1}{3}
+\]
+
+而当 \(x = 2\) 时,函数 \(f\left( x\right)\) 有极小值, 且 \(f\left( 2\right) = \frac{1}{3} \cdot {2}^{3} - 4 \cdot 2 + 4 = - 1\frac{1}{3}\) .
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_143_629914.jpg}
+\end{center}
+
+图 3-9
+
+函数 \(f\left( x\right) = \frac{1}{3}{x}^{3} - {4x} + 4\) 的图象如图 3-9 所示.
+
+例 2 求函数 \(f\left( x\right) = x + 2\sin x\) 在区间 \(\left\lbrack {0,{2\pi }}\right\rbrack\) 内的极值.
+
+解: 因 \({f}^{\prime }\left( x\right) = 1 + 2\cos x\) ,
+
+令 \(1 + 2\cos x = 0\) ,解得驻点为
+
+\({x}_{1} = \frac{2}{3}\pi ,\;{x}_{2} = \frac{4}{3}\pi .\)
+
+当 \(x\) 变化时, \({f}^{\prime }\left( x\right) ,f\left( x\right)\) 的变化状态如下表:
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\(x\) & 0 & . & \(\frac{2}{3}\pi\) & ： & \(\frac{4}{3}\pi\) & : & \({2\pi }\) \\
+\hline
+\({f}^{\prime }\left( x\right)\) & \phantom{X} & \(+\) & 0 & - & 0 & \(+\) & \phantom{X} \\
+\hline
+\(f\left( x\right)\) & 0 & 7 & 极大值 \(\frac{2}{3}\pi + \sqrt{3}\) & y & 极小值 \(\frac{4}{3}\pi - \sqrt{3}\) & 7 & \({2\pi }\) \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+因此 当 \(\dot{x} = \frac{2}{3}\pi\) 时,函数 \(f\left( x\right)\) 有极大值,且
+
+\[
+f\left( {\frac{2}{3}\pi }\right) = \frac{2}{3}\pi + \sqrt{3}
+\]
+
+而当 \(x = \frac{4}{3}\pi\) 时,函数 \(f\left( x\right)\) 有极小值,且
+
+\[
+f\left( {\frac{4}{3}\pi }\right) = \frac{4}{3}\pi - \sqrt{3}.
+\]
+
+函数 \(f\left( x\right) = x + 2\sin x\) 的图象如图 3-10 所示.
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_144_191268.jpg}
+\end{center}
+
+图 3-10
+
+\begin{problemset}[练习]
+
+\item 填写下表:
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|}
+\hline
+导 数 \({y}^{\prime }\) & 函数 \(y\) & 极 值 \\
+\hline
+由\_\_\_变为\_\_\_ & 由增变为减 & 极\_\_\_值 \\
+\hline
+由\_\_\_变为\_\_\_ & 由减变为增 & 极\_\_\_值 \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+(正, 负) (增, 减) \(\left( {大,小}\right)\)
+
+\item 说明函数 \(y = \ln x,y = {ax} + b\) 为什么没有极值.
+
+\item 求下列函数的极值, 并根据极值情况画出草图:
+
+(1) \(y = {x}^{2} - {7x} + 6\) ; (2) \(y = 3{x}^{4} - 4{x}^{3}\) ;
+
+(3) \(y = \frac{1}{2}x + \cos x\;\left( {-{2\pi } < x < {2\pi }}\right)\) .
+
+\item 用求导数的方法证明二次函数 \(y = a{x}^{2} + {bx} + c\left( {a \neq 0}\right)\) 的
+
+极值点为 \({x}_{0} = - \frac{b}{2a}\) ,并讨论它的极值.
+
+\end{problemset}
+
+\begin{problemset}[习 题 十]
+
+\item 确定下列函数的增减范围:
+
+(1) \(y = - {4x} + 2\) ; (2) \(y = {\left( x - 1\right) }^{2}\) ;
+
+(3) \(y = {x}^{2} - {2x} + 5\) ; (4) \(y = {3x} - {x}^{3}\) ;
+
+(5) \(y = {x}^{2}\left( {x - 3}\right)\) ; (6) \(y = {x}^{3} - {x}^{2} - x\) .
+
+\item 证明下列函数的单调性:
+
+（1） \(p\) 为何值时,函数 \(f\left( x\right) = \cos x - {px} + q\) 在整个数轴上是减函数?
+
+（2）证明 \(y = {2x} + \sin x\) 在整个数轴上是增函数;
+
+（3）证明 \(y = x + \frac{1}{{x}^{2} + 1}\) 在整个数轴上是增函数;
+
+（4）研究函数 \(y = \frac{1}{{x}^{2} + x + 1}\) 的单调性.
+
+\item 证明 \(y = \sqrt{{2x} - {x}^{2}}\) 在区间 \(\left( {0,1}\right)\) 内为增函数,在区间 \(\left( {1,2}\right)\) 内为减函数.
+
+\item 求下列二次函数的极值:
+
+(1) \(y = {x}^{2} - {3x} + {10}\) ; (2) \(y = - 2{x}^{2} + {4x} - 7\) ;
+
+(3) \(y = 6{x}^{2} - x - 2\) ; (4) \(y = - {x}^{2} - {2x} + 3\) ;
+
+(5) \(y = 2 - x - {x}^{2}\) ; (6) \(y = \frac{1}{2}{x}^{2} - {3x}\) .
+
+\item 求下列函数的极值:
+
+(1) \(y = 6 + {12x} - {x}^{3}\) (2) \(y = 2{x}^{2} - {x}^{4}\)
+
+(3) \(y = 2{x}^{3} - 9{x}^{2} - {24x} - {12}\) ;
+
+(4) \(y = \frac{1}{3}{x}^{3} - \frac{1}{2}{x}^{2} - {2x} + 2\) ;
+
+(5) \(y = {15} + {9x} - 3{x}^{2} - {x}^{3}\) ;
+
+(6) \(y = 4{x}^{3} - 3{x}^{2} - {6x} + 2\) ;
+
+(7) \(y = {2x} - \sin x\) ; (8) \(y = 2{e}^{x} + {e}^{-x}\) .
+
+\end{problemset}
+
+\section{函数的最大值与最小值}
+
+在生产中, 常常会遇到要求在一定条件下使“强度最大”, “用料最省”, “功率最大”这样一类问题, 在数学上, 这类问题往往归结为求函数的最大值或最小值.
+
+本节讨论函数的最大值与最小值, 是导数应用的又一个方面. 在 3.3 节已知可导函数的极大值与极小值, 就是函数在点 \({x}_{0}\) 附近的最大值与最小值. 如图 3-11 所示. 但是,就区间 \(\left\lbrack {a,b}\right\rbrack\) 上的给定函数 \(f\left( x\right)\) 来说,函数的极大值不一定是最大值, 极小值也不一定是最小值.
+
+\begin{center}
+\includegraphics[max width=0.7\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_146_522148.jpg}
+\end{center}
+
+图 3-11
+
+如果函数 \(f\left( x\right)\) 在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上连续,在开区间 \(\left( {a,b}\right)\) 内可导,从连续函数性质 1 得知,函数 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上有最大值与最小值. 如图 3-11 中,最大值是区间端点 \(a\) 的值 \(f\left( a\right)\) ,最小值是几个极小值中最小的一个 \(f\left( {x}_{3}\right)\) . 这就是说求函数 \(f\left( x\right)\) 的最大值,只要求得所有 \(f\left( x\right)\) 的极大值与 \(f\left( a\right) \text{、}f\left( b\right)\) 这些值中最大者就行了. 而求函数 \(f\left( x\right)\) 的最小值,也只考虑 \(f\left( x\right)\) 的所有极小值与 \(f\left( a\right) \text{、}f\left( b\right)\) 中的最小者.
+
+因此,求闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上的可导函数 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上的最大值与最小值, 可以分两步来进行:
+
+1. 求 \(f\left( x\right)\) 在 \(\left( {a,b}\right)\) 内的驻点;
+
+2. 计算 \(f\left( x\right)\) 在驻点和端点的函数值,并把这些值加以比较, 其中最大的一个为最大值, 最小的一个为最小值.
+
+因为二次函数在其定义域内只有一个极值点, 所以在包含极值点的闭区间上, 二次函数的极大值就是最大值, 极小值就是最小值, 如图 3-12 所示. 11440
+
+\begin{center}
+\includegraphics[max width=0.8\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_147_605988.jpg}
+\end{center}
+
+图 8-12
+
+例 1 求函数 \(y = {x}^{4} - 2{x}^{2} + 5\) 在区间 \(\left\lbrack {-2,2}\right\rbrack\) 上的最大值与最小值.
+
+解: \({y}^{\prime } = 4{x}^{3} - {4x}\) .
+
+令 \(4{x}^{3} - {4x} = 0\) ,求得驻点为
+
+\[
+{x}_{1} = - 1,\;{x}_{2} = 0,\;{x}_{3} = 1.
+\]
+
+这些驻点的函数值为
+
+\[
+{\left. y\right| }_{x = 0} = 5,{\left. y\right| }_{x = \pm 1} = 4\text{. }
+\]
+
+区间端点的函数值为
+
+\[
+{\left. y\right| }_{x = \pm 2} = {13}\text{.}
+\]
+
+将这些求出的函数值加以比较, 知道最大值为 13 , 最小值为 4 (图 3-13).
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_148_436471.jpg}
+\end{center}
+
+图 3-13
+
+\begin{center}
+\includegraphics[max width=0.6\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_148_813570.jpg}
+\end{center}
+
+图 3-14
+
+例 2 用边长为 60 厘米的正方形铁皮做一个无盖水箱, 先在四角分别截去一个小正方形, 然后把四边翻转九十度, 再焊接而成(图 3-14). 问水箱底边的长应取多少, 才能使水箱容积最大. 最大容积是多少?
+
+解; 设水箱底边长为 \(n\) (原米),则水箱高
+
+\[
+h = \frac{{60} - x}{2}
+\]
+
+水箱容积
+
+\[
+V = V\left( x\right) = {x}^{2}h
+\]
+
+\[
+= \frac{{60}{x}^{2} - {x}^{3}}{2}\left( {0 < x < {60}}\right) \text{.}
+\]
+
+由问题的实际情况来看,如果 \(x\) 过小,水箱的底面积就很小,容积 \(V\) 也就很小; 如果 \(x\) 过大,水箱的高就很小,容积 \(V\) 也就很小. 因此,其中必有一适当的 \(x\) 值,使容积 \(V\) 取得最大值.
+
+令
+
+\[
+{V}^{\prime }\left( x\right) = {60x} - \frac{3}{2}{x}^{2} = 0,
+\]
+
+得两个根
+
+\[
+x = 0\text{(不合题意,舍去),}x = {40}\text{,}
+\]
+
+从而在定义域 \(\left( {0,{60}}\right)\) 内,函数 \(V\left( x\right)\) 只有一个驻点
+
+\[
+x = {40}\text{(厘米).}
+\]
+
+代入函数式 \(V\left( x\right)\) ,即得.
+
+\[
+{V}_{\text{最大 }} = {\left( {40}\right) }^{2} \cdot \frac{{60} - {40}}{2} = {16000}\text{ (立方厘米). }
+\]
+
+答: 水箱底边长取 40 厘米时, 容积最大. 最大容积为 16000 立方厘米.
+
+要注意, 如果由问题的实际情况, 可以断定可导函数在定义域开区间内存在最大 (小)值,而且 \(f\left( x\right)\) 在这个定义域开区间内又只有一个驻点, 那么立即可以断定这个驻点的函数值就是最大 (小)值. 这一点在解决某些实际问题时很有用.
+
+例 3 矩形横梁的强度同它断面的高的平方与宽的积成正比. 要将直径为 \(d\) 的圆木锯成强度最大的横梁,断面的宽和高应是多少?
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_150_941467.jpg}
+\end{center}
+
+图 3-15
+
+解: 如图 3-15 所示, 设断面宽为 \(x\) ,高为 \(h\) ,则
+
+\[
+{h}^{2} = {d}^{2} - {x}^{2}
+\]
+
+横梁强度函数
+
+\[
+f\left( x\right) = {kx}{h}^{2},
+\]
+
+( \(k\) 为比例系数, \(k > 0\) ).
+
+\(\therefore \;f\left( x\right) = {kx}\left( {{d}^{2} - {x}^{2}}\right) \;\left( {0 < x < d}\right)\) .
+
+从实际情况可知,横梁强度函数 \(f\left( x\right)\) 在 \(\left( {0,d}\right)\) 内一定有最大值. 令
+
+\[
+{f}^{\prime }\left( x\right) = k\left( {{d}^{2} - 3{x}^{2}}\right) = 0,
+\]
+
+即 \({d}^{2} - 3{x}^{2} = 0\) ,此方程有两个根 \(x = \pm \frac{\sqrt{3}}{3}d\) ,其中负根没有意义,舍去,从而在定义域 \(\left( {0,d}\right)\) 内,函数 \(f\left( x\right)\) 只有一个驻点
+
+\[
+x = \frac{\sqrt{3}}{3}d
+\]
+
+\(f\left( x\right)\) 在这一点的函数值,就是横梁强度的最大值. 此时
+
+\[
+h = \sqrt{{d}^{2} - {x}^{2}} = \frac{\sqrt{6}}{3}d.
+\]
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_150_751406.jpg}
+\end{center}
+
+图 8-16-
+
+答: 当宽为 \(\frac{\sqrt{3}}{3}d\) ,高为 \(\frac{\sqrt{6}}{3}d\) 时,横梁强度最大.
+
+例 4 某生产队要造一个可容纳 150 担氨水 (比重为 0.925 吨/立方米)的有盖有底圆柱形氨水槽 (图 3-16), 问氨水槽的底半径与圆柱高应取多少, 才能使所用的材料最省?
+
+解: 材料最省, 就是使圆柱表面积最小.
+
+设槽底半径为 \(R\) ,高为 \(h\) ,则氨水槽的表面积
+
+\[
+S = {2\pi Rh} + {2\pi }{R}^{2}.
+\]
+
+由氨水槽的容积 \(V = \pi {R}^{2}h\) ,知 \(h = \frac{V}{\pi {R}^{2}}\) ,代入上式得
+
+\[
+S = S\left( R\right) = {2\pi R}\frac{V}{\pi {R}^{2}} + {2\pi }{R}^{2}
+\]
+
+\[
+= \frac{2V}{R} + {2\pi }{R}^{2}
+\]
+
+从实际情况可知,表面积 \(S\) 在其定义域内一定有最小值.
+
+令
+
+\[
+{S}^{\prime }\left( R\right) = - \frac{2V}{{R}^{2}} + {4\pi R} = 0,
+\]
+
+即 \({2V} - {4\pi }{R}^{3} = 0\) ,此方程的实根只有一个,就是 \(R = \sqrt[3]{\frac{V}{2\pi }}\) ,因此我们得到唯一驻点
+
+\[
+R = \sqrt[3]{\frac{V}{2\pi }}
+\]
+
+当 \(R = \sqrt[3]{\frac{V}{2\pi }}\) 时,
+
+\[
+h = \frac{V}{\pi {R}^{2}} = \frac{V}{\pi {\left( \sqrt[3]{\frac{V}{2\pi }}\right) }^{2}} = \sqrt[3]{\frac{4V}{\pi }} = 2\sqrt[3]{\frac{V}{2\pi }},
+\]
+
+这就是说,当 \(h = {2R}\) 时,函数 \(S\left( R\right)\) 取得最小值,这时所用的材料最省.
+
+现在我们根据 1 担 \(= {100}\) 斤 \(= {0.05}\) 吨,得
+
+\[
+V = {150} \times \frac{0.05}{0.925} \approx {8.11}\text{ (立方米),}
+\]
+
+于是
+
+\[
+R = \sqrt[3]{\frac{V}{2\pi }} \approx \sqrt[3]{\frac{8.11}{2\pi }} \approx {1.09}\left( \text{ 米 }\right) ,
+\]
+
+\[
+h = {2R} \approx {2.18}\text{ (米) }
+\]
+
+这时建造氨水槽所用的材料最省.
+
+答: 当氨水槽的底半径约为 1.09 米, 高约为 2.18 米时, 所用的材料最省.
+
+例 5 已知电源电压为 \(E\) ,内电阻为 \(r\) (图 3-17),问当外电路负载电阻 \(R\) 取什么值时,输出功率最大.
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_152_349261.jpg}
+\end{center}
+
+图 3-17
+
+解: 由欧姆定律得电流强度
+
+\[
+I = \frac{E}{R + r}.
+\]
+
+在负载电阻 \(R\) 上输出的功率
+
+\[
+P = P\left( R\right) = {I}^{2}R = \frac{{E}^{2}R}{{\left( R + r\right) }^{2}}.
+\]
+
+实验证明,当 \(E,r\) 一定时,输出功率由负载电阻 \(R\) 的大小决定. \(R\) 很小时,电源功率大都消耗在内电阻 \(r\) 上,输出功率可以变得很小; \(R\) 很大时,电路中电流很小,输出功率也可以变得很小. 因此, \(R\) 一定有一个适当的数值,使得输出功率最大. 令
+
+\[
+{P}^{\prime }\left( R\right) = {\left\lbrack \frac{{E}^{2}R}{{\left( R + r\right) }^{2}}\right\rbrack }^{\prime }
+\]
+
+\[
+= {E}^{2} \cdot \frac{{\left( R + r\right) }^{2} - {2R}\left( {R + r}\right) }{{\left( R + r\right) }^{4}}
+\]
+
+\[
+= {E}^{2} \cdot \frac{r - R}{{\left( R + r\right) }^{3}} = 0,
+\]
+
+即 \({E}^{2}\left( {r - R}\right) = 0\) ,求得唯一驻点
+
+\[
+R = r\text{.}
+\]
+
+所以,当 \(R = r\) ,即外电路负载电阻等于内电阻时,输出功率最大.
+
+答: 当外电路负载电阻 \(R\) 等于内电阻 \(r\) 时,输出功率最大.
+
+\begin{problemset}[练习]
+
+\item 已知函数 \(y = 3{x}^{3} - {9x} + 5\) ,求函数在 \(\left\lbrack {-2,2}\right\rbrack\) 上的最大值与最小值。
+
+\item 把长度为 \(l\) 的线段分成两段,使得以这两段分别作为长与宽所得的矩形的面积最大.
+
+\item 把长为 \(l\) 的铁丝分成两段,各围成一个正方形,问怎样分法才能使它们的面积之和最小。
+
+\item 等腰三角形的周长为 \({2p}\) ,问绕这个三角形的底边旋转一周所成立体的体积为最大时, 各边长分别是多少。
+
+\end{problemset}
+
+\begin{problemset}[习 题 十 一]
+
+\item 证明函数 \(y = 2{x}^{3} + 3{x}^{2} - {12x} + 1\) 在区间 \(\left( {-2,1}\right)\) 内是减函数。
+
+\item 确定下列函数的增减范围:
+
+(1) \(y = \left( {5 - x}\right) \left( {1 + x}\right)\) ;
+
+(2) \(y = {x}^{3} - {12x} + 2\) ;
+
+(3) \(y = {x}^{3} - 9{x}^{2} + {24x}\) ;
+
+(4) \(y = {x}^{4} - 2{x}^{2} - 5\) ;
+
+(5) \(y = x\lg x\) ; (6) \(y = x{e}^{x}\) .
+
+\item 求下列函数的驻点:
+
+(1) \(y = {x}^{3} - 2{x}^{2} - {9x} + {31}\) ;
+
+(2) \(y = 6{x}^{2} - {x}^{4}\) ;
+
+(3) \(y = \frac{2}{1 + {x}^{2}}\)
+
+(4) \(y = \sin x - \sqrt{3}\cos x\;\left( {0 < x < {2\pi }}\right)\) .
+
+\item 讨论下列函数的增减性:
+
+(1) \(f\left( x\right) = 7{x}^{2} + {14x} + 1\) ;
+
+(2) \(f\left( x\right) = \frac{1}{3x}\)
+
+(3) \(f\left( x\right) = 2{x}^{3} - 6{x}^{2} - {18x} - 7\) ;
+
+(4) \(f\left( x\right) = {x}^{4} - 2{x}^{2} - 5\) ;
+
+(5) \(y = x - {e}^{x}\) ;
+
+(6) \(y = x + \cos x\) ;
+
+(7) \(y = x - \sin x\) ;
+
+（8）函数 \(y = \operatorname{arctg}x - x\) 是整个定义域内的减函数.
+
+\item 证明下列不等式成立:
+
+（1）当 \(x > 0\) 时, \(\frac{5}{3}{x}^{3} - 2{x}^{2} + x > 0\) ;
+
+（2）当 \(x > 0\) 时, \({x}^{5} - \frac{4}{3}{x}^{3} + x > 0\) ;
+
+（3）如果 \(0 < {x}_{1} < {x}_{2} < \frac{\pi }{2}\) ,那么 \(\frac{\operatorname{tg}{x}_{1}}{{x}_{1}} < \frac{\operatorname{tg}{x}_{2}}{{x}_{2}}\) .
+
+\item 已知函数 \(y = a\left( {{x}^{3} - x}\right) \;\left( {a \neq 0}\right)\) ,
+
+（1）如果 \(x > \frac{\sqrt{3}}{3}\) 时, \(y\) 是减函数,确定 \(a\) 的值的范围;
+
+（2）如果 \(x < - \frac{\sqrt{3}}{3}\) 时, \(y\) 是减函数,确定 \(a\) 的值的范围;
+
+（3）如果 \(- \frac{\sqrt{3}}{3} < x < \frac{\sqrt{3}}{3}\) 时, \(y\) 是减函数,确定 \(a\) 的值的范围.
+
+\item 求下列函数的极值:
+
+(1) \(y = {x}^{3} + {12}{x}^{2} + {36x} - {50}\) ; (2) \(y = 4{x}^{5} - 5{x}^{4} - {40}{x}^{3}\) ;
+
+(3) \(y = 3{x}^{5} - 5{x}^{3} + 2\) ; (4) \(y = \frac{{x}^{2}}{{x}^{2} + 3}\)
+
+(5) \(y = {x}^{3} - {2x} + \frac{8}{x}\) ; (6) \(y = \left( {{x}^{2} - 3}\right) {e}^{x}\) .
+
+\item 求下列函数的极值:
+
+(1) \(y = \sin x\cos x\;\left( {0 < x < \pi }\right)\) ;
+
+(2) \(y = 1 - \sqrt{{x}^{2} - {2x} + {10}}\) ;
+
+(3) \(y = 1 - \sqrt{6 - x - {x}^{2}}\) ; (4) \(y = b + c{\left( x - a\right) }^{\frac{3}{2}}\) ;
+
+(5) \(y = \frac{{x}^{3} + x}{{x}^{4} - {x}^{2} + 1}\) (6) \(y = x - \ln \left( {1 + x}\right)\) ;
+
+(7) \(y = {\left( x - 5\right) }^{2}\sqrt[3]{{\left( x + 1\right) }^{4}}\) ;
+
+(8) \(y = a{e}^{px} + b{e}^{-{px}}\;\left( {a\text{ 与 }b\text{ 同号,}p \neq 0}\right)\) .
+
+\item 求下列函数在给定区间内的极值:
+
+(1) \(y = \cos \left( {x + \frac{\pi }{4}}\right) ,x\) 在 \(\left( {0,\pi }\right)\) 内;
+
+(2) \(y = \cos x + \sin x,x\) 在 \(\left( {-\frac{\pi }{2},\frac{\pi }{2}}\right)\) 内;
+
+（3） \(y = \frac{x}{1 + {x}^{2}},\;x\) 在 \(\left( {-\frac{3}{2},\frac{1}{2}}\right)\) 内;
+
+(4) \(y = x - \sin {2x},x\) 在 \(\left( {0,\pi }\right)\) 内;
+
+(5) \(y = 2\operatorname{tg}x - {\operatorname{tg}}^{2}x,x\) 在 \(\left( {0,{2\pi }}\right)\) 内.
+
+\item 求下列函数在给定区间的最大值与最小值:
+
+(1) \(y = {x}^{4} - 2{x}^{2} + 5,\left\lbrack {-2,2}\right\rbrack\) ;
+
+(2) \(y = x + 2\sqrt{x},\left\lbrack {0,4}\right\rbrack\) ;
+
+(3) \(y = \frac{1 - x + {x}^{2}}{1 + x - {x}^{2}},\left\lbrack {0,1}\right\rbrack\) ;
+
+(4) \(y = 2\operatorname{tg}x - {\operatorname{tg}}^{2}x,\left\lbrack {0,\frac{\pi }{3}}\right\rbrack\) .
+
+\item 将 36 分成两个因数, 使其平方和最小.
+
+\item 求外切于半径为 \(R\) 的球并且体积最小的圆锥的高.
+
+\item 在抛物线 \({y}^{2} = {2px}\) 的对称轴上,已知一个与顶点距离为 \(a\) 的点 \(M\) (在 \(y\) 轴右侧),求曲线上点 \(N\) 的横坐标,使得 \(\left| {MN}\right|\) 最小.
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_156_776700.jpg}
+\end{center}
+
+(第 14 题)
+
+\item 如图, 已知一个正方形内接于另一个固定的正方形,问 \(\alpha\) 取什么值时, 内接正方形面积最小.
+
+(提示: 用求导数的方法来解,
+
+可设小正方形边长为 \(x\) .) :
+
+\item 求下列函数在给定区间的最大值与最小值:
+
+(1) \(y = 5 - {36x} + 3{x}^{2} + 4{x}^{3},\left\lbrack {-2,2}\right\rbrack\) ;
+
+(2) \(y = 4{x}^{2}\left( {{x}^{2} - 2}\right) ,\left\lbrack {-2,2}\right\rbrack\) .
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_157_303198.jpg}
+\end{center}
+
+(第 17 题)
+
+\item 将 8 分为两部分, 使其立方和最小.
+
+\item 有根木料长为 6 米, 要做一个如图的窗框, 已知上框架与下框架的高之比为 \(1 : 2\) ,问怎样利用木料,才能使光线通过的窗框面积最大(中间木档的面积可以忽略不计).
+
+\item 有根铁丝长 \({72}\mathrm{\;{cm}}\) ,截成十二段,搭成一个正四棱柱的模型, 要求占空间位置最大, 问线段应该怎样截法.
+
+(提示: 占空间位置是指铁丝所围成的正四棱柱的体积.)
+
+\item 如图,用半径为 \(R\) 的圆铁皮,剪一个圆心角为 \(\alpha\) 的扇形, 制成一个圆锥形的漏斗,问圆心角 \(\alpha\) 取什么值时,漏斗容积最大。
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_157_936491.jpg}
+\end{center}
+
+(第 19 题)
+
+\item (1) 求内接于半径为 \(R\) 的球并且体积最大的圆柱体的高;
+
+（2）求内接于半径为 \(R\) 的球并且体积最大的圆锥体的高。
+
+\item 如图,已知海岛 \(A\) 到海岸公路 \({BD}\) 的距离 \({AD}\) 为 50 公里,
+
+\(D\) 与工厂 \(B\) 的距离为 200 公里,海上机船的速度为 25 公里/小时, 岸上卡车的速度为 50 公里/小时. 问在海岸公路 \({BD}\) 上哪一处设立转运站 \(C\) ,可以使从岛 \(A\) 到工厂 \(B\) 的运货时间最短 (装货及卸货所用时间除外). \(B,D\) 的距离对 \(C\) 点的位置有没有影响?
+
+\begin{center}
+\includegraphics[max width=0.9\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_158_569376.jpg}
+\end{center}
+
+(第 21 题)
+
+\item 如图,铁路线上 \({AB}\) 段长 100 公里,工厂 \(C\) 到铁路的距离 \({CA}\) 为 20 公里. 现在要在 \({AB}\) 上某一点 \(D\) 处,向 \(C\) 修一条公路。已知铁路每吨公里与公路每吨公里的运费之比为 \(3 : 5\) ,为了使原料从供应站 \(B\) 运到工厂 \(C\) 的运费最省, \(D\) 点应选在何处?
+
+\begin{center}
+\includegraphics[max width=0.7\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_158_819415.jpg}
+\end{center}
+
+(第 22 题)
+
+\item (1) 如图,已知防空洞的截面是矩形加半圆,周长为 \(l\) , 底宽 \({2x}\) 取什么值时,截面面积最大?
+
+（2）如果上述防空洞截面积为 \(S\) ,底宽 \({2x}\) 取什么值时, 周长最小?
+
+\begin{center}
+\includegraphics[max width=0.2\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_159_493137.jpg}
+\end{center}
+
+(第 23 题)
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_159_646060.jpg}
+\end{center}
+
+(第 24 题)
+
+\item 如图, 在施工地点中心设立一灯架, 上面挂一盏“太阳” 灯,问灯离地面多高,可以使与工地中心距离为 \(a\) 的圆形施工区域边上具有最大照度.
+
+(提示: 照度 \(J\) 与 \(\cos \varphi\) 成正比,与光源距离 \(r\) 的平方成反比.)
+
+\item 如图,在等腰梯形 \({ABCD}\) 中, 底 \({CD} = {40}\) ,腰 \({AD} = {40}\) ,问 \({AB}\) 为多长时, 等腰梯形的面积最大。
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_159_135403.jpg}
+\end{center}
+
+(第 25 题)
+
+(提示: 可设 \(\angle A = \theta\) .)
+
+\end{problemset}
+
+\section*{*二阶导数的应用}
+
+二阶导数的应用是导数应用的重要部分. 一是利用 \({f}^{\prime \prime }\left( {x}_{0}\right) < 0\) (或 \({f}^{\prime \prime }\left( {x}_{0}\right) > 0\) ) 来判定函数 \(f\left( x\right)\) 的极大值 (或极小值); 二是利用 \({f}^{\prime \prime }\left( x\right) > 0\text{、}{f}^{\prime \prime }\left( x\right) < 0\) 以及 \({f}^{\prime \prime }\left( {x}_{0}\right) = 0\) ,来判定曲线 \(y = f\left( x\right)\) 的凸向和拐点; 三是绘制函数的图象. 为此,先讲预备知识.
+
+\section{预备知识}
+
+首先引进连续函数的局部保号性质.
+
+定理 1 若函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处连续,且 \(f\left( {x}_{0}\right) \neq 0\) ,则函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 附近必与 \(f\left( {x}_{0}\right)\) 同号,即
+
+当 \(f\left( {x}_{0}\right) > 0\) 时, \(f\left( x\right) > 0\) (图 3-18(1));
+
+当 \(f\left( {x}_{0}\right) < 0\) 时, \(f\left( x\right) < 0\) (图 3-18(2)).
+
+从图 3-18 容易看出连续函数具有局部保号性质.
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_160_145040.jpg}
+\end{center}
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_160_221128.jpg}
+\end{center}
+
+图 3-18
+
+其次, 给出关于二阶导数的中值定理.
+
+定理 2 如果函数 \(f\left( x\right)\) 在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上有二阶导数, 那么至少有一点 \(\xi \in \left( {a,b}\right)\) ,使得
+
+\[
+f\left( b\right) = f\left( a\right) + {f}^{\prime }\left( a\right) \left( {b - a}\right) + \frac{1}{2}{f}^{\prime \prime }\left( \xi \right) {\left( b - a\right) }^{2}. \tag{1}
+\]
+
+证明: 令
+
+\[
+f\left( b\right) = f\left( a\right) + {f}^{\prime }\left( a\right) \left( {b - a}\right) + K{\left( b - a\right) }^{2}. \tag{2}
+\]
+
+若能证明 \(\;K = \frac{1}{2}{f}^{\prime \prime }\left( \xi \right)\) ,则定理的结论得证.
+
+为此, 作辅助函数:
+
+\[
+\varphi \left( x\right) = f\left( b\right) - f\left( x\right) - {f}^{\prime }\left( x\right) \left( {b - x}\right) - K{\left( b - x\right) }^{2} \tag{3}
+\]
+
+因 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上有二阶导数,故 \(f\left( x\right) \text{、}{f}^{\prime }\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上连续,于是 \(\varphi \left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上连续,且可导,又由 \(\left( 2\right) \text{、}\left( 3\right)\) 有
+
+\[
+\varphi \left( a\right) = f\left( b\right) - f\left( a\right) - {f}^{\prime }\left( a\right) \left( {b - a}\right) - K{\left( b - a\right) }^{2}
+\]
+
+\[
+= f\left( b\right) - f\left( b\right) = 0,
+\]
+
+\[
+\varphi \left( b\right) = f\left( b\right) - f\left( b\right) = 0\text{,即}
+\]
+
+\[
+\varphi \left( a\right) = \varphi \left( b\right) \text{.}
+\]
+
+根据罗尔定理可知,至少存在一点 \(\xi \in \left( {a,b}\right)\) ,使得
+
+\[
+{\varphi }^{\prime }\left( \xi \right) = 0.
+\]
+
+但对 \(\left( 3\right)\) 求导得 \({\varphi }^{\prime }\left( x\right) = - {f}^{\prime \prime }\left( x\right) \left( {b - x}\right) + {2K}\left( {b - x}\right)\) ,
+
+所以
+
+\[
+{\varphi }^{\prime }\left( \xi \right) = - {f}^{\prime \prime }\left( \xi \right) \left( {b - \xi }\right) + {2K}\left( {b - \xi }\right) = 0.
+\]
+
+因 \(b - \xi \neq 0\) 于是
+
+\[
+K = \frac{1}{2}{f}^{\prime \prime }\left( \xi \right)
+\]
+
+将 \(K\) 代入 (2)得证 (1) 式成立,即
+
+\[
+f\left( b\right) = f\left( a\right) + {f}^{\prime }\left( a\right) \left( {b - a}\right) + \frac{1}{2}{f}^{\prime \prime }\left( \xi \right) {\left( b - a\right) }^{2}.
+\]
+
+为了应用方便, 本定理的结论也可写成如下形式:
+
+令 \(a = {x}_{0},b = x \neq {x}_{0}\) ,则
+
+\[
+f\left( x\right) = f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right) + \frac{1}{2}{f}^{\prime \prime }\left( \xi \right) {\left( x - {x}_{0}\right) }^{2}, \tag{4}
+\]
+
+其中 \(\xi\) 在点 \({x}_{0}\) 与 \(x\) 之间.
+
+\section{函数极值的判定}
+
+我们学过了用一阶导数判定函数极值的方法, 下面进一步研究, 怎样用二阶导数来判定函数的极大值与极小值问题.
+
+定理 如果函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 附近有连续的导函数 \({f}^{\prime \prime }\left( x\right)\) ,且 \({f}^{\prime }\left( {x}_{0}\right) = \mathbf{0},{f}^{\prime \prime }\left( {x}_{0}\right) \neq \mathbf{0}\) .
+
+(1) 若 \({f}^{\prime \prime }\left( {x}_{0}\right) < 0\) ,则函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处取极大值;
+
+（2）若 \({f}^{\prime \prime }\left( {x}_{0}\right) > 0\) ,则函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处取极小值.
+
+证明: (1) 因 \({f}^{\prime \prime }\left( {x}_{0}\right) < 0\) ,由连续函数的局部保号性质, 在点 \({x}_{0}\) 附近有 \({f}^{\prime \prime }\left( x\right) < 0\) .
+
+根据上节定理 2 中 (4) 式有
+
+\[
+f\left( x\right) = f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right) + \frac{{f}^{\prime \prime }\left( \xi \right) }{2}{\left( x - {x}_{0}\right) }^{2},
+\]
+
+\[
+\because \;{f}^{\prime }\left( {x}_{0}\right) = 0,
+\]
+
+\[
+\therefore \;f\left( x\right) - f\left( {x}_{0}\right) = \frac{{f}^{\prime \prime }\left( \xi \right) }{2}{\left( x - {x}_{0}\right) }^{2}\text{,} \tag{1}
+\]
+
+又因 \(\xi\) 在点 \({x}_{0}\) 与 \(x\) 之间,即 \(\xi\) 在点 \({x}_{0}\) 附近,于是 \({f}^{\prime \prime }\left( \xi \right) < 0\) .
+
+再从 \(\left( 1\right)\) 式得 \(f\left( x\right) < f\left( {x}_{0}\right)\) ,也就是说 \(f\left( {x}_{0}\right)\) 为函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处的极大值.
+
+（2）若 \({f}^{\prime \prime }\left( {x}_{0}\right) > 0\) ,同样可得 \({f}^{\prime \prime }\left( \xi \right) > 0\) ,再由 (1) 式则
+
+\[
+f\left( x\right) > f\left( {x}_{0}\right) \text{.}
+\]
+
+也就是说, \(f\left( {x}_{0}\right)\) 为 \(f\left( x\right)\) 在点 \({x}_{0}\) 处的极小值.
+
+例 1 求函数 \(f\left( x\right) = {x}^{5} - {15}{x}^{3} + 3\) 的极值.
+
+解: \({f}^{\prime }\left( x\right) = 5{x}^{4} - {45}{x}^{2},{f}^{\prime \prime }\left( x\right) = {20}{x}^{3} - {90x}\) . 令 \({f}^{\prime }\left( x\right) = 0\) ,求得驻点为 \(x = - 3,0,3\) .
+
+因为, \({f}^{\prime \prime }\left( {-3}\right) = - {270} < 0\) ,故 \(f\left( x\right)\) 在 \(x = - 3\) 取极大值, 且 \(f\left( {-3}\right) = {165}\) .
+
+因为 \({f}^{\prime \prime }\left( 3\right) = {270} > 0\) ,故 \(f\left( x\right)\) 在 \(x = 3\) 取极小值, \(f\left( 3\right) =\) \(- {159}\) .
+
+注 当 \({f}^{\prime \prime }\left( 0\right) = 0\) 时, \(f\left( x\right)\) 在点 \(x = 0\) 处是否有极值不能判定, 即使有极值, 是极大值、极小值也不能判定.
+
+例如 \({f}_{1}\left( x\right) = {\left( x - 1\right) }^{3} + 1\) 在点 \(x = 1\) 处 \({f}_{1}^{\prime \prime }\left( 1\right) = 0\) ,从 \({f}_{1}\left( x\right)\) 的图象可知 \({f}_{1}\left( x\right)\) 在 \(x = 1\) 处无极值.
+
+又如 \({f}_{2}\left( x\right) = - {\left( x - 1\right) }^{4} + 1\) 在点 \(x = 1\) 处 \({f}_{2}^{\prime \prime }\left( 1\right) = 0\) ,从 \({f}_{2}\left( x\right)\) 的图象可知 \({f}_{2}\left( x\right)\) 在 \(x = 1\) 处有极大值 1 .
+
+再如 \({f}_{3}\left( x\right) = {\left( x - 1\right) }^{4} - 1\) 在点 \(x = 1\) 处 \({f}_{3}^{\prime \prime }\left( 1\right) = 0\) ,从 \({f}_{3}\left( x\right)\) 的图象可知 \({f}_{3}\left( x\right)\) 在 \(x = 1\) 处有极小值 -1 .
+
+例 2 求 \(f\left( x\right) = {\left( {x}^{2} - 1\right) }^{2} - 1\) 的极值,并在下列区间 \(\left( {-\infty ,\infty }\right) ,\left\lbrack {-2,2}\right\rbrack ,\left( {-1,1}\right)\) 分别讨论其最大值、最小值.
+
+解: \({f}^{\prime }\left( x\right) = {4x}\left( {{x}^{2} - 1}\right) ,{f}^{\prime \prime }\left( x\right) = 4\left( {3{x}^{2} - 1}\right)\) ,
+
+令 \({f}^{\prime }\left( x\right) = {4x}\left( {{x}^{2} - 1}\right) = 0\) ,求得驻点: \(x = - 1,0,1\) .
+
+因为 \({f}^{\prime \prime }\left( 0\right) = - 4 < 0\) ,故 \(f\left( x\right)\) 在 \(x = 0\) 处取极大值. 且极大值为 \(f\left( 0\right) = 0\) ;
+
+又 \({f}^{\prime \prime }\left( {-1}\right) = {f}^{\prime \prime }\left( 1\right) = 8 > 0\) ,故 \(f\left( x\right)\) 在 \(x = \pm 1\) 两点都有极小值. 极小值为 \(f\left( {\pm 1}\right) = - 1\) .
+
+下面讨论函数 \(f\left( x\right)\) 在不同区间内最大值、最小值是否存在问题.
+
+因当 \(x \rightarrow \pm \infty\) 时,函数 \(f\left( x\right) = {\left( {x}^{2} - 1\right) }^{2} - 1\) 也趋向于无穷大,故 \(f\left( x\right)\) 在开区间 \(\left( {-\infty ,\infty }\right)\) 内无最大值. 但从图 3-19 可
+
+知函数 \(f\left( x\right)\) ,有最小值 \(f\left( {\pm 1}\right) = - 1\) ; 在 \(\left\lbrack {-2,2}\right\rbrack\) 上 \(f\left( x\right)\) 的最大值为 \(f\left( {\pm 2}\right) = 8\) ,最小值为 \(f\left( {\pm 1}\right) = - 1\) ; 在 \(\left( {-1,1}\right)\) 内 \(f\left( x\right)\) 的最大值为 \(f\left( 0\right) = 0\) ,无最小值.
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_164_907490.jpg}
+\end{center}
+
+图 3-19
+
+注 一般的,在开区间 \(\left( {a,b}\right)\) 内的连续函数不一定有最大值、最小值.
+
+\begin{problemset}[练习]
+
+\item 应用二阶导数求下列函数的极值:
+
+(1) \(f\left( x\right) = {x}^{3} + 3{x}^{2} - {9x} + 6\) ;
+
+(2) \(f\left( x\right) = x - 2\sin x\;\left( {0 \leq x \leq {2\pi }}\right)\) ;
+
+(3) \(g\left( x\right) = a{x}^{2} + {bx} + c\;\left( {a \neq 0}\right)\) .
+
+\end{problemset}
+
+\section{曲线的凸向和拐点}
+
+如果函数 \(f\left( x\right)\) 的导函数 \({f}^{\prime }\left( x\right)\) 在点 \({x}_{0}\) 处连续,同时 \({f}^{\prime }\left( {x}_{0}\right) > 0\) (或 \({f}^{\prime }\left( {x}_{0}\right) < 0\) ),根据连续函数的局部保号性质,则 \({f}^{\prime }\left( x\right)\) 在点 \({x}_{0}\) 附近,必有 \({f}^{\prime }\left( x\right) > 0\) (或 \({f}^{\prime }\left( x\right) < 0\) ),这表示 \(f\left( x\right)\) 在点 \({x}_{0}\) 附近是增函数 (或减函数). 即函数 \(f\left( x\right)\) 的图象在点 \({x}_{0}\) 附近是上升的 (或下降的).
+
+当 \({f}^{\prime }\left( {x}_{0}\right) > 0\) 时,对于给定的函数 \(f\left( x\right)\) 的图象在点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 附近上升情况有四种(见图 3-20).
+
+\begin{center}
+\includegraphics[max width=1.0\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_165_181993.jpg}
+\end{center}
+
+图 3-20
+
+当 \({f}^{\prime }\left( {x}_{0}\right) < 0\) 时,函数 \(f\left( x\right)\) 的图象在点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 附近的下降情况也有四种(见图 3-21).
+
+\begin{center}
+\includegraphics[max width=1.0\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_165_929562.jpg}
+\end{center}
+
+图 3-21
+
+为了能确切地了解函数 \(f\left( x\right)\) 在点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 附近的变化情况, 还应研究曲线的凸向与拐点.
+
+设函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处可导,则曲线 \(y = f\left( x\right)\) 在点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 处有切线. 若此切线位于切点附近曲线的下方, 切点除外,则称曲线在点 \(x = {x}_{0}\) 处下凸. 如图 3-20(1),图 3-21(1). 若此切线位于切点附近曲线的上方, 切点除外, 则称曲线在点 \(x = {x}_{0}\) 处上凸. 如图 3-20(2),图 3-21(2).
+
+如果曲线 \(y = f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内所有点都下凸（或上凸),则称曲线在区间 \(\left( {\mathbf{a},\mathbf{b}}\right)\) 内下凸 (或上凸).
+
+若曲线 \(y = f\left( x\right)\) 在切点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 的两侧改变了凸向, 即左下凸右上凸,或左上凸右下凸,则称点 \(P\) 为曲线的拐点. 如图 3-20(3)、图 3-21(3)或图 3-20(4)、图 3-21(4).
+
+下面就给出应用二阶导数判定曲线的凸向和拐点的方法:
+
+定理 1 设函数 \(f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内有二阶导数 \({f}^{\prime \prime }\left( x\right)\) ,
+
+(1) 如果对所有点 \(x \in \left( {a,b}\right)\) ,有 \({f}^{\prime \prime }\left( x\right) > 0\) ,则曲线 \(y = f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内下凸.
+
+(2) 如果对所有点 \(x \in \left( {a,b}\right)\) ,有 \({f}^{\prime \prime }\left( x\right) < 0\) ,则曲线 \(y = f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内上凸.
+
+证明: (1) 当 \(x \in \left( {a,b}\right)\) 时,有 \({f}^{\prime \prime }\left( x\right) > 0\) ,于是对于任取一点 \({x}_{0} \in \left( {a,b}\right)\) ,有 \({f}^{\prime \prime }\left( {x}_{0}\right) > 0\) ,现证明曲线 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处下凸. 已知曲线 \(y = f\left( x\right)\) 在点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 处的切线为
+
+\[
+y - f\left( {x}_{0}\right) = {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right) ,
+\]
+
+设 \({x}_{1}\) 为 \({x}_{0}\) 附近的任意一点, \({x}_{1} \neq {x}_{0}\) ,则切线上对应于点 \({x}_{1}\) 的纵坐标为
+
+\[
+{y}_{1} = f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) \left( {{x}_{1} - {x}_{0}}\right) . \tag{1}
+\]
+
+另外,因函数 \(f\left( x\right)\) 在 \(\left( {a,b}\right)\) 内有二阶导数,并且 \({x}_{0},{x}_{1} \in \left( {a,b}\right)\) ,根据 3.5 节定理 2 中 (4) 式有
+
+\[
+f\left( {x}_{1}\right) = f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) \left( {{x}_{1} - {x}_{0}}\right) + \frac{{f}^{\prime \prime }\left( \xi \right) }{2}{\left( {x}_{1} - {x}_{0}\right) }^{2}, \tag{2}
+\]
+
+其中 \(\xi\) 在 \({x}_{0}\) 与 \({x}_{1}\) 之间.
+
+\(f\left( {x}_{1}\right)\) 为对应于点 \({x}_{1}\) 的曲线上 \({P}_{1}\) 点的纵坐标 (图 3-22).
+
+\begin{center}
+\includegraphics[max width=0.7\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_167_239614.jpg}
+\end{center}
+
+图 3-22
+
+由 \(\left( 2\right)\) 式减 \(\left( 1\right)\) 式,得 \(f\left( {x}_{1}\right) - {y}_{1} = \frac{{f}^{\prime \prime }\left( \xi \right) }{2}{\left( {x}_{1} - {x}_{0}\right) }^{2}\) .(3)
+
+因为对所有点 \(x \in \left( {a,b}\right)\) ,有 \({f}^{\prime \prime }\left( x\right) > 0\) ,从而 \({f}^{\prime \prime }\left( \xi \right) > 0\) .
+
+由(3)式得
+
+\[
+f\left( {x}_{1}\right) > {y}_{1}\text{.} \tag{4}
+\]
+
+由 (4) 式表明,曲线在点 \(P\) 的切线位于曲线的下方,说明曲线 \(y = f\left( x\right)\) 在点 \(x = {x}_{0}\) 处下凸.
+
+因对区间 \(\left( {a,b}\right)\) 内任意一点 \({x}_{0},\left( 3\right)\) 式皆成立,这样曲线 \(y = f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内下凸得证.
+
+（2）当 \(x \in \left( {a,b}\right)\) ,有 \({f}^{\prime \prime }\left( x\right) < 0\) 的情况,利用(3)式,同样可证曲线 \(y = f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内上凸.
+
+例 1 判定曲线 \(y = \frac{1}{x}\) 的凸向.
+
+解: 由于 \(f\left( x\right) = \frac{1}{x},{f}^{\prime }\left( x\right) = - \frac{1}{{x}^{2}},{f}^{\prime \prime }\left( x\right) = \frac{2}{{x}^{3}}\) .
+
+所以当 \(x < 0\) 时, \({f}^{\prime \prime }\left( x\right) < 0\) ; 当 \(x > 0\) 时, \({f}^{\prime \prime }\left( x\right) > 0\) . 这表明曲线 \(y = \frac{1}{x}\) 在 \(\left( {-\infty ,0}\right)\) 内为上凸; 在 \(\left( {0, + \infty }\right)\) 内为下凸.
+
+从例 1 可知,曲线 \(y = \frac{1}{x}\) 在点 \(x = 0\) 的两侧改变了凸向, 可是曲线 \(y = \frac{1}{x}\) 无拐点,因为 \(x = 0\) 时, \(\frac{1}{x}\) 无意义. 可见只有两侧改变了凸向的点, 还不一定是拐点. 那么拐点存在还应具备什么条件呢?
+
+如果点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 为曲线 \(y = f\left( x\right)\) 的拐点,且 \({f}^{\prime \prime }\left( {x}_{0}\right)\) 存在,则横坐标 \({x}_{0}\) 必满足: \({f}^{\prime \prime }\left( {x}_{0}\right) = 0\) .
+
+事实上,假设 \({f}^{\prime \prime }\left( {x}_{0}\right) \neq 0\) ,必有 \({f}^{\prime \prime }\left( {x}_{0}\right) > 0\) ,或 \({f}^{\prime \prime }\left( {x}_{0}\right) < 0\) , 根据定理 1 的证明可知曲线 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处为下凸,或上凸. 这样点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 就不能是拐点,与点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 为拐点的条件相矛盾. 这说明拐点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 的横坐标 \({x}_{0}\) 必须满足 \({f}^{\prime \prime }\left( {x}_{0}\right) = 0\) .
+
+例 2 判定曲线 \(y = \sin x\) 在区间 \(\left( {-\pi ,\pi }\right)\) 内的凸向与拐点.
+
+解: 因 \({f}^{\prime \prime }\left( x\right) = - \sin x\) .
+
+当 \(x \in \left( {-\pi ,0}\right)\) 时, \({f}^{\prime \prime }\left( x\right) = - \sin x > 0\) ,则曲线 \(y = \sin x\) 在 \(\left( {-\pi ,0}\right)\) 内下凸.
+
+当 \(x \in \left( {0,\pi }\right)\) 时, \({f}^{\prime \prime }\left( x\right) = - \sin x < 0\) ,则曲线 \(y = \sin x\) 在 \(\left( {0,\pi }\right)\) 内上凸.
+
+\begin{center}
+\includegraphics[max width=0.6\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_169_891522.jpg}
+\end{center}
+
+图 3-23
+
+从图 3-23 看出曲线 \(y = \sin x\) 在原点 \(\left( {0,0}\right)\) 的两侧改变了凸向,点 \(\left( {0,0}\right)\) 为曲线的拐点. 且 \({f}^{\prime \prime }\left( 0\right) = 0\) .
+
+但是,如果只有 \({f}^{\prime \prime }\left( {x}_{0}\right) = 0\) ,那么点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 也不一定是拐点.
+
+例 3 讨论曲线 \(y = {x}^{4} - 1\) 的凸向与拐点.
+
+解: 因 \({f}^{\prime \prime }\left( x\right) = {12}{x}^{2}\) ,且 \({f}^{\prime \prime }\left( 0\right) = 0\) ,当 \(x \neq 0\) 时, \({f}^{\prime \prime }\left( x\right)\) \(> 0\) .
+
+因此,曲线 \(y = {x}^{4} - 1\) 在 \(\left( {-\infty ,\infty }\right)\) 内下凸,虽然 \({f}^{\prime \prime }\left( 0\right) = 0\) , 但点 \(\left( {0, - 1}\right)\) 不是拐点.
+
+定理 2 设函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 附近有二阶导函数,满足下列条件:
+
+(1) \({f}^{\prime \prime }\left( {x}_{0}\right) = 0\) ;
+
+（2）在 \(x = {x}_{0}\) 的两侧 \({f}^{\prime \prime }\left( x\right)\) 变号,
+
+则点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 必为曲线 \(y = f\left( x\right)\) 的拐点.
+
+例 4 判定曲线 \(y = {x}^{3} - 6{x}^{2} + {9x} - 1\) 的凸向和拐点.
+
+解: 因 \(\;{f}^{\prime }\left( x\right) = 3{x}^{2} - {6x} + 9\) ,
+
+\[
+{f}^{\prime \prime }\left( x\right) = {6x} - {12} = 6\left( {x - 2}\right) ,
+\]
+
+所以, \(f\left( x\right)\) 在 \(\left( {-\infty ,2}\right)\) 内上凸,在 \(\left( {2,\infty }\right)\) 内下凸,点 \(\left( {2,1}\right)\) 为
+
+拐点(图 3-24).
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_170_742442.jpg}
+\end{center}
+
+图 3-24
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|c|}
+\hline
+a & \(x < 2\) & 2 & \(2 < x\) \\
+\hline
+\({f}^{\prime \prime }\left( x\right)\) & \(-\) & 0 & \(+\) \\
+\hline
+\(f\left( x\right)\) & 上凸 & 1 & 下凸 \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+\begin{problemset}[练习]
+
+\item 判定下列曲线的凸向与拐点:
+
+(1) \(f\left( x\right) = {x}^{4} - 2{x}^{3} + 1\) ;
+
+(2) \(f\left( x\right) = {x}^{2} + \frac{1}{x}\)
+
+(3) \(f\left( x\right) = x - \sin x\) .
+
+\item 讨论下列曲线的凸向与拐点:
+
+(1) \(f\left( x\right) = {e}^{-2{x}^{2}}\) ; (2) \(f\left( x\right) = \frac{x}{x + 1}\) ;
+
+(3) \(f\left( x\right) = \ln \left( {{x}^{2} + 1}\right)\) .
+
+\end{problemset}
+
+\section{函数的图象}
+
+设函数 \(f\left( x\right)\) 已由某个式子给定,在平面解析几何中我们可以利用描点法作出函数的图象, 这种图象一般是粗糙的, 在一些关键性点的附近函数的变化状态, 不一定能确切地反映出来. 现在我们学习了导数及其应用, 就可以利用函数的一、 二阶导数及其某些性质, 给出较准确地描述函数动态. 一般的, 描绘函数图象的步骤如下:
+
+1. 确定函数的定义域,及其某些性质: \({e}^{i{\omega }^{2} + {\omega }^{2}}{e}^{i\left( {\omega - 1}\right) }\)
+
+由函数的定义域, 找出其图象范围;
+
+由函数的奇偶性、周期性, 缩小研究范围:
+
+找出函数图象与两坐标轴的交点.
+
+2. 计算 \({f}^{\prime }\left( x\right)\) ,求方程 \({f}^{\prime }\left( x\right) = 0\) 在研究范围内的所有实根. 找出 \(f\left( x\right)\) 的增减区间、驻点、极值点.
+
+3. 计算 \({f}^{\prime \prime }\left( x\right)\) ,求方程 \({f}^{\prime \prime }\left( x\right) = 0\) 在研究范围内的所有实根,找出曲线 \(y = f\left( x\right)\) 的凸向区间和拐点.
+
+4. 计算驻点、拐点及有关点的函数值, 列出表格、描绘图象.
+
+例 1 描绘函数 \(y = \frac{x}{{x}^{2} + 1}\) 的图象.
+
+解: 1. 函数 \(f\left( x\right)\) 的定义域为 \(\left( {-\infty , + \infty }\right)\) ;
+
+又因 \(f\left( {-x}\right) = - f\left( x\right)\) ,所以 \(f\left( x\right)\) 为奇函数,只须研究区间 \(\lbrack 0,\infty )\) 上的图象,再描绘它关于原点的对称图形即得 \(\left( {-\infty , + \infty }\right)\) 上 \(f\left( x\right)\) 的图象;
+
+另外,因 \(x = 0\) 时, \(y = 0\) ,所以,函数 \(f\left( x\right)\) 的图象过坐标原点 \(\left( {0,0}\right)\) .
+
+2. \({f}^{\prime }\left( x\right) = \frac{1 - {x}^{2}}{{\left( {x}^{2} + 1\right) }^{2}}\) ,解方程 \({f}^{\prime }\left( x\right) = 0\) ,得驻点为 \(x = \pm 1\)
+
+在 \(\left( {-\infty , - 1}\right) \text{、}\left( {1, + \infty }\right)\) 内 \({f}^{\prime }\left( x\right) < 0,f\left( x\right)\) 为减函数;
+
+在 \(\left( {-1, + 1}\right)\) 内 \({f}^{\prime }\left( x\right) > 0,f\left( x\right)\) 为增函数.
+
+3. \({f}^{\prime \prime }\left( x\right) = \frac{{2x}\left( {{x}^{2} - 3}\right) }{{\left( {x}^{2} + 1\right) }^{3}}\) ,解. 方程 \({f}^{\prime \prime }\left( x\right) = 0\) ,得根为 \(x = - \sqrt{3},0,\sqrt{3}\) .
+
+在区间 \(\left( {-\infty , - \sqrt{3}}\right) \text{、}\left( {0,\sqrt{3}}\right)\) 内 \({f}^{\prime \prime }\left( x\right) < 0,f\left( x\right)\) 上凸;
+
+在区间 \(\left( {-\sqrt{3},0}\right) \text{、}\left( {\sqrt{3}, + \infty }\right)\) 内 \({f}^{\prime \prime }\left( x\right) > 0,f\left( x\right)\) 下凸;
+
+在点 \(\left( {-\sqrt{3}, - \frac{\sqrt{3}}{4}}\right) \text{、}\left( {0,0}\right) \text{、}\left( {\sqrt{3},\frac{\sqrt{3}}{4}}\right)\) 处为拐点.
+
+4. 因 \(\mathop{\lim }\limits_{{x \rightarrow + \infty }}f\left( x\right) = 0,f\left( 0\right) = 0,f\left( 1\right) = \frac{1}{2},f\left( \sqrt{3}\right) = \frac{\sqrt{3}}{4}\) . \({f}^{\prime }\left( x\right) ,{f}^{\prime \prime }\left( x\right) ,f\left( x\right)\) 的变化状态如下表:
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\(x\) & 0 & \(\left( {0,1}\right)\) & 1 & \(\left( {1,\sqrt{3}}\right)\) & \(\sqrt{3}\) & \(\left( {\sqrt{3}, + \infty }\right)\) \\
+\hline
+\({f}^{\prime }\left( x\right)\) & 1 & \(+\) & 0 & \(-\) & \(- \frac{1}{8}\) & \(-\) \\
+\hline
+\({f}^{\prime \prime }\left( x\right)\) & 0 & \(-\) & \(\cdots\) & \(-\) & 0 & \(+\) \\
+\hline
+\(f\left( x\right)\) & 0 & 7 & \(\frac{1}{2}\) & / & \(\frac{\sqrt{3}}{4}\) & / \\
+\hline
+\(y = f\left( x\right)\) & 拐点 & 上凸 & 极大值 & 上凸 & 拐点 & 下凸 \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+根据以上的讨论, 函数的图象描绘如下 (图 3-25).
+
+\begin{center}
+\includegraphics[max width=0.7\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_172_655401.jpg}
+\end{center}
+
+图 8-25
+
+例 2 横绘函数 \(y = {e}^{-\frac{1}{4}}\) 的图象. 0.169
+
+解:
+
+1. 函数 \(f\left( x\right) = {e}^{-\frac{x \cdot 2}{2}}\) 的定义域为 \(\left( {-\infty , + \infty }\right)\) ;
+
+因为 \(f\left( {-x}\right) = f\left( x\right)\) ,所以 \(f\left( x\right)\) 为偶函数,只研究区间 \(\lbrack 0,\infty )\) 上的图象,再利用它关于 \(y\) 轴对称性即得 \(\left( {-\infty , + \infty }\right)\) 上的 \(f\left( x\right)\) 的图象;
+
+因当 \(x = 0\) 时, \(y = 1\) ,故与 \(y\) 轴交点为 \(\left( {0,1}\right)\) ;
+
+又当 \(y = 0\) 时,方程 \(0 = {e}^{-\frac{x2}{2}}\) 无解,故与 \(x\) 轴无交点.
+
+2. \({f}^{\prime }\left( x\right) = - x{e}^{-\frac{{x}^{2}}{2}}\) ,解方程 \({f}^{\prime }\left( x\right) = 0\) ,得驻点为 \(x = 0\) .
+
+在区间 \(\left( {0, + \infty }\right)\) 内 \({f}^{\prime }\left( x\right) < 0,f\left( x\right)\) 为减函数.
+
+3. \({f}^{\prime \prime }\left( x\right) = {e}^{-\frac{{x}^{2}}{2}}\left( {{x}^{2} - 1}\right)\) ,解方程 \({f}^{\prime \prime }\left( x\right) = 0\) ,得根 \(x = 1\) .
+
+在区间 \(\left( {0,1}\right)\) 内 \({f}^{\prime \prime }\left( x\right) < 0,f\left( x\right)\) 上凸;
+
+在区间 \(\left( {1, + \infty }\right)\) 内 \({f}^{\prime \prime }\left( x\right) > 0,f\left( x\right)\) 下凸;
+
+点 \(\left( {1,\frac{1}{\sqrt{e}}}\right)\) 为拐点.
+
+4. 因 \(\mathop{\lim }\limits_{{x \rightarrow + \infty }}f\left( x\right) = 0,f\left( 0\right) = 1,f\left( 1\right) = \frac{1}{\sqrt{e}}\) . \({f}^{\prime }\left( x\right) ,{f}^{\prime \prime }\left( x\right) ,f\left( x\right)\) 的变化状态如下表: * 170 .
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\(x\) & 0 & \(\left( {0,1}\right)\) & 1 & \(\left( {1, + \infty }\right)\) \\
+\hline
+\({f}^{\prime }\left( x\right)\) & 0 & \(-\) & ( & \(-\) \\
+\hline
+\({f}^{\prime \prime }\left( x\right)\) & \(-\) & \(-\) & 0 & \(+\) \\
+\hline
+\(f\left( x\right)\) & 1 & 1 & \(\frac{1}{\sqrt{e}}\) & / \\
+\hline
+\(y = f\left( x\right)\) & 极大值 & 的大曲 & 拐点 & 下出 \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+根据以上的讨论, 函数的图象描绘如下 (图 3-26).
+
+\begin{center}
+\includegraphics[max width=0.6\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_174_141078.jpg}
+\end{center}
+
+图 3-26
+
+\begin{problemset}[习 题 十 二]
+
+\item 求下列函数的极值:
+
+(1) \(f\left( x\right) = 2{x}^{3} - 6{x}^{2} - {18x} + 7\) ;
+
+(2) \(f\left( x\right) = 2{x}^{3} + 6{x}^{2} - {18x} + {120}\) ;
+
+(3) \(f\left( x\right) = {x}^{4} - 2{x}^{2}\) ;
+
+(4) \(f\left( x\right) = \frac{1}{2}{x}^{2} - {3x}\) ;
+
+(5) \(f\left( x\right) = \frac{{x}^{2} + x - 1}{{x}^{2} - x + 1}\)
+
+(6) \(f\left( x\right) = \frac{x + 1}{{x}^{2} - {2x} + 1}\) .
+
+\item 确定下列函数的增减区间, 并求极值:
+
+(1) \(f\left( x\right) = {2x} + \frac{1}{{x}^{2}}\)
+
+(2) \(g\left( x\right) = \frac{x + 1}{\sqrt{{x}^{2} + 1}}\)
+
+(3) \(h\left( x\right) = \frac{\ln x}{{x}^{2}}\) .
+
+\item 讨论下列曲线的凸向与拐点:
+
+(1) \(f\left( x\right) = 3{x}^{2} - {x}^{3}\) ;
+
+(2) \(f\left( x\right) = 2{x}^{3} - 3{x}^{2} - {36x} + {25}\) ;
+
+(3) \(g\left( x\right) = - {x}^{2} + {2x} - 1\) ;
+
+(4) \(g\left( x\right) = \frac{1}{3}{x}^{3} - {x}^{2} - {3x} + 2\) ;
+
+(5) \(y = x + \frac{1}{x}\)
+
+(6) \(y = \ln x\) ;
+
+(7) \(y = \frac{1}{2}\left( {{e}^{x} + {e}^{-x}}\right)\) .
+
+\item 考察下列函数的增减性和极值, 并画出图象:
+
+(1) \(f\left( x\right) = {x}^{3} - 3{x}^{2} + 2\) ;
+
+(2) \(f\left( x\right) = \frac{1}{3}{x}^{3} - \frac{1}{2}{x}^{2} - {2x}\) ;
+
+(3) \(y = {x}^{4} - {2x} + {10}\) ;
+
+(4) \(y = \frac{8}{{x}^{2} + 4}\)
+
+(5) \(g\left( x\right) = \sqrt{x - 1}\) .
+
+\item 求曲线 \(y = {x}^{3} - {3x} + 3\) 上的切线并与直线 \(y = {3x}\) 平行的切点的坐标。
+
+\item 求与曲线 \(y = {x}^{3} + 3{x}^{2} - 5\) 相切,且与直线 \({2x} - {6y} - 1 = 0\) 垂直的直线方程。
+
+\end{problemset}
+
+\chapter*{小结}
+\markboth{小结}{小结}
+
+一、本章主要内容是一阶导数与二阶导数的应用。
+
+二、中值定理是微分学的基本定理, 罗尔定理、拉格朗日定理是导数应用的理论基础. 它们在微分学的公式推导、不等式的证明以及利用导数研究函数的性质中有着广泛的应用。
+
+三、利用一阶导数可以讨论函数的单调性和极值, 导数 \({y}^{\prime }\) 符号的变化与函数 \(y\) 的增减情况以及极值的关系是:
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|c|}
+\hline
+变量 \(x\) & 导数 \({y}^{\prime }\) & 函数 \(y\) & 极 值 \\
+\hline
+由小变大 & 由正变为负 & 由增变为减 \includegraphics[max width=0.2\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_176_703426.jpg} & \({y}^{\prime } = 0\) 时 函数 \(y\) 有极大值 \\
+\hline
+由小变大 & 由负变为正 & 由减变为增 Let & \({y}^{\prime } = 0\) 时 函数 \(y\) 有极小值 \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+四、从极值与最大、最小值的定义可知: 极值是指某一点附近函数值的比较. 因此, 同一函数在某一点的极大 (小) 值, 可以比另一点的极小 (大) 值小 (大); 而最大、最小值是指闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上所有函数值的比较. 因而在一般情况下,两者是有区别的. 极大 (小) 值不一定是最大 (小) 值, 最大 (小) 值也不一定是极大 (小) 值. 但如果连续函数在区间 \(\left( {a,b}\right)\) 内只有一个极值, 那么极大值就是最大值, 极小值就是最小值.
+
+在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上连续,在开区间 \(\left( {a,b}\right)\) 内可导的函数 \(f\left( x\right)\) ,它的极值可以通过检查导数 \({f}^{\prime }\left( x\right)\) 在每一个驻点两旁的符号来求得. 而 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上的最大 (小) 值,则可以通过将驻点与端点的函数值加以比较来求得, 其中最大 (小) 的一个即为最大(小)值.
+
+在生产建设与科学技术中, 要求 “用料最省”, “功率最大” “体积最小”等实际问题, 一般地, 都可以用求函数的最大值与最小值方法来解决.
+
+五、利用二阶导数可以判定函数的极值、凸向和拐点, 并可描绘函数的图象.
+
+设 \({f}^{\prime }\left( {x}_{0}\right) = 0\) ,若 \({f}^{\prime \prime }\left( {x}_{0}\right) > 0\) (或 \({f}^{\prime \prime }\left( {x}_{0}\right) < 0\) ),则 \(f\left( {x}_{0}\right)\) 为极小值 (或极大值).
+
+在区间 \(\left( {a,b}\right)\) 内二阶可导函数 \(f\left( x\right)\) ,若对所有点 \(x \in \left( {a,b}\right)\) 有 \({f}^{\prime \prime }\left( x\right) > 0\) (或 \({f}^{\prime \prime }\left( x\right) < 0\) ),则曲线 \(y = f\left( x\right)\) 在区间 \(\left( {a,b}\right)\) 内下凸 (或上凸).
+
+如果点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 为曲线 \(y = f\left( x\right)\) 的拐点,且 \({f}^{\prime \prime }\left( {x}_{0}\right)\) 存在,则 \({f}^{\prime \prime }\left( {x}_{0}\right) = 0\) . 因此, \({f}^{\prime \prime }\left( {x}_{0}\right) = 0\) 为曲线 \(y = f\left( x\right)\) 有拐点的必要条件. 如果 \({f}^{\prime \prime }\left( {x}_{0}\right) = 0\) ,且在 \(x = {x}_{0}\) 的两侧 \({f}^{\prime \prime }\left( x\right)\) 变号, 则点 \(P\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 必为曲线 \(y = f\left( x\right)\) 的拐点.
+
+\chapter*{复习参考题三}
+\markboth{复习参考题三}{复习参考题三}
+
+\section*{\(A\) 组}
+
+1. 如果多项式的导函数 \({P}^{\prime }\left( x\right) = 0\) 在 \(\left( {-\infty , + \infty }\right)\) 中无实根,求证 \(P\left( x\right) = 0\) 在 \(\left( {-\infty , + \infty }\right)\) 中至多有一个实根.
+
+*2. 利用拉格朗日中值定理, 证明下列不等式:
+
+（1）当 \(h > 0\) 时, \(\frac{h}{1 + {h}^{2}} < \operatorname{arctg}h < h\) ;
+
+（2）当 \(b > a > 0\) 时, \(\frac{b - a}{b} < \ln \frac{b}{a} < \frac{b - a}{a}\) ;
+
+（3）当 \(x > 0\) 时, \({e}^{x} > 1 + x\) ;
+
+3. 考察下列函数的谐减范围:
+
+(1) \(f\left( x\right) = {x}^{3} - {3x} - 1\) ;
+
+(2) \(f\left( x\right) = \frac{{x}^{3}}{3} - \frac{5{x}^{2}}{2} + {6x} + 4\) ;
+
+(3) \(f\left( x\right) = 3{x}^{4} + 2{x}^{3} - 3{x}^{2} - 2\) ;
+
+(4) \(f\left( x\right) = 3{x}^{4} - 4{x}^{3} - {12}{x}^{2} + {15}\) ;
+
+(5) \(f\left( x\right) = {x}^{3} - 6{x}^{2} + {9x} + {16}\) ;
+
+(6) \(f\left( x\right) = {x}^{3} + 3{x}^{2} + {3x} - 4\) ;
+
+(7) \(f\left( x\right) = 5 - {x}^{3} - {12}{x}^{2} - {48x}\) ;
+
+(8) \(f\left( x\right) = {3x} + {x}^{3}\) .
+
+4 求下列函数在指定范围内的单调区间:
+
+(1) \(y = \sin x,\;x \in \left( {0,{2\pi }}\right)\) ;
+
+(2) \(y = \operatorname{tg}x,x \in \left( {-\frac{\pi }{2},\frac{\pi }{2}}\right)\) ;
+
+(3) \(y = t + \cos t\;t \in \left( {0,{2\pi }}\right)\) .
+
+5. 求下列函数的单调区间:
+
+(1) \(f\left( t\right) = \frac{t + 2}{t}\) (2) \(g\left( t\right) = \frac{t - 1}{t + 1}\)
+
+(3) \(h\left( t\right) = \frac{{t}^{2} + 1}{t}\) (4) \(h\left( x\right) = \frac{x}{{x}^{2} - 9}\)
+
+(5) \(f\left( x\right) = \frac{{x}^{2} + 1}{{x}^{2} - 1}\) (6) \(g\left( x\right) = \frac{{x}^{3} - {2x} + 2}{x}\) ;
+
+(7) \(f\left( t\right) = \sqrt{t} + t\) ; (8) \(g\left( t\right) = \frac{1}{t} - \frac{1}{{t}^{2}} + 3\) ;
+
+(9) \(f\left( x\right) = 2\sqrt{x} + \frac{\sqrt{8}}{x}\) (10) \(h\left( t\right) = {t}^{\frac{3}{2}} + \sqrt{t}\) ;
+
+(11) \(f\left( x\right) = {x}^{3} - 3{x}^{2} - {105x} - 2\) ,
+
+*6. 证明下列不等式:
+
+（1）当 \(x > 0\) 时, \(x - \frac{{x}^{2}}{2} < \ln \left( {1 + x}\right) < x\) ;
+
+（2）当 \(x > 0,\alpha > 1\) 时, \({\left( 1 + x\right) }^{\alpha } > 1 + {\alpha x}\) ;
+
+（3）当 \(h > 0\) 时, \(\frac{h}{1 + h} < \ln \left( {1 + h}\right) < h\) .
+
+7. 求下列函数的极值:
+
+(1) \(f\left( x\right) = 8{x}^{3} - {12}{x}^{2} + {6x} + 1\) ; (2) \(f\left( x\right) = {x}^{4} - 2{x}^{2} + 3\) ;
+
+(3) \(f\left( x\right) = {x}^{3} + 3{x}^{2} - {24x} + {12}\) ;
+
+(4) \(f\left( x\right) = {x}^{5} - 5{x}^{4} + 5{x}^{3} + 1\) ;
+
+(5) \(h\left( x\right) = \frac{x}{3} + \frac{3}{x}\) ; (6) \(g\left( x\right) = {x}^{2} - \frac{1}{2}{x}^{4}\) ;
+
+(7) \(f\left( x\right) = \frac{{x}^{2} - {7x} + 6}{x - {10}}\) ; (8) \(y = {x}^{2} + \frac{16}{x}\)
+
+(9) \(y = {x}^{2} + \frac{1}{{x}^{2}}\) (10) \(y = \frac{6x}{{x}^{2} + 1}\)
+
+(11) \(y = \frac{{x}^{2} + x + 1}{x}\) .
+
+8. 求下列函数的最大值与最小值:
+
+(1) \(f\left( x\right) = \frac{4x}{{x}^{2} + 1}\)
+
+(2) \(g\left( x\right) = x\sqrt{1 - {x}^{2}}\) .
+
+9. 求下列函数在给定区间上的最大值与最小值:
+
+(1) \(f\left( x\right) = {x}^{5} - 5{x}^{4} + 5{x}^{3} + 1, - 1 \leq x \leq 2\) ;
+
+(2) \(g\left( x\right) = \frac{x - 1}{{x}^{2} + 1},0 \leq x \leq 4\) ;
+
+(8) \(h\left( x\right) = x + \frac{1}{x},{0.01} \leq x \leq {100}\) ;
+
+(4) \(f\left( x\right) = x + 2\sqrt{x},0 \leq x \leq 4\) ;
+
+(5) \(f\left( x\right) = \sin {2x} - x, - \frac{\pi }{2} \leq x \leq \frac{\pi }{2}\) .
+
+10. 用长为 \({2l}\) 的线段围成矩形,问长和宽各为多长时矩形面积最大?
+
+11. 讨论下列曲线的凸向与拐点:
+
+(1) \(f\left( x\right) = 2{x}^{3} + 3{x}^{2} + x + 2\) ;
+
+(2) \(f\left( x\right) = {x}^{4} - 6{x}^{2} - 7\) ;
+
+(3) \(g\left( x\right) = 2{x}^{4} - 6{x}^{2} + 1\) ;
+
+(4) \(g\left( x\right) = {x}^{4} - 4{x}^{3} + {16}\) .
+
+12. 已知曲线 \(y = {x}^{3} + a{x}^{2} - {9x} + 4\) 在 \(x = 1\) 处有拐点,
+
+（1）试确定系数 \(a\) ;
+
+（2）求曲线的拐点与凸向区间。
+
+13. 研究下列函数, 并作出图象:
+
+(1) \(y = 8 + 2{x}^{2} - {x}^{4}\) ; (2) \(y = x{\left( x - 2\right) }^{2}\) ;
+
+(3) \(f\left( x\right) = {x}^{2} + \frac{1}{x}\) ; (4) \(g\left( x\right) = \frac{{\left( x - 1\right) }^{2}}{{x}^{2} + 1}\) .
+
+\section*{B 组}
+
+14. 试证:
+
+（1）方程 \({x}^{3} + x - 1 = 0\) 只有一个实根,(提示: 用反证法);
+
+（2）方程 \({x}^{4} + 3{x}^{2} - {5x} - 4 = 0\) 只有两个实根;
+
+（3）对任意常数 \(c\) ,在 \(\left\lbrack {0,1}\right\rbrack\) 上,方程
+
+\[
+{x}^{3} - {3x} + 0 = 0
+\]
+
+不可能有两个不同的根, (提示; 周反证法),
+
+15. 证明实系数多项式 \(f\left( x\right)\) 有重根 \(a\) 的充要条件为
+
+\[
+f\left( a\right) = 0,{f}^{\prime }\left( a\right) = 0.
+\]
+
+16. 证明下列不等式:
+
+(1) 设 \(f\left( x\right) = \frac{1}{{x}^{n}}\) ( \(n\) 为正整数),当 \(b > a > 0\) 时,
+
+\[
+\frac{n}{{a}^{n + 1}}\left( {a - b}\right) < f\left( b\right) - f\left( a\right) < \frac{n}{{b}^{n + 1}}\left( {a - b}\right) .
+\]
+
+（2）当 \(0 < a < c < b\) 时,
+
+\[
+\frac{\ln c - \ln a}{c - a} > \frac{\ln b - \ln c}{b - c}.
+\]
+
+（3）如果函数 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上的导数 \({f}^{\prime }\left( x\right)\) 是有界的,那么函数 \(f\left( x\right)\) 在 \(\left\lbrack {a,b}\right\rbrack\) 上满足利普希茨 (Lipschitz) 条件,即存在常数 \(L\) ,使对任意两点 \({x}_{1},{x}_{2}\) 有
+
+\[
+\left| {f\left( {x}_{1}\right) - f\left( {x}_{2}\right) }\right| \leq L\left| {{x}_{1} - {x}_{2}}\right| ,{x}_{1},{x}_{2} \in \left\lbrack {a,b}\right\rbrack .
+\]
+
+17. 确定下列函数的增减范围:
+
+(1) \(y = {x}^{4} + \frac{4}{3}{x}^{3} - 2{x}^{2} - {4x}\) ;
+
+(2) \(y = \sqrt{{2x} - {x}^{2}}\) ;
+
+（3） \(y = \frac{2x}{1 + {x}^{2}}\) (4) \(y = \frac{{x}^{2} - 1}{x}\)
+
+(5) \(y = 2{x}^{2} - \ln x\) ; (6) \(y = \frac{{e}^{x}}{x}\)
+
+(7) \(y = x - 2\sin x\;\left( {0 \leq x \leq {2\pi }}\right)\) .
+
+18. 设质点作直线运动, 运动规律为
+
+\[
+s = \frac{1}{4}{t}^{4} - 4{t}^{3} + {10}{t}^{2}\;\left( {t > 0}\right) ,
+\]
+
+问: (1) 何时速度为 \(0\) ?
+
+（2）何时作前进 ( \(s\) 增加) 运动?
+
+（3）何时作后退 ( \(s\) 减少) 运动?
+
+19. 在某化学反应过程中,反应物在时刻 \(t\) 的浓度是 \(x =\) \({x}_{0}{e}^{-{kt}}\) ,其中, \({x}_{0},k\) 都是正数,问浓度是减少还是增加?
+
+20. 在指定区间内, 证明下列不等式:
+
+(1) \(x \in \left( {0,\frac{\pi }{2}}\right)\) 时, \(\operatorname{tg}x > x - \frac{{x}^{3}}{3}\) ;
+
+（2）当 \(0 < \alpha < 1,x \in \left( {1, + \infty }\right)\) 时,
+
+\[
+\alpha \left( {x - 1}\right) > {x}^{a} - 1
+\]
+
+21. 设函数 \(f\left( x\right) = a\ln x + b{x}^{2} + x\) 在 \({x}_{1} = 1\) 及 \({x}_{2} = 2\) 时有极值. 试定出 \(a\) 与 \(b\) 之值,并问 \(f\left( x\right)\) 在 \({x}_{1}\) 与 \({x}_{2}\) 是取极大值还是取极小值?
+
+22. 设函数 \(y = \frac{{ax} + b}{{x}^{2} + a}\) 在 \(x = 2\) 时的极大值为 1 :
+
+(1) 确定 \(a,b\) 之值;
+
+（2）画出函数的图象。
+
+23. 设抛物线 \(y = {x}^{2} - 1\left( {x > 0}\right)\) 上点 \(P\left( {t,{t}^{2} - 1}\right)\) 的切线与 \(x\) 轴、 \(y\) 轴分别交于 \(A\text{、}B\) 两点, 原点为 \(O\) ,
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_182_738738.jpg}
+\end{center}
+
+(第 23 题)
+
+(1) 将 \(\bigtriangleup {OAB}\) 的面积用 \(t\) 表示出来;
+
+（2）求面积 \(S\) 的最小值;
+
+（3）求这时 \(P\) 点的坐标。
+
+24. 讨论下列函数的极值及其曲线的凸向与拐点:
+
+(1) \(f\left( x\right) = {\left( x + 2\right) }^{4} + {2x} + 1\) ;
+
+(2) \(y\left( x\right) = {e}^{\frac{1}{x}}\) .
+
+25. 问 \(a\) 和 \(b\) 为何值时,点 \(\left( {1,3}\right)\) 为曲线 \(y = a{x}^{3} + b{x}^{2}\) 的拐点?
+
+26. 函数 \(y = {x}^{4} + a{x}^{3} + {3a}{x}^{2} + 1\) 的图象有拐点,试求 \(a\) 值的范围。
+
+27. 绘制下列各函数的图象:
+
+(1) \(f\left( x\right) = \frac{1}{5}{x}^{5} - 4{x}^{2}\) ; (2) \(f\left( x\right) = x + \frac{4}{{x}^{2}}\)
+
+(3) \(g\left( x\right) = {e}^{-\frac{1}{x}}\) (4) \(g\left( x\right) = \frac{{x}^{2} + {3x}}{x - 1}\) .
+
+\chapter{第四章 不定积分}
+
+\section{原函数}
+
+假设已知物体运动的路程函数
+
+\[
+s = s\left( t\right)
+\]
+
+把路程函数对时间求导数,就得到速度函数 \(v\left( t\right)\) ,即
+
+\[
+{s}^{\prime }\left( t\right) = v\left( t\right) \text{.}
+\]
+
+在实践中, 也需要解决相反的问题: 已知物体运动的速度函数 \(v\left( t\right)\) ,如何求路程函数 \(s\left( t\right)\) . 一般地说,已知某个函数的导数, 如何求这个函数. 下面我们就来研究这类问题.
+
+设 \(f\left( x\right)\) 是定义在区间 \(I\) 上的一个函数,如果存在函数 \(F\left( x\right)\) ,在区间 \(I\) 上任何一点 \(x\) 处都有
+
+\[
+{F}^{\prime }\left( x\right) = f\left( x\right)
+\]
+
+那么 \(F\left( x\right)\) 叫做函数 \(f\left( x\right)\) 在区间 \(I\) 上的一个原函数.
+
+根据定义,求函数 \(f\left( x\right)\) 的原函数,就是要求一个函数 \(F\left( x\right)\) ,使它的导数 \({F}^{\prime }\left( x\right)\) 等于 \(f\left( x\right)\) .
+
+例 求出下列函数的一个原函数:
+
+(1) \(f\left( x\right) = 3{x}^{2}\) ; (2) \(f\left( x\right) = \cos x\) .
+
+解: (1) \(\because {\left( {x}^{3}\right) }^{\prime } = 3{x}^{2}\) ,
+
+\(\therefore {x}^{3}\) 是函数 \(3{x}^{2}\) 的一个原函数;
+
+(2) \(\because {\left( \sin x\right) }^{\prime } = \cos x\) ,
+
+\(\therefore \sin x\) 是函数 \(\cos x\) 的一个原函数.
+
+已知函数 \(f\left( x\right)\) 有一个原函数 \(F\left( x\right)\) ,函数 \(f\left( x\right)\) 是否还有其他原函数? 我们看下面的例子. 因为
+
+\[
+{\left( {x}^{2}\right) }^{\prime } = {2x}
+\]
+
+\[
+{\left( {x}^{2} + 1\right) }^{\prime } = {2x}
+\]
+
+\[
+{\left( {x}^{2} - 1\right) }^{\prime } = {2x}
+\]
+
+所以 \({x}^{2},{x}^{2} + 1,{x}^{2} - 1\) 都是函数 \({2x}\) 的原函数. 设 \(C\) 为任意常数, 由于
+
+\[
+{\left( {x}^{2} + C\right) }^{\prime } = {2x}
+\]
+
+便知 \({x}^{2} + C\) 也是函数 \({2x}\) 的原函数.
+
+一般地, 有下面的定理:
+
+定理 设 \(F\left( x\right)\) 是函数 \(f\left( x\right)\) 在区间 \(I\) 上的一个原函数, 对于任意常数 \(\mathbf{C}\) ,则
+
+(1) \(F\left( x\right) + C\) 也是 \(f\left( x\right)\) 的原函数;
+
+（2） \(f\left( x\right)\) 在区间 \(I\) 上任何一个原函数都可以表示成 \(\mathbf{F}\left( \mathbf{x}\right) + \mathbf{C}\) 的形式.
+
+证明: (1) 因为
+
+\[
+{\left\lbrack F\left( x\right) + C\right\rbrack }^{\prime } = {F}^{\prime }\left( x\right) = f\left( x\right) ,
+\]
+
+所以 \(F\left( x\right) + C\) 也是函数 \(f\left( x\right)\) 的原函数.
+
+（2）设 \(\Phi \left( x\right)\) 是 \(f\left( x\right)\) 在区间 \(I\) 上的任一原函数,则
+
+\[
+{\Phi }^{\prime }\left( x\right) = f\left( x\right) .
+\]
+
+\[
+\because \;{F}^{\prime }\left( x\right) = f\left( x\right) ,
+\]
+
+\[
+\therefore \;{\left\lbrack \Phi \left( x\right) - F\left( x\right) \right\rbrack }^{\prime } = {\Phi }^{\prime }\left( x\right) - {F}^{\prime }\left( x\right)
+\]
+
+\[
+= f\left( x\right) - f\left( x\right) = 0\text{. }
+\]
+
+已知在某区间 \(I\) 上导数恒等于零的函数必为常数,由此得到
+
+\[
+\Phi \left( x\right) - F\left( x\right) = C,
+\]
+
+即
+
+\[
+\Phi \left( x\right) = F\left( x\right) + C\text{ ( }C\text{ 为常数). }
+\]
+
+也就是,函数 \(f\left( x\right)\) 的任一原函数 \(\Phi \left( x\right)\) 都可表示成 \(F\left( x\right) + C\) 的形式.
+
+\section{不定积分}
+
+上节定理告诉我们,如果 \(F\left( x\right)\) 是函数 \(f\left( x\right)\) 的一个原函数,则 \(F\left( x\right) + C\) 也是函数 \(f\left( x\right)\) 的原函数,而且所有的原函数都可表示成 \(F\left( x\right) + C\) 的形式,其中 \(C\) 为任意常数.
+
+设 \(F\left( x\right)\) 是函数 \(f\left( x\right)\) 的一个原函数,我们把函数 \(f\left( x\right)\) 的所有的原函数 \(F\left( x\right) + C\) ( \(C\) 为任意常数) 叫做函数 \(f\left( x\right)\) 的不定积分,记作 \(\int f\left( x\right) {dx}\) ,即
+
+\[
+\int f\left( x\right) {dx} = F\left( x\right) + C,
+\]
+
+其中 \(\int\) 叫做积分号, \(f\left( x\right)\) 叫做被积函数, \(x\) 叫做积分变量, \(f\left( x\right) {dx}\) 叫做被积式, \(C\) 叫做积分常数. 求已知函数的不定积分的过程叫做对这函数进行积分.
+
+求函数 \(f\left( x\right)\) 的不定积分,就是要求出 \(f\left( x\right)\) 的所有的原函数. 由上节定理可知,只要求出函数 \(f\left( x\right)\) 的任一个原函数 \(F\left( x\right)\) ,再加上任意常数 \(C\) ,就得到 \(f\left( x\right)\) 的不定积分.
+
+例 求下列不定积分:
+
+(1) \(\int {xdx}\) (2) \(\int \cos {xdx}\) .
+
+解: (1) \(\because \frac{1}{2}{x}^{2}\) 是 \(x\) 的一个原函数,
+
+\(\therefore \;\int {xdx} = \frac{1}{2}{x}^{2} + C\) .
+
+（2） \(\because \sin x\) 是 \(\cos x\) 的一个原函数,
+
+\[
+\therefore \;\int \cos {xdx} = \sin x + C\text{. }
+\]
+
+根据不定积分的定义, 可以推出下面两个性质:
+
+(1) \({\left( \int f\left( x\right) dx\right) }^{\prime } = f\left( x\right)\) ;
+
+(2) \(\int {F}^{\prime }\left( x\right) {dx} = F\left( x\right) + C\) .
+
+上面的性质表明: 如果对函数 \(f\left( x\right)\) 先求不定积分后求导数,那么两者的作用相互抵消,结果仍为 \(f\left( x\right)\) . 如果对函数 \(F\left( x\right)\) 先求导数后求不定积分,那么作用相互抵消后结果与 \(F\left( x\right)\) 只差一个任意常数. 从这里可以看出,求导数与求不定积分互为逆运算.
+
+\begin{problemset}[练习]
+
+\item 将下面表中空格处填上适当的函数:
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|}
+\hline
+函数 \(f\left( x\right)\) & 理 由 & \(f\left( x\right)\) 的一个原函数 \\
+\hline
+\(k\) (常数) & \({\left( kx\right) }^{\prime } = k\) & \({kx}\) \\
+\hline
+\(4{x}^{3}\) & \phantom{X} & \phantom{X} \\
+\hline
+\(\cos x\) & \phantom{X} & \phantom{X} \\
+\hline
+\({e}^{x}\) & \phantom{X} & \phantom{X} \\
+\hline
+\(\frac{1}{1 + {x}^{2}}\) & \phantom{X} & \phantom{X} \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+\item 写出下列函数的一个原函数:
+
+(1) \(6{x}^{5}\) ; (2) \(- \sin x\) ;
+
+(3) \(\frac{1}{2\sqrt{x}}\) (4) \(\frac{1}{\sqrt{1 - {x}^{2}}}\) .
+
+\item 在括号内填入一个适当的函数, 并求出相应的不定积分:
+
+(1) \({\left( \;\right) }^{\prime } = 3\) , \(\int {3dx} =\)
+
+(2) \({\left( \;\right) }^{\prime } = 3{x}^{2}\) ,
+
+\[
+\int 3{x}^{2}{dx} =
+\]
+
+(3) \({\left( \;\right) }^{\prime } = \frac{1}{{\cos }^{2}x}\) \(\int \frac{1}{{\cos }^{2}x}{dx} =\)
+
+(4) \({\left( \;\right) }^{\prime } = \frac{1}{1 + {x}^{2}}\) , \(\int \frac{1}{1 + {x}^{2}}{dx} =\)
+
+\item 根据不定积分的定义, 验证下列等式:
+
+(1) \(\int {x}^{4}{dx} = \frac{1}{5}{x}^{5} + C\) ; (2) \(\int \frac{1}{{x}^{3}}{dx} = - \frac{1}{2}{x}^{-2} + C\) ;
+
+(3) \(\int \left( {\sin x + \cos x}\right) {dx} = - \cos x + \sin x + C\) .
+
+\end{problemset}
+
+\section{基本积分公式}
+
+我们已经知道, 求不定积分是求导数的逆运算. 因此, 我们可以从导数公式得到相应的不定积分公式. 例如, 因为
+
+\[
+{\left( \frac{{x}^{n + 1}}{n + 1}\right) }^{\prime } = {x}^{n}\left( {n \neq - 1}\right)
+\]
+
+所以有不定积分公式
+
+\[
+\int {x}^{n}{dx} = \frac{1}{n + 1}{x}^{n + 1} + C\;\left( {n \neq - 1}\right) .
+\]
+
+用同样方法可以得到其他的不定积分公式. 下面是基本积分公式表.
+
+\section*{基本积分公式表}
+
+(1) \(\int {0dx} = C\) ;
+
+(2) \(\int {1dx} = x + C\) ;
+
+(3) \(\int {x}^{n}{dx} = \frac{1}{n + 1}{x}^{n + 1} + C\;\left( {n \neq - 1}\right)\) ;
+
+(4) \(\int \frac{1}{x}{dx} = \ln \left| x\right| + C\) ;
+
+(5) \(\int {a}^{x}{dx} = \frac{{a}^{x}}{\ln a} + C\) (其中 \(a > 0\) ,且 \(a \neq 1\) );
+
+(6) \(\int {e}^{x}{dx} = {e}^{x} + C\) ;
+
+(7) \(\int \sin {xdx} = - \cos x + C\) ;
+
+(8) \(\int \cos {xdx} = \sin x + C\) ;
+
+(9) \(\int \frac{1}{{\cos }^{2}x}{dx} = \int {\sec }^{2}{xdx} = \operatorname{tg}x + C\) ;
+
+(10) \(\int \frac{1}{{\sin }^{2}x}{dx} = \int {\csc }^{2}{xdx} = - \operatorname{ctg}x + C\) ;
+
+(11) \(\int \frac{1}{\sqrt{1 - {x}^{2}}}{dx} = \arcsin x + C\) ;
+
+(12) \(\int \frac{1}{1 + {x}^{2}}{dx} = \operatorname{arctg}x + C\) .
+
+(表中 \(C\) 为积分常数)
+
+例 1 求 \(\int \frac{1}{{x}^{4}}{dx}\) .
+
+解: \(\int \frac{1}{{x}^{4}}{dx} = \int {x}^{-4}{dx}\)
+
+\[
+= \frac{1}{-4 + 1}{x}^{-4 + 1} + C
+\]
+
+\[
+= - \frac{1}{3}{x}^{-3} + C\text{. }
+\]
+
+例 2 求 \(\int \frac{1}{{x}^{3}\sqrt{x}}{dx}\) .
+
+解: \(\int \frac{1}{{x}^{3}\sqrt{x}}{dx} = \int {x}^{-\frac{7}{2}}{dx}\)
+
+\[
+= \frac{1}{-\frac{7}{2} + 1}{x}^{-\frac{7}{2} + 1} + C
+\]
+
+\[
+= - \frac{2}{5}{x}^{-\frac{5}{2}} + C\text{. }
+\]
+
+例 3 求 \(\int {10}^{x}{dx}\) .
+
+解: \(\int {10}^{x}{dx} = \frac{{10}^{x}}{\ln {10}} + C\) .
+
+\begin{problemset}[练习]
+
+\item (口答) 求不定积分:
+
+(1) \(\int \sin {xdx}\) ; (2) \(\int {mdx}\) ( \(m\) 为常数);
+
+(3) \(\int {a}^{x}{dx}\) (4) \(\int {e}^{x}{dx}\)
+
+(5) \(\int \cos {xdx}\) (6) \(\int \frac{1}{{x}^{2}}{dx}\) ; 1.00
+
+(7) \(\int \frac{1}{x}{dx}\) (8) \(\int {xdx}\) ;
+
+(9) \(\int \frac{1}{\sqrt{1 - {x}^{2}}}{dx}\) (10) \(\int \frac{1}{{\sin }^{2}x}{dx}\) .
+
+\item 求不定积分:
+
+(1) \(\int {x}^{\frac{1}{2}}{dx}\) (2) \(\int {x}^{-\frac{1}{2}}{dx}\)
+
+(3) \(\int {x}^{7}{dx}\) (4) \(\int {x}^{3}\sqrt[3]{{x}^{2}}{dx}\)
+
+(5) \(\int \frac{1}{x\sqrt{x}}{dx}\) (6) \(\int {x}^{-9}{dx}\) I
+
+(7) \(\int {5}^{x}{dx}\) (8) \(\int {\left( 3e\right) }^{x}{dx}\)
+
+(9) \(\int \sin {\theta d\theta }\) (10) \(\int {\sec }^{2}{\alpha d\alpha }\) ;
+
+(11) \(\int {\theta }^{3}{d\theta }\) (12) \(\int {t}^{5}{dt}\) .
+
+\end{problemset}
+
+\section{不定积分的运算法则}
+
+根据导数的运算法则, 可以推出下面不定积分的两个运算法则.
+
+1. 被积式的常数因子可以提到积分号前面,即如果 \(k\) 为不等于零的常数, 那么
+
+\[
+\int {kf}\left( x\right) {dx} = k\int f\left( x\right) {dx}.
+\]
+
+证明: 由于
+
+\[
+\left\lbrack {k\int f\left( x\right) {dx}}\right\rbrack = k\left\lbrack {\int f\left( x\right) {dx}\rbrack }\right.
+\]
+
+\[
+= {kf}\left( x\right)
+\]
+
+即 \(k\int f\left( x\right) {dx}\) 是 \({kf}\left( x\right)\) 的原函数,由此得出
+
+\[
+\int {kf}\left( x\right) {dx} = k\int f\left( x\right) {dx}.
+\]
+
+2. 两个函数的和 (或差) 的不定积分等于这两个函数的不定积分的和(或差), 即
+
+\[
+\int \left\lbrack {f\left( x\right) \pm g\left( x\right) }\right\rbrack {dx} = \int f\left( x\right) {dx} \pm \int g\left( x\right) {dx}.
+\]
+
+证明: 由于
+
+\[
+\left\lbrack {\int f\left( x\right) {dx} \pm \int g\left( x\right) {dx}{\rbrack }^{\prime }}\right.
+\]
+
+\[
+= \left\lbrack {\int f\left( x\right) {dx}{\rbrack }^{\prime } \pm \left\lbrack {\int g\left( x\right) {dx}{\rbrack }^{\prime }}\right. }\right.
+\]
+
+\[
+= f\left( x\right) \pm g\left( x\right)
+\]
+
+即 \(\int f\left( x\right) {dx} \pm \int g\left( x\right) {dx}\) 是 \(f\left( x\right) \pm g\left( x\right)\) 的原函数,由此得出
+
+\[
+\int \left\lbrack {f\left( x\right) \pm g\left( x\right) }\right\rbrack {dx} = \int f\left( x\right) {dx} \pm \int g\left( x\right) {dx}.
+\]
+
+这个法则可以推广: 有限个函数的和(或差)的不定积分等于各个函数的不定积分的和 (或差), 即
+
+\[
+\int \left\lbrack {{f}_{1}\left( x\right) \pm {f}_{2}\left( x\right) \pm \cdots \pm {f}_{n}\left( x\right) }\right\rbrack {dx}
+\]
+
+\[
+= \int {f}_{1}\left( x\right) {dx} \pm \int {f}_{2}\left( x\right) {dx} \pm \cdots \pm \int {f}_{n}\left( x\right) {dx},
+\]
+
+例 1 求 \(\int \left( {2{x}^{2} + {5x} + 3}\right) {dx}\) .
+
+解: \(\int \left( {2{x}^{2} + {5x} + 3}\right) {dx}\)
+
+\[
+= 2\int {x}^{2}{dx} + 5\int {xdx} + 3\int {dx}
+\]
+
+\[
+= 2 \cdot \frac{1}{3}{x}^{3} + 5 \cdot \frac{1}{2}{x}^{2} + {3x} + C
+\]
+
+\[
+= \frac{2}{3}{x}^{3} + \frac{5}{2}{x}^{2} + {3x} + C.
+\]
+
+注意 在各项积分后, 每个不定积分的结果都含有任意常数. 但因任意常数的和仍然是任意常数, 所以只要写一个任意常数就可以了.
+
+例 2 求 \(\int \left( {\frac{6}{\sqrt[3]{x}} - \frac{5}{{x}^{2}}}\right) {dx}\) .
+
+解: \(\int \left( {\frac{6}{\sqrt[3]{x}} - \frac{5}{{x}^{2}}}\right) {dx}\)
+
+\[
+= 6\int {x}^{-\frac{1}{3}}{dx} - 5\int {x}^{-2}{dx}
+\]
+
+\[
+= \frac{6}{-\frac{1}{3} + 1} \cdot {x}^{-\frac{1}{3} + 1} - \frac{5}{-2 + 1} \cdot {x}^{-2 + 1}
+\]
+
+\[
+= 9{x}^{\frac{2}{3}} + \frac{5}{x} + C\text{. }
+\]
+
+例 3 求 \(\int \left( {\frac{1}{x} - \cos x}\right) {dx}\) .
+
+解: \(\int \left( {\frac{1}{x} - \cos x}\right) {dx}\)
+
+\[
+= \int \frac{1}{x}{dx} - \int \cos {xdx}
+\]
+
+\[
+= \ln \left| x\right| - \sin x + C\text{. }
+\]
+
+\begin{problemset}[练习]
+
+\item 求不定积分:
+
+(1) \(\int \left( {{x}^{3} - {3x} + 1}\right) {dx}\)
+
+(2) \(\int \left( {5{x}^{4} + 2\sqrt{x}}\right) {dx}\)
+
+（3） \(\int \left( {\frac{{x}^{2}}{2} - \frac{2}{{x}^{2}}}\right) {dx}\) ;
+
+(4) \(\int \left( {{2}^{x} + {x}^{2}}\right) {dx}\)
+
+(5) \(\int \left( {\frac{5}{x} + 2{e}^{x} - \frac{1}{x\sqrt{x}}}\right) {dx}\) ;
+
+(6) \(\int \left( {\sin x - \cos x}\right) {dx}\) ;
+
+(7) \(\int \left( {{\sec }^{2}x - {\csc }^{2}x}\right) {dx}\)
+
+(8) \(\int \left( {\frac{3}{1 + {x}^{2}} - \frac{2}{\sqrt{1 - {x}^{2}}}}\right) {dx}\) .
+
+\end{problemset}
+
+\section{直接积分法}
+
+在求某些函数的不定积分时, 只需经过简单的恒等变形, 直接运用不定积分的两个运算法则与基本积分公式来求出结果, 这种积分方法叫做直接积分法.
+
+例 1 求 \(\int \frac{{x}^{3} - 3{x}^{2} + {2x}}{{x}^{2}}{dx}\) .
+
+解: \(\int \frac{{x}^{3} - 3{x}^{2} + {2x}}{{x}^{2}}{dx}\)
+
+\[
+= \int \left( {x - 3 + \frac{2}{x}}\right) {dx}
+\]
+
+\[
+= \int {xdx} - 3\int {dx} + 2\int \frac{1}{x}{dx}
+\]
+
+\[
+= \frac{{x}^{2}}{2} - {3x} + 2\ln \left| x\right| + C\text{. }
+\]
+
+例 2 求 \(\int {\left( x - \sqrt{x}\right) }^{2}{dx}\) .
+
+解: \(\int {\left( x - \sqrt{x}\right) }^{2}{dx}\)
+
+\[
+= \int \left( {{x}^{2} - {2x}\sqrt{x} + x}\right) {dx}
+\]
+
+\[
+= \int {x}^{2}{dx} - 2\int {x}^{\frac{3}{2}}{dx} + \int {xdx}
+\]
+
+\[
+= \frac{1}{3}{x}^{3} - \frac{4}{5}{x}^{\frac{5}{2}} + \frac{1}{2}{x}^{2} + C.
+\]
+
+例 3 求 \(\int \frac{{x}^{2}}{1 + {x}^{2}}{dx}\) .
+
+解: \(\int \frac{{x}^{2}}{1 + {x}^{2}}{dx} = \int \frac{{x}^{2} + 1 - 1}{1 + {x}^{2}}{dx}\)
+
+\[
+= \int \left( {1 - \frac{1}{1 + {x}^{2}}}\right) {dx}
+\]
+
+\[
+= x - \operatorname{arctg}x + C\text{. }
+\]
+
+例 4 求 \(\int \frac{\cos {2x}}{\cos x - \sin x}{dx}\) .
+
+解: \(\int \frac{\cos {2x}}{\cos x - \sin x}{dx} = \int \frac{{\cos }^{2}x - {\sin }^{2}x}{\cos x - \sin x}{dx}\)
+
+\[
+= \int \left( {\cos x + \sin x}\right) {dx} = \int \cos {xdx} + \int \sin {xdx}
+\]
+
+\[
+= \sin x - \cos x + C\text{. }
+\]
+
+例 5 求 \(\int \frac{1}{{\sin }^{2}x{\cos }^{2}x}{dx}\) .
+
+解: \(\int \frac{1}{{\sin }^{2}x{\cos }^{2}x}{dx}\)
+
+\[
+= \int \frac{{\sin }^{2}x + {\cos }^{2}x}{{\sin }^{2}x{\cos }^{2}x}{dx}
+\]
+
+\[
+= \int \left( {\frac{1}{{\cos }^{2}x} + \frac{1}{{\sin }^{2}x}}\right) {dx}
+\]
+
+\[
+= \int \frac{1}{{\cos }^{2}x}{dx} + \int \frac{1}{{\sin }^{2}x}{dx}
+\]
+
+\[
+= \operatorname{tg}x - \operatorname{ctg}x + C\text{. }
+\]
+
+\begin{problemset}[练习]
+
+\item 求不定积分:
+
+(1) \(\int \left( {{x}^{2} + 2}\right) \sqrt{x}{dx}\) (2) \(\int {\left( x - 5\right) }^{2}{dx}\)
+
+(3) \(\int \frac{{x}^{4} - x - 5}{{x}^{2}}{dx}\) (4) \(\int \frac{{x}^{2} - 9}{x + 3}{dx}\)
+
+(5) \(\int \left( {{a}^{x} + {\csc }^{2}x}\right) {dx}\) (6) \(\int \left( {{\sec }^{2}x + \frac{2}{1 + {x}^{2}}}\right) {dx}\)
+
+(7) \(\int \frac{\sqrt{x} - {x}^{3}{e}^{x}}{{x}^{3}}{dx}\) (8) \(\int {\left( \sin \frac{x}{2} - \cos \frac{x}{2}\right) }^{2}{dx}\)
+
+(9) \(\int {\operatorname{tg}}^{2}{xdx}\) (10) \(\int \frac{5}{\sqrt{1 - {x}^{2}}}{dx}\) .
+
+\end{problemset}
+
+\begin{problemset}[习 题 十 三]
+
+\item 求不定积分:
+
+(1) \(\int \sqrt[n]{{x}^{m}}{dx}\left( {m,n\text{为正整数}}\right)\) ;
+
+(2) \(\int \left( {{x}^{3} + {px} + q}\right) {dx}\)
+
+(3) \(\int \frac{{e}^{x} + {x}^{e}}{2}{dx}\) .
+
+\item 根据不定积分的定义, 验证下列各等式:
+
+(1) \(\int \sin x\cos {xdx} = \frac{1}{2}{\sin }^{2}x + C\) ;
+
+(2) \(\int \sin x\cos {xdx} = - \frac{1}{2}{\cos }^{2}x + C\) ;
+
+(3) \(\int \sin x\cos {xdx} = - \frac{1}{4}\cos {2x} + C\) .
+
+\item 求不定积分:
+
+(1) \(\int {\left( a + bx\right) }^{2}{dx}\) (2) \(\int \left( {x + 5}\right) \left( {x - 5}\right) {dx}\) ;
+
+(3) \(\int \left( {{3x} + 1}\right) \left( {{2x} - 1}\right) {dx}\) (4) \(\int x\left( {4{x}^{2} - {4x} - 1}\right) {dx}\)
+
+(5) \(\int {\left( {x}^{\frac{1}{2}} - {x}^{-\frac{1}{2}}\right) }^{3}{dx}\) (6) \(\int \frac{{x}^{2} + x + 1}{{x}^{2}}{dx}\)
+
+(7) \(\int \frac{x + 5}{\sqrt{x}}{dx}\) (8) \(\int {\left( \frac{2}{x} + \frac{x}{3}\right) }^{3}{dx}\)
+
+(9) \(\int {\left( \frac{t - 1}{t}\right) }^{2}{dt}\)
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_197_590705.jpg}
+\end{center}
+
+(11) \(\int \frac{x - 4}{\sqrt{x} - 2}{dx}\) ; 12) \(\int \frac{{x}^{3} - {27}}{x - 3}{dx}\)
+
+(13) \(\int \frac{{x}^{4}}{1 + {x}^{2}}{dx}\) (14) \(\int \frac{1 + x + {x}^{2}}{x\left( {1 + {x}^{2}}\right) }{dx}\) .
+
+\item 求不定积分:
+
+(1) \(\int \frac{\sqrt{1 + {x}^{2}}}{\sqrt{1 - {x}^{4}}}{dx}\) (2) \(\int {e}^{x}\left( {{a}^{x} - \frac{{e}^{-x}}{\sqrt{1 - {x}^{2}}}}\right) {dx}\)
+
+(3) \(\int \left( {\frac{1}{x} - \frac{3}{\sqrt{1 - {x}^{2}}}}\right) {dx}\)
+
+(4) \(\int \frac{2 \cdot {3}^{x} - 5 \cdot {2}^{x}}{{3}^{x}}{dx}\) (5) \(\int \frac{\cos {2x}}{\sin x + \cos x}{dx}\) ;
+
+(6) \(\int \frac{\cos {2x}}{{\sin }^{2}x}{dx}\) (7) \(\int \frac{\sin {2x}}{\cos x}{dx}\)
+
+(8) \(\int \frac{\sin {2x}}{\sin x}{dx}\) (9) \(\int {\cos }^{2}\frac{x}{2}{dx}\)
+
+(10) \(\int {\operatorname{ctg}}^{2}{xdx}\) .
+
+\end{problemset}
+
+\section{换元积分法}
+
+换元积分法就是通过适当的变量替换, 使被积式化为基本积分公式表中的某一被积式, 然后求出结果. 例如, 在不定积分 \(\int 2\sin {2xdx}\) 中,如果令 \(u = {2x}\) ,那么 \({du} = {2dx}\) ,于是
+
+\[
+\int 2\sin {2xdx} = \int \sin {2x} \cdot {2dx}
+\]
+
+\[
+= \int \sin {udu}
+\]
+
+这样, 原来的被积式就化为基本积分公式表中的一个被积式, 可得
+
+\[
+\int 2\sin {2xdx} = - \cos u + C
+\]
+
+最后, 换回原来的变量, 就有
+
+\[
+\int 2\sin {2xdx} = - \cos {2x} + C\text{. }
+\]
+
+例1 求 \(\int {\left( 2x + 1\right) }^{5}{dx}\) .
+
+解: 设 \(u = {2x} + 1,{du} = {2dx}\) ,于是
+
+\[
+\int {\left( 2x + 1\right) }^{5}{dx} = \frac{1}{2}\int {\left( 2x + 1\right) }^{5} \cdot {2dx}
+\]
+
+\[
+= \frac{1}{2}\int {u}^{5}{du}
+\]
+
+\[
+= \frac{1}{12}{u}^{6} + C
+\]
+
+\[
+= \frac{1}{12}{\left( 2x + 1\right) }^{6} + C\text{.}
+\]
+
+例 2 求 \(\int \frac{2x}{{\left( {x}^{2} + 1\right) }^{3}}{dx}\) .
+
+解: 设 \({x}^{2} + 1 = u\) ,则 \({du} = {2xdx}\) ,于是
+
+\[
+\int \frac{2x}{{\left( {x}^{2} + 1\right) }^{3}}{dx} = \int {\left( {x}^{2} + 1\right) }^{-3} \cdot {2xdx}
+\]
+
+\[
+= \int {u}^{-3}{du}
+\]
+
+\[
+= \frac{1}{-3 + 1}{u}^{-2} + C
+\]
+
+\[
+= - \frac{1}{2{\left( {x}^{2} + 1\right) }^{2}} + C\text{. }
+\]
+
+从上面的例子我们看到, 求某些不定积分的关键是设法将被积式 \(f\left( x\right) {dx}\) 凑成微分 \(g\left( {\varphi \left( x\right) }\right) {\varphi }^{\prime }\left( x\right) {dx}\) 的形式,即
+
+\[
+\int f\left( x\right) {dx} = \int g\left( {\varphi \left( x\right) }\right) {\varphi }^{\prime }\left( x\right) {dx}
+\]
+
+再进行变量替换 \(u = \varphi \left( x\right)\) ,于是
+
+\[
+\int g\left( {\varphi \left( x\right) }\right) {\varphi }^{\prime }\left( x\right) {dx} = \int g\left( u\right) {du}.
+\]
+
+对 \(g\left( u\right)\) 进行积分,得
+
+\[
+\int g\left( u\right) {du} = F\left( u\right) + C
+\]
+
+用 \(u = \varphi \left( x\right)\) 将变量 \(u\) 换回到原来的变量 \(x\) ,那么所求的不定积分就是
+
+\[
+\int f\left( x\right) {dx} = F\left\lbrack {\varphi \left( x\right) }\right\rbrack + C.
+\]
+
+这种求不定积分的方法叫做第一换元积分法, 这一方法实质上是把被积式凑成某个函数的微分, 因此也叫做凑微分法.
+
+例 3 求 \(\int x\sqrt{1 - {x}^{2}}{dx}\) .
+
+解: 设 \(u = 1 - {x}^{2}\) ,则 \({du} = - {2xdx}\) ,于是
+
+\[
+\int x\sqrt{1 - {x}^{2}}{dx} = - \frac{1}{2}\int \sqrt{1 - {x}^{2}}\left( {-{2xdx}}\right)
+\]
+
+\[
+= - \frac{1}{2}\int {u}^{\frac{1}{2}}{du}
+\]
+
+\[
+= - \frac{1}{3}{u}^{\frac{3}{2}} + C
+\]
+
+\[
+= - \frac{1}{3}{\left( 1 - {x}^{2}\right) }^{\frac{3}{2}} + C\text{.}
+\]
+
+例 4 求 \(\int \operatorname{ctg}{xdx}\) .
+
+解: 设 \(\sin x = u\) ,则 \({du} = \cos {xdx}\) ,于是
+
+\[
+\int \operatorname{ctg}{xdx} = \int \frac{1}{\sin x} \cdot \cos {xdx}
+\]
+
+\[
+= \int \frac{1}{u}{du}
+\]
+
+\[
+= \ln \left| u\right| + C
+\]
+
+\[
+= \ln \left| {\sin x}\right| + C\text{. }
+\]
+
+在运算熟练之后, 可以省去其中写出变量替换的步骤.
+
+例 5 求 \(\int \sin {5x}\cos {xdx}\) .
+
+解: 由三角函数积化和差公式, 得
+
+\[
+\sin {5x}\cos x = \frac{1}{2}\left( {\sin {6x} + \sin {4x}}\right) ,
+\]
+
+于是
+
+\[
+\int \sin {5x}\cos {xdx} = \frac{1}{2}\int \left( {\sin {6x} + \sin {4x}}\right) {dx}
+\]
+
+\[
+= \frac{1}{2}\left( {\int \sin {6xdx}+\int \sin {4xdx}}\right)
+\]
+
+\[
+= \frac{1}{2}\left\lbrack {\frac{1}{6}\int \sin {6xd}\left( {6x}\right) + \frac{1}{4}\int \sin {4xd}\left( {4x}\right) }\right\rbrack
+\]
+
+\[
+= - \frac{1}{12}\cos {6x} - \frac{1}{8}\cos {4x} + C\text{. }
+\]
+
+例 6 求 \(\int \frac{1}{{a}^{2} + {x}^{2}}{dx}\) .
+
+解: \(\int \frac{1}{{a}^{2} + {x}^{2}}{dx} = \frac{1}{{a}^{2}}\int \frac{1}{1 + {\left( \frac{x}{a}\right) }^{2}}{dx}\)
+
+\[
+= \frac{1}{a}{\int }_{1 + {\left( \frac{x}{a}\right) }^{2}} \cdot d\left( \frac{x}{a}\right)
+\]
+
+\[
+= \frac{1}{a}\operatorname{arctg}\frac{x}{a} + C.
+\]
+
+求不定积分有时将所求的不定积分 \(\int f\left( x\right) {dx}\) 作另一种形式的变量替换. 设 \(x = \varphi \left( t\right)\) ,则 \({dx} = {\varphi }^{\prime }\left( t\right) {dt}\) ,于是
+
+\[
+\int f\left( x\right) {dx} = \int f\left\lbrack {\varphi \left( t\right) }\right\rbrack {\varphi }^{\prime }\left( t\right) {dt}.
+\]
+
+如果已知右端的积分为
+
+\[
+\int f\left\lbrack {\varphi \left( t\right) }\right\rbrack {\varphi }^{\prime }\left( t\right) {dt} = F\left( t\right) + C,
+\]
+
+那么以 \(x = \varphi \left( t\right)\) 的反函数 \(t = {\varphi }^{-1}\left( x\right)\) 代入上式,将变量 \(t\) 还原为原来变量 \(x\) ,即得到所求的不定积分
+
+\[
+\int f\left( x\right) {dx} = F\left\lbrack {{\varphi }^{-1}\left( x\right) }\right\rbrack + C.
+\]
+
+这种求不定积分的方法叫做第二换元积分法.
+
+例 7 求 \(\int \frac{1}{1 + \sqrt{x}}{dx}\) .
+
+解: 设 \(x = {t}^{2}\left( {t > 0}\right)\) ,则 \({dx} = {2tdt}\) ,于是
+
+\[
+\int \frac{1}{1 + \sqrt{x}}{dx} = \int \frac{1}{1 + t} \cdot {2tdt}
+\]
+
+\[
+= 2\int \left( {1 - \frac{1}{1 + t}}\right) {dt}
+\]
+
+\[
+= {2t} - 2\ln \left| {1 + t}\right| + C\text{. }
+\]
+
+将变量 \(t\) 还原为变量 \(x\) . 由 \(x = {t}^{2}\) ,得 \(t = \sqrt{x}\) . 代入上式,得
+
+\[
+\int \frac{1}{1 + \sqrt{x}}{dx} = 2\sqrt{x} - 2\ln \left| {1 + \sqrt{x}}\right| + C.
+\]
+
+例 8 求 \(\int \sqrt{{a}^{2} - {x}^{2}}{dx}\;\left( {a > 0}\right)\) .
+
+解: 由于被积式含有根式 \(\sqrt{{a}^{2} - {x}^{2}}\) ,为此考虑利用三角公式进行变量替换, 消去根号. 根据公式
+
+\[
+1 - {\sin }^{2}t = {\cos }^{2}t
+\]
+
+可设 \(x = a\sin t\;\left( {-\frac{\pi }{2} \leq t \leq \frac{\pi }{2}}\right)\) ,那么
+
+\[
+\sqrt{{a}^{2} - {x}^{2}} = \sqrt{{a}^{2} - {a}^{2}{\sin }^{2}t} = a\cos t,
+\]
+
+\[
+{dx} = a\cos {tdt}
+\]
+
+于是
+
+\[
+\int \sqrt{{a}^{2} - {x}^{2}}{dx} = \int a\cos t \cdot a\cos {tdt}
+\]
+
+\[
+= {a}^{2}\int {\cos }^{2}{tdt}
+\]
+
+\[
+= {a}^{2}\int \frac{1 + \cos {2t}}{2}{dt}
+\]
+
+\[
+= {a}^{2}\left( {\frac{1}{2}t + \frac{1}{4}\sin {2t}}\right) + C\text{. }
+\]
+
+由 \(x = a\sin t\) 可得 \(t = \arcsin \frac{x}{a}\) ,
+
+\[
+\cos t = \sqrt{1 - {\left( \frac{x}{a}\right) }^{2}}
+\]
+
+\[
+\sin {2t} = 2\sin t\cos t
+\]
+
+\[
+= 2 \cdot \frac{x}{a} \cdot \sqrt{1 - {\left( \frac{x}{a}\right) }^{2}} = \frac{2}{{a}^{2}}x\sqrt{{a}^{2} - {x}^{2}}.
+\]
+
+因此,
+
+\[
+\int \sqrt{{a}^{2} - {x}^{2}}{dx}
+\]
+
+\[
+= {a}^{2}\left( {\frac{1}{2}\arcsin \frac{x}{a} + \frac{1}{4} \cdot \frac{2}{{a}^{2}} \cdot x \cdot \sqrt{{a}^{2} - {x}^{2}}}\right) + C
+\]
+
+\[
+= \frac{{a}^{2}}{2}\arcsin \frac{x}{a} + \frac{x}{2}\sqrt{{a}^{2} - {x}^{2}} + C.
+\]
+
+\begin{problemset}[练习]
+
+\item 在下列等式的空白处填入适当的系数, 使等式成立, 并求出相应的不定积分:
+
+(1) \({dx} = \;d\left( {{3x} + 1}\right) ,\;\int {\left( 3x + 1\right) }^{4}{dx} = \;\) ;
+
+(2) \({xdx} = \;d\left( {{x}^{2} + 1}\right) ,\;\int \frac{x}{{\left( {x}^{2} + 1\right) }^{2}}{dx} = \;\) ;
+
+(3) \(\sin {3xdx} = d\left( {\cos {3x}}\right) ,\int {\cos }^{2}{3x}\sin {3xdx} =\) ;
+
+(4) \(\frac{1}{x}{dx} = \;d\left( {\ln x}\right) ,\;\int \frac{{\ln }^{3}x}{x}{dx} =\)
+
+\item 用换元积分法求不定积分:
+
+(1) \(\int \sqrt{1 + {2x}}{dx}\) (2) \(\int \frac{1}{1 - x}{dx}\)
+
+(3) \(\int x\sqrt{1 + {x}^{2}}{dx}\) (4) \(\int \frac{2x}{1 + {x}^{2}}{dx}\)
+
+(5) \(\int \frac{{\ln }^{2}x}{x}{dx}\) (6) \(\int {e}^{\sin x}\cos {xdx}\)
+
+(7) \(\int \sin \left( {{3x} + 5}\right) {dx}\) (8) \(\int \operatorname{tg}{xdx}\) .
+
+\item 用换元积分法求不定积分:
+
+(1) \(\int \frac{1}{1 + \sqrt{x + 1}}{dx}\) ; (2) \(\int x\sqrt{x - 6}{dx}\) .
+
+(3) \(\int \frac{1}{x\sqrt{x - 1}}{dx}\) ; (4) \(\int \sqrt{1 - {x}^{2}}{dx}\) .
+
+\end{problemset}
+
+\section{分部积分法}
+
+我们知道, 两个函数乘积的导数法则是
+
+\[
+{\left( uv\right) }^{\prime } = v{u}^{\prime } + u{v}^{\prime }.
+\]
+
+移项, 得
+
+\[
+u{v}^{\prime } = {\left( uv\right) }^{\prime } - v{u}^{\prime }.
+\]
+
+两边积分, 得
+
+\[
+\int u{v}^{\prime }{dx} = {uv} - \int v{u}^{\prime }{dx}
+\]
+
+或简写成如下形式:
+
+\[
+\int {udv} = {uv} - \int {vdu}
+\]
+
+这个公式叫做分部积分公式. 如果求 \(\int {vdu}\) 比较容易时,就可以利用分部积分公式,将求 \(\int {udv}\) 形式的不定积分转化为求 \(\int {vdu}\) 形式的不定积分. 用这个公式求不定积分的方法叫做分部积分法.
+
+例 1 求 \(\int x\cos {xdx}\) .
+
+解: 设 \(u = x,{dv} = \cos {xdx}\) ,则
+
+\[
+{du} = {dx},v = \sin x.
+\]
+
+由分部积分公式, 得
+
+\[
+\int x\cos {xdx} = x\sin x - \int \sin {xdx}
+\]
+
+\[
+= x\sin x + \cos x + C\text{. }
+\]
+
+例 2 求 \(\int x{e}^{x}{dx}\) .
+
+解: 设 \(u = x,{dv} = {e}^{x}{dx}\) ,则
+
+\[
+{du} = {dx},v = {e}^{x}.
+\]
+
+由分部积分公式, 得
+
+\[
+\int x{e}^{x}{dx} = x{e}^{x} - \int {e}^{x}{dx}
+\]
+
+\[
+= x{e}^{x} - {e}^{x} + C\text{. }
+\]
+
+注意 用分部积分公式的关键是 \(u\) 与 \({dv}\) 的选择要得当, 否则可能会使问题愈来愈繁. 在例 2 中,如果改设 \(u = {e}^{x},{dv} =\) \({xdx}\) ,则 \({du} = {e}^{x}{dx},v = \frac{1}{2}{x}^{2}\) ,按分部积分公式得
+
+\[
+\int x{e}^{x}{dx} = \frac{1}{2}{x}^{2}{e}^{x} - \frac{1}{2}\int {x}^{2}{e}^{x}{dx}
+\]
+
+这时, 上式右端第二项的积分比原来的积分更复杂了.
+
+例 3 求 \(\int \operatorname{arctg}{xdx}\) .
+
+解: 将 \(\operatorname{arctg}x\) 看作 \(u,{dx}\) 看作 \({dv}\) ,即
+
+设 \(u = \operatorname{arctg}x,{dv} = {dx}\) ,则
+
+\[
+{du} = \frac{1}{1 + {x}^{2}}{dx},\;v = x.
+\]
+
+由分部积分公式, 得
+
+\[
+\int \operatorname{arctg}{xdx} = x\operatorname{arctg}x - \int \frac{x}{1 + {x}^{2}}{dx}
+\]
+
+\[
+= x\operatorname{arctg}x - \frac{1}{2}\int \frac{1}{1 + {x}^{2}}d\left( {1 + {x}^{2}}\right)
+\]
+
+\[
+= x\operatorname{arctg}x - \frac{1}{2}\ln \left( {1 + {x}^{2}}\right) + C\text{.}
+\]
+
+例 4 求 \(\int x\ln {xdx}\) .
+
+解: 设 \(u = \ln x,{dv} = {xdx}\) ,则
+
+\[
+{du} = \frac{1}{x}{dx},v = \frac{1}{2}{x}^{2}.
+\]
+
+由分部积分公式, 得
+
+\[
+\int x\ln {xdx} = \frac{1}{2}{x}^{2}\ln x - \int \frac{1}{x} \cdot \frac{1}{2}{x}^{2}{dx}
+\]
+
+\[
+= \frac{1}{2}{x}^{2}\ln x - \frac{1}{2}\int {xdx}
+\]
+
+\[
+= \frac{1}{2}{x}^{2}\ln x - \frac{1}{4}{x}^{2} + C\text{. }
+\]
+
+\begin{problemset}[练习]
+
+\item 用分部积分法求不定积分:
+
+(1) \(\int x\sin {xdx}\) (2) \(\int \left( {x + 1}\right) \cos {xdx}\) ;
+
+(3) \(\int x{e}^{-x}{dx}\) (4) \(\int x{e}^{2x}{dx}\)
+
+(5) \(\int \operatorname{arcctg}{xdx}\) (6) \(\int x\operatorname{arctg}{xdx}\) ;
+
+(7) \(\int \ln {xdx}\) (8) \(\int \left( {x + 1}\right) \ln {xdx}\) .
+
+\end{problemset}
+
+\section*{*积分表的用法}
+
+求一个函数的不定积分, 比求它的导数或微分往往困难得多, 因此我们把常见的被积函数的积分结果列成积分表. 这样, 在实际计算积分时, 就可以利用积分表来求得函数的积分. 本书后面附有简易积分表.
+
+积分表是按被积函数的类型编排的. 查表求积分时, 根据被积函数的类型, 或经过适当的变换, 化成表中所列函数类型, 查出相应的公式, 便可求得结果.
+
+例 1 求 \(\int \frac{1}{{x}^{2}\left( {2 + {3x}}\right) }{dx}\) .
+
+解: 这个被积函数是有理函数, 可在附表的 (二) 中查出公式 24 是
+
+\[
+\int \frac{1}{{x}^{2}\left( {a + {bx}}\right) }{dx} = - \frac{1}{ax} + \frac{b}{{a}^{2}}\ln \left| \frac{a + {bx}}{x}\right| + C.
+\]
+
+因此,以 \(a = 2,b = 3\) 代入这个公式,便得所求不定积分
+
+\[
+\int \frac{1}{{x}^{2}\left( {2 + {3x}}\right) }{dx} = - \frac{1}{2x} + \frac{3}{4}\ln \left| \frac{2 + {3x}}{x}\right| + C.
+\]
+
+例 2 求 \(\int \frac{1}{x\sqrt{4{x}^{2} + 9}}{dx}\) .
+
+解: 这个被积式不能在表中直接查到, 需要先进行变量替换.
+
+设 \({2x} = u\) ,那么 \(\sqrt{4{x}^{2} + 9} = \sqrt{{u}^{2} + {3}^{2}},x = \frac{u}{2},{dx} = \frac{1}{2}{du}\) ,
+
+于是
+
+\[
+\int \frac{1}{x\sqrt{4{x}^{2} + 9}}{dx} = \int \frac{1}{\frac{u}{2}\sqrt{{u}^{2} + {3}^{2}}} \cdot \frac{1}{2}{du}
+\]
+
+\[
+= \int \frac{1}{u\sqrt{{u}^{2} + {3}^{2}}}{du}
+\]
+
+上式中的被积函数是无理函数, 可以在附表的 (三) 中查出公式 50 是
+
+\[
+\int \frac{1}{u\sqrt{{u}^{2} + {a}^{2}}}{du} = - \frac{1}{a}\ln \left| \frac{a + \sqrt{{u}^{2} + {a}^{2}}}{u}\right| + C.
+\]
+
+因此,以 \(a = 3\) 代入这个公式,得
+
+\[
+\int \frac{1}{u\sqrt{{u}^{2} + {3}^{2}}}{du} = - \frac{1}{3}\ln \left| \frac{3 + \sqrt{{u}^{2} + {3}^{2}}}{u}\right| + C.
+\]
+
+最后把 \(u = {2x}\) 代入,得到所求不定积分
+
+\[
+\int \frac{1}{x\sqrt{4{x}^{2} + 9}}{dx} = - \frac{1}{3}\ln \left| \frac{3 + \sqrt{4{x}^{2} + 9}}{2x}\right| + C.
+\]
+
+\begin{problemset}[练习]
+
+\item *利用积分表求不定积分:
+
+(1) \(\int \frac{x}{{\left( 3x + 5\right) }^{2}}{dx}\) ; (2) \(\int \frac{x}{{\left( 1 + {x}^{2}\right) }^{2}}{dx}\)
+
+(3) \(\int \sin {3x}\sin {5xdx}\) ; (4) \(\int \sqrt{2{x}^{2} + 1}{dx}\) ;
+
+(5) \(\int \frac{1}{3 + 5{x}^{2}}{dx}\) ; (6) \(\int \frac{1}{\sin x}{dx}\) ;
+
+(7) \(\int {\sin }^{4}{xdx}\) (8) \(\int {x}^{4}\ln {xdx}\) .
+
+\end{problemset}
+
+\begin{problemset}[习 题 十 四]
+
+\item 用换元积分法求不定积分:
+
+(1) \(\int \sqrt{2 + {3x}}{dx}\) (2) \(\int \frac{1}{{2x} - 1}{dx}\) ;
+
+（3） \(\int \frac{{x}^{2}}{1 + {x}^{3}}{dx}\) ; (4) \(\int \frac{{2x} - 3}{{x}^{2} - {3x} + 8}{dx}\) ;
+
+(5) \(\int \sin \left( {{3x} + 1}\right) {dx}\) ; (6) \(\int \cos \left( {2 - {5x}}\right) {dx}\) ;
+
+(7) \(\int x\cos {x}^{2}{dx}\) (8) \(\int \frac{1}{{x}^{2}}\sin \frac{1}{x}{dx}\)
+
+(9) \(\int {\sin }^{5}x\cos {xdx}\) ; (10) \(\int \frac{\sin x}{{\left( 1 + \cos x\right) }^{3}}{dx}\) ;
+
+(11) \(\int \frac{{e}^{x}}{1 + {e}^{x}}{dx}\) (12) \(\int {e}^{-{3x}}{dx}\)
+
+(13) \(\int {2x}{e}^{-{x}^{2}}{dx}\) (14) \(\int \frac{{e}^{x}}{1 + {e}^{2x}}{dx}\)
+
+(15) \(\int \frac{1}{9 + 4{x}^{2}}{dx}\) (16) \(\int \left( {1 + \operatorname{tg}x}\right) {\sec }^{2}{xdx}\) ;
+
+(17) \(\int \sin {6x}\sin {4xdx}\) ; (18) \(\int \cos {7x}\cos {3xdx}\) ;
+
+(19) \(\int \frac{1}{x\left( {1 + 2\ln x}\right) }{dx}\) ; (20) \(\int \frac{{x}^{2}}{\sqrt{2 - {x}^{3}}}{dx}\) .
+
+\item 用换元积分法求不定积分:
+
+(1) \(\int \frac{x + 1}{\sqrt{{3x} + 1}}{dx}\) (2) \(\int \frac{1}{1 + \sqrt{2x}}{dx}\)
+
+(3) \(\int \frac{1}{x + \sqrt{x}}{dx}\) (4) \(\int \frac{\sqrt[4]{x}}{1 + \sqrt{x}}{dx}\)
+
+(5) \(\int \frac{{e}^{\sqrt{x}}}{\sqrt{x}}{dx}\) (6) \(\int \frac{\sin \sqrt{x}}{\sqrt{x}}{dx}\)
+
+(7) \(\int \frac{\cos \sqrt{x}}{\sqrt{x}}{dx}\) (8) \(\int \frac{{x}^{2}}{\sqrt{1 - {x}^{2}}}{dx}\) .
+
+\item 用分部积分法求不定积分:
+
+(1) \(\int x\sin {3xdx}\) (2) \(\int x\cos {2xdx}\)
+
+(3) \(\int \left( {{2x} + 1}\right) \sin {xdx}\) ; (4) \(\int x\cos \left( {{\omega x} + \varphi }\right) {dx}\) ;
+
+(5) \(\int t\sin \left( {{\omega t} + \varphi }\right) {dt}\) ; (6) \(\int \left( {x + 1}\right) {e}^{x}{dx}\)
+
+(7) \(\int x{e}^{4x}{dx}\) (8) \(\int x{e}^{-{3x}}{dx}\)
+
+(9) \(\int x\operatorname{arcctg}{xdx}\) ; (10) \(\int \arcsin {xdxy}\)
+
+(11) \(\int x\ln \left( {{3x} - 2}\right) {dx}\) ; (12) \(\int \ln \left( {1 + {x}^{2}}\right) {dx}\) 1207
+
+\item * 用积分表求不定积分:
+
+(1) \(\int \frac{x}{{\left( 2x + \frac{1}{2}\right) }^{2}}{dx}\) (2) \(\int \frac{1}{{x}^{2} + 9}{dx}\) ;
+
+(3) \(\int \frac{1}{{\left( {x}^{2} + 2\right) }^{2}}{dx}\) (4) \(\int \frac{1}{\sqrt{4{x}^{2} - 9}}{dx}\)
+
+(5) \(\int \sqrt{2{x}^{2} + 9}{dx}\) ; (6) \(\int \sqrt{3{x}^{2} - 2}{dx}\) ;
+
+(7) \(\int \frac{1}{{x}^{2} + {5x} + 6}{dx}\) ; (8) \(\int {x}^{2}\sin {4xdx}\)
+
+(9) \(\int {x}^{5}\ln {xdx}\) ; (10) \(\int \frac{1}{{x}^{2}\left( {1 - x}\right) }{dx}\) .
+
+\end{problemset}
+
+\chapter*{小结}
+\markboth{小结}{小结}
+
+一、本章主要内容是不定积分的概念及其求法.
+
+二、如果 \({F}^{\prime }\left( x\right) = f\left( x\right)\) ,那么就称 \(F\left( x\right)\) 为函数 \(f\left( x\right)\) 的一个原函数.
+
+如果函数 \(f\left( x\right)\) 有一个原函数 \(F\left( x\right)\) ,那么它的原函数就. 有无穷多个,而且所有原函数可以用 \(F\left( x\right) + C(C\) 是任意常数) 的形式表示出来.
+
+我们把函数 \(f\left( x\right)\) 的所有的原函数 \(F\left( x\right) + C\) 叫做函数 \(f\left( x\right)\) 的不定积分,记作
+
+\[
+\int f\left( x\right) {dx} = F\left( x\right) + C.
+\]
+
+三、与求已知函数的导数的运算相反, 求不定积分是从导数求其原函数的运算, 因此, 求不定积分与求导数互为逆运算. 于是, 根据导数公式可以得到相应的不定积分公式; 根据导数的某些运算法则可以导出相应的不定积分运算法则:
+
+\[
+\int {kf}\left( x\right) {dx} = k\int f\left( x\right) {dx}\;\left( {k \neq 0}\right) ,
+\]
+
+\[
+\int \left\lbrack {f\left( x\right) \pm g\left( x\right) }\right\rbrack {dx} = \int f\left( x\right) {dx} \pm \int g\left( x\right) {dx}.
+\]
+
+四、求不定积分的基本方法有:
+
+1. 直接积分法 利用基本积分公式和不定积分的运算法则直接求得结果;
+
+2. 换元积分法 通过适当的变量替换, 将被积式化为基本积分公式表中的某一被积式, 求出结果;
+
+3. 分部积分法 利用分部积分公式将求 \(\int {udv}\) 形式的 不定积分化为求 \(\int {vdu}\) 形式的不定积分,当后者较易求出结果时, 即可用分部积分公式。
+
+\chapter*{复习参考题四}
+\markboth{复习参考题四}{复习参考题四}
+
+\section*{\(A\) 组}
+
+1. 求不定积分:
+
+(1) \(\int x\left( {3{x}^{2} - 4}\right) {dx}\) ;
+
+(2) \(\int {\left( \frac{2{x}^{2} + 1}{x}\right) }^{3}{dx}\)
+
+(3) \(\int \left( {\sqrt[3]{{x}^{2}} - \frac{3}{\sqrt{1 - {x}^{2}}}}\right) {dx}\) ;
+
+(4) \(\int x\sqrt[3]{x}\left( {\frac{1}{2\sqrt{x}} + \frac{3}{5x}}\right) {dx}\) ;
+
+(5) \(\int \frac{5{\theta }^{2}}{1 + {\theta }^{2}}{d\theta }\) (6) \(\int \frac{2{x}^{2} + 1}{1 + {x}^{2}}{dx}\)
+
+(7) \(\int \frac{2 + {\cos }^{2}x}{{\cos }^{2}x}{dx}\) (8) \(\int \frac{1}{1 + \cos {2\theta }}{d\theta }\) ;
+
+(9) \(\int {\left( {e}^{\frac{x}{2}} + {e}^{-\frac{x}{2}}\right) }^{2}{dx}\) (10) \(\int \frac{1 + {\cos }^{2}x}{1 + \cos {2x}}{dx}\) .
+
+2. 用换元积分法求不定积分:
+
+(1) \(\int {\left( 3x + 2\right) }^{3}{dx}\) (2) \(\int {x}^{3}/\sqrt{8 + 9{x}^{2}}{dx}\)
+
+(3) \(\int \frac{2 + \ln x}{x}{dx}\) (4) \(\int {e}^{x}{\left( {e}^{x} + 2\right) }^{2}{dx}\)
+
+(5) \(\int \frac{3}{\left( {1 + {x}^{2}}\right) \operatorname{arctg}x}{dx}\) ; (6) \(\int \frac{1}{{e}^{x} + {e}^{-x}}{dx}\) ;
+
+(7) \(\int {\left( \sin x - \cos x\right) }^{2}{dx}\) ;
+
+(8) \(\int \frac{1}{{\cos }^{2}\left( {1 - x}\right) }{dx}\) ; (9) \(\int \operatorname{tg}{nxdx}\)
+
+(10) \(\int \frac{\operatorname{tg}{m\theta }}{\cos {m\theta }}{d\theta }\) ; (11) \(\int {\left( \operatorname{tg}\theta - \sec \theta \right) }^{2}{d\theta }\) ;
+
+(12) \(\int {e}^{\cos {2\theta }}\sin {2\theta d\theta }\) ; (13) \(\int \sqrt{{e}^{x}}{dx}\)
+
+(14) \(\int 2{e}^{\operatorname{tg}\theta }{\sec }^{2}{\theta d\theta }\) (15) \(\int \frac{1}{{x}^{2}\sqrt{1 + {x}^{2}}}{dx}\) ;
+
+(16) \(\int \frac{\sqrt{{x}^{2} - 1}}{x}{dx}\) ,
+
+3. 用分部积分法求不定积分;
+
+(1) \(\int x\cos \frac{x}{2}{dx}\) ; (2) \(\int \left( {{x}^{2} + 1}\right) \sin {xdx}\)
+
+(3) \(\int x{e}^{-{2x}}{dx}\) (4) \(\int \left( {{3x} + 4}\right) {e}^{-{3x}}{dx}\)
+
+(5) \(\int \operatorname{arctg}\frac{x}{3}{dx}\) (6) \(\int x\operatorname{arctg}{5xdx}\)
+
+(7) \(\int x{\sec }^{2}{xdx}\) ; (8) \(\int x{\csc }^{2}{xdx}\)
+
+(9) \(\int \ln {9xdx}\) (10) \(\int \frac{\ln {3x}}{{x}^{3}}{dx}\) .
+
+\section*{B 组}
+
+4. 假设:
+
+\[
+\int f\left( x\right) {dx} = F\left( x\right) + C,
+\]
+
+求证:
+
+\[
+\int f\left( {{ax} + b}\right) {dx} = \frac{1}{a}F\left( {{ax} + b}\right) + C,
+\]
+
+其中 \(a,b\) 为常数,而且 \(a \neq 0\) .
+
+5. 证明下式:
+
+\[
+\int f\left( x\right) {dx} = {xf}\left( x\right) - \int x{f}^{\prime }\left( x\right) {dx}.
+\]
+
+6. 求不定积分:
+
+(1) \(\int \left( {{a}_{n}{x}^{n} + {a}_{n - 1}{x}^{n - 1} + \cdots + {a}_{1}x + {a}_{0}}\right) {dx}\) ;
+
+(2) \(\int \frac{1}{\left( {x - a}\right) \left( {x - b}\right) }{dx}\) ;
+
+(3) \(\int \frac{1}{{x}^{2} - {a}^{2}}{dx}\) (4) \(\int \frac{{x}^{2} + {7x} + {12}}{x + 4}{dx}\)
+
+(5) \(\int {\operatorname{ctg}}^{2}{xdx}\) ; (6) \(\int {\left( {2}^{x} + {3}^{x}\right) }^{2}{dx}\) 。
+
+7. 用换元积分法求不定积分:
+
+(1) \(\int \frac{1}{\sqrt{{x}^{2} + {3x}}}{dx}\) ; (2) \(\int \frac{1}{\sqrt{x - {x}^{2}}}{dx}\) ;
+
+（3） \(\int \frac{\sin x}{3 + 4\cos x}{dx}\) ; (4) \(\int \frac{\arcsin x}{\sqrt{1 - {x}^{2}}}{dx}\) ;
+
+(5) \(\int \frac{\sqrt{\operatorname{arctg}{2x}}}{1 + 4{x}^{2}}{dx}\) ; (6) \(\int \frac{{e}^{x} - {e}^{-x}}{{e}^{x} + {e}^{-x}}{dx}\) ;
+
+(7) \(\int \frac{\sqrt{{x}^{2} - {a}^{2}}}{x}{dx}\) (8) \(\int \frac{{x}^{3}}{\sqrt{1 - {x}^{2}}}{dx}\) .
+
+8. 用分部积分法求不定积分:
+
+(1) \(\int {x}^{2}\cos {xdx}\) (2) \(\int {e}^{x}\sin {xdx}\)
+
+(3) \(\int {e}^{x}\cos {xdx}\) ; (4) \(\int x\arcsin {xdx}\) ;
+
+(5) \(\int {x}^{2}{e}^{x}{dx}\) (6) \(\int {\ln }^{2}{xdx}\) .
+
+\chapter{定积分及其应用}
+
+\section*{定积分的概念和计算}
+
+\section{定积分的概念}
+
+在生产和科学技术中, 许多实际问题, 如求面积、路程、体积等, 最后都可归结为求一种和的极限. 现在我们以求面积和求路程为例, 说明解决这类问题的方法, 从而引出定积分的概念.
+
+问题 1 求曲边梯形的面积.
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_216_110266.jpg}
+\end{center}
+
+图 5-1
+
+曲边梯形是指由三条直线 \(x =\) \(a,x = b,y = 0\) 和一条曲线 \(y = f\left( x\right)\) 围成的图形(图 5-1),其中 \(f\left( x\right)\) 是连续函数 (这里假设 \(f\left( x\right) \geq 0\) ).
+
+我们知道, 矩形的面积公式是面积 \(=\) 长 \(\times\) 宽.
+
+现在研究的是曲边梯形的面积, 就不能直接用这个公式来计算. 如图 5-2 所表示, 为了计算曲边梯形的面积, 可以将它分割成许多小曲边梯形, 每个小曲边梯形用相应的小矩形近似代替, 把这些小矩形的面积累加起来, 就得到曲边梯形面积的一个近似值, 当分割无限变细时, 这个近似值就无限趋近于所求的曲边梯形面积. 现在用下例来说明具体的做法:
+
+\begin{center}
+\includegraphics[max width=1.0\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_216_513151.jpg}
+\end{center}
+
+图 5-2
+
+例 1 求由直线 \(x = 0,x = 1,y = 0\) 和曲线 \(y = {x}^{2}\) 围成的图形面积.
+
+解: (1) 将曲边梯形分割成 \(n\) 个小曲边梯形.
+
+用分点
+
+\[
+0 = \frac{0}{n} < \frac{1}{n} < \cdots < \frac{i - 1}{n} < \frac{i}{n}
+\]
+
+\[
+< \cdots < \frac{n - 1}{n} < \frac{n}{n} = 1
+\]
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_217_504981.jpg}
+\end{center}
+
+图 5-3
+
+把区间 \(\left\lbrack {0,1}\right\rbrack\) 等分成 \(n\) 个小区间
+
+(如图 5-3):
+
+\[
+\left\lbrack {0,\frac{1}{n}}\right\rbrack ,\left\lbrack {\frac{1}{n},\frac{2}{n}}\right\rbrack ,\cdots ,\left\lbrack {\frac{i - 1}{n},\frac{i}{n}}\right\rbrack ,\cdots ,\left\lbrack {\frac{n - 1}{n},\frac{n}{n}}\right\rbrack ,
+\]
+
+每个小区间的长度为
+
+\[
+{\Delta x} = \frac{i}{n} - \frac{i - 1}{n} = \frac{1}{n}
+\]
+
+过各分点作 \(x\) 轴的垂线,把曲边梯形分成 \(n\) 个小曲边梯形,它们的面积分别记作
+
+\[
+\Delta {S}_{1},\Delta {S}_{2},\cdots ,\Delta {S}_{i},\cdots ,\Delta {S}_{n}.
+\]
+
+（2）用小矩形面积近似代替小曲边梯形面积.
+
+在小区间 \(\left\lbrack {\frac{i - 1}{n},\frac{i}{n}}\right\rbrack\) 上任取一点 \({\xi }_{i}\left( {i = 1,2,\cdots ,n}\right)\) ,为了计算方便,取 \({\xi }_{i}\) 为小区间的左端点,用以点 \({\xi }_{i}\) 的纵坐标 \(f\left( {\xi }_{i}\right) = {\left( \frac{i - 1}{n}\right) }^{2}\) 为长,以小区间长度 \({\Delta x} = \frac{1}{n}\) 为宽的小矩形面积近似代替第 \(i\) 个小曲边梯形面积,可以近似地表示为
+
+\[
+\Delta {S}_{i} \approx f\left( {\xi }_{i}\right) {\Delta x} = {\left( \frac{i - 1}{n}\right) }^{2} \cdot \frac{1}{n}.
+\]
+
+\[
+\left( {i = 1,2,\cdots \cdots ,n}\right)
+\]
+
+(3) 取和.
+
+因为每一个小矩形的面积都可以作为相应的小曲边梯形面积的近似值,所以 \(n\) 个小矩形面积的和就是曲边梯形面积 \(S\) 的近似值,即
+
+\[
+S = \mathop{\sum }\limits_{{i = 1}}^{n}\Delta {S}_{i} \approx \mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x} = \mathop{\sum }\limits_{{i = 1}}^{n}{\left( \frac{i - 1}{n}\right) }^{2} \cdot \frac{1}{n}. \tag{I}
+\]
+
+（4）求和式(I)的极限.
+
+当分点数目愈多,即 \({\Delta x}\) 愈小时,从图 5-4 可以看出,和式 (I) 的值就愈接近曲边梯形的面积 \(S\) . 因此,当 \(n \rightarrow \infty\) ,即 \({\Delta x} \rightarrow\) 0时, 和式 (I) 的极限, 就是所求的曲边梯形的面积.
+
+\begin{center}
+\includegraphics[max width=1.0\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_218_835855.jpg}
+\end{center}
+
+图 5-4
+
+因为
+
+\[
+\mathop{\sum }\limits_{{i = 1}}^{n}{\left( \frac{i - 1}{n}\right) }^{2} \cdot \frac{1}{n} = \frac{1}{{n}^{3}}\mathop{\sum }\limits_{{i = 1}}^{n}{\left( i - 1\right) }^{2}
+\]
+
+\[
+= \frac{1}{{n}^{3}}\left\lbrack {0 + {1}^{2} + {2}^{2} + \cdots + {\left( n - 1\right) }^{2}}\right\rbrack
+\]
+
+\[
+= \frac{1}{{n}^{3}} \cdot \frac{n\left( {n - 1}\right) \left( {{2n} - 1}\right) }{6}
+\]
+
+\[
+= \frac{1}{6}\left( {1 - \frac{1}{n}}\right) \left( {2 - \frac{1}{n}}\right) \text{.}
+\]
+
+由此得到
+
+\[
+S = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x} = \mathop{\lim }\limits_{{n \rightarrow \infty }}\frac{1}{6}\left( {1 - \frac{1}{n}}\right) \left( {2 - \frac{1}{n}}\right) = \frac{1}{3}.
+\]
+
+问题 2 求变速直线运动的路程.
+
+设一物体沿直线运动,它的速度 \(v\) 是时间 \(t\) 的函数 \(v\left( t\right)\) , 求物体从时刻 \(t = a\) 到 \(t = b\) 这段时间所经过的路程 \(s\) .
+
+我们知道, 匀速直线运动的路程公式是
+
+路程 \(=\) 速度 \(\times\) 时间.
+
+现在研究的是变速直线运动, 即速度是随时间的变化而变化的, 因此不能直接用这公式计算路程. 为了计算变速直线运动的路程, 将时间区间(即时间间隔)分割成许多小区间, 当时间区间很短时, 速度变化很小, 可以认为在同一个时间区间内速度是不变的, 这样在这很短的一段时间内可以用匀速运动公式计算小区间内路程的近似值, 把这些小区间内路程的近似值加起来, 得到所求路程的近似值, 当分割无限变细时, 这个近似值的极限就是所求的路程.
+
+我们以自由落体运动为例, 采用上述的方法和步骤, 求物体在给定的时间内下落的距离.
+
+例 2 已知自由落体的运动速度 \(v = {gt}\) ( \(g\) 是常数),求在时间区间 \(\left\lbrack {0,t}\right\rbrack\) 内,物体由点 0 下落的距离 \(\varepsilon\) .
+
+解: (1) 将时间区间 \(\left\lbrack {0,t}\right\rbrack\) 分成 \(n\) 等份.
+
+用分点
+
+\[
+0 = {t}_{0} < {t}_{1} < \cdots < {t}_{i - 1} < {t}_{i} < \cdots < {t}_{n} = t
+\]
+
+把时间 \(\left\lbrack {0,t}\right\rbrack\) 等分成 \(n\) 个小区间
+
+\[
+\left\lbrack {0,\frac{t}{n}}\right\rbrack ,\left\lbrack {\frac{t}{n},\frac{2t}{n}}\right\rbrack ,\cdots ,\left\lbrack {\frac{\left( {i - 1}\right) t}{n},\frac{it}{n}}\right\rbrack ,\cdots ,\left\lbrack {\frac{\left( {n - 1}\right) t}{n},\frac{nt}{n}}\right\rbrack
+\]
+
+每个小区间所表示的时间为 \({\Delta t} = \frac{it}{n} - \frac{\left( {i - 1}\right) t}{n} = \frac{t}{n}\) .
+
+在各小区间物体下落的距离记作
+
+\[
+\Delta {s}_{1},\Delta {s}_{2},\cdots \cdots ,\Delta {s}_{n}.
+\]
+
+（2）在每个小区间上以匀速运动的路程近似代替变速运动的路程.
+
+在小区间 \(\left\lbrack {\frac{i - 1}{n}t,\frac{i}{n}t}\right\rbrack\) 上任取一时刻 \({\xi }_{i}\left( {i = 1,2,\cdots ,n}\right)\) ; 为了计算方便,取 \({\xi }_{i}\) 为小区间的左端点,用时刻 \({\xi }_{i}\) 的速度 \(v\left( {\xi }_{i}\right) = g \cdot \frac{\left( {i - 1}\right) t}{n}\) 近似代替第 \(i\) 个小区间上的速度,这样利用匀速运动的路程公式,每个小区间上自由落体在 \({\Delta t} = \frac{t}{n}\) 内所经过的距离, 可以近似地表示为
+
+\[
+\Delta {s}_{i} \approx v\left( {\xi }_{i}\right) {\Delta t} = g \cdot \left( {\frac{i - 1}{n} \cdot t}\right) \cdot \frac{t}{n}.
+\]
+
+\[
+\left( {i = 1,2,\cdots ,n}\right)
+\]
+
+(3) 取和.
+
+因为每个小区间上自由落体运动的距离可用该区间匀速直线运动的路程近似代替,所以在 \(\left\lbrack {0,t}\right\rbrack\) 内落体运动的距离 \(s\) , 就可以用这同一物体分别在 \(n\) 个小区间上作 \(n\) 个匀速直线运动的路程的和近似代替, 即
+
+\[
+s = \mathop{\sum }\limits_{{i = 1}}^{n}\Delta {s}_{i} \approx \mathop{\sum }\limits_{{i = 1}}^{n}v\left( {\xi }_{i}\right) {\Delta t} = \mathop{\sum }\limits_{{i = 1}}^{n}g \cdot \frac{\left( {i - 1}\right) t}{n} \cdot \frac{t}{n}. \tag{II}
+\]
+
+（4）求和式(II)的极限.
+
+当所分时间区间愈短,即 \({\Delta t} = \frac{t}{n}\) 愈小时,和式(II)的值就愈接近 \(s\) . 因此,当 \(n \rightarrow \infty\) ,即 \({\Delta t} = \frac{t}{n} \rightarrow 0\) 时,和式(II) 的极限,就是所求的自由落体运动在时间 \(\left\lbrack {0,t}\right\rbrack\) 内所经过的距离, 因为
+
+\[
+\mathop{\sum }\limits_{{i = 1}}^{n}g \cdot \frac{\left( {i - 1}\right) t}{n} \cdot \frac{t}{n}
+\]
+
+\[
+= \frac{g{t}^{2}}{{n}^{2}}\mathop{\sum }\limits_{{i = 1}}^{n}\left( {i - 1}\right)
+\]
+
+\[
+= \frac{g{t}^{2}}{{n}^{2}}\left\lbrack {0 + 1 + 2 + \cdots + \left( {n - 1}\right) }\right\rbrack
+\]
+
+\[
+= \frac{g{t}^{2}}{{n}^{2}}\left\lbrack \frac{n\left( {n - 1}\right) }{2}\right\rbrack
+\]
+
+\[
+= \frac{g{t}^{2}}{2}\left( {1 - \frac{1}{n}}\right)
+\]
+
+由此得到
+
+\[
+s = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}v\left( {\xi }_{i}\right) {\Delta t}
+\]
+
+\[
+= \mathop{\lim }\limits_{{n \rightarrow \infty }}\frac{g{t}^{2}}{2}\left( {1 - \frac{1}{n}}\right)
+\]
+
+\[
+= \frac{1}{2}g{t}^{2}
+\]
+
+\begin{itemize}
+\item 218 ,
+\end{itemize}
+
+上面两个实际问题, 一个是求曲边梯形面积, 一个是求变速直线运动的路程, 虽然实际意义不同, 但是解决问题的方法和计算步骤是完全相同的, 最后都归结为求一个连续函数在某一闭区间上的和式的极限问题:
+
+曲边梯形的面积 \(\;S = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x}\) ;
+
+变速直线运动的路程 \(s = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}v\left( {\xi }_{i}\right) {\Delta t}\) .
+
+类似的实际问题很多, 都可以归结为求这种和式的极限. 因此, 我们抛开这些问题的具体意义, 抽象出解决这类问题的一般思想, 给出定积分的概念.
+
+设函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上连续,用分点
+
+\[
+a = {x}_{0} < {x}_{1} < \cdots < {x}_{i - 1} < {x}_{i} < \cdots < {x}_{n} = b
+\]
+
+把区间 \(\left\lbrack {a,b}\right\rbrack\) 等分成 \(n\) 个小区间,在每个小区间 \(\left\lbrack {{x}_{i - 1},{x}_{i}}\right\rbrack\) 上取任一点 \({\xi }_{i}\left( {i = 1,2,\cdots ,n}\right)\) ,作和式
+
+\[
+{I}_{n} = \mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x}\text{ (其中 }{\Delta x}\text{ 为小区间长度),}
+\]
+
+我们把 \(n \rightarrow \infty\) 即 \({\Delta x} \rightarrow 0\) 时,和式 \({I}_{n}\) 的极限叫做函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上的定积分,记作
+
+\[
+{\int }_{a}^{b}f\left( x\right) {dx}
+\]
+
+即
+
+\[
+{\int }_{a}^{b}f\left( x\right) {dx} = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x}.
+\]
+
+这里, \(a\) 与 \(b\) 分别叫做积分下限与积分上限,区间 \(\left\lbrack {a,b}\right\rbrack\) 叫做积分区间,函数 \(f\left( x\right)\) 叫做被积函数, \(x\) 叫做积分变量, \(f\left( x\right) {dx}\) 叫做被积式.
+
+根据定积分的定义, 就可以说:
+
+曲边梯形的面积 \(S\) 等于其曲边所对应的函数 \(y = f\left( x\right)\) 在底边所在的区间 \(\left\lbrack {a,b}\right\rbrack\) 上的定积分,即
+
+\[
+S = {\int }_{a}^{b}f\left( x\right) {dx}.
+\]
+
+于是例 1 的结果可写为
+
+\[
+s = {\int }_{0}^{1}f\left( x\right) {dx} = {\int }_{0}^{1}{x}^{2}{dx} = \frac{1}{3}.
+\]
+
+物体作变速直线运动所经过的路程 \(s\) 等于其速度函数 \(v = v\left( t\right)\) 在时间区间 \(\left\lbrack {a,b}\right\rbrack\) 上的定积分,即
+
+\[
+s = {\int }_{a}^{b}v\left( t\right) {dt}
+\]
+
+于是例 2 的结果可写为
+
+\[
+s = {\int }_{0}^{t}v\left( t\right) {dt} = {\int }_{0}^{t}{gtdt} = \frac{1}{2}g{t}^{2}.
+\]
+
+定积分有下列三个主要性质:
+
+1. 被积函数的常数因子可以提到积分号前面, 即
+
+\[
+{\int }_{a}^{b}{kf}\left( x\right) {dx} = k{\int }_{a}^{b}f\left( x\right) {dx}\;\left( {k\text{ 为常数 }}\right) .
+\]
+
+证明: 由定义可得
+
+\[
+{\int }_{a}^{b}{kf}\left( x\right) {dx} = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}{kf}\left( {\xi }_{i}\right) {\Delta x}
+\]
+
+\[
+= \mathop{\lim }\limits_{{n \rightarrow \infty }}k\mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x}
+\]
+
+\[
+= k\mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x}
+\]
+
+\[
+= k{\int }_{a}^{b}f\left( x\right) {dx}
+\]
+
+即
+
+\[
+{\int }_{a}^{b}{kf}\left( x\right) {dx} = k{\int }_{a}^{b}f\left( x\right) {dx}.
+\]
+
+2. 两个函数的和 (或差) 在 \(\left\lbrack {a,b}\right\rbrack\) 上的定积分,等于这两个函数在 \(\left\lbrack {\mathbf{a},\mathbf{b}}\right\rbrack\) 上的定积分的和(或差),即
+
+\[
+{\int }_{a}^{b}\left\lbrack {f\left( x\right) \pm g\left( x\right) }\right\rbrack {dx} = {\int }_{a}^{b}f\left( x\right) {dx} \pm {\int }_{a}^{b}g\left( x\right) {dx}.
+\]
+
+证明: 由定义可得
+
+\[
+{\int }_{a}^{b}\left\lbrack {f\left( x\right) \pm g\left( x\right) }\right\rbrack {dx} = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}\left\lbrack {f\left( {\xi }_{i}\right) \pm g\left( {\xi }_{i}\right) }\right\rbrack {\Delta x}
+\]
+
+\[
+= \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x} \pm \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}g\left( {\xi }_{i}\right) {\Delta x}
+\]
+
+\[
+= {\int }_{a}^{b}f\left( x\right) {dx} \pm {\int }_{a}^{b}g\left( x\right) {dx}
+\]
+
+即 \(\;{\int }_{a}^{b}\left\lbrack {f\left( x\right) \pm g\left( x\right) }\right\rbrack {dx} = {\int }_{a}^{b}f\left( x\right) {dx} \pm {\int }_{a}^{b}g\left( x\right) {dx}\) .
+
+3. 如果将区间 \(\left\lbrack {a,b}\right\rbrack\) 分成两个区间 \(\left\lbrack {a,c}\right\rbrack\) 及 \(\left\lbrack {c,b}\right\rbrack\) (其中 \(a < c < b\) ),那么
+
+\[
+{\int }_{a}^{b}f\left( x\right) {dx}
+\]
+
+\[
+= {\int }_{a}^{c}f\left( x\right) {dx} + {\int }_{c}^{b}f\left( x\right) {dx}.
+\]
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_224_842112.jpg}
+\end{center}
+
+定积分的性质 3, 可以用图 5-5
+
+直观地表示出来,即 \(i = 1,1,1,1,1,1,1,1,1,1,5 - 5\)
+
+\[
+{S}_{\text{曲边梯形 }{AabB}} = {S}_{\text{曲边梯形 }{AacC}} + {S}_{\text{曲边梯形 }{CcbB}}\text{。}
+\]
+
+这个性质的证明从略.
+
+\begin{problemset}[练习]
+
+\item 用定积分定义求由 \(y = x,x = 1,x = 2,y = 0\) 围成的图形的面积。
+
+\item 将由 \(y = \sin x,x = 0,x = \frac{\pi }{2},y = 0\) 围成图形的面积写成定积分的形式.
+
+\end{problemset}
+
+\section{微积分基本公式}
+
+从上节我们看到, 根据定义求定积分, 要计算一个和式的极限, 这往往是比较困难的. 下面, 我们用求变速直线运动的路程的例子, 来研究计算定积分的新方法.
+
+设物体沿直线运动,速度为 \(v\left( t\right)\) ,求从时刻 \(t = a\) 到 \(t = b\) 这段时间所经过的路程 \(s\) .
+
+由定积分定义, 物体所经过的路程为
+
+\[
+s = {\int }_{a}^{b}v\left( t\right) {dt}
+\]
+
+\begin{center}
+\includegraphics[max width=0.7\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_225_134815.jpg}
+\end{center}
+
+图 5-6
+
+另一方面,如图 5-6, \(t = a\) 时,路程为 \(s\left( a\right) ;t = b\) 时,路程为 \(s\left( b\right)\) . 由图中可以看出,从时刻 \(t = a\) 到 \(t = b\) 这段时间物体所经过的路程
+
+\[
+s = s\left( b\right) - s\left( a\right) .
+\]
+
+由此得到
+
+\[
+{\int }_{a}^{b}v\left( t\right) {dt} = s\left( b\right) - s\left( a\right) .
+\]
+
+我们又知道,路程函数 \(s\left( t\right)\) 与速度函数 \(v\left( t\right)\) 有下面的关系:
+
+\[
+{s}^{\prime }\left( t\right) = v\left( t\right)
+\]
+
+即 \(s\left( t\right)\) 是 \(v\left( t\right)\) 的一个原函数. 因此,由上式可知,函数 \(v\left( t\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上的定积分,等于它的一个原函数 \(s\left( t\right)\) 在积分区间 \(\left\lbrack {a,b}\right\rbrack\) 上的改变量 \(s\left( b\right) - s\left( a\right)\) .
+
+一般地, 有下面的定理:
+
+定理 设 \(f\left( x\right)\) 是区间 \(\left\lbrack {a,b}\right\rbrack\) 上的连续函数, \(F\left( x\right)\) 是函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上的任一原函数,即 \({F}^{\prime }\left( x\right) = f\left( x\right)\) ,则
+
+\[
+{\int }_{a}^{b}f\left( x\right) {dx} = F\left( b\right) - F\left( a\right) .
+\]
+
+证明: 用分点
+
+\[
+a = {x}_{0} < {x}_{1} < \cdots < {x}_{i - 1} < {x}_{i} < \cdots < {x}_{n} = b
+\]
+
+将区间 \(\left\lbrack {a,b}\right\rbrack\) 分为 \(n\) 等份,每个小区间长度为 \({\Delta x} = \frac{b - a}{n}\) . 相应的函数 \(F\left( x\right)\) 的总改变量 \(F\left( b\right) - F\left( a\right)\) 可分为 \(n\) 个部分改变量的和, 即
+
+\[
+F\left( b\right) - F\left( a\right) = F\left( {x}_{n}\right) - F\left( {x}_{0}\right)
+\]
+
+\[
+= \left\lbrack {F\left( {x}_{n}\right) - F\left( {x}_{n - 1}\right) }\right\rbrack
+\]
+
+\[
++ \left\lbrack {F\left( {x}_{n - 1}\right) - F\left( {x}_{n - 2}\right) }\right\rbrack + \cdots
+\]
+
+\[
++ \left\lbrack {F\left( {x}_{i}\right) - F\left( {x}_{i - 1}\right) }\right\rbrack + \cdots
+\]
+
+\[
++ \left\lbrack {F\left( {x}_{1}\right) - F\left( {x}_{0}\right) }\right\rbrack
+\]
+
+\[
+= \mathop{\sum }\limits_{{i = 1}}^{n}\left\lbrack {F\left( {x}_{i}\right) - F\left( {x}_{i - 1}\right) }\right\rbrack \text{.} \tag{1}
+\]
+
+根据拉格朗日中值定理,在每个小区间 \(\left\lbrack {{x}_{i - 1},{x}_{i}}\right\rbrack\) 内一定存在一点 \({\xi }_{i}\) ,使得
+
+\[
+F\left( {x}_{i}\right) - F\left( {x}_{i - 1}\right) = f\left( {\xi }_{i}\right) {\Delta x}. \tag{2}
+\]
+
+将 \(\left( 2\right)\) 式代入 \(\left( 1\right)\) 式,从而
+
+\[
+F\left( b\right) - F\left( a\right) = \mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x}.
+\]
+
+当 \(n \rightarrow \infty\) 时,根据定积分的定义,得
+
+\[
+F\left( b\right) - F\left( a\right) = {\int }_{a}^{b}f\left( x\right) {dx}.
+\]
+
+这个公式叫做微积分基本公式, 又叫做牛顿-莱布尼茨* 公式. 它表示了定积分与不定积分 (或原函数) 之间的关系, 使我们可以借助求原函数来计算定积分, 就是说, 连续函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上的定积分 \({\int }_{a}^{b}f\left( x\right) {dx}\) ,等于函数 \(f\left( x\right)\) 的任一原函数 \(F\left( x\right)\) 在积分区间 \(\left\lbrack {a,b}\right\rbrack\) 上的改变量 \(F\left( b\right) - F\left( a\right)\) .
+
+通常地,原函数在区间 \(\left\lbrack {a,b}\right\rbrack\) 的改变量 \(F\left( b\right) - F\left( a\right)\) 简记作 \({\left. F\left( x\right) \right| }_{a}^{b}\) ,因此,微积分基本公式可以写成下面的形式:
+
+* 牛顿(Isaac Newton, 1642-1727 年), 英国物理学家、数学家. 莱布尼茨 (Gottfried Wilhelm Leibniz, 1646-1716 年), 德国数学家。
+
+\[
+{\int }_{a}^{b}f\left( x\right) {dx} = {\left. F\left( x\right) \right| }_{a}^{b} = F\left( b\right) - F\left( a\right) .
+\]
+
+注意 在计算定积分时,只写 \(f\left( x\right)\) 的一个原函数 \(F\left( x\right)\) , 不需要再加上任意常数 \(C\) ,这是因为
+
+\[
+{\left. \left\lbrack F\left( x\right) + C\right\rbrack \right| }_{a}^{b} = \left\lbrack {F\left( b\right) + C}\right\rbrack - \left\lbrack {F\left( a\right) + C}\right\rbrack
+\]
+
+\[
+= F\left( b\right) - F\left( a\right) \text{.}
+\]
+
+例 1 计算定积分:
+
+(1) \({\int }_{0}^{1}{x}^{2}{dx}\) (2) \({\int }_{1}^{2}\left( {{2x} + \frac{1}{x}}\right) {dx}\) .
+
+解: (1) 因为 \(\frac{1}{3}{x}^{3}\) 是 \({x}^{2}\) 的一个原函数,由微积分基本公式, 有
+
+\[
+{\int }_{0}^{1}{x}^{2}{dx} = {\left. \frac{1}{3}{x}^{3}\right| }_{0}^{1} = \frac{1}{3} \cdot {1}^{3} - \frac{1}{3} \cdot {0}^{3} = \frac{1}{3}.
+\]
+
+这个结果与上节例 1 按照定积分定义计算的结果相同.
+
+(2) \({\int }_{1}^{2}\left( {{2x} + \frac{1}{x}}\right) {dx} = {\int }_{1}^{2}{2xdx} + {\int }_{1}^{2}\frac{1}{x}{dx}\)
+
+\[
+= {\left. {x}^{2}\right| }_{1}^{2} + {\left. \ln x\right| }_{1}^{2}
+\]
+
+\[
+= \left( {4 - 1}\right) + \left( {\ln 2 - \ln 1}\right)
+\]
+
+\[
+= 3 + \ln 2\text{. }
+\]
+
+例 2 计算定积分:
+
+(1) \({\int }_{0}^{\frac{\pi }{2}}{\sin }^{2}\frac{x}{2}{dx}\) (2) \({\int }_{0}^{a}\frac{1}{{a}^{2} + {x}^{2}}{dx}\) .
+
+解: (1) \({\int }_{0}^{\frac{\pi }{2}}{\sin }^{2}\frac{x}{2}{dx} = {\int }_{0}^{\frac{\pi }{2}}\frac{1}{2}\left( {1 - \cos x}\right) {dx}\)
+
+\[
+= \frac{1}{2}{\int }_{0}^{\frac{\pi }{2}}\left( {1 - \cos x}\right) {dx}
+\]
+
+\[
+= {\left. \frac{1}{2}\left( x - \sin x\right) \right| }_{0}^{\frac{\pi }{2}}
+\]
+
+\[
+= \frac{\pi }{4} - \frac{1}{2}
+\]
+
+(2) \({\int }_{0}^{a}\frac{1}{{a}^{2} + {x}^{2}}{dx} = {\left. \frac{1}{a}\operatorname{arctg}\frac{x}{a}\right| }_{0}^{a}\)
+
+\[
+= \frac{1}{a}\operatorname{arctg}1 - \frac{1}{a}\operatorname{arctg}0
+\]
+
+\[
+= \frac{1}{a} \cdot \frac{\pi }{4} - 0
+\]
+
+\[
+= \frac{\pi }{4a}
+\]
+
+例 3 计算 \({\int }_{0}^{1}x\sqrt{1 + {x}^{2}}{dx}\) .
+
+解: \(\because \int x\sqrt{1 + {x}^{2}}{dx} = \frac{1}{2}\int {\left( 1 + {x}^{2}\right) }^{\frac{1}{2}}d\left( {1 + {x}^{2}}\right)\)
+
+\[
+= \frac{1}{2} \cdot \frac{2}{3}{\left( 1 + {x}^{2}\right) }^{\frac{3}{2}} + C
+\]
+
+\[
+= \frac{1}{3}{\left( 1 + {x}^{2}\right) }^{\frac{3}{2}} + C\text{.}
+\]
+
+\[
+\therefore \;{\int }_{0}^{1}x\sqrt{1 + {x}^{2}}{dx} = {\left. \frac{1}{3}{\left( 1 + {x}^{2}\right) }^{\frac{3}{2}}\right| }_{0}^{1}
+\]
+
+\[
+= \frac{2\sqrt{2} - 1}{3}
+\]
+
+例 4 求 \({\int }_{0}^{a}\sqrt{{a}^{2} - {x}^{2}}{dx}\) .
+
+解: 由 4.6 节例 8 有
+
+\[
+\int \sqrt{{a}^{2} - {x}^{2}}{dx} = \frac{{a}^{2}}{2}\arcsin \frac{x}{a} + \frac{x}{2}\sqrt{{a}^{2} - {x}^{2}} + C,
+\]
+
+因此
+
+\[
+{\int }_{0}^{a}\sqrt{{a}^{2} - {x}^{2}}{dx} = {\left. \left( \frac{{a}^{2}}{2}\arcsin \frac{x}{a} + \frac{x}{2}\sqrt{{a}^{2} - {x}^{2}}\right) \right| }_{0}^{a}
+\]
+
+\[
+= \frac{{a}^{2}}{2}\arcsin 1 - 0
+\]
+
+\[
+= \frac{{a}^{2}}{2} \cdot \frac{\pi }{2}
+\]
+
+\[
+= \frac{1}{4}\pi {a}^{2}
+\]
+
+\begin{problemset}[练习]
+
+\item 计算定积分:
+
+(1) \({\int }_{0}^{5}{2xdx}\) (2) \({\int }_{0}^{2}\left( {{x}^{2} - {2x}}\right) {dx}\)
+
+(3) \({\int }_{1}^{2}\left( {\sqrt{x} - 1}\right) {dx}\) (4) \({\int }_{0}^{2}\left( {4 - {2x}}\right) \left( {4 - {x}^{2}}\right) {dx}\)
+
+(5) \({\int }_{1}^{2}{\left( x - \frac{1}{x}\right) }^{2}{dx}\) (6) \({\int }_{1}^{2}\frac{{x}^{2} + {2x} - 3}{x}{dx}\)
+
+(7) \({\int }_{0}^{\pi }\cos {xdx}\) (8) \({\int }_{0}^{\frac{\pi }{2}}\sin {xdx}\)
+
+(9) \({\int }_{1}^{2}\left( {{e}^{x} + \frac{1}{x}}\right) {dx}\) (10) \({\int }_{0}^{\frac{1}{2}}\frac{1}{\sqrt{1 - {x}^{2}}}{dx}\) .
+
+\end{problemset}
+
+\begin{problemset}[习 题 十 五]
+
+\item 计算定积分:
+
+(1) \({\int }_{-1}^{3}\left( {3{x}^{2} - {2x} + 1}\right) {dx}\) (2) \({\int }_{1}^{2}\frac{1}{{x}^{2}}{dx}\)
+
+(3) \({\int }_{2}^{3}{\left( \sqrt{x} + \frac{1}{\sqrt{x}}\right) }^{2}{dx}\) (4) \({\int }_{0}^{\frac{\pi }{2}}\left( {{3x} + \sin x}\right) {dx}\) ;
+
+(5) \({\int }_{0}^{\frac{\pi }{2}}\cos {xdx}\) (6) \({\int }_{\frac{\pi }{6}}^{\frac{\pi }{4}}\cos {2xdx}\)
+
+(7) \({\int }_{0}^{\frac{\pi }{6}}\frac{1}{{\cos }^{2}{2x}}{dx}\) (8) \({\int }_{\frac{\pi }{4}}^{\frac{\pi }{3}}{\operatorname{ctg}}^{2}{xdx}\)
+
+(9) \({\int }_{0}^{1}\frac{1}{1 + {x}^{2}}{dx}\) (10) \({\int }_{0}^{2}\frac{1}{4 + {x}^{2}}{dx}\)
+
+(11) \({\int }_{-\frac{1}{2}}^{\frac{1}{2}}\frac{1}{\sqrt{1 - {x}^{2}}}{dx}\) (12) \({\int }_{-1}^{1}\frac{1}{\sqrt{5 - {4x}}}{dx}\) ;
+
+(13) \({\int }_{0}^{1}\frac{x}{{\left( 1 + {x}^{2}\right) }^{3}}{dx}\) (14) \({\int }_{1}^{e}\frac{2 + \ln x}{x}{dx}\) .
+
+\end{problemset}
+
+\section*{定积分的应用}
+
+\section{平面图形的面积}
+
+我们已经知道,由三条直线 \(x = a,x = b\left( {a < b}\right) ,x\) 轴及一条曲线 \(y = f\left( x\right)\) 围成的曲边梯形的面积为
+
+\[
+S = {\int }_{a}^{b}f\left( x\right) {dx}
+\]
+
+这里 \(f\left( x\right) \geq 0\) (图 5-7).
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_232_528761.jpg}
+\end{center}
+
+图 5-7
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_232_995714.jpg}
+\end{center}
+
+图 5-8
+
+如果图形由曲线 \({y}_{1} = {f}_{1}\left( x\right) ,{y}_{2} = {f}_{2}\left( x\right)\) (不妨设 \({f}_{1}\left( x\right) \geq\) \(\left. {{f}_{2}\left( x\right) \geq 0}\right)\) ,及直线 \(x = a,x = b\left( {a < b}\right)\) 围成 (图 5-8),那么所求面积为
+
+\[
+S = {\int }_{a}^{b}{f}_{1}\left( x\right) {dx} - {\int }_{a}^{b}{f}_{2}\left( x\right) {dx}.
+\]
+
+例 1 计算曲线 \(y = {x}^{2} - {2x} + 3\) 与直线 \(y = x + 3\) 所围图形的面积.
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_232_503568.jpg}
+\end{center}
+
+图 5-9
+
+解: 如图 5-9, 为了确定图形的范围, 先求出已知曲线与直线的交点的横坐标. 解方程组
+
+\[
+\left\{ \begin{array}{l} y = x + 3 \\ y = {x}^{2} - {2x} + 3 \end{array}\right.
+\]
+
+得出交点的横坐标为 \(x = 0\) 及 \(x = 3\) .
+
+从而所求图形的面积
+
+\[
+S = {\int }_{0}^{3}\left( {x + 3}\right) {dx} - {\int }_{0}^{3}\left( {{x}^{2} - {2x} + 3}\right) {dx}
+\]
+
+\[
+= {\int }_{0}^{3}\left\lbrack {\left( {x + 3}\right) - \left( {{x}^{2} - {2x} + 3}\right) }\right\rbrack {dx}
+\]
+
+\[
+= {\int }_{0}^{3}\left( {-{x}^{2} + {3x}}\right) {dx}
+\]
+
+\[
+= {\left. \left( -\frac{1}{3}{x}^{3} + \frac{3}{2}{x}^{2}\right) \right| }_{0}^{3}
+\]
+
+\[
+= \frac{9}{2}\text{. }
+\]
+
+例 2 求椭圆 \(\frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}} = 1\) 的面积.
+
+解: 如图 5-10, 这个椭圆关于坐标轴对称, 所以只须求出椭圆在第一象限的面积
+
+\[
+{S}_{1} = {\int }_{0}^{a}{ydx}
+\]
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_233_497776.jpg}
+\end{center}
+
+图 5-10
+
+便可得出椭圆面积:
+
+\[
+S = 4{S}_{1}
+\]
+
+由椭圆方程 \(\frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}} = 1\) 得 \(y = \pm \frac{b}{a}\sqrt{{a}^{2} - {x}^{2}}\) . 因为我们只
+
+考虑第一象限,所以取 \(y = \frac{b}{a}\sqrt{{a}^{2} - {x}^{2}}\) . 于是
+
+\[
+S = 4{\int }_{0}^{a}\frac{b}{a}\sqrt{{a}^{2} - {x}^{2}}{dx}
+\]
+
+\[
+= 4 \cdot \frac{b}{a}{\int }_{0}^{a}\sqrt{{a}^{2} - {x}^{2}}{dx}
+\]
+
+\[
+= {\left. 4 \cdot \frac{b}{a}\left( \frac{{a}^{2}}{2}\arcsin \frac{x}{a} + \frac{x}{2}\sqrt{{a}^{2} - {x}^{2}}\right) \right| }_{0}^{a}
+\]
+
+\[
+= 4 \cdot \frac{b}{a}\left( {\frac{{a}^{2}}{2}\arcsin 1 - 0}\right)
+\]
+
+\[
+= 4 \cdot \frac{b}{a} \cdot \frac{{a}^{2}}{2} \cdot \frac{\pi }{2} = {\pi ab}.
+\]
+
+当 \(a = b = r\) 时,上式就成为圆的面积公式
+
+\[
+S = \pi {r}^{2}
+\]
+
+其中 \(r\) 为圆的半径.
+
+例 3 计算曲线 \({y}^{2} = x,y = {x}^{2}\) 所围图形的面积.
+
+解: 如图 5-11, 为确定图形的范围, 首先求这两条曲线的交点横坐标. 解方程组
+
+\[
+\left\{ \begin{array}{l} {y}^{2} = x \\ y = {x}^{2} \end{array}\right.
+\]
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_234_594804.jpg}
+\end{center}
+
+图 5-11
+
+得出交点横坐标为 \(x = 0\) 及 \(z = 1\) .
+
+因此所求图形的面积
+
+\[
+S = {\int }_{0}^{1}\sqrt{x}{dx} - {\int }_{0}^{1}{x}^{2}{dx}
+\]
+
+\[
+= {\left. {\left. \frac{2}{3}{x}^{\frac{3}{2}}\right| }_{0}^{1} - \frac{1}{3}{x}^{3}\right| }_{0}^{1}
+\]
+
+\[
+= \frac{2}{3} - \frac{1}{3}
+\]
+
+\[
+= \frac{1}{3}\text{. }
+\]
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_234_549966.jpg}
+\end{center}
+
+图 5-12
+
+注意 1. 如果在区间 \(\lbrack a\) , \(b\rbrack\) 上 \(f\left( x\right) \leq 0\) (图 5-12),那么 \({\int }_{a}^{b}f\left( x\right) {dx} \leq 0\) ,这时曲边梯形的面积
+
+\[
+S = \left| {{\int }_{a}^{b}f\left( x\right) {dx}}\right| = - {\int }_{a}^{b}f\left( x\right) {dx}.
+\]
+
+2. 如果在区间 \(\left\lbrack {a,c}\right\rbrack\) 上 \(f\left( x\right) \leq 0\) ,在区间 \(\left\lbrack {c,b}\right\rbrack\) 上 \(f\left( x\right) \geq 0\) (图 5-13), 那么我们看到, 所求面积
+
+\[
+S = \left| {{\int }_{a}^{c}f\left( x\right) {dx}}\right| + {\int }_{c}^{b}f\left( x\right) {dx}.
+\]
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_235_691141.jpg}
+\end{center}
+
+图 5-13
+
+\begin{problemset}[练习]
+
+\item 求下列曲线围成的图形的面积:
+
+(1) \(y = {x}^{2},y = {2x} + 3\) .
+
+(2) \(y = 1 - {x}^{2},y = 0\) .
+
+(3) \(y = {e}^{x},x = 2,x = 4,y = 0\) .
+
+(4) \(y = \cos x,x = - \frac{\pi }{2},x = \frac{\pi }{2},y = 0\) .
+
+(5) \(y = {x}^{2},y = - {x}^{2} + 8\) .
+
+\end{problemset}
+
+\section{旋转体的体积}
+
+以前我们学过的圆柱、圆锥、圆台、球等几何体都是简单的旋转体. 旋转体就是一平面图形绕这平面内的一条直线旋转一周而成的几何体. 现在我们利用计算定积分的方法来计算它的体积.
+
+设旋转体是曲线 \(y = f\left( x\right)\) ,直线 \(x = a,x = b\) 以及 \(x\) 轴所
+
+围曲边梯形 \({AabB}\) 绕 \(x\) 轴旋转一周而成的 (图 5-14).
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_236_380755.jpg}
+\end{center}
+
+图 5-14
+
+我们仿照计算曲边梯形面积的方法,用 \(n - 1\) 个垂直于 \(x\) 轴的平面,把区间 \(\left\lbrack {a,b}\right\rbrack\) 等分成 \(n\) 个小区间 \(\left\lbrack {{x}_{i - 1},{x}_{i}}\right\rbrack ,(i = 1\) , \(2,\cdots ,n\) ,其中 \(\left. {{x}_{0} = a,{x}_{n} = b}\right)\) ,旋转体被分成 \(n\) 个厚度相同的薄片,每个薄片的厚度为 \({\Delta x} = \frac{b - a}{n}\) . 如果薄片很薄,可以把每个薄片近似地认为是小圆柱体, 它的底面半径可用区间上任一点 \({\xi }_{i}\) 的纵坐标 \(f\left( {\xi }_{i}\right)\) 来近似代替,它的高为薄片的厚度 \({\Delta x}\) \(= \frac{b - a}{n}\) . 这样,第 \(i\) 个小薄片的体积 \(\Delta {V}_{i}\) ,就可用同这个区间对应的小圆柱体的体积来近似代替, 即
+
+\[
+\Delta {V}_{i} \approx \pi {\left\lbrack f\left( {\xi }_{i}\right) \right\rbrack }^{2}{\Delta x}\;\left( {i = 1,2,\cdots ,n}\right) .
+\]
+
+所以, 整个旋转体的体积
+
+\[
+V \approx \mathop{\sum }\limits_{{i = 1}}^{n}\pi {\left\lbrack f\left( {\xi }_{i}\right) \right\rbrack }^{2}{\Delta x}.
+\]
+
+当 \(n \rightarrow \infty\) ,即 \({\Delta x} \rightarrow 0\) 时,上式右边的极限,就是旋转体的体积 \(V\) ,即
+
+\[
+V = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}\pi {\left\lbrack f\left( {\xi }_{i}\right) \right\rbrack }^{2}{\Delta x}.
+\]
+
+根据定积分定义, 便得到旋转体的体积公式
+
+\[
+V = \pi {\int }_{a}^{b}{\left\lbrack f\left( x\right) \right\rbrack }^{2}{dx}.
+\]
+
+例 1 用积分法推出两底面半径分别为 \(R,r\) ,高为 \(H\) 的圆台的体积计算公式.
+
+解: 取坐标系如图 5-15, 圆台母线 \({AB}\) 过点 \(A\left( {0,r}\right)\) , \(B\left( {H,R}\right)\) ,因此,母线 \({AB}\) 的方程为
+
+\[
+\frac{y - r}{x - 0} = \frac{R - r}{H - 0}
+\]
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_237_214548.jpg}
+\end{center}
+
+图 5-15
+
+即
+
+\[
+y = \frac{R - r}{H}x + r\;\left( {0 \leq x \leq H}\right) .
+\]
+
+根据旋转体体积公式得出圆台的体积
+
+\[
+V = \pi {\int }_{0}^{H}{\left( \frac{R - r}{H}x + r\right) }^{2}{dx}
+\]
+
+\[
+= {\left. \frac{\pi H}{3\left( {R - r}\right) }{\left( \frac{R - r}{H}x + r\right) }^{3}\right| }_{0}^{H}
+\]
+
+\[
+= \frac{\pi H}{3\left( {R - r}\right) }\left( {{R}^{3} - {r}^{3}}\right)
+\]
+
+\[
+= \frac{\pi H}{3}\left( {{R}^{2} + {Rr} + {r}^{2}}\right) \text{.}
+\]
+
+如果其中一个底面的半径 \(r = 0\) ,则圆台就变成了圆锥, 其体积公式为
+
+\[
+V = \frac{\pi {R}^{2}H}{3}
+\]
+
+例 2 求椭圆 \(\frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}} = 1\) 绕 \(x\) 轴旋转而成的旋转体的体积.
+
+解: 如图 5-16,因为 \({y}^{2} = \frac{{b}^{2}}{{a}^{2}}\left( {{a}^{2} - {x}^{2}}\right)\) ,并且所求的体积 \(V\) 是曲边梯形 \({BOA}\) 绕 \(x\) 轴旋转一周所成旋转体的体积 \({V}_{1}\) 的 2 倍, 所以, 根据旋转体的体积公式, 有
+
+\[
+V = 2{V}_{1} = {2\pi }{\int }_{0}^{a}\frac{{b}^{2}}{{a}^{2}}\left( {{a}^{2} - {x}^{2}}\right) {dx}
+\]
+
+\[
+= {2\pi }\frac{{b}^{2}}{{a}^{2}}{\int }_{0}^{a}\left( {{a}^{2} - {x}^{2}}\right) {dx}
+\]
+
+\[
+= {\left. 2\pi \frac{{b}^{2}}{{a}^{2}}\left( {a}^{2}x - \frac{1}{3}{x}^{3}\right) \right| }_{0}^{a}
+\]
+
+\[
+= \frac{4}{3}{\pi a}{b}^{2}
+\]
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_238_905216.jpg}
+\end{center}
+
+图 5-16
+
+当 \(a = b = r\) 时,上式就成为球的体积公式
+
+\[
+{V}_{\text{球 }} = \frac{4}{3}\pi {r}^{3}
+\]
+
+其中 \(r\) 为球的半径.
+
+例 3 求圆 \({x}^{2} + {\left( y - b\right) }^{2} = {a}^{2}\left( {0 < a < b}\right)\) 绕 \(x\) 轴旋转所成的旋转体的体积.
+
+解: 如图 5-17, 圆的方程可以改写成
+
+\[
+y = b \pm \sqrt{{a}^{2} - {x}^{2}},
+\]
+
+其中,上半圆 \({MKN}\) 的方程是
+
+\[
+y = b + \sqrt{{a}^{2} - {x}^{2}}
+\]
+
+\begin{center}
+\includegraphics[max width=0.6\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_239_464014.jpg}
+\end{center}
+
+图 5-17
+
+下半圆 \({MLN}\) 的方程是
+
+\[
+y = b - \sqrt{{a}^{2} - {x}^{2}}.
+\]
+
+所求的体积,是这两个半圆分别与直线 \(x = \pm a\) 及 \(x\) 轴围成的曲边梯形绕 \(x\) 轴旋转所成的两个旋转体的体积的差,因此
+
+\[
+V = \pi {\int }_{-a}^{a}{\left( b + \sqrt{{a}^{2} - {x}^{2}}\right) }^{2}{dx} - \pi {\int }_{-a}^{a}{\left( b - \sqrt{{a}^{2} - {x}^{2}}\right) }^{2}{dx}
+\]
+
+\[
+= {4\pi b}{\int }_{-a}^{a}\sqrt{{a}^{2} - {x}^{2}}{dx}
+\]
+
+\[
+= {\left. 4\pi b\left( \frac{{a}^{2}}{2}\arcsin \frac{x}{a} + \frac{x}{2}\sqrt{{a}^{2} - {x}^{2}}\right) \right| }_{-a}^{a}
+\]
+
+\[
+= {2\pi b}{a}^{2}\left( {\arcsin 1 + \arcsin 1}\right)
+\]
+
+\[
+= 2{\pi }^{2}{a}^{2}b\text{. }
+\]
+
+\begin{problemset}[练习]
+
+\item 将直线 \(\frac{x}{2} + y = 1\) 及两条坐标轴围成的三角形绕 \(x\) 轴旋
+
+转, 利用定积分计算所得的圆锥体的体积.
+
+\item 求曲线 \({y}^{2} = {4x}\) ,直线 \(x = 0,x = 4\) 及 \(x\) 轴所围图形绕 \(x\) 轴旋转而成的旋转体的体积.
+
+\item 求曲线 \(y = \cos x\) 从 \(x = - \frac{\pi }{2}\) 到 \(x = \frac{\pi }{2}\) 的一段绕 \(x\) 轴旋转而成的旋转体的体积.
+
+\end{problemset}
+
+\section{*平面曲线的弧长}
+
+我们已经知道, 任一线段的长度, 可以直接度量求得, 任一已知半径和弧度或角度的圆弧的长度,可以用公式 \(l = {\alpha R}\) (或 \(\frac{n\pi }{180}R\) )求得. 但是,我们还不会求平面上任意一条曲线的弧长. 现在, 我们采用与求曲边梯形面积类似的方法来求曲线的弧长.
+
+设曲线 \({AB}\) 的方程为 \(y = f\left( x\right) \left( {a \leq x \leq b}\right)\) . 这里函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上可导,而且 \({f}^{\prime }\left( x\right)\) 连续.
+
+现在求曲线 \({AB}\) 的长 \(l\) (见图 5-18).
+
+（1）将 \(\overset{⏜}{AB}\) 分割为 \(n\) 段小弧.
+
+用 \(n - 1\) 个垂直于 \(x\) 轴的垂线,把区间 \(\left\lbrack {a,b}\right\rbrack\) 等分成 \(n\) 个小区间
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_240_926911.jpg}
+\end{center}
+
+图 5-18
+
+\(\left\lbrack {{x}_{i - 1},{x}_{i}}\right\rbrack \left( {i = 1,2,\cdots ,n\text{,其中 }{x}_{0} = a,{x}_{n} = b}\right)\) .
+
+每个小区间长度为
+
+\[
+{\Delta x} = \frac{b - a}{n}.
+\]
+
+平面曲线 \({AB}\) 被分成 \(n\) 段弧,连结每段弧的弦,得内接曲线 \({AB}\) 的折线 (如图 5-18 所示),第 \(i\) 个小区间上所对应的第 \(i\) 段弧 \({A}_{i - 1}{A}_{i}\) 两个端点坐标为
+
+\[
+{A}_{i - 1}\left( {{x}_{i - 1},f\left( {x}_{i - 1}\right) }\right) ,{A}_{i}\left( {{x}_{i},f\left( {x}_{i}\right) }\right) .
+\]
+
+根据两点间的距离公式,得折线第 \(i\) 段长
+
+\[
+\left| {{A}_{i - 1}{A}_{i}}\right| = \sqrt{{\left( {x}_{i} - {x}_{i - 1}\right) }^{2} + {\left\lbrack f\left( {x}_{i}\right) - f\left( {x}_{i - 1}\right) \right\rbrack }^{2}}
+\]
+
+\[
+\left( {i = 1,2,\cdots ,n}\right) \text{.}
+\]
+
+（2）用折线代替曲线.
+
+当小区间很小时,第 \(i\) 段弧 \({A}_{i - 1}{A}_{i}\) 的长就可以用第 \(i\) 段折线 \(\left| {{A}_{i - 1}{A}_{i}}\right|\) 的长近似代替,于是曲线 \({AB}\) 的长 \(l\) 的近似值
+
+\[
+{l}_{n} = \mathop{\sum }\limits_{{i = 1}}^{n}\sqrt{{\left( {x}_{i} - {x}_{i - 1}\right) }^{2} + {\left\lbrack f\left( {x}_{i}\right) - f\left( {x}_{i - 1}\right) \right\rbrack }^{2}}, \tag{1}
+\]
+
+由拉格朗日中值定理, 有
+
+\[
+f\left( {x}_{i}\right) - f\left( {x}_{i - 1}\right) = {f}^{\prime }\left( {\xi }_{i}\right) {\Delta x}\;\left( {{x}_{i - 1} < {\xi }_{i} < {x}_{i}}\right) ,
+\]
+
+其中
+
+\[
+{\Delta x} = {x}_{i} - {x}_{i - 1} = \frac{b - a}{n}.
+\]
+
+这时
+
+\[
+{l}_{n} = \mathop{\sum }\limits_{{i = 1}}^{n}\sqrt{{\left( \Delta x\right) }^{2} + {\left\lbrack {f}^{\prime }\left( {\xi }_{i}\right) \Delta x\right\rbrack }^{2}}
+\]
+
+\[
+= \mathop{\sum }\limits_{{i = 1}}^{n}\sqrt{1 + {\left\lbrack {f}^{\prime }\left( {\xi }_{i}\right) \right\rbrack }^{2}}{\Delta x}
+\]
+
+当 \(n \rightarrow \infty\) ,即 \({\Delta x} \rightarrow 0\) 时,折线长 \({l}_{n}\) 的极限,就是曲线 \({AB}\) 的长
+
+\(l\) ,即
+
+\[
+l = \mathop{\lim }\limits_{{n \rightarrow \infty }}{l}_{n} = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}\sqrt{1 + {\left\lbrack {f}^{\prime }\left( {\xi }_{i}\right) \right\rbrack }^{2}}{\Delta x}.
+\]
+
+根据定积分的定义, 便得到平面曲线的弧长公式:
+
+\[
+l = {\int }_{a}^{b}\sqrt{1 + {\left\lbrack {f}^{\prime }\left( x\right) \right\rbrack }^{2}}{dx}.
+\]
+
+例 1 已知圆的方程 \({x}^{2} + {y}^{2} = {R}^{2}\) ,求第一象限内端点横坐标 \(x = 0\) 到 \(x = b\left( {b < R}\right)\) 的弧 \({AB}\) 的长 \(l\) .
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_242_691071.jpg}
+\end{center}
+
+图 5-19
+
+解: 如图 5-19, 第一象限圆弧方程为
+
+\[
+y = \sqrt{{R}^{2} - {x}^{2}}
+\]
+
+于是
+
+\[
+{y}^{\prime } = - \frac{x}{\sqrt{{R}^{2} - {x}^{2}}}
+\]
+
+\[
+\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}} = \sqrt{1 + {\left( -\frac{x}{\sqrt{{R}^{2} - {x}^{2}}}\right) }^{2}} = \frac{R}{\sqrt{{R}^{2} - {x}^{2}}}.
+\]
+
+根据弧长公式,得弧 \({AB}\) 的长
+
+\[
+l = {\int }_{0}^{b}\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}}{dx}
+\]
+
+\[
+= {\int }_{0}^{b}\frac{R}{\sqrt{{R}^{2} - {x}^{2}}}{dx}
+\]
+
+\[
+= {\left. R\arcsin \frac{x}{R}\right| }_{0}^{b}
+\]
+
+\[
+= R\arcsin \frac{b}{R}
+\]
+
+例 2 已知悬链线方程为 \(y = \frac{a}{2}\left( {{e}^{\frac{x}{a}} + {e}^{-\frac{x}{a}}}\right)\) ,求端点横坐标从 \(x = 0\) 到 \(x = a\left( {a > 0}\right)\) 一段的弧长 \(l\) .
+
+\begin{center}
+\includegraphics[max width=0.3\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_243_219487.jpg}
+\end{center}
+
+图 5-20
+
+解: 如图 5-20.
+
+\[
+\because \;{y}^{\prime } = {\left\lbrack \frac{a}{2}\left( {e}^{\frac{x}{a}} + {e}^{-\frac{x}{a}}\right) \right\rbrack }^{\prime }
+\]
+
+\[
+= \frac{1}{2}\left( {{e}^{\frac{x}{a}} - {e}^{-\frac{x}{a}}}\right)
+\]
+
+\[
+\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}} = \sqrt{1 + \frac{1}{4}{\left( {e}^{\frac{x}{a}} - {e}^{-\frac{x}{a}}\right) }^{2}}
+\]
+
+\[
+= \frac{1}{2}\left( {{e}^{\frac{x}{a}} + {e}^{-\frac{x}{a}}}\right)
+\]
+
+\[
+l = {\int }_{0}^{a}\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}}{dx}
+\]
+
+\[
+= {\int }_{0}^{a}\frac{1}{2}\left( {{e}^{\frac{x}{a}} + {e}^{-\frac{x}{a}}}\right) {dx}
+\]
+
+\[
+= {\left. \frac{a}{2}\left( {e}^{\frac{x}{a}} - {e}^{-\frac{x}{a}}\right) \right| }_{0}^{a}
+\]
+
+\[
+= \frac{a}{2}\left( {e - \frac{1}{e}}\right)
+\]
+
+\begin{problemset}[练习]
+
+\item 求抛物线 \(y = \frac{1}{2}{x}^{2}\) 在端点横坐标 \(x = - 1\) 到 \(x = 1\) 之间的弧长。
+
+\item 求半立方抛物线 \(y = \frac{2}{3}{x}^{\frac{3}{2}}\) 在端点横坐标 \(x = 0\) 到 \(x = 8\) 之
+
+间的弧长。
+\end{problemset}
+
+\section{*旋转体的侧面积}
+
+设旋转体是由曲线 \(y = f\left( x\right)\) ,直线 \(x = a,x = b\) 以及 \(x\) 轴所围曲边梯形 \({AabB}\) 绕 \(x\) 轴旋转一周而成的(图 5-21(1)).
+
+用 \(n - 1\) 个垂直于 \(x\) 轴的平面把区间 \(\left\lbrack {a,b}\right\rbrack\) 等分成 \(n\) 个小区间 \(\left\lbrack {{x}_{i - 1},{x}_{i}}\right\rbrack ,\left( {i = 1,2,\cdots ,n\text{,其中}{x}_{0} = a,{x}_{n} = b}\right)\) ,旋转体被分成 \(n\) 个厚度相同的薄片,取第 \(i\) 片,它可以看作是曲线 \({MN}\) , 直线 \(x = {x}_{i - 1},x = {x}_{i}\) 及 \(x\) 轴所围小曲边梯形 \(M{x}_{i - 1}{x}_{i}N\) 绕 \(x\) 轴旋转一周而成的小旋转体,它的侧面积用 \(\Delta {S}_{i}\) 表示(图 5-21).
+
+\begin{center}
+\includegraphics[max width=0.9\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_244_731175.jpg}
+\end{center}
+
+图 5-21
+
+从图 5-21(2) 可以看出,当 \(n\) 充分大,即 \({\Delta x}\) 充分小时,弧 \({MN}\) 可近似地用弦 \({MN}\) 代替. 因此,由弧 \({MN}\) 绕 \(x\) 轴旋转而成的第 \(i\) 个小薄片的侧面积 \(\Delta {S}_{i}\) ,就可近似地用由弦 \({MN}\) 绕 \(x\) 轴旋转而成的小圆台的侧面积来代替. 这第 \(i\) 个小圆台上、下底面的半径分别为 \(f\left( {x}_{i - 1}\right)\) 与 \(f\left( {x}_{i}\right)\) ,母线 \({MN} = \sqrt{M{Q}^{2} + Q{N}^{2}}\) , 由图 5-21(2)可知其中的 \({MQ} = {\Delta x},{QN} = f\left( {x}_{1}\right) - f\left( {x}_{i - 1}\right)\) ,根据圆台的侧面积公式, 可得
+
+\[
+\Delta {S}_{i} \approx \pi \left\lbrack {f\left( {x}_{i - 1}\right) + f\left( {x}_{i}\right) }\right\rbrack \sqrt{{\left( \Delta x\right) }^{2} + {\left\lbrack f\left( {x}_{i}\right) - f\left( {x}_{i - 1}\right) \right\rbrack }^{2}}
+\]
+
+\[
+= \pi \left\lbrack {f\left( {x}_{i - 1}\right) + f\left( {x}_{i}\right) }\right\rbrack \sqrt{1 + {\left\lbrack \frac{f\left( {x}_{i}\right) - f\left( {x}_{i - 1}\right) }{\Delta x}\right\rbrack }^{2}} \cdot {\Delta x}.
+\]
+
+所以, 整个旋转体的侧面积
+
+\[
+S \approx \mathop{\sum }\limits_{{i = 1}}^{n}\pi \left\lbrack {f\left( {x}_{i - 1}\right) + f\left( {x}_{i}\right) }\right\rbrack \sqrt{1 + {\left\lbrack \frac{f\left( {x}_{i}\right) - f\left( {x}_{i - 1}\right) }{\Delta x}\right\rbrack }^{2}}{\Delta x}.
+\]
+
+当 \(n \rightarrow \infty\) 时,上式右端的极限,就是侧面积 \(S\) ,即
+
+\[
+S = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}\pi \left\lbrack {f\left( {x}_{i - 1}\right) + f\left( {x}_{i}\right) }\right\rbrack \sqrt{1 + {\left\lbrack \frac{f\left( {x}_{i}\right) - f\left( {x}_{i - 1}\right) }{\Delta x}\right\rbrack }^{2}}{\Delta x}.
+\]
+
+可以证明 (本书从略) 这个极限就是
+
+\[
+{2\pi }{\int }_{a}^{b}f\left( x\right) \sqrt{1 + {\left\lbrack {f}^{\prime }\left( x\right) \right\rbrack }^{2}}{dx}.
+\]
+
+于是旋转体的侧面积公式为
+
+\[
+{S}_{m} = {2\pi }{\int }_{a}^{b}f\left( x\right) \sqrt{1 + {\left\lbrack {f}^{\prime }\left( x\right) \right\rbrack }^{2}}{dx}.
+\]
+
+例1 圆 \({x}^{2} + {y}^{2} = {r}^{2}\) 绕 \(x\) 轴旋转形成球面,求由 \(x = {x}_{1}\) 到 \(x = {x}_{2}\) 的球带面积.
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_245_758349.jpg}
+\end{center}
+
+图 5-22
+
+解: 如图 5-22.
+
+球带的表面积 \(S\) 等于曲线
+
+\[
+y = \sqrt{{r}^{2} - {x}^{2}}
+\]
+
+\[
+\left( {{x}_{1} \leq x \leq {x}_{2}}\right) ,
+\]
+
+绕 \(x\) 轴旋转所成的曲面面积, 由旋转体侧面积公式, 得
+
+\[
+S = {2\pi }{\int }_{{x}_{1}}^{{x}_{2}}y\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}}{dx},
+\]
+
+其中
+
+\[
+y = \sqrt{{r}^{2} - {x}^{2}}
+\]
+
+\[
+{y}^{\prime } = - \frac{x}{\sqrt{{r}^{2} - {x}^{2}}} = - \frac{x}{y}
+\]
+
+\[
+\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}} = \sqrt{1 + {\left( \frac{x}{y}\right) }^{2}} = \frac{\sqrt{{x}^{2} + {y}^{2}}}{y} = \frac{r}{y},
+\]
+
+\[
+y\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}} = y \cdot \frac{r}{y} = r.
+\]
+
+于是
+
+\[
+S = {2\pi }{\int }_{{x}_{1}}^{{x}_{2}}{rdx}
+\]
+
+\[
+= {2\pi r}{\int }_{{x}_{1}}^{{x}_{2}}{dx}
+\]
+
+\[
+= {\left. 2\pi rx\right| }_{{x}_{1}}^{{x}_{2}}
+\]
+
+\[
+= {2\pi r}\left( {{x}_{2} - {x}_{1}}\right) \text{. }
+\]
+
+如果把球带的高 \({x}_{2} - {x}_{1}\) 记为 \(h\) ,那么得出球带的面积
+
+\[
+S = {2\pi rh}\text{. }
+\]
+
+特别当 \({x}_{1} = - r,{x}_{2} = r\) 时, \(h = {x}_{2} - {x}_{1} = {2r}\) ,上面公式便成了球面积公式:
+
+\[
+S = {4\pi }{r}^{2}
+\]
+
+例 2 求在 \(x = 0\) 与 \(x = {3a}\) 之间的抛物线 \({y}^{2} = {4ax}\) 绕 \(x\) 轴旋转而成的曲面面积.
+
+解: 如图 5-23, 由旋转体侧面积公式, 得
+
+\[
+S = {2\pi }{\int }_{0}^{3a}y\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}}{dx},
+\]
+
+\begin{center}
+\includegraphics[max width=0.6\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_247_426094.jpg}
+\end{center}
+
+图 5-23
+
+其中
+
+\[
+y = \sqrt{4ax}
+\]
+
+\[
+{y}^{\prime } = {\left( \sqrt{4ax}\right) }^{\prime } = \frac{\sqrt{a}}{\sqrt{x}}
+\]
+
+\[
+\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}} = \sqrt{1 + \frac{a}{x}} = \frac{\sqrt{x + a}}{\sqrt{x}}
+\]
+
+\[
+y\sqrt{1 + {\left( {y}^{\prime }\right) }^{2}} = \sqrt{4ax} \cdot \frac{\sqrt{x + a}}{\sqrt{x}} = 2\sqrt{a} \cdot \sqrt{x + a}.
+\]
+
+于是
+
+\[
+S = {2\pi }{\int }_{0}^{3a}2\sqrt{a} \cdot \sqrt{x + a}{dx}
+\]
+
+\[
+= {\left. 4\pi \sqrt{a} \cdot \frac{2}{3}{\left( x + a\right) }^{\frac{3}{2}}\right| }_{0}^{3a}
+\]
+
+\[
+= \frac{8}{3}\pi \sqrt{a}\left\lbrack {{\left( 4a\right) }^{\frac{3}{2}} - {a}^{\frac{3}{2}}}\right\rbrack
+\]
+
+\[
+= \frac{56}{3}\pi {a}^{2}
+\]
+
+\begin{problemset}[练习]
+
+\item 求曲线 \({y}^{2} = x\) ,直线 \(x = 0,x = 6\) 所围图形绕 \(x\) 轴旋转所得旋转体的侧面积.
+
+\end{problemset}
+
+\begin{problemset}[习题十六]
+
+\item 求下列曲线所围图形的面积:
+
+（1）曲线 \(y = 4 - {x}^{2}\) 与 \(x\) 轴;
+
+（2）曲线 \({2y} = {x}^{2}\) 与直线 \(x = y - 4\) ;
+
+（3）半圆 \(y = \sqrt{{25} - {x}^{2}},x\) 轴,直线 \(x = - 3,x = 4\) ;
+
+（4）曲线 \(y = {2x} - {x}^{2},y = 2{x}^{2} - {4x}\) ;
+
+(5) 曲线 \(y = {x}^{2} + 2,y = {2x},x = 0,x = 2\) ;
+
+（6）曲线 \(y = 2{x}^{2},y = {x}^{2},x = 1\) ;
+
+（7）曲线 \(\sqrt{x} + \sqrt{y} = 1,x = 0,y = 0\) ;
+
+（8）曲线 \(y = \sin x,x = \frac{\pi }{4},x = \pi ,y = 0\) ;
+
+（9）曲线 \(y = \frac{1}{x},x = 1,x = e,y = 0\) .
+
+\item 求下列曲线围成的图形绕 \(x\) 轴旋转所成的旋转体的体积:
+
+(1) \(y = 4 - {x}^{2}\) 与 \(x\) 轴;
+
+(2) \(y = \sqrt{4 + {x}^{2}},x = - 2,x = 2,x\) 轴;
+
+(3) \(y = {x}^{2},y = \sqrt{x}\) ;
+
+(4) \(y = \sin x,y = \cos x,x\) 轴上的线段 \(\left\lbrack {0,\frac{\pi }{2}}\right\rbrack\) .
+
+\item * 求曲线 \(y = \ln \left( {1 - {x}^{2}}\right)\) 由 \(x = 0\) 到 \(x = \frac{1}{2}\) 之间的弧长.
+
+\item * 求抛物线 \(y = \frac{{x}^{2}}{2p}\) 由顶点到点 \(A\left( {\sqrt{2}p,p}\right)\) 之间的弧长.
+
+\item * 求曲线 \(y = \frac{1}{4}{x}^{2} - \frac{1}{2}\ln x\) 在 \(1 \leq x \leq e\) 之间的弧长.
+
+\item * 求抛物线 \({y}^{2} = {4x}\) ,直线 \(x = {10}\) 所围图形绕 \(x\) 轴旋转所得旋转体的侧面积.
+
+\item * 求圆 \({x}^{2} + {\left( y - 2\right) }^{2} = 1\) 绕 \(x\) 轴旋转而成的旋转体的表面积.
+
+\item * 用旋转体侧面积公式验证高为 \(H\) ,底面半径为 \(R\) 的圆锥侧面积公式为 \({\pi R}\sqrt{{R}^{2} + {H}^{2}}\) .
+
+\end{problemset}
+
+\chapter*{小结}
+\markboth{小结}{小结}
+
+一、本章主要内容是定积分的概念、计算及其简单应用.
+
+二、定积分的概念是从求曲边梯形的面积、变速直线运动的路程等实际问题引入的. 解决这类问题都是通过分割, 取近似, 最后归结为求一种和式的极限:
+
+\[
+\mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x}
+\]
+
+(其中 \(f\left( x\right)\) 为区间 \(\left\lbrack {a,b}\right\rbrack\) 上的连续函数,把区间 \(\left\lbrack {a,b}\right\rbrack n\) 等分后, \({\Delta x} = \frac{b - a}{n}\) ,而 \({\xi }_{i}\) 是第 \(i\) 个小区间上的任意一点). 这个极限叫做函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上的定积分,记作
+
+\[
+{\int }_{a}^{b}f\left( x\right) {dx} = \mathop{\lim }\limits_{{n \rightarrow \infty }}\mathop{\sum }\limits_{{i = 1}}^{n}f\left( {\xi }_{i}\right) {\Delta x}.
+\]
+
+三、微积分基本公式是
+
+\[
+{\int }_{a}^{b}f\left( x\right) {dx} = F\left( b\right) - F\left( a\right)
+\]
+
+其中 \(F\left( x\right)\) 是函数 \(f\left( x\right)\) 的任一原函数,即 \({F}^{\prime }\left( x\right) = f\left( x\right)\) ,就是说,函数 \(f\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上的定积分 \({\int }_{a}^{b}f\left( x\right) {dx}\) ,等于它的任一原函数 \(F\left( x\right)\) 在区间 \(\left\lbrack {a,b}\right\rbrack\) 上的改变量 \(F\left( b\right) - F\left( a\right)\) . 这个公式是定积分与原函数之问的关系式, 它使定积分的计算大为简化.
+
+四、定积分的一些简单应用:
+
+1. 求曲边梯形的面积, 公式是
+
+\[
+S = {\int }_{a}^{b}f\left( x\right) {dx}
+\]
+
+2. 求旋转体的体积, 公式是
+
+\[
+V = \pi {\int }_{a}^{b}{\left\lbrack f\left( x\right) \right\rbrack }^{2}{dx}
+\]
+
+*3. 求平面曲线弧长, 公式是
+
+\[
+l = {\int }_{a}^{b}\sqrt{1 + {\left\lbrack {f}^{\prime }\left( x\right) \right\rbrack }^{2}}{dx}
+\]
+
+*4. 求旋转体的侧面积, 公式是
+
+\[
+S = {2\pi }{\int }_{a}^{b}f\left( x\right) \sqrt{1 + {\left\lbrack {f}^{\prime }\left( x\right) \right\rbrack }^{2}}{dx}.
+\]
+
+\chapter*{复习参考题五}
+\markboth{复习参考题五}{复习参考题五}
+
+\section*{\(A\) 组}
+
+1. 计算定积分;
+
+(1) \({\int }_{0}^{a}\left( {3{x}^{2} - x + 1}\right) {dx}\) (2) \({\int }_{1}^{2}\left( {{x}^{2} + \frac{1}{{x}^{4}}}\right) {dx}\)
+
+(3) \({\int }_{2}^{4}\frac{{x}^{3} - 3{x}^{2} + 5}{{x}^{2}}{dx}\)
+
+(4) \({\int }_{1}^{3}{y}^{2}\left( {y - 2}\right) {dy}\) (5) \({\int }_{-1}^{1}x\left( {x - 3}\right) {dx}\) ;
+
+(6) \({\int }_{-2}^{2}\left( {6{x}^{3} + x + 1}\right) {dx}\) ;
+
+(7) \({\int }_{-1}^{1}\left( {{x}^{2} - \frac{x}{{x}^{2} + 1}}\right) {dx}\) ;
+
+(8) \({\int }_{0}^{\frac{1}{3}}\frac{1}{4 - {3x}}{dx}\) (9) \({\int }_{\frac{1}{2}}^{1}\sqrt{3 - {2x}}{dx}\) .
+
+2. 计算定积分:
+
+(1) \({\int }_{0}^{\pi }\sqrt{1 - \cos {2x}}{dx}\) (2) \({\int }_{\frac{\pi }{6}}^{\frac{\pi }{2}}{\cos }^{2}{udu}\) ;
+
+(3) \({\int }_{0}^{\frac{\pi }{4}}{\operatorname{tg}}^{2}{\theta d\theta }\)
+
+(4) \({\int }_{\frac{\pi }{3}}^{\frac{2\pi }{3}}\left( {2\sin x + \cos x}\right) {dx}\) ;
+
+(5) \({\int }_{0}^{\frac{\pi }{2}}\sin \varphi {\cos }^{2}{\varphi d\varphi }\) ;
+
+(6) \({\int }_{0}^{4}\frac{1}{1 + \sqrt{x}}{dx}\)
+
+(7) \({\int }_{0}^{e - 1}\ln \left( {x + 1}\right) {dx}\) ;
+
+(8) \({\int }_{0}^{1}x{e}^{x}{dx}\) .
+
+3. 求下列各曲线围成的图形的面积:
+
+（1）曲线 \(y = {x}^{3},y = {x}^{2}\) ,直线 \(x = 1,x = 2\) ;
+
+（2）曲线 \(y = \sin x,y = \cos x\) ,直线 \(x = - \frac{\pi }{4},x = \frac{\pi }{4}\) ;
+
+（3）曲线 \(y = \frac{1}{x}\) ,直线 \(y = x,x = 2,y = 0\) ;
+
+（4）曲线 \(y = {x}^{2}\) ,直线 \(y = x,y = {2x}\) ;
+
+（5）曲线 \(y = {x}^{2} - {4x} + 5\) ,直线 \(x = 3,x = 5,y = 0\) ;
+
+（6）曲线 \(y = 3 - {2x} - {x}^{2},y = 0\) .
+
+4. 求下列曲线所围图形绕 \(x\) 轴旋转而成的旋转体体积:
+
+(1) \(y = {x}^{3},x = 2,y = 0\) ;
+
+(2) \(y = \cos x,x = - \frac{\pi }{4},x = \frac{\pi }{4},y = 0\) ;
+
+(3) \({xy} = 4,x = 1,x = 4,y = 0\) ;
+
+(4) \({x}^{2} - {y}^{2} = {a}^{2},x = a + h,\;\left( {a > 0,h > 0}\right)\) ;
+
+(5) \(y = 1 + \sqrt{x},y = 3,x = 0\) .
+
+*5. 求曲线 \(y = \frac{{x}^{2}}{2} - 2\) 与 \(x\) 轴交点间的曲线弧长.
+
+*6. 将立方抛物线 \({a}^{2}y = {x}^{3}\) 由 \(x = 0\) 到 \(x = a\) 的一段弧,绕 \(x\) 轴旋转一周, 求旋转面的面积.
+
+*7. 星形线 \({x}^{\frac{2}{3}} + {y}^{\frac{2}{3}} = {a}^{\frac{2}{3}}\) 绕 \(x\) 轴旋转一周,求所得曲面面积.
+
+\section*{B 组}
+
+8. 计算定积分:
+
+(1) \({\int }_{0}^{2a}{\left( x - a\right) }^{3}{dx}\) (2) \({\int }_{-2}^{0}{x}^{3}{\left( x - a\right) }^{2}{dx}\)
+
+(3) \({\int }_{-a}^{0}{\left( \frac{x + a}{a}\right) }^{2}{dx}\) (4) \({\int }_{-\pi }^{\pi }\sin {2x}\sin {4xdx}\) .
+
+9. 求抛物线 \(y = - {x}^{2} + {4x} - 3\) 及其在点 \(A\left( {0, - 3}\right)\) 与点 \(B(3\) , \(0)\) 处的切线所围图形的面积.
+
+10. 如图,已知曲线方程 \({y}^{2} = {x}^{2}\left( {1 - {x}^{2}}\right)\) ,求图中阴影部分的面积。
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_253_827563.jpg}
+\end{center}
+
+(第 10 题)
+
+11. 过椭圆 \(\frac{{x}^{2}}{5} + {y}^{2} = 1\) 的两个焦点作 \(x\) 轴的垂线,将椭圆的夹在这两条垂线间的部分与这两条垂线及 \(x\) 轴所围曲边梯形绕 \(x\) 轴旋转,求得到的旋转体的体积.
+
+*12. 求曲线 \({9a}{y}^{2} = x{\left( x - 3a\right) }^{2}\) 由 \(x = 0\) 到 \(x = {3a}\) 的弧长.
+
+*13. 求 \({x}^{2} + {\left( y - b\right) }^{2} = {a}^{2}\left( {b > a}\right)\) 绕 \(x\) 轴旋转所成的旋转体的表面积。
+
+\section*{【附表】}
+
+\section*{简易积分表}
+
+\section*{(一) 基本积分公式}
+
+1. \(\int {dx} = x + C\)
+
+2. \(\int {x}^{n}{dx} = \frac{{x}^{n + 1}}{n + 1} + C\left( {n \neq - 1}\right)\)
+
+3. \(\int \frac{1}{x}{dx} = \ln \left| x\right| + C\)
+
+4. \(\int {e}^{x}{dx} = {e}^{x} + C\)
+
+5. \(\int {a}^{x}{dx} = \frac{1}{\ln a}{a}^{x} + C\)
+
+6. \(\int \sin {xdx} = - \cos x + C\)
+
+7. \(\int \cos {xdx} = \sin x + C\)
+
+8. \(\int \operatorname{tg}{xdx} = - \ln \left| {\cos x}\right| + C\)
+
+9. \(\int \operatorname{ctg}{xdx} = \ln \left| {\sin x}\right| + C\)
+
+10. \(\int {\sec }^{2}{xdx} = \int \frac{1}{{\cos }^{2}x}{dx} = \operatorname{tg}x + C\)
+
+11. \(\int {\csc }^{2}{xdx} = \int \frac{1}{{\sin }^{2}x}{dx} = - \operatorname{ctg}x + C\)
+
+12. \(\int \sec {xdx} = \int \frac{1}{\cos x}{dx} = \ln \left| {\sec x + \operatorname{tg}x}\right| + C\)
+
+\[
+= \ln \left| {\operatorname{tg}\left( {\frac{x}{2} + \frac{\pi }{4}}\right) }\right| + C
+\]
+
+13. \(\int \csc {xdx} = \int \frac{1}{\sin x}{dx} = \ln \left| {\csc x - \operatorname{ctg}x}\right| + C\)
+
+\[
+= \ln \left| {\operatorname{tg}\frac{x}{2}}\right| + C
+\]
+
+14. \(\int \sec x\operatorname{tg}{xdx} = \sec x + C\)
+
+15. \(\int \csc x\operatorname{ctg}{xdx} = - \csc x + C\)
+
+16. \(\int \frac{1}{\sqrt{{a}^{2} - {x}^{2}}}{dx} = \arcsin \frac{x}{a} + C\) 或 \(- \arccos \frac{x}{a} + C\)
+
+17. \(\int \frac{1}{{a}^{2} + {x}^{2}}{dx} = \frac{1}{a}\operatorname{arctg}\frac{x}{a} + C\)
+
+\section*{(二) 有理函数的积分}
+
+18. \(\int \frac{1}{a + {bx}}{dx} = \frac{1}{b}\ln \left| {a + {bx}}\right| + C\)
+
+19. \(\int {\left( a + bx\right) }^{n}{dx} = \frac{{\left( a + bx\right) }^{n + 1}}{b\left( {n + 1}\right) } + C\left( {n \neq - 1}\right)\)
+
+20. \(\int \frac{x}{{\left( a + bx\right) }^{2}}{dx} = \frac{1}{{b}^{2}}\left\lbrack {\frac{a}{a + {bx}} + \ln \left| {a + {bx}}\right| }\right\rbrack + C\)
+
+21. \(\int \frac{{x}^{2}}{{\left( a + bx\right) }^{2}}{dx} = \frac{1}{{b}^{3}}\left\lbrack {a + {bx} - \frac{{a}^{2}}{a + {bx}} - {2a}\ln \left| {a + {bx}}\right| }\right\rbrack + C\)
+
+22. \(\int \frac{1}{x\left( {a + {bx}}\right) }{dx} = - \frac{1}{a}\ln \left| \frac{a + {bx}}{x}\right| + C\)
+
+23. \(\int \frac{1}{\left( {x + a}\right) \left( {x + b}\right) }{dx} = \frac{1}{b - a}\ln \left| \frac{x + a}{x + b}\right| + C\)
+
+24. \(\int \frac{1}{{x}^{2}\left( {a + {bx}}\right) }{dx} = - \frac{1}{ax} + \frac{b}{{a}^{2}}\ln \left| \frac{a + {bx}}{x}\right| + C\)
+
+25. \(\int \frac{1}{x{\left( a + bx\right) }^{2}}{dx} = \frac{1}{a\left( {a + {bx}}\right) } - \frac{1}{{a}^{2}}\ln \left| \frac{a + {bx}}{x}\right| + C\)
+
+26. \(\begin{aligned} \int \frac{1}{{x}^{2}{\left( a + bx\right) }^{2}}{dx} & = - \frac{1}{{a}^{3}}\left\lbrack {\frac{a + {bx}}{x} - {2b}\ln \left| \frac{a + {bx}}{x}\right| - \frac{{b}^{2}x}{a + {bx}}}\right\rbrack \\ & + C \end{aligned}\)
+
+27. \(\int \frac{1}{a + b{x}^{2}}{dx} = \frac{1}{\sqrt{ab}}\operatorname{arctg}\frac{x\sqrt{ab}}{a} + C\left( {a\text{、}b\text{同号}}\right)\)
+
+28. \(\int \frac{1}{a + b{x}^{2}}{dx} = \frac{1}{2\sqrt{-{ab}}}\ln \left| \frac{a + \sqrt{-{ab}}x}{a - \sqrt{-{ab}}x}\right| + C\left( {a,b\text{异号}}\right)\)
+
+29. \(\int \frac{x}{a + b{x}^{2}}{dx} = \frac{1}{2b}\ln \left| {a + b{x}^{2}}\right| + C\)
+
+30. \(\int \frac{x}{{a}^{2} \pm {b}^{2}{x}^{2}}{dx} = \frac{1}{\pm 2{b}^{2}}\ln \left| {{a}^{2} \pm {b}^{2}{x}^{2}}\right| + C\)
+
+31. \(\int \frac{1}{{a}^{2} + {b}^{2}{x}^{2}}{dx} = \frac{1}{ab}\operatorname{arctg}\frac{bx}{a} + C\)
+
+32. \(\int \frac{1}{{a}^{2} - {b}^{2}{x}^{2}}{dx} = \frac{1}{2ab}\ln \left| \frac{a + {bx}}{a - {bx}}\right| + C\)
+
+33. \(\int \frac{1}{x\left( {{a}^{2} \pm {b}^{2}{x}^{2}}\right) }{dx} = \frac{1}{2{a}^{2}}\ln \left| \frac{{x}^{2}}{{a}^{2} \pm {b}^{2}{x}^{2}}\right| + C\)
+
+34. \(\int \frac{1}{{x}^{2}\left( {{a}^{2} + {b}^{2}{x}^{2}}\right) }{dx} = - \frac{1}{{a}^{2}x} - \frac{b}{{a}^{3}}\operatorname{arctg}\frac{b}{a}x + C\)
+
+35. \(\int \frac{1}{{\left( {a}^{2} + {b}^{2}{x}^{2}\right) }^{2}}{dx} = \frac{x}{2{a}^{2}\left( {{a}^{2} + {b}^{2}{x}^{2}}\right) } + \frac{1}{2{a}^{3}b}\operatorname{arctg}\frac{bx}{a} + C\)
+
+36. \(\int \frac{1}{{\left( {a}^{2} - {b}^{2}{x}^{2}\right) }^{2}}{dx} = \frac{x}{2{a}^{2}\left( {{a}^{2} - {b}^{2}{x}^{2}}\right) } + \frac{1}{4{a}^{3}b}\ln \left| \frac{a + {bx}}{a - {bx}}\right| + C\)
+
+37. \(\int \frac{1}{a + {bx} + c{x}^{2}}{dx} = \frac{2}{\sqrt{{4ac} - {b}^{2}}}\operatorname{arctg}\left( \frac{{2cx} + b}{\sqrt{{4ac} - {b}^{2}}}\right) + C\)
+
+\[
+\left( {{b}^{2} < {4ac}}\right)
+\]
+
+38. \(\int \frac{1}{a + {bx} + c{x}^{2}}{dx} = \frac{1}{\sqrt{{b}^{2} - {4ac}}}\ln \left| \frac{{2cx} + b - \sqrt{{b}^{2} - {4ac}}}{{2cx} + b + \sqrt{{b}^{2} - {4ac}}}\right|\)
+
+\[
++ c
+\]
+
+\[
+\left( {{b}^{2} > {4ac}}\right)
+\]
+
+\section*{(三) 无理函数的积分}
+
+39. \(\int x\sqrt{a + {bx}}{dx} = - \frac{2\left( {{2a} - {3bx}}\right) {\left( a + bx\right) }^{\frac{3}{2}}}{{15}{b}^{2}} + C\)
+
+40. \(\int {x}^{2}\sqrt{a + {bx}}{dx} = \frac{2\left( {8{a}^{2} - {12abx} + {15}{b}^{2}{x}^{2}}\right) {\left( a + bx\right) }^{\frac{3}{2}}}{{105}{b}^{3}} + C\)
+
+41. \(\int \frac{x}{\sqrt{a + {bx}}}{dx} = - \frac{2\left( {{2a} - {bx}}\right) \sqrt{a + {bx}}}{3{b}^{2}} + C\)
+
+42. \(\int \frac{{x}^{2}}{\sqrt{a + {bx}}}{dx} = \frac{2\left( {8{a}^{2} - {4abx} + 3{b}^{2}{x}^{2}}\right) \sqrt{a + {bx}}}{{15}{b}^{3}} + C\)
+
+43. \(\int \frac{1}{x\sqrt{a + {bx}}}{dx} = \frac{1}{\sqrt{a}}\ln \left| \frac{\sqrt{a + {bx}} - \sqrt{a}}{\sqrt{a + {bx}} + \sqrt{a}}\right| + C\left( {a > 0}\right)\)
+
+44. \(\int \frac{1}{x\sqrt{a + {bx}}}{dx} = \frac{2}{\sqrt{-a}}\operatorname{arctg}\sqrt{\frac{a + {bx}}{-a}} + C\left( {a < 0}\right)\)
+
+45. \(\int \frac{1}{\sqrt{{x}^{2} \pm {a}^{2}}}{dx} = \ln \left| {x + \sqrt{{x}^{2} \pm {a}^{2}}}\right| + C\)
+
+46. \(\int \sqrt{{x}^{2} \pm {a}^{2}}{dx} = \frac{x}{2}\sqrt{{x}^{2} \pm {a}^{2}} \pm \frac{{a}^{2}}{2}\ln \left| {x + \sqrt{{x}^{2} \pm {a}^{2}}}\right| + C\)
+
+47. \(\int {\left( {x}^{2} \pm {a}^{2}\right) }^{\frac{3}{2}}{dx} = \frac{x}{8}\left( {2{x}^{2} \pm 5{a}^{2}}\right) \sqrt{{x}^{2} \pm {a}^{2}}\)
+
+\[
++ \frac{3{a}^{4}}{8}\ln \left| {x + \sqrt{{x}^{2} \pm {a}^{2}}}\right| + a
+\]
+
+48. \(\int \frac{1}{{\left( {x}^{2} \pm {a}^{2}\right) }^{\frac{3}{2}}}{dx} = \frac{x}{\pm {a}^{2}\sqrt{{x}^{2} \pm {a}^{2}}} + C\)
+
+49. \(\int \frac{{x}^{2}}{\sqrt{{x}^{2} \pm {a}^{2}}}{dx} = \frac{x}{2}\sqrt{{x}^{2} \pm {a}^{2}} \mp \frac{{a}^{2}}{2}\ln \left| {x + \sqrt{{x}^{2} \pm {a}^{2}}}\right| + C\)
+
+50. \(\int \frac{1}{x\sqrt{{x}^{2} + {a}^{2}}}{dx} = - \frac{1}{a}\ln \left| \frac{a + \sqrt{{x}^{2} + {a}^{2}}}{x}\right| + C\)
+
+51. \(\int \frac{1}{x\sqrt{{x}^{2} - {a}^{2}}}{dx} = \frac{1}{a}\arccos \frac{a}{x} + C\left( {x > a}\right)\)
+
+52. \(\int \frac{1}{{x}^{2}\sqrt{{x}^{2} \pm {a}^{2}}}{dx} = \mp \frac{\sqrt{{x}^{2} \pm {a}^{2}}}{{a}^{2}x} + C\)
+
+53. \(\int \frac{\sqrt{{x}^{2} + {a}^{2}}}{x}{dx} = \sqrt{{x}^{2} + {a}^{2}} - a\ln \left| \frac{a + \sqrt{{x}^{2} + {a}^{2}}}{x}\right| + C\)
+
+54. \(\int \frac{\sqrt{{x}^{2} - {a}^{2}}}{x}{dx} = \sqrt{{x}^{2} - {a}^{2}} - a\arccos \frac{a}{x} + C\left( {x > a}\right)\)
+
+55. \(\int \frac{\sqrt{{x}^{2} \pm {a}^{2}}}{{x}^{2}}{dx} = - \frac{\sqrt{{x}^{2} \pm {a}^{2}}}{x} + \ln \left| {x + \sqrt{{x}^{2} \pm {a}^{2}}}\right| + C\)
+
+56. \(\int \sqrt{{a}^{2} - {x}^{2}}{dx} = \frac{x}{2}\sqrt{{a}^{2} - {x}^{2}} + \frac{{a}^{2}}{2}\arcsin \frac{x}{a} + C\)
+
+57. \(\int {\left( {a}^{2} - {x}^{2}\right) }^{\frac{3}{2}}{dx} = \frac{x}{8}\left( {5{a}^{2} - 2{x}^{2}}\right) \sqrt{{a}^{2} - {x}^{2}}\)
+
+\[
++ \frac{3}{8}{a}^{4}\arcsin \frac{x}{a} + C
+\]
+
+58. \(\int \frac{1}{\sqrt{{a}^{2} - {x}^{2}}}{dx} = \arcsin \frac{x}{a} + C\)
+
+59. \(\int \frac{1}{{\left( {a}^{2} - {x}^{2}\right) }^{\frac{3}{2}}}{dx} = \frac{x}{{a}^{2}\sqrt{{a}^{2} - {x}^{2}}} + C\)
+
+60. \(\int {x}^{2}\sqrt{{a}^{2} - {x}^{2}}{dx} = \frac{x}{8}\left( {2{x}^{2} - {a}^{2}}\right) \sqrt{{a}^{2} - {x}^{2}} + \frac{{a}^{4}}{8}\arcsin \frac{x}{a}\)
+
+\[
++ c
+\]
+
+61. \(\int \frac{{x}^{2}}{\sqrt{{a}^{2} - {x}^{2}}}{dx} = - \frac{x}{2}\sqrt{{a}^{2} - {x}^{2}} + \frac{{a}^{2}}{2}\arcsin \frac{x}{a} + C\) 1
+
+62. \(\int \frac{1}{x\sqrt{{a}^{2} - {x}^{2}}}{dx} = - \frac{1}{a}\ln \left| \frac{a + \sqrt{{a}^{2} - {x}^{2}}}{x}\right| + C\)
+
+63. \(\int \frac{1}{{x}^{2}\sqrt{{a}^{2} - {x}^{2}}}{dx} = - \frac{\sqrt{{a}^{2} - {x}^{2}}}{{a}^{2}x} + C\)
+
+64. \(\int \frac{\sqrt{{a}^{2} - {x}^{2}}}{x}{dx} = \sqrt{{a}^{2} - {x}^{2}} - a\ln \left| \frac{a + \sqrt{{a}^{2} - {x}^{2}}}{x}\right| + C\)
+
+65. \(\int \frac{\sqrt{{a}^{2} - {x}^{2}}}{{x}^{2}}{dx} = - \frac{\sqrt{{a}^{2} - {x}^{2}}}{x} - \arcsin \frac{x}{a} + C\)
+
+66. \(\int \sqrt{{2ax} - {x}^{2}}{dx} = \frac{x - a}{2}\sqrt{{2ax} - {x}^{2}} + \frac{{a}^{2}}{2}\arccos \left( {1 - \frac{x}{a}}\right) + C\)
+
+67. \(\int x\sqrt{{2ax} - {x}^{2}}{dx} = - \frac{3{a}^{2} + {ax} - 2{x}^{2}}{6}\sqrt{{2ax} - {x}^{2}}\)
+
+\[
++ \frac{{a}^{3}}{2}\arccos \left( {1 - \frac{x}{a}}\right) + C
+\]
+
+68. \(\int \frac{\sqrt{{2ax} - {x}^{2}}}{x}{dx} = \sqrt{{2ax} - {x}^{2}} + a\arccos \left( {1 - \frac{x}{a}}\right) + C\)
+
+69. \(\int \frac{\sqrt{{2ax} - {x}^{2}}}{{x}^{2}}{dx} = - \frac{2\sqrt{{2ax} - {x}^{2}}}{x} - \arccos \left( {1 - \frac{x}{a}}\right) + C\)
+
+70. \(\int \frac{1}{\sqrt{{2ax} - {x}^{2}}}{dx} = \arccos \left( {1 - \frac{x}{a}}\right) + C\)
+
+71. \(\int \frac{x}{\sqrt{{2ax} - {x}^{2}}}{dx} = - \sqrt{{2ax} - {x}^{2}} + a\arccos \left( {1 - \frac{x}{a}}\right) + C\)
+
+72. \(\int \frac{{x}^{2}}{\sqrt{{2ax} - {x}^{2}}}{dx} = - \frac{\left( {x + {3a}}\right) \sqrt{{2ax} - {x}^{2}}}{2}\)
+
+\[
++ \frac{3{a}^{2}}{2}\arccos \left( {1 - \frac{x}{a}}\right) + C
+\]
+
+73. \(\int \frac{1}{x\sqrt{{2ax} - {x}^{2}}}{dx} = - \frac{\sqrt{{2ax} - {x}^{2}}}{ax} + C\)
+
+74. \(\int \frac{1}{\sqrt{{2ax} + {x}^{2}}}{dx} = \ln \left| {x + a + \sqrt{{2ax} + {x}^{2}}}\right| + C\)
+
+75. \(\int \sqrt{\frac{a + x}{b + x}}{dx} = \sqrt{\left( {a + x}\right) \left( {b + x}\right) } + \left( {a - b}\right) \ln (\sqrt{a + x}\)
+
+\[
++ \sqrt{b + x}) + C
+\]
+
+76. \(\int \sqrt{\frac{a - x}{b + x}}{dx} = \sqrt{\left( {a - x}\right) \left( {b + x}\right) } + \left( {a + b}\right) \arcsin \sqrt{\frac{x + b}{a + b}}\)
+
+\[
++ c
+\]
+
+77. \(\int \sqrt{\frac{a + x}{b - x}}{dx} = - \sqrt{\left( {a + x}\right) \left( {b - x}\right) } - \left( {a + b}\right) \arcsin \sqrt{\frac{b - x}{a + b}}\)
+
+78. \(\int \frac{1}{\sqrt{\left( {x - a}\right) \left( {b - x}\right) }}{dx} = 2\arcsin \sqrt{\frac{x - a}{b - a}} + C\)
+
+\section*{(四) 超越函数的积分}
+
+79. \(\int {e}^{ax}{dx} = \frac{{e}^{ax}}{a} + C\)
+
+80. \(\int {b}^{ax}{dx} = \frac{{b}^{ax}}{a\ln b} + C\)
+
+81. \(\int \ln {xdx} = x\ln x - x + C\)
+
+82. \(\int {x}^{n}\ln {xdx} = {x}^{n + 1}\left\lbrack {\frac{\ln x}{n + 1} - \frac{1}{{\left( n + 1\right) }^{2}}}\right\rbrack + C\)
+
+83. \(\int {\sin }^{2}{xdx} = \frac{1}{2}x - \frac{1}{4}\sin {2x} + C\)
+
+84. \(\int {\cos }^{2}{xdx} = \frac{1}{2}x + \frac{1}{4}\sin {2x} + C\) \(\lambda\)
+
+85. \(\int {\cos }^{n}x\sin {xdx} = - \frac{{\cos }^{n + 1}x}{n + 1} + C\)
+
+86. \(\int {\sin }^{n}x\cos {xdx} = \frac{{\sin }^{n + 1}x}{n + 1} + C\)
+
+87. \(\int \sin {mx}\sin {nxdx} = - \frac{\sin \left( {m + n}\right) x}{2\left( {m + n}\right) } + \frac{\sin \left( {m - n}\right) x}{2\left( {m - n}\right) } + C\)
+
+88. \(\int \cos {mx}\cos {nxdx} = \frac{\sin \left( {m + n}\right) x}{2\left( {m + n}\right) } + \frac{\sin \left( {m - n}\right) x}{2\left( {m - n}\right) } + C\)
+
+89. \(\int \sin {mx}\cos {nxdx} = - \frac{\cos \left( {m + n}\right) x}{2\left( {m + n}\right) } - \frac{\cos \left( {m - n}\right) x}{2\left( {m - n}\right) } + C\)
+
+90. \(\int \frac{dx}{1 + \cos x} = \operatorname{tg}\frac{x}{2} + C\)
+
+91. \(\int \frac{dx}{1 - \cos x} = - \operatorname{ctg}\frac{x}{2} + C\)
+
+92. \(\int x\sin {nxdx} = \frac{1}{{n}^{2}}\sin {nx} - \frac{1}{n}x\cos {nx} + C\)
+
+93. \(\int x\cos {nxdx} = \frac{1}{{n}^{2}}\cos {nx} + \frac{1}{n}x\sin {nx} + C\)
+
+94. \(\int {x}^{2}\sin {nxdx} = \frac{x}{{n}^{2}}\left( {2\sin {nx} - {nx}\cos {nx}}\right) + \frac{2}{{n}^{3}}\cos {nx} + C\)
+
+95. \(\int {x}^{2}\cos {nxdx} = \frac{x}{{n}^{2}}\left( {{nx}\sin {nx} + 2\cos {nx}}\right) - \frac{2}{{n}^{3}}\sin {nx} + C\)
+
+96. \(\int \arcsin {xdx} = x\arcsin x + \sqrt{1 - {x}^{2}} + C\)
+
+97. \(\int \arccos {xdx} = x\arccos x - \sqrt{1 - {x}^{2}} + C\)
+
+98. \(\int \operatorname{arctg}{xdx} = x\operatorname{arctg}x - \ln \sqrt{1 + {x}^{2}} + C\)
+
+99. \(\int \operatorname{arcctg}{xdx} = x\operatorname{arcctg}x + \ln \sqrt{1 + {x}^{2}} + C\)
 
 \subsection{在线使用模板}
 
