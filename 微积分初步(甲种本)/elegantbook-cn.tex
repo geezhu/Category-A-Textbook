@@ -752,7 +752,7 @@ S = {a}_{1} + {a}_{1}q + {a}_{1}{q}^{2} + \cdots + {a}_{1}{q}^{n - 1} + \cdots =
 \section{函数的极限}
 前面我们研究了数列的极限的概念和极限的运算法则. 从本节起, 我们将讨论函数的极限的概念和运算法则.
 
-\subsection{当 \(x \rightarrow \infty\) 时函数的极限}
+\section*{1.当 \(x \rightarrow \infty\) 时函数的极限}
 
 
 我们考察函数 \(y = \frac{1}{x}\) 当 \(x\) 无限增大时的变化趋势. 为此,
@@ -819,7 +819,7 @@ S = {a}_{1} + {a}_{1}q + {a}_{1}{q}^{2} + \cdots + {a}_{1}{q}^{n - 1} + \cdots =
 
 当 \(x \rightarrow \infty\) 时, \(f\left( x\right) \rightarrow A\) .
 
-\subsection{当 \(x \rightarrow {x}_{0}\) 时函数的极限}
+\section*{2.当 \(x \rightarrow {x}_{0}\) 时函数的极限}
 
 
 我们来研究函数 \(y = {x}^{2}\) 当 \(x\) 无限趋近于 2 时的变化趋势.
@@ -912,7 +912,7 @@ y = \frac{{x}^{2} - 1}{x - 1}
 \mathop{\lim }\limits_{{x \rightarrow {x}_{0}}}x = {x}_{0}
 \]
 
-\subsection{函数的左极限和右极限}
+\section*{3.函数的左极限和右极限}
 
 首先,我们介绍在微积分中常常用到的函数 \(y = \left\lbrack x\right\rbrack\) ,符号 \(\left\lbrack x\right\rbrack\) 表示不超过数 \(x\) 的整数部分,例如
 
@@ -1148,7 +1148,7 @@ y = \frac{{x}^{2} - 1}{x - 1}
 \]
 
 
-\begin{problemset}[练 习]
+\begin{problemset}[练习]
 \item 利用函数极限的运算法则求下列极限:
 
 (1) \(\mathop{\lim }\limits_{{x \rightarrow \frac{1}{2}}}\left( {{2x} - 3}\right)\) ; (2) \(\mathop{\lim }\limits_{{x \rightarrow 2}}\left( {2{x}^{2} - {3x} + 1}\right)\) ;
@@ -2011,6 +2011,3205 @@ y = {\log }_{a}{\left( 1 + x\right) }^{2},\;y = \sqrt{{a}^{2} - {b}^{2}{\cos }^{
 (1) \(\mathop{\lim }\limits_{{x \rightarrow \infty }}{\left( 1 + \frac{3}{x}\right) }^{x}\) ; (2) \(\mathop{\lim }\limits_{{x \rightarrow 0}}{\left( 1 + x\right) }^{\frac{1}{x} + 2}\) ;
 
 (3) \(\mathop{\lim }\limits_{{x \rightarrow 0}}{\left( 1 + \operatorname{tg}x\right) }^{\operatorname{ctg}x}\) ; (4) \(\mathop{\lim }\limits_{{x \rightarrow 1}}\frac{\sin \left( {1 - x}\right) }{1 - {x}^{2}}\) .
+
+\chapter{导数和微分}
+
+\section*{导 数 概 念}
+
+\section{瞬时速度}
+
+我们知道,物体作匀速直线运动时,物体的位移 \(s\) 与所经过的时间 \(t\) 的比,就是物体运动的速度 \(v\) ,即
+
+\[
+v = \frac{s}{t}
+\]
+
+这个速度在匀速直线运动过程中的任何时刻都是一样的.
+
+如果物体作非匀速直线运动, 也就是说, 在运动过程的各个时刻, 物体运动的快慢不一样, 这时, 设已知物体的运动规律是 \(s = s\left( t\right)\) ,从 \({t}_{0}\) 到 \({t}_{0} + {\Delta t}({\Delta t}\) 称为时间改变量) 这段时间内, 物体的位移 (即位置改变量) 是
+
+\[
+{\Delta s} = s\left( {{t}_{0} + {\Delta t}}\right) - s\left( {t}_{0}\right) ,
+\]
+
+那么,位置改变量 \({\Delta s}\) 与时间改变量 \({\Delta t}\) 的比,就是这段时间内物体的平均速度 \(\bar{v}\) ,即
+
+\[
+\bar{v} = \frac{\Delta s}{\Delta t} = \frac{s\left( {{t}_{0} + {\Delta t}}\right) - s\left( {t}_{0}\right) }{\Delta t}.
+\]
+
+平均速度的大小反映在这段时间内物体运动快慢的平均程度.
+
+为了更精确地刻划非匀速运动, 还需知道物体在某一时刻的“速度”. 那么, 作非匀速直线运动的物体在某一时刻的 “速度”怎样求呢?
+
+现在我们以自由落体运动为例, 来说明作非匀速直线运动的物体在某一时刻的“速度”的求法.
+
+我们知道, 自由落体运动的方程是
+
+\[
+s = s\left( t\right) = \frac{1}{2}g{t}^{2},
+\]
+
+这里 \(g\) 是重力加速度,通常取 \(g = {9.8}\) 米 \(/{\text{秒}}^{2}\) . 现在来求 \(t = 3\) 秒这一时刻落体的 “速度”.
+
+当 \({\Delta t}\) 很小时,从 3 秒到 \(3 + {\Delta t}\) 秒这段时间内,落体运动的快慢变化也不大, 因此, 可以用这段时间内的平均速度近似地反映落体在 3 秒时的 “速度”. 当 \({\Delta t}\) 越小时,一般来讲,这种近似就越精确. 现在我们来计算一下 \(t\) 从 3 秒 分别到 3.1 秒、 3.01 秒、 3.001 秒、 3.0001 秒、……, 各段时间内的平均速度, 把所得数据列表如下:
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\(t\left( \text{ 秒 }\right)\) & 8 (米) & \({\Delta t}\) (秒) & \({\Delta s}\) (米) & \(\bar{v} = \frac{\Delta s}{\Delta t}\left( {\text{ 米 }/\text{ 秒 }}\right)\) \\
+\hline
+3 & 4. \(5\mathrm{\;g}\) & \phantom{X} & \phantom{X} & \phantom{X} \\
+\hline
+3. 1 & \({4.805g}\) & 0.1 & \({0.305g}\) & \({3.05g}\) \\
+\hline
+3.01 & 4. \({53005g}\) & 0.01 & 0.03005g & 3. \({005}\mathrm{\;g}\) \\
+\hline
+3.001 & 4. 5030005g & 0.001 & 0.0030005g & 3.00059 \\
+\hline
+3.0001 & 4.500300005g & 0.0001 & 0.000300005g & 3.00005g \\
+\hline
+\(\cdots\) & ... & . & ... & ... \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+从上表可以看出,平均速度 \(\frac{\Delta s}{\Delta t}\) 随着 \({\Delta t}\) 变化而变化,当
+
+\({\Delta t}\) 越小时, \(\frac{\Delta s}{\Delta t}\) 越接近于一个定值一 \({3g}\) . 这个值就是 \({\Delta t} \rightarrow 0\) 时 \(\frac{\Delta s}{\Delta t}\) 的极限. 我们规定这个极限为落体在 \(t = 3\) 秒时的速度,也叫瞬时速度,用 \(v\) 表示. 根据第一章求极限的法则,得
+
+\[
+v = \mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\frac{s\left( {3 + {\Delta t}}\right) - s\left( 3\right) }{\Delta t}
+\]
+
+\[
+= \mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\frac{\frac{1}{2}g{\left( 3 + \Delta t\right) }^{2} - \frac{1}{2}g \cdot {3}^{2}}{\Delta t}
+\]
+
+\[
+= \frac{g}{2}\mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\left( {6 + {\Delta t}}\right)
+\]
+
+\[
+= {3g} = {29.4}\text{ (米/秒). }
+\]
+
+一般地,我们规定,非匀速直线运动在某一时刻 \({t}_{0}\) 的瞬时速度 \(v\) ,就是运动物体在 \({t}_{0}\) 到 \({t}_{0} + {\Delta t}\) 一段时间内的平均速度当 \({\Delta t} \rightarrow 0\) 时的极限,即
+
+\[
+v = \mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\frac{\Delta s}{\Delta t} = \mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\frac{s\left( {{t}_{0} + {\Delta t}}\right) - s\left( {t}_{0}\right) }{\Delta t}.
+\]
+
+平均速度 \(\frac{\Delta s}{\Delta t}\) 在 \({\Delta t} \rightarrow 0\) 时转化为瞬时速度,瞬时速度的大小刻划了物体在某一时刻运动的快慢.
+
+\begin{problemset}[练习]
+
+\item 一球沿某一斜面自由滚下,测得滚下的垂直距离 \(y\) 与时间 \(x\) 之间的函数关系为 \(y = {x}^{2}\) .
+
+（1）求时间 \(x\) 从 5 秒分别到 6 秒、5.1 秒、5.01 秒、5.001 秒、 \(5 + h\) 秒的时间改变量 \({\Delta x}\) ,对应的垂直距离改变
+
+量 \({\Delta y}\) 以及这段时间内垂直方向的平均速 度 \(\frac{\Delta y}{\Delta x}\) ,并填下表:
+
+\begin{center}
+\adjustbox{max width=\textwidth}{
+\begin{tabular}{|c|c|c|c|}
+\hline
+\phantom{X} & \({\Delta x}\) (秒) & \({\Delta y}\left( \text{ 米 }\right)\) & \(\frac{\Delta y}{\Delta x}\left( {\text{米}/\text{秒}}\right)\) \\
+\hline
+从 5 秒到 6 秒 从 5 秒到 5.1 秒 & \phantom{X} & \phantom{X} & \phantom{X} \\
+\hline
+从 5 秒到 5.01 秒 & \phantom{X} & \phantom{X} & \phantom{X} \\
+\hline
+从 5 秒到 5.001 秒 & \phantom{X} & \phantom{X} & \phantom{X} \\
+\hline
+从 5 秒到 \(5 + h\) 秒 & \phantom{X} & \phantom{X} & \phantom{X} \\
+\hline
+\end{tabular}
+}
+\end{center}
+
+（2）求在 5 秒时垂直方向的瞬时速度.
+
+\item 质点 \(M\) 按规律 \(s = 2{t}^{2} + {3t}\) 作直线运动 \((s\) 的单位为厘米, \(t\) 的单位为秒).
+
+（1）设 \({t}_{0},{\Delta t}\) 已给定,求相应的 \({\Delta s},\frac{\Delta s}{\Delta t}\) 和 \(\mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\frac{\Delta s}{\Delta t}\) ,并说明它们的物理意义;
+
+（2）求出质点 \(M\) 从 2 秒分别到 2.1 秒、2.01 秒、 2.001 秒、 \(2 + {\Delta t}\) 秒各段时间内的平均速度;
+
+（3）求质点 \(M\) 在 \(t = 2\) 秒时的瞬时速度。
+\end{problemset}
+
+\section{导数}
+
+从上节的讨论可以看出, 当物体作匀速直线运动时, 我们可以直接根据位移和时间的比值来求速度; 当物体的位移随着时间的改变可能是非均匀变化时, 要研究在某一时刻物体运动的快慢, 就需要引进瞬时速度, 也就是位移函数对时间的瞬时变化率 (简称变化率) 的概念. 在自然科学和工程技术中, 经常遇到非均匀变化的问题, 例如化学反应速度、物体温度变化速度、放射物质的蜕变速度、电流强度等等. 因此, 撇开具体实际意义, 一般地从数量关系上来研究函数的变化率, 将对很多实际问题的解决具有普遍意义. 为此, 我们引进一个新的数学概念一导数.
+
+设函数 \(y = f\left( x\right)\) 在点 \(x = {x}_{0}\) 及其附近有定义. 当自变量 \(x\) 在 \({x}_{0}\) 处有改变量 \({\Delta x}\) ( \({\Delta x}\) 可正可负),则函数 \(y\) 相应地有改变量
+
+\[
+{\Delta y} = f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) .
+\]
+
+这两个改变量的比
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) }{\Delta x}
+\]
+
+叫做函数 \(y = f\left( x\right)\) 在 \({x}_{0}\) 到 \({x}_{0} + {\Delta x}\) 之间的平均变化率.
+
+如果 当 \({\Delta x} \rightarrow 0\) 时, \(\frac{\Delta y}{\Delta x}\) 有极限,我们就说函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处可导,并把这一极限叫做 \(f\left( x\right)\) 在点 \({x}_{0}\) 处的导数 (或变化率),记作 \({f}^{\prime }\left( {x}_{0}\right)\) 或 \({\left. {y}^{\prime }\right| }_{x = {x}_{0}}\) ,即
+
+\[
+{f}^{\prime }\left( {x}_{0}\right) = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) }{\Delta x}. \tag{1}
+\]
+
+因此,函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处的导数就是函数的平均变化率当自变量的改变量趋向于零时的极限 \({f}^{\prime }\left( {x}_{0}\right)\) ,它反映了函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处变化的 “速度”.
+
+如果上述极限不存在,我们就说函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处不可导或导数不存在.
+
+根据导数的定义,瞬时速度就是位移函数 \(s\left( t\right)\) 对时间 \(t\)
+
+的导数,自由落体在 \(t = 3\) 秒时的速度就是 \(s = \frac{1}{2}g{t}^{2}\) 在点 \(t =\) 3 处的导数. 即
+
+\[
+v = {\left. {s}^{\prime }\right| }_{t = 3} = \mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\frac{\frac{1}{2}g{\left( 3 + \Delta t\right) }^{2} - \frac{1}{2}g \cdot {3}^{2}}{\Delta t}
+\]
+
+\[
+= {3g} = {29.4}\text{ (米/秒). }
+\]
+
+由导数的定义,直接得出求函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 处的导数的方法:
+
+1. 求改变量 \({\Delta y} = f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right)\) ;
+
+2. 求比 \(\frac{\Delta y}{\Delta x} = \frac{f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) }{\Delta x}\) ;
+
+3. 求极限 \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}\) .
+
+例 1 求 \(y = {x}^{2}\) 在点 \(x = 1\) 处的导数.
+
+解: \(\;{\Delta y} = {\left( 1 + \Delta x\right) }^{2} - {1}^{2} = {2\Delta x} + {\left( \Delta x\right) }^{2}\) ,
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{{2\Delta x} + {\left( \Delta x\right) }^{2}}{\Delta x} = 2 + {\Delta x},
+\]
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\left( {2 + {\Delta x}}\right) = 2
+\]
+
+\[
+\therefore {\left. \;{y}^{\prime }\right| }_{x = 1} = 2\text{. }
+\]
+
+如果函数 \(f\left( x\right)\) 在开区间 \(\left( {a,b}\right)\) 内每一点处都可导,就说 \(f\left( x\right)\) 在开区间 \(\left( {a,b}\right)\) 内可导. 这时,对于开区间 \(\left( {a,b}\right)\) 内每一个确定的值 \({x}_{0}\) ,都对应着一个确定的导数 \({f}^{\prime }\left( {x}_{0}\right)\) ,这样就在开区间 \(\left( {a,b}\right)\) 内,构成一个新的函数,我们把这一新函数叫做 \(f\left( x\right)\) 的导函数,记为 \({f}^{\prime }\left( x\right)\) 或 \({y}^{\prime }\) (有必要指明自变量 \(x\) 时记作 \(\left. {y}_{x}^{\prime }\right)\) . 根据导数的定义,就可得出导函数
+
+\[
+{y}^{\prime } = {f}^{\prime }\left( x\right) = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{f\left( {x + {\Delta x}}\right) - f\left( x\right) }{\Delta x}. \tag{2}
+\]
+
+导函数也简称为导数. 今后, 如不特别指明求某一点处的导数,求导数就是指求导函数. 但要注意,函数 \(y = f\left( x\right)\) 的导函数 \({f}^{\prime }\left( x\right)\) 与函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处的导数是有区别的, \({f}^{\prime }\left( x\right)\) 是 \(x\) 的函数,而 \({f}^{\prime }\left( {x}_{0}\right)\) 是一个数值; 但它们又是有联系的, \(f\left( x\right)\) 在点 \({x}_{0}\) 处的导数 \({f}^{\prime }\left( {x}_{0}\right)\) 就是导函数 \({f}^{\prime }\left( x\right)\) 在点 \({x}_{0}\) 处的函数值.
+
+这样,如果知道了导函数 \({f}^{\prime }\left( x\right)\) ,要求 \(f\left( x\right)\) 在点 \({x}_{0}\) 处的导数,只要把 \(x = {x}_{0}\) 代入 \({f}^{\prime }\left( x\right)\) 中去求函数值就可以了.
+
+例 2 已知 \(y = {x}^{3} - {2x} + 1\) ,求 \({y}^{\prime }\) ,并求在点 \(x = 2\) 处的导数.
+
+解: \({\Delta y} = {\left( x + \Delta x\right) }^{3} - 2\left( {x + {\Delta x}}\right) + 1 - \left( {{x}^{3} - {2x} + 1}\right)\)
+
+\[
+= \left( {3{x}^{2} - 2}\right) {\Delta x} + {3x}{\left( \Delta x\right) }^{2} + {\left( \Delta x\right) }^{3},
+\]
+
+\[
+\frac{\Delta y}{\Delta x} = 3{x}^{2} - 2 + {3x\Delta x} + {\left( \Delta x\right) }^{2},
+\]
+
+\[
+\therefore \;{y}^{\prime } = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = 3{x}^{2} - 2,
+\]
+
+\[
+{\left. {y}^{\prime }\right| }_{x = 2} = 3 \times {2}^{2} - 2 = {10}.
+\]
+
+例 3 已知 \(y = \sqrt{x}\) ,求 \({y}^{\prime }\) .
+
+解: \({\Delta y} = \sqrt{x + {\Delta x}} - \sqrt{x}\) ,
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{\sqrt{x + {\Delta x}} - \sqrt{x}}{\Delta x}.
+\]
+
+\[
+\therefore {y}^{\prime } = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{\Delta \dot{x} \rightarrow 0}}\frac{\sqrt{x + {\Delta x}} - \sqrt{x}}{\Delta x}
+\]
+
+\[
+= \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{1}{\sqrt{x + {\Delta x}} + \sqrt{x}} = \frac{1}{2\sqrt{x}}
+\]
+
+\begin{problemset}[练习]
+
+\item 求下列函数在指定点处的导数:
+
+(1) \(y = {x}^{3}\) ,点 \(x = 0\) ; (2) \(y = \frac{2}{x}\) ,点 \(x = 1\) .
+
+\item 已知一物体作直线运动,运动方程为 \(s = 4{t}^{2}\) (米),求:
+
+(1) \(t\) 秒时的瞬时速度;
+
+(2) \(t = 3\) 秒、 \(t = 5\) 秒、 \(t = 8\) 秒时的瞬时速度.
+
+\item 已知 \(y = \sqrt{x + 4}\) ,求 \({y}^{\prime }\) ,并求在点 \(x = 5\) 处的导数.
+
+\end{problemset}
+
+\section{导数的几何意义 切线方程和法线方程}
+
+如图 2-1,设曲线 \(C\) 是函数 \(y = f\left( x\right)\) 的图象. 在曲线 \(C\) 上取一点 \(P\left( {{x}_{0},{y}_{0}}\right)\) 及点 \(P\) 邻近的任一点 \(Q\left( {{x}_{0} + }\right.\) \(\left. {{\Delta x},{y}_{0} + {\Delta y}}\right)\) ,过 \(P,Q\) 作割线, 并作 \({MP} \bot {Ox},{NQ} \bot {Ox}\) , \({PR} \bot {NQ}\) . 又设割线 \({PQ}\) 的倾斜角为 \(\beta\) ,那么
+
+\[
+\frac{\Delta y}{\Delta x} = \operatorname{tg}{QPR} = \operatorname{tg}\beta .
+\]
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_62_329591.jpg}
+\end{center}
+
+图 2-1
+
+这就是说, \(\frac{\Delta y}{\Delta x}\) 就是割线 \({PQ}\) 的斜率.
+
+当点 \(Q\) 沿着曲线 \(O\) 无限地趋近于点 \(P\) ,即 \({\Delta x} \rightarrow 0\) 时,割线 \({PQ}\) 绕着点 \(P\) 转动,它的极限位置 \({PT}\) 叫做曲线 \(C\) 在点 \(P\) 处的切线. 这时如果函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处可导,那么当 \({\Delta x} \rightarrow 0\) 时, \(\frac{\Delta y}{\Delta x} \rightarrow {f}^{\prime }\left( {x}_{0}\right)\) ,而 \(\operatorname{tg}\beta\) 以 \({PT}\) 的斜率 \(\operatorname{tg}\alpha (\alpha\) 是 \({PT}\) 的倾斜角) 为极限, 所以
+
+\[
+{f}^{\prime }\left( {x}_{0}\right) = \operatorname{tg}\alpha \text{. }
+\]
+
+因此,函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处的导数 \({f}^{\prime }\left( {x}_{0}\right)\) 的几何意义,就是曲线 \(y = f\left( x\right)\) 在点 \(\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 处的切线的斜率.
+
+这样,求曲线 \(y = f\left( x\right)\) 在点 \(\left( {{x}_{0},f\left( {x}_{0}\right) }\right)\) 处的切线,只要先求出函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处的导数 \({f}^{\prime }\left( {x}_{0}\right)\) ,然后根据直线方程的点斜式, 就得到切线的方程
+
+\[
+y - {y}_{0} = {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right)
+\]
+
+这里 \({y}_{0} = f\left( {x}_{0}\right)\) ,下同.
+
+当 \(\alpha = \frac{\pi }{2}\) 时,导数不存在,这时切线 \({PT}\) 平行于 \(y\) 轴,切线的方程为
+
+\[
+x = {x}_{0}
+\]
+
+经过点 \(P\) 且和切线 \({PT}\) 垂直的直线叫做曲线 \(C\) 在点 \(P\) 处的法线. 由解析几何得知, 如果两条有斜率的直线互相垂直, 那么,它们的斜率互为负倒数. 已知曲线 \(y = f\left( x\right)\) 在点 \(\left( {x}_{0}\right.\) , \(\left. {f\left( {x}_{0}\right) }\right)\) 处的切线的斜率为 \({f}^{\prime }\left( {x}_{0}\right)\) ,那么,当 \({f}^{\prime }\left( {x}_{0}\right) \neq 0\) 时,曲线在该点处的法线的斜率为 \(- \frac{1}{{f}^{\prime }\left( {x}_{0}\right) }\) ,法线的方程为
+
+\[
+y - {y}_{0} = - \frac{1}{{f}^{\prime }\left( {x}_{0}\right) }\left( {x - {x}_{0}}\right) .
+\]
+
+当 \({f}^{\prime }\left( {x}_{0}\right) = 0\) 时,法线平行于 \(y\) 轴,法线的方程为
+
+\[
+x = {x}_{0}
+\]
+
+当切线 \({PT}\) 平行于 \(y\) 轴时,法线平行于 \(x\) 轴,这时法线的方程为
+
+\[
+y = {y}_{0}
+\]
+
+例 已知曲线 \(y = \frac{1}{3}{x}^{3}\) 上一点 \(P\left( {2,\frac{8}{3}}\right)\) . 求: (1) 过 \(P\) 点的切线的斜率; (2) 过 \(P\) 点的切线的方程; (3) 过 \(P\) 点的法线的方程.
+
+解: (1) \(y = \frac{1}{3}{x}^{3}\) ,
+
+\[
+\therefore \;{y}^{\prime } = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}
+\]
+
+\[
+= \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\frac{1}{3}{\left( x + \Delta x\right) }^{3} - \frac{1}{3}{x}^{3}}{\Delta x}
+\]
+
+\[
+= \frac{1}{3}\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{3{x}^{2}{\Delta x} + {3x}{\left( \Delta x\right) }^{2} + {\left( \Delta x\right) }^{3}}{\Delta x}
+\]
+
+\[
+= \frac{1}{3}\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\left\lbrack {3{x}^{2} + {3x\Delta x} + {\left( \Delta x\right) }^{2}}\right\rbrack
+\]
+
+\[
+= {x}^{2}
+\]
+
+\[
+{\left. {y}^{\prime }\right| }_{x = 2} = {2}^{2} = 4\text{. }
+\]
+
+\(\therefore\) 在点 \(P\) 处的切线的斜率等于 4 .
+
+（2）在点 \(P\) 处的切线的方程为
+
+\[
+y - \frac{8}{3} = 4\left( {x - 2}\right)
+\]
+
+即
+
+\[
+{12x} - {3y} - {16} = 0.
+\]
+
+（3）在点 \(P\) 处的法线的方程为
+
+\[
+y - \frac{8}{3} = - \frac{1}{4}\left( {x - 2}\right)
+\]
+
+即
+
+\[
+{3x} + {12y} - {38} = 0\text{. }
+\]
+
+图形如图 2-2.
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_65_242214.jpg}
+\end{center}
+
+图 2-2
+
+\begin{problemset}[练习]
+
+\item 求抛物线 \(y = {4x} - {x}^{2}\) 在点 \(A\left( {4,0}\right)\) 和点 \(B\left( {2,4}\right)\) 处的 \(\left( 1\right)\) 切线的斜率; (2) 切线的方程.
+
+\item 求等边双曲线 \(y = \frac{9}{x}\) 在点 \(M\left( {3,3}\right)\) 处的切线的斜率与倾斜角。
+
+\item 求抛物线 \(y = {x}^{2} + 2\) 在点 \(M\left( {2,6}\right)\) 处的切线方程和法线方程。
+
+\end{problemset}
+
+\section*{*变化率举例}
+
+我们知道,函数 \(y = f\left( x\right)\) 的导数 \({f}^{\prime }\left( x\right)\) 就是函数对自变量 \(x\) 的变化率,因此,很多非均匀变化的变化率问题都可以应用导数来研究. 为了更好地理解和应用导数概念, 我们再举几个非均匀变化的变化率的例子.
+
+例 1 瞬时功率.
+
+已知物体所作的功 \(W\) 是时间 \(t\) 的函数: \(W = W\left( t\right)\) . 求在时刻 \(t = {t}_{0}\) 的功率.
+
+分析: 功率表示作功的效率, 物体在某段时间内所作的功 \({\Delta W}\) 和这段时间 \({\Delta t}\) 的比 \(\frac{\Delta W}{\Delta t}\) ,就是这段时间内的(平均) 功率. 如果物体所作的功随时间增加而均匀改变, 这个比是个常数, 这个常数就是任一时刻的功率. 但是, 如果物体作功随时间的变化是非均匀的,那么, \(\frac{\Delta W}{\Delta t}\) 只表示某段时间内的平均功率. 因此,要求任一时刻 \({t}_{0}\) 的功率,就是求 \(\left\lbrack {{t}_{0},{t}_{0} + {\Delta t}}\right\rbrack\) 内的平均功率 \(\frac{\Delta W}{\Delta t}\) 当 \({\Delta t} \rightarrow 0\) 时的极限一瞬时功率.
+
+解: 已知物体从 0 到 \(t\) 这段时间内所作的功是 \(W =\) \(W\left( t\right)\) ,那么,从时刻 \({t}_{0}\) 到 \({t}_{0} + {\Delta t}\) 这段时间内物体所作的功 (即功的改变量)为
+
+\[
+{\Delta W} = W\left( {{t}_{0} + {\Delta t}}\right) - W\left( {t}_{0}\right) .
+\]
+
+它和完成这些功所用时间(即时间改变量) \({\Delta t}\) 的比
+
+\[
+\frac{\Delta W}{\Delta t} = \frac{W\left( {{t}_{0} + {\Delta t}}\right) - W\left( {t}_{0}\right) }{\Delta t}
+\]
+
+就是 \({t}_{0}\) 到 \({t}_{0} + {\Delta t}\) 这段时间内的平均功率.
+
+当 \({\Delta t} \rightarrow 0\) 时,平均功率的极限
+
+\[
+\mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\frac{W\left( {{t}_{0} + {\Delta t}}\right) - W\left( {t}_{0}\right) }{\Delta t} = {P}_{0}
+\]
+
+就是在时刻 \({t}_{0}\) 的瞬时功率.
+
+因此,功率 \(P\) 是功 \(W\) 对时间 \(t\) 的导数,即
+
+\[
+P = {W}^{\prime }\left( t\right)
+\]
+
+例 2 瞬时电流强度.
+
+设有一随时间而变化的电流,从 0 到 \(t\) 这段时间内通过导线横截面的电量为 \(q = q\left( t\right)\) . 求在时刻 \({t}_{0}\) 时导线中的电流强度.
+
+分析: 电流强度表示电流的强弱, 在某段时间内通过导线横截面的电量 \({\Delta q}\) 和这段时间 \({\Delta t}\) 的比 \(\frac{\Delta q}{\Delta t}\) ,就是这段时间内的电流强度. 如果给出的电流是稳恒电流,比 \(\frac{\Delta q}{\Delta t}\) 是一个常数, 这个常数就是任一时刻的电流强度. 但是, 如果电路中电流的强弱是变化的,那么, \(\frac{\Delta q}{\Delta t}\) 只表示某段时间内的平均电流强度. 因此,要求在时刻 \({t}_{0}\) 的电流强度,就是求 \(\left\lbrack {{t}_{0},{t}_{0} + {\Delta t}}\right\rbrack\) 内的平均电流强度 \(\frac{\Delta q}{\Delta t}\) 当 \({\Delta t} \rightarrow 0\) 时的极限一瞬时电流强度.
+
+解: 已知从 0 到 \(t\) 这段时间内通过导线横截面的电量为 \(q\left( t\right)\) ,那么,从时刻 \({t}_{0}\) 到 \({t}_{0} + {\Delta t}\) 这段时间内通过导线横截面的电量为
+
+\[
+{\Delta q} = q\left( {{t}_{0} + {\Delta t}}\right) - q\left( {t}_{0}\right)
+\]
+
+这段时间内的平均电流强度为
+
+\[
+\frac{\Delta q}{\Delta t} = \frac{q\left( {{t}_{0} + {\Delta t}}\right) - q\left( {t}_{0}\right) }{\Delta t}.
+\]
+
+当 \({\Delta t} \rightarrow 0\) 时,平均电流强度的极限
+
+\[
+\mathop{\lim }\limits_{{{\Delta t} \rightarrow 0}}\frac{q\left( {{t}_{0} + {\Delta t}}\right) - q\left( {t}_{0}\right) }{\Delta t} = {I}_{0}
+\]
+
+就是在时刻 \({t}_{0}\) 的电流强度.
+
+因此,电流强度 \(I\) 是电量 \(q\) 对时间 \(t\) 的导数,即
+
+\[
+I = {q}^{\prime }\left( t\right)
+\]
+
+\begin{problemset}[练习]
+
+\item 在匀速圆周运动中, 连结运动质点和圆心的半径转过的角度和所用时间的比值, 叫做匀速圆周运动的角速度. 现有一质点作变速圆周运动,已知在时刻 \(t\) 连结运动质点和圆心的半径转过的角度为 \(\varphi \left( t\right)\) ,求它在时 刻 \({t}_{0}\) 的角速度 \({\omega }_{0}\) .
+
+\item 某物质在一个化学反应中的浓度 \(C\) 与反应开始后的时间 \(t\) 之间的函数关系为 \(C = C\left( t\right)\) ,写出 \(t = a\) 时浓度的变化率。
+
+\item 求导数的方法适用不适用于求均匀变化的量的变化率? 这时, 平均变化率和瞬时变化率有什么关系? 试加说明.
+
+\end{problemset}
+
+\section{函数的可导性与连续性的关系}
+
+由导数的定义, 可以推出函数在一点处可导与函数在该点处连续的关系:
+
+如果函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处可导,那么 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处连续.
+
+证明 我们是要根据
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) }{\Delta x} = {f}^{\prime }\left( {x}_{0}\right)
+\]
+
+来证明
+
+\[
+\mathop{\lim }\limits_{{x \rightarrow {x}_{0}}}f\left( x\right) = f\left( {x}_{0}\right) .
+\]
+
+考虑 \(\mathop{\lim }\limits_{{x \rightarrow {x}_{0}}}f\left( x\right)\) ,令 \(x = {x}_{0} + {\Delta x},x \rightarrow {x}_{0}\) 相当于 \({\Delta x} \rightarrow 0\) ,于是
+
+\[
+\mathop{\lim }\limits_{{x \rightarrow {x}_{0}}}f\left( x\right) = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}f\left( {{x}_{0} + {\Delta x}}\right)
+\]
+
+\[
+= \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\left\lbrack {f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) + f\left( {x}_{0}\right) }\right\rbrack
+\]
+
+\[
+= \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\left\lbrack {\frac{f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) }{\Delta x} \cdot {\Delta x} + f\left( {x}_{0}\right) }\right\rbrack
+\]
+
+\[
+= \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) }{\Delta x} \cdot {\Delta x} + f\left( {x}_{0}\right)
+\]
+
+\[
+= \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) }{\Delta x} \cdot \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}{\Delta x} + f\left( {x}_{0}\right)
+\]
+
+\[
+= {f}^{\prime }\left( {x}_{0}\right) \cdot 0 + f\left( {x}_{0}\right)
+\]
+
+\[
+= f\left( {x}_{0}\right) \text{.}
+\]
+
+但是,如果函数 \(f\left( x\right)\) 在点 \({x}_{0}\) 连续, \(f\left( x\right)\) 在该点不一定可导. 例如 \(y = \left| x\right|\) 在点 \(x = 0\) 连续,但在点 \(x = 0\) 处不可导. 从图形上看,就是曲线 \(y = f\left( x\right)\) 在点 \(O\left( {0,0}\right)\) 处没有切线 (图 \(2 - 3)\) .
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_69_933568.jpg}
+\end{center}
+
+图 2-3
+
+*下面我们根据导数的定义证明 \(y = \left| x\right|\) 在 \(x = 0\) 处不可导. 并从而导出左、右导数的概念.
+
+\(\because {\Delta y} = \left| {0 + {\Delta x}}\right| - \left| 0\right| = \left| {\Delta x}\right| = \left\{ \begin{array}{r} {\Delta x},\text{ 当 }{\Delta x} > 0, \\ - {\Delta x},\text{ 当 }{\Delta x} < 0, \end{array}\right.\)
+
+\[
+\therefore \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 + }}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 + }}\frac{\Delta x}{\Delta x} = 1\text{,}
+\]
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 - }}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 - }}\frac{-{\Delta x}}{\Delta x} = - 1.
+\]
+
+也就是说,当 \({\Delta x} \rightarrow 0\) 时, \(\frac{\Delta y}{\Delta x}\) 的左、右极限不相等,所以 \(\frac{\Delta y}{\Delta x}\) 当 \({\Delta x} \rightarrow 0\) 时极限 不存在. 因此,函数 \(y = \left| x\right|\) 在点 \(x = 0\) 处不可导.
+
+一般地,设已知函数 \(y = f\left( x\right) ,{\Delta y} = f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right)\) ,如果 \(\frac{\Delta y}{\Delta x}\) 的左极限存在,就把左极限 \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}\) 叫做 \(f\left( x\right)\) 在点 \({x}_{0}\) 处的左导数; 如果 \(\frac{\Delta y}{\Delta x}\) 的右极限存在,就把右极限 \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 + }}\frac{\Delta y}{\Delta x}\) 叫做 \(f\left( x\right)\) 在点 \({x}_{0}\) 处的右导数.
+
+根据左、右极限存在且相等是极限存在的充要条件, 可得左、右导数存在且相等是导数存在的充要条件.
+
+如果函数 \(y = f\left( x\right)\) 在开区间 \(\left( {a,b}\right)\) 内可导,在左端点 \(x =\) \(a\) 处存在右导数,在右端点 \(x = b\) 处存在左导数,我们就说函数 \(f\left( x\right)\) 在闭区间 \(\left\lbrack {a,b}\right\rbrack\) 上可导.
+
+\begin{problemset}[练习]
+
+\item 先从函数的图象观察,然后根据定义判断函数 \(y = \sqrt[3]{{x}^{2}}\) 在点 \(x = 0\) 处是否连续,在点 \(x = 0\) 处是否可导.
+
+\end{problemset}
+
+\begin{problemset}[习 题 四]
+
+\item 已知作直线运动的某一物体的运动方程为 \(s = \frac{5}{2}{t}^{2}\) (米), 当 \(t = 2\) 秒, \({\Delta t}\) 分别为 0.1 秒、 0.01 秒、 0.001 秒、 0.0001 秒、0.00001 秒时,求从 \({t}_{0}\) 到 \({t}_{0} + {\Delta t}\) 这段时间内的平均速度及 \(t = 2\) 秒时的瞬时速度.
+
+\item 已知质点按规律 \(s = 2{t}^{2} + {4t}\) (米) 作直线运动,求:
+
+（1）质点在运动开始后前 3 秒内的平均速度;
+
+（2）质点在 2 秒到 3 秒内的平均速度;
+
+（3）质点在 3 秒时的瞬时速度。
+
+\item 求下列函数在指定点处的导数:
+
+(1) \(y = {\left( x - 2\right) }^{2}\) ,点 \(x = 2\) ; （2） \(y = \frac{1}{x - 1}\) ,点 \(x = 0\) .
+
+\item 说明函数 \(y = f\left( x\right)\) 在点 \({x}_{0}\) 处的导数也可定义为
+
+\[
+{f}^{\prime }\left( {x}_{0}\right) = \mathop{\lim }\limits_{{x \rightarrow {x}_{0}}}\frac{f\left( x\right) - f\left( {x}_{0}\right) }{x - {x}_{0}}.
+\]
+
+\item 求下列函数的导数:
+
+(1) \(y = {ax} + b\) ; (2) \(y = \frac{1}{x}\)
+
+(3) \(y = \frac{1}{{x}^{2}}\) (4) \(y = \frac{1}{\sqrt{x}}\) .
+
+\item 已知 \(f\left( x\right) = \frac{1}{1 - x}\) ,求 \({f}^{\prime }\left( x\right) ,{f}^{\prime }\left( 0\right) ,{f}^{\prime }\left( 2\right)\) .
+
+\item 已知 \(y = \sqrt{{a}^{2} - {x}^{2}}\) ,求证 \({y}^{\prime } = - \frac{x}{\sqrt{{a}^{2} - {x}^{2}}}\) .
+
+\item 设质点 \(M\) 沿 \(x\) 轴作变速直线运动,在时刻 \(t\) (秒),质点 \(M\)
+
+所在位置为 \(x = {t}^{2} - {5t} + 6\) (米). 求从 1 秒到 3 秒 这段时间内质点 \(M\) 的平均速度. 质点 \(M\) 在什么时刻的速度等于这段时间内的平均速度?
+
+\item 求曲线 \(y = {2x} - {x}^{3}\) 在点 \(\left( {-1, - 1}\right)\) 处的切线的倾斜角.
+
+\item 求抛物线 \(y = \frac{1}{4}{x}^{2}\) 在点 \(\left( {-2,1}\right)\) 及点 \(\left( {2,1}\right)\) 处的切线方程和法线方程。
+
+\item 从时刻 \(t = 0\) 开始的 \(t\) 秒内,通过某导体的电量 (单位: 库仑)可由公式 \(q = 2{t}^{2} + {3t}\) 表示. 求第 5 秒时的电流强度及第 7 秒时的电流强度（即通过的电量 \(q\) 对时间 \(t\) 的导数 \({q}_{t}^{\prime }\) ),什么时刻电流强度达到 43 安培 (即库仑/秒).
+
+\end{problemset}
+
+\section*{求 导 方 法}
+
+\section{几种常见函数的导数}
+
+为了能够较快地求出某个函数的导数, 在下几节中我们将研究求导数的一般运算法则以及基本初等函数的导数公式. 这一节, 我们根据导数的定义先来证明几个常见函数的导数公式.
+
+1. 设 \(y = C\) ( \(C\) 为常数),则 \({y}^{\prime } = 0\) .
+
+证明:
+
+\[
+y = f\left( x\right) = C,
+\]
+
+\[
+{\Delta y} = f\left( {x + {\Delta x}}\right) - f\left( x\right)
+\]
+
+\[
+= C - C = 0,
+\]
+
+\[
+\frac{\Delta y}{\Delta x} = 0
+\]
+
+\(\therefore \;{f}^{\prime }\left( x\right) = {C}^{\prime } = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = 0\) .
+
+2. \({\left( {x}^{n}\right) }^{\prime } = n{x}^{n - 1}\) ( \(n\) 为正整数)
+
+证明: \(y = f\left( x\right) = {x}^{n}\) ,
+
+\[
+{\Delta y} = f\left( {x + {\Delta x}}\right) - f\left( x\right)
+\]
+
+\[
+= {\left( x + \Delta x\right) }^{n} - {x}^{n}
+\]
+
+\[
+= \left\lbrack {{x}^{n} + {C}_{n}^{1}{x}^{n - 1}{\Delta x} + {C}_{n}^{2}{x}^{n - 2}{\left( \Delta x\right) }^{2}}\right.
+\]
+
+\[
+\left. {+\cdots + {C}_{n}^{n}{\left( \Delta x\right) }^{n}}\right\rbrack - {x}^{n}
+\]
+
+\[
+= {C}_{n}^{1}{x}^{n - 1}{\Delta x} + {C}_{n}^{2}{x}^{n - 2}{\left( \Delta x\right) }^{2} + \cdots + {C}_{n}^{n}{\left( \Delta x\right) }^{n},
+\]
+
+\[
+\frac{\Delta y}{\Delta x} = {C}_{n}^{1}{x}^{n - 1} + {C}_{n}^{2}{x}^{n - 2}{\Delta x} + \cdots + {C}_{n}^{n}{\left( \Delta x\right) }^{n - 1},
+\]
+
+\[
+\therefore \;{y}^{\prime } = {\left( {x}^{n}\right) }^{\prime } = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}
+\]
+
+\[
+= \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\left\lbrack {{C}_{n}^{1}{x}^{n - 1} + {C}_{n}^{2}{x}^{n - 2}{\Delta x} + \cdots + {C}_{n}^{n}{\left( \Delta x\right) }^{n - 1}}\right\rbrack
+\]
+
+\[
+= n{x}^{n - 1}\text{. }
+\]
+
+例如,
+
+\[
+{\left( {x}^{3}\right) }^{\prime } = 3{x}^{2},\;{\left( {x}^{7}\right) }^{\prime } = 7{x}^{6},\;{\left( x\right) }^{\prime } = 1{x}^{0} = 1.
+\]
+
+3. \({\left( \sin x\right) }^{\prime } = \cos x\)
+
+证明: \(y = \sin x\) ,
+
+\[
+{\Delta y} = \sin \left( {x + {\Delta x}}\right) - \sin x = 2\cos \left( {x + \frac{\Delta x}{2}}\right) \sin \frac{\Delta x}{2},
+\]
+
+\[
+\frac{\Delta y}{\Delta x} = \cos \left( {x + \frac{\Delta x}{2}}\right) \frac{\sin \frac{\Delta x}{2}}{\frac{\Delta x}{2}}
+\]
+
+\(\because \;\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\sin \frac{\Delta x}{2}}{\frac{\Delta x}{2}} = 1\)
+
+\(\therefore \;{y}^{\prime } = {\left( \sin x\right) }^{\prime } = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}\)
+
+\[
+= \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\cos \left( {x + \frac{\Delta x}{2}}\right) \cdot \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\sin \frac{\Delta x}{2}}{\frac{\Delta x}{2}} = \cos x.
+\]
+
+4. \({\left( \cos x\right) }^{\prime } = - \sin x\)
+
+请同学自己证明.
+
+\begin{problemset}[练习]
+
+\item (口答) 求下列函数的导数:
+
+(1) \(y = {x}^{5}\) ; (2) \(y = {x}^{6}\) ;
+
+(3) \(x = \sin t\) ; (4) \(u = \cos \varphi\) .
+
+\end{problemset}
+
+\section{函数的和、差、积、商的导数}
+
+相应于函数极限的四则运算法则, 我们根据导数的定义来导出求导数的四则运算法则, 以简化求导数的计算. 在下面的公式中, \(u\) 及 \(v\) 都是 \(x\) 的函数,而且都是可导的.
+
+\section*{1. 和(或差)的导数}
+
+法则 1 两个函数的和 (或差) 的导数, 等于这两个函数的导数的和(或差). 即
+
+\[
+{\left( \mathbf{u} \pm \mathbf{v}\right) }^{\prime } = {\mathbf{u}}^{\prime } \pm \mathbf{v}.
+\]
+
+证明: \(y = f\left( x\right) = u\left( x\right) \pm v\left( x\right)\) ,
+
+\[
+{\Delta y} = \left\lbrack {u\left( {x + {\Delta x}}\right) \pm v\left( {x + {\Delta x}}\right) }\right\rbrack - \left\lbrack {u\left( x\right) \pm v\left( x\right) }\right\rbrack
+\]
+
+\[
+= \left\lbrack {u\left( {x + {\Delta x}}\right) - u\left( x\right) }\right\rbrack \pm \left\lbrack {v\left( {x + {\Delta x}}\right) - v\left( x\right) }\right\rbrack
+\]
+
+\[
+= {\Delta u} \pm {\Delta v}
+\]
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{\Delta u}{\Delta x} \pm \frac{\Delta v}{\Delta x}
+\]
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\left( {\frac{\Delta u}{\Delta x} \pm \frac{\Delta v}{\Delta x}}\right) = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta u}{\Delta x} \pm \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta v}{\Delta x}
+\]
+
+即
+
+\[
+{y}^{\prime } = {\left( u \pm v\right) }^{\prime } = {u}^{\prime } \pm {v}^{\prime }.
+\]
+
+这个法则可以推广到任意有限个函数, 即
+
+\[
+{\left( {u}_{1} \pm {u}_{2} \pm \cdots \pm {u}_{n}\right) }^{\prime } = {u}_{1}^{\prime } \pm {u}_{2}^{\prime } \pm \cdots \pm {u}_{n}^{\prime }.
+\]
+
+例 1 求 \(y = {x}^{3} + \sin x\) 的导数.
+
+解: \({y}^{\prime } = {\left( {x}^{3}\right) }^{\prime } + {\left( \sin x\right) }^{\prime } = 3{x}^{2} + \cos x\) .
+
+例 2 求 \(y = {x}^{4} - {x}^{2} - x + 3\) 的导数.
+
+解: \({y}^{\prime } = 4{x}^{3} - {2x} - 1\) .
+
+\section*{2. 积的导数}
+
+法则 2 两个函数的积的导数, 等于第一个函数的导数乘以第二个函数, 加上第一个函数乘以第二个函数的导数. 即
+
+\[
+{\left( uv\right) }^{\prime } = {u}^{\prime }v + u{v}^{\prime }
+\]
+
+证明: \(y = f\left( x\right) = u\left( x\right) v\left( x\right)\) ,
+
+\[
+{\Delta y} = u\left( {x + {\Delta x}}\right) v\left( {x + {\Delta x}}\right) - u\left( x\right) v\left( x\right)
+\]
+
+\[
+= u\left( {x + {\Delta x}}\right) v\left( {x + {\Delta x}}\right) - u\left( x\right) v\left( {x + {\Delta x}}\right)
+\]
+
+\[
++ u\left( x\right) v\left( {x + {\Delta x}}\right) - u\left( x\right) v\left( x\right)
+\]
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{u\left( {x + {\Delta x}}\right) - u\left( x\right) }{\Delta x}v\left( {x + {\Delta x}}\right) + u\left( x\right) \frac{v\left( {x + {\Delta x}}\right) - v\left( x\right) }{\Delta x}.
+\]
+
+因为 \(v\left( x\right)\) 在点 \(x\) 处可导,所以它在点 \(x\) 处连续,于是当 \({\Delta x} \rightarrow 0\) 时, \(v\left( {x + {\Delta x}}\right) \rightarrow v\left( x\right)\) . 从而
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{u\left( {x + {\Delta x}}\right) - u\left( x\right) }{\Delta x}v\left( {x + {\Delta x}}\right)
+\]
+
+\[
++ u\left( x\right) \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{v\left( {x + {\Delta x}}\right) - v\left( x\right) }{\Delta x}
+\]
+
+\[
+= {u}^{\prime }v + u{v}^{\prime }
+\]
+
+即
+
+\[
+{y}^{\prime } = {\left( uv\right) }^{\prime } = {u}^{\prime }v + u{v}^{\prime }.
+\]
+
+从法则 2 立即可以得出
+
+\[
+{\left( Cu\right) }^{\prime } = {C}^{\prime }u + C{u}^{\prime } = 0 + C{u}^{\prime } = C{u}^{\prime },
+\]
+
+也就是, 常数与函数的积的导数, 等于常数乘以函数的导数.
+
+即
+
+\[
+{\left( Cu\right) }^{\prime } = C{u}^{\prime }\text{. }
+\]
+
+例 3 求 \(y = 2{x}^{3} - 3{x}^{2} + {5x} - 4\) 的导数.
+
+解: \({y}^{\prime } = 6{x}^{2} - {6x} + 5\) .
+
+例 4 求 \(y = \left( {2{x}^{2} + 3}\right) \left( {{3x} - 2}\right)\) 的导数.
+
+解: \({y}^{\prime } = {\left( 2{x}^{2} + 3\right) }^{\prime }\left( {{3x} - 2}\right) + \left( {2{x}^{2} + 3}\right) {\left( 3x - 2\right) }^{\prime }\)
+
+\[
+= {4x} \cdot \left( {{3x} - 2}\right) + \left( {2{x}^{2} + 3}\right) \cdot 3 = {18}{x}^{2} - {8x} + 9\text{.}
+\]
+
+\section*{3. 商的导数}
+
+法则 3 两个函数的商的导数, 等于分子的导数 与分母的积, 减去分母的导数与分子的积, 再除以分母的平方. 即
+
+\[
+{\left( \frac{u}{v}\right) }^{\prime } = \frac{{u}^{\prime }v - u{v}^{\prime }}{{v}^{2}}\;\left( {v \neq 0}\right) .
+\]
+
+证明: \(y = f\left( x\right) = \frac{u\left( x\right) }{v\left( x\right) }\) ,
+
+\[
+{\Delta y} = \frac{u\left( {x + {\Delta x}}\right) }{v\left( {x + {\Delta x}}\right) } - \frac{u\left( x\right) }{v\left( x\right) }
+\]
+
+\[
+= \frac{u\left( {x + {\Delta x}}\right) v\left( x\right) - u\left( x\right) v\left( {x + {\Delta x}}\right) }{v\left( {x + {\Delta x}}\right) v\left( x\right) }
+\]
+
+\[
+= \frac{\left\lbrack {u\left( {x + {\Delta x}}\right) v\left( x\right) - u\left( x\right) v\left( x\right) }\right\rbrack - \left\lbrack {u\left( x\right) v\left( {x + {\Delta x}}\right) - u\left( x\right) v\left( x\right) }\right\rbrack }{v\left( {x + {\Delta x}}\right) v\left( x\right) }
+\]
+
+\[
+= \frac{\left\lbrack {u\left( {x + {\Delta x}}\right) - u\left( x\right) }\right\rbrack v\left( x\right) - u\left( x\right) \left\lbrack {v\left( {x + {\Delta x}}\right) - v\left( x\right) }\right\rbrack }{v\left( {x + {\Delta x}}\right) v\left( x\right) }.
+\]
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{\frac{u\left( {x + {\Delta x}}\right) - u\left( x\right) }{\Delta x}v\left( x\right) - u\left( x\right) \frac{v\left( {x + {\Delta x}}\right) - v\left( x\right) }{\Delta x}}{v\left( {x + {\Delta x}}\right) v\left( x\right) }.
+\]
+
+因为 \(v\left( x\right)\) 在点 \(x\) 处可导,所以它在点 \(x\) 处连续,于是当 \({\Delta x} \rightarrow 0\) 时, \(v\left( {x + {\Delta x}}\right) \rightarrow v\left( x\right)\) . 从而
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \frac{{u}^{\prime }\left( x\right) v\left( x\right) - u\left( x\right) {v}^{\prime }\left( x\right) }{{\left\lbrack v\left( x\right) \right\rbrack }^{2}},
+\]
+
+即
+
+\[
+{y}^{\prime } = {\left( \frac{u}{v}\right) }^{\prime } = \frac{{u}^{\prime }v - u{v}^{\prime }}{{v}^{2}}.
+\]
+
+例 5 求 \(y = \frac{{x}^{2}}{\sin x}\) 的导数.
+
+解: \({y}^{\prime } = \frac{{\left( {x}^{2}\right) }^{\prime } \cdot \sin x - {x}^{2} \cdot {\left( \sin x\right) }^{\prime }}{{\sin }^{2}x} = \frac{{2x}\sin x - {x}^{2}\cos x}{{\sin }^{2}x}\) .
+
+例 6 求 \(y = \frac{x + 3}{{x}^{2} + 3}\) 在点 \(x = 3\) 处的导数.
+
+解: \({y}^{\prime } = \frac{1 \cdot \left( {{x}^{2} + 3}\right) - \left( {x + 3}\right) \cdot {2x}}{{\left( {x}^{2} + 3\right) }^{2}} = \frac{-{x}^{2} - {6x} + 3}{{\left( {x}^{2} + 3\right) }^{2}}\) ,
+
+\[
+\therefore {\left. {y}^{\prime }\right| }_{x = 3} = \frac{-9 - {18} + 3}{{\left( 9 + 3\right) }^{2}} = \frac{-{24}}{144} = - \frac{1}{6}\text{.}
+\]
+
+例 7 求证当 \(n\) 是负整数时,公式
+
+\[
+{\left( {x}^{n}\right) }^{\prime } = n{x}^{n - 1}
+\]
+
+仍然成立.
+
+证明: 设 \(n = - m\) ,则 \(m\) 为正整数.
+
+\[
+\therefore \;{\left( {x}^{n}\right) }^{\prime } = {\left( {x}^{-m}\right) }^{\prime } = {\left( \frac{1}{{x}^{m}}\right) }^{\prime }
+\]
+
+\[
+= \frac{0 \cdot {x}^{m} - m{x}^{m - 1}}{{x}^{2m}}
+\]
+
+\[
+= - m{x}^{-m - 1} = n{x}^{n - 1}.
+\]
+
+例 8 求 \(y = 2{x}^{2} - {3x} + 4 - \frac{3}{x} + \frac{2}{{x}^{2}}\) 的导数.
+
+解: \(y = 2{x}^{2} - {3x} + 4 - 3{x}^{-1} + 2{x}^{-2}\) ,
+
+\[
+\therefore \;{y}^{\prime } = {4x} - 3 + 3{x}^{-2} - 4{x}^{-3}
+\]
+
+\[
+= {4x} - 3 + \frac{3}{{x}^{2}} - \frac{4}{{x}^{3}}
+\]
+
+\begin{problemset}[练习]
+
+\item 求下列函数的导数:
+
+(1) \(y = 3{x}^{4} - {23}{x}^{3} + {40x} - {10}\) ; \(\;\left( 2\right) y = a{x}^{3} - {bx} + c\) ;
+
+(3) \(y = \sin x - x + 1\) ; (4) \(y = {x}^{2} + 2\cos x\) .
+
+\item 填空:
+
+(1) \({\left\lbrack \left( 3{x}^{2} + 1\right) \left( 4{x}^{2} - 3\right) \right\rbrack }^{\prime }\)
+
+\(= \left( \;\right) \left( {4{x}^{2} - 3}\right) + \left( {3{x}^{2} + 1}\right) \left( \;\right)\) ;
+
+(2) \({\left( {x}^{3}\sin x\right) }^{\prime } = \left( \;\right) {x}^{2}\sin x + {x}^{3}\left( \;\right)\) .
+
+\item 求下列函数的导数:
+
+(1) \(y = \left( {3{x}^{2} + 1}\right) \left( {2 - x}\right)\) ; (2) \(y = \left( {1 - 2{x}^{3}}\right) \left( {x - 3{x}^{2}}\right)\) ;
+
+(3) \(y = \left( {1 + {x}^{2}}\right) \cos x\) ; (4) \(y = \left( {1 + \sin x}\right) \left( {1 - {2x}}\right)\) .
+
+\item 填空:
+
+(1) \({\left( \frac{x}{{x}^{2} + 1}\right) }^{\prime } = \frac{\left( \;\right) \left( {{x}^{2} + 1}\right) - x\left( \;\right) }{{\left( {x}^{2} + 1\right) }^{2}}\)
+
+(2) \({\left( \frac{1 - {x}^{2}}{\sin x}\right) }^{\prime } = \frac{\left( \;\right) \sin x - \left( {1 - {x}^{2}}\right) \left( \;\right) }{{\sin }^{2}x}\) .
+
+\item 求下列函数的导数:
+
+(1) \(y = \frac{a - x}{a + x}\) (2) \(y = \frac{1 + x}{3 - {x}^{2}}\)
+
+(3) \(y = \frac{\cos x}{1 - {x}^{2}}\) (4) \(y = \frac{1}{1 + \sin x}\) ;
+
+(5) \(y = 1 + \frac{2}{x} + \frac{3}{{x}^{2}} - \frac{4}{{x}^{3}}\) (6) \(y = \frac{-3{x}^{4} + 3{x}^{2} - 5}{{x}^{3}}\) .
+
+\item 下列做法是否正确? 如果不正确, 加以改正:
+
+(1) \({\left\lbrack \left( 3 + {x}^{2}\right) \left( 2 - {x}^{3}\right) \right\rbrack }^{\prime } = {2x}\left( {2 - {x}^{3}}\right) + 3{x}^{2}\left( {3 + {x}^{2}}\right)\) ;
+
+(2) \({\left( \frac{1 + \cos x}{{x}^{2}}\right) }^{\prime } = \frac{{2x}\left( {1 + \cos x}\right) + {x}^{2}\sin x}{{x}^{2}}\) .
+
+\end{problemset}
+
+\section{复合函数的导数}
+
+我们先看一个例子. 设已知
+
+\[
+y = {\left( 3x - 2\right) }^{2},
+\]
+
+那么,
+
+\[
+{y}^{\prime } = {\left\lbrack {\left( 3x - 2\right) }^{2}\right\rbrack }^{\prime } = {\left( 9{x}^{2} - {12}x + 4\right) }^{\prime } = {18x} - {12}.
+\]
+
+函数 \(y = {\left( 3x - 2\right) }^{2}\) 又可以看成由
+
+\[
+y = {u}^{2},u = {3x} - 2
+\]
+
+复合而成的. 由于
+
+\[
+{y}_{u}^{\prime } = {2u},\;{u}_{x}^{\prime } = 3,
+\]
+
+因而
+
+\[
+{y}_{u}^{\prime } \cdot {u}_{x}^{\prime } = {2u} \cdot 3 = 2\left( {{3x} - 2}\right) \cdot 3 = {18x} - {12}.
+\]
+
+于是在本例中, 我们有等式
+
+\[
+{y}_{x}^{\prime } = {y}_{u}^{\prime } \cdot {u}_{x}^{\prime }
+\]
+
+一般地,设函数 \(u = \varphi \left( x\right)\) 在点 \(x\) 处有导数 \({u}_{x}^{\prime } = {\varphi }^{\prime }\left( x\right)\) , 函数 \(y = f\left( u\right)\) 在点 \(x\) 的对应点 \(u\) 处有导数 \({y}_{u}^{\prime } = {f}^{\prime }\left( u\right)\) ,则复合函数 \(y = f\left\lbrack {\varphi \left( x\right) }\right\rbrack\) 在点 \(x\) 处也有导数,且
+
+\[
+{y}_{x}^{\prime } = {y}_{u}^{\prime } \cdot {u}_{x}^{\prime }
+\]
+
+或写作
+
+\[
+{f}_{x}^{\prime }\left\lbrack {\varphi \left( x\right) }\right\rbrack = {f}^{\prime }\left( u\right) {\varphi }^{\prime }\left( x\right) .
+\]
+
+证明: 设 \(x\) 有一改变量 \({\Delta x}\) ,则对应的 \(u\text{、}y\) 分别有改变量 \({\Delta u}\text{、}{\Delta y}\) . 因为 \(u = \varphi \left( x\right)\) 在点 \(x\) 处可导,所以 \(u = \varphi \left( x\right)\) 在点 \(x\) 处连续. 因此当 \({\Delta x} \rightarrow 0\) 时, \({\Delta u} \rightarrow 0\) . 设 \({\Delta u} \neq 0\mathbf{0}\) ,由
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{\Delta y}{\Delta u} \cdot \frac{\Delta u}{\Delta x}
+\]
+
+且
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta u} = \mathop{\lim }\limits_{{{\Delta u} \rightarrow 0}}\frac{\Delta y}{\Delta u}
+\]
+
+得
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta u} \cdot \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta u}{\Delta x}
+\]
+
+3 \({\Delta u} = 0\) 时公式也成立,证明从略.
+
+\[
+= \mathop{\lim }\limits_{{{\Delta u} \rightarrow 0}}\frac{\Delta y}{\Delta u} \cdot \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta u}{\Delta x}
+\]
+
+即
+
+\[
+{y}_{x}^{\prime } = {y}_{u}^{\prime } \cdot {u}_{x}^{\prime }
+\]
+
+这就是复合函数的求导法则, 即: 复合函数对自变量的导数, 等于已知函数对中间变量的导数, 乘以中间变量对自变量的导数.
+
+这个法则可以推广到两个以上的中间变量. 例如, 如果
+
+\[
+y = y\left( u\right) ,u = u\left( v\right) ,v = v\left( x\right) ,
+\]
+
+那么有
+
+\[
+{y}_{x}^{\prime } = {y}_{u}^{\prime } \cdot {u}_{v}^{\prime } \cdot {v}_{x}^{\prime }
+\]
+
+例 1 求 \(y = {\left( 2x + 1\right) }^{5}\) 的导数.
+
+解: 设 \(y = {u}^{5},u = {2x} + 1\) .
+
+根据复合函数求导法则, 有
+
+\[
+{y}_{x}^{\prime } = {y}_{u}^{\prime } \cdot {u}_{x}^{\prime } = {\left( {u}^{5}\right) }_{u}^{\prime } \cdot {\left( 2x + 1\right) }_{x}^{\prime }
+\]
+
+\[
+= 5{u}^{4} \cdot 2 = 5{\left( 2x + 1\right) }^{4} \cdot 2
+\]
+
+\[
+= {10}{\left( 2x + 1\right) }^{4}\text{.}
+\]
+
+注意: 在利用复合函数的求导法则求导数后, 要把中间变量换成自变量的函数.
+
+例 2 求 \(y = \frac{1}{{\left( 1 - 3x\right) }^{4}}\) 的导数.
+
+解: \(y = \frac{1}{{\left( 1 - 3x\right) }^{4}} = {\left( 1 - 3x\right) }^{-4}\) .
+
+设 \(y = {u}^{-4},u = \left( {1 - {3x}}\right)\) ,则
+
+\[
+{y}_{x}^{\prime } = {y}_{u}^{\prime } \cdot {u}_{x}^{\prime }
+\]
+
+\[
+= {\left( {u}^{-4}\right) }_{u}^{\prime } \cdot {\left( 1 - 3x\right) }_{x}^{\prime }
+\]
+
+\[
+= - 4{u}^{-5} \cdot \left( {-3}\right)
+\]
+
+\[
+= {12}{u}^{-5}
+\]
+
+\[
+= {12}{\left( 1 - 3x\right) }^{-5}
+\]
+
+\[
+= \frac{12}{{\left( 1 - 3x\right) }^{5}}
+\]
+
+例 3 求 \(y = {\sin }^{2}\left( {{2x} + \frac{\pi }{3}}\right)\) 的导数.
+
+解: 设 \(y = {u}^{2},u = \sin v,v = {2x} + \frac{\pi }{3}\) ,
+
+\[
+{y}_{x}^{\prime } = {y}_{u}^{\prime } \cdot {u}_{v}^{\prime } \cdot {v}_{x}^{\prime }
+\]
+
+\[
+= {\left( {u}^{2}\right) }_{u}^{\prime } \cdot {\left( \sin v\right) }_{v}^{\prime } \cdot {\left( 2x + \frac{\pi }{3}\right) }_{x}^{\prime }
+\]
+
+\[
+= {2u} \cdot \cos v \cdot 2
+\]
+
+\[
+= 2\sin \left( {{2x} + \frac{\pi }{3}}\right) \cdot \cos \left( {{2x} + \frac{\pi }{3}}\right) \cdot 2
+\]
+
+\[
+= 2\sin \left( {{4x} + \frac{2\pi }{3}}\right) \text{.}
+\]
+
+求复合函数的导数, 关键在于分析清楚函数的复合关系, 适当选定中间变量, 明确每次是哪个变量对哪个变量求导数. 在熟练以后, 就不必再写出中间步骤. 如以上三例可分别直接写成
+
+\[
+{y}^{\prime } = {\left\lbrack {\left( 2x + 1\right) }^{5}\right\rbrack }^{\prime } = 5{\left( 2x + 1\right) }^{4} \cdot 2 = {10}{\left( 2x + 1\right) }^{4}.
+\]
+
+\[
+{y}^{\prime } = {\left\lbrack {\left( 1 - 3x\right) }^{-4}\right\rbrack }^{\prime } = - 4{\left( 1 - 3x\right) }^{-5} \cdot \left( {-3}\right) = {12}{\left( 1 - 3x\right) }^{-5}.
+\]
+
+\[
+{y}^{\prime } = {\left\lbrack {\sin }^{2}\left( 2x + \frac{\pi }{3}\right) \right\rbrack }^{\prime } = 2\sin \left( {{2x} + \frac{\pi }{3}}\right) \cdot \cos \left( {{2x} + \frac{\pi }{3}}\right) \cdot 2
+\]
+
+\[
+= 2\sin \left( {{4x} + \frac{2\pi }{3}}\right)
+\]
+
+对经过多次复合及四则运算而成的复合函数, 也可利用复合函数的求导法则, 由外向里, 逐层求导.
+
+例 4 求 \(y = {\left( at - b{\sin }^{2}\omega t\right) }^{3}\) 对 \(t\) 的导数.
+
+解: \({y}^{\prime } = 3{\left( at - b{\sin }^{2}\omega t\right) }^{2} \cdot {\left( at - b{\sin }^{2}\omega t\right) }^{\prime }\)
+
+\[
+= 3{\left( at - b{\sin }^{2}\omega t\right) }^{2}\left\lbrack {a - {2b}\sin {\omega t} \cdot {\left( \sin \omega t\right) }^{\prime }}\right\rbrack
+\]
+
+\[
+= 3{\left( at - b{\sin }^{2}\omega t\right) }^{2}\left\lbrack {a - {2b}\sin {\omega t} \cdot \cos {\omega t} \cdot {\left( \omega t\right) }^{\prime }}\right\rbrack
+\]
+
+\[
+\sim 3{\left( at - b{\sin }^{2}\omega t\right) }^{2}\left( {a - {2b}\sin {\omega t} \cdot \cos {\omega t} \cdot \omega }\right)
+\]
+
+\[
+= 3{\left( at - b{\sin }^{2}\omega t\right) }^{2}\left( {a - {b\omega }\sin {2\omega t}}\right) \text{.}
+\]
+
+熟练以后, 也可省去中间步骤, 直接写成
+
+\[
+{y}^{\prime } = 3{\left( at - b{\sin }^{2}\omega t\right) }^{2}\left( {a - {2b}\sin {\omega t} \cdot \cos {\omega t} \cdot \omega }\right)
+\]
+
+\[
+= 3{\left( at - b{\sin }^{2}\omega t\right) }^{2}\left( {a - {b\omega }\sin {2\omega t}}\right) \text{.}
+\]
+
+在 2.12 节我们将要证明,公式 \({\left( {x}^{a}\right) }^{\prime } = \alpha {x}^{a - 1}\) 对一切实数 \(\alpha\) 都成立. 现在先运用这个公式和复合函数的求导法则来求一些无理函数的导数 (中间步骤省略不写).
+
+例 5 求 \(y = \sqrt[3]{a{x}^{2} + {bx} + c}\) 的导数.
+
+解: \(y = \sqrt[3]{a{x}^{2} + {bx} + c} = {\left( a{x}^{2} + bx + c\right) }^{\frac{1}{3}}\) ,
+
+\[
+\therefore \;{y}^{\prime } = \frac{1}{3}{\left( a{x}^{2} + bx + c\right) }^{-\frac{2}{3}} \cdot \left( {{2ax} + b}\right)
+\]
+
+\[
+= \frac{{2ax} + b}{3\sqrt[3]{{\left( a{x}^{2} + bx + c\right) }^{2}}}.
+\]
+
+例 6 求 \(y = \left( {2{x}^{2} - 3}\right) \sqrt{1 + {x}^{2}}\) 的导数.
+
+解: \(y = \left( {2{x}^{2} - 3}\right) \sqrt{1 + {x}^{2}} = \left( {2{x}^{2} - 3}\right) {\left( 1 + {x}^{2}\right) }^{\frac{1}{2}}\) ,
+
+\[
+\therefore \;{y}^{\prime } = {4x} \cdot {\left( 1 + {x}^{2}\right) }^{\frac{1}{2}} + \left( {2{x}^{2} - 3}\right) \cdot \frac{1}{2}{\left( 1 + {x}^{2}\right) }^{-\frac{1}{2}} \cdot {2x}
+\]
+
+\[
+= {4x}\sqrt{1 + {x}^{2}} + \frac{x\left( {2{x}^{2} - 3}\right) }{\sqrt{1 + {x}^{2}}}
+\]
+
+\[
+= \frac{{4x}\left( {1 + {x}^{2}}\right) + x\left( {2{x}^{2} - 3}\right) }{\sqrt{1 + {x}^{2}}}
+\]
+
+\[
+= \frac{6{x}^{3} + x}{\sqrt{1 + {x}^{2}}}
+\]
+
+\begin{problemset}[练习]
+
+\item 把下列函数看成由一些比较简单的函数复合而成的, 写出它们的复合过程:
+
+(1) \(y = {\left( {x}^{2} - 1\right) }^{3}\) ; (2) \(y = \operatorname{tg}\left( {\frac{\pi }{4} - x}\right)\)
+
+（3） \(y = {e}^{1 + {x}^{2}}\) (4) \(y = \sin \frac{1}{\sqrt{1 + {x}^{2}}}\) .
+
+\item 按例 1 中的步骤, 对下列函数, 先设中间变量, 然后求导:
+
+(1) \(y = {\left( 5x - 3\right) }^{4}\) ; (2) \(y = {\left( 2 - {x}^{2}\right) }^{3}\) ;
+
+(3) \(y = \sin \left( {{3x} - \frac{\pi }{6}}\right)\) ; (4) \(y = \cos \left( {1 + {x}^{2}}\right)\) .
+
+\item 填空:
+
+(1) \({y}^{\prime } = {\left\lbrack {\left( 2{x}^{3} + x\right) }^{2}\right\rbrack }^{\prime } = 2\left( {2{x}^{3} + x}\right) \left( \;\right)\) ;
+
+(2) \({y}^{\prime } = {\left\lbrack {\left( 1 + {x}^{2}\right) }^{2}\sin \left( ax + b\right) \right\rbrack }^{\prime }\)
+
+\[
+= 2\left( {1 + {x}^{2}}\right) \left( \;\right) \sin \left( {{ax} + b}\right)
+\]
+
+\[
++ {\left( 1 + {x}^{2}\right) }^{2}\cos \left( {{ax} + b}\right) \left( \;\right) \text{; }
+\]
+
+(3) \({y}^{\prime } = {\left\lbrack {\left( 1 + {\cos }^{2}x\right) }^{3}\right\rbrack }^{\prime } = 3{\left( 1 + {\cos }^{2}x\right) }^{2}\left( \;\right) \left( \;\right)\) ;
+
+(4) \({y}^{\prime } = {\left\lbrack \frac{1}{{\left( 2 + 3x\right) }^{5}}\right\rbrack }^{\prime } = {\left\lbrack {\left( 2 + 3x\right) }^{-5}\right\rbrack }^{\prime }\)
+
+\[
+= \left( \;\right) {\left( 2 + 3x\right) }^{-6}\left( \;\right) \text{. }
+\]
+
+\item 求下列函数的导数:
+
+(1) \(y = \sin {x}^{2} - \sin {3x}\) ; (2) \(y = \frac{{x}^{2}}{{\left( 2x + 1\right) }^{3}}\) ;
+
+(3) \(y = {x}^{2}\sqrt{x} - \frac{1}{\sqrt{x}}\) (4) \(y = \sqrt{{x}^{2} - {a}^{2}}\) ;
+
+(5) \(y = \frac{1}{\sqrt[3]{{x}^{2} - 1}}\) (6) \(y = \sqrt{{4x} + 3}\cos {2x}\) .
+\end{problemset}
+
+\begin{problemset}[习 题 五]
+
+\item 求下列函数的导数:
+
+(1) \(y = {x}^{2}\sin x + {x}^{3}\) ; (2) \(y = \frac{{a}^{2} - {x}^{2}}{{a}^{2} + {x}^{2}}\)
+
+(3) \(y = \left( {2 + {3x}}\right) \left( {1 - x + {x}^{2}}\right)\) ; (4) \(y = \frac{\cos x}{1 - \sin x}\) ;
+
+(5) \(y = {x}^{3}\left( {\sin x + \sin \frac{\pi }{4}}\right)\) ; (6) \(y = \frac{x - 1}{{x}^{2} - {3x} + 6}\) .
+
+\item 已知 \(u,v,w\) 是 \(x\) 的可导函数,求证
+
+\[
+{\left( uvw\right) }^{\prime } = {u}^{\prime }{vw} + u{v}^{\prime }w + {uv}{w}^{\prime }.
+\]
+
+\item 求下列函数在指定点处的导数:
+
+(1) \(y = x\sin x\) 在点 \(x = \frac{\pi }{4}\) 处;
+
+（2） \(y = \frac{2 - 3{x}^{2}}{1 + {2x}}\) 在点 \(x = 1\) 处.
+
+\item 求正弦函数 \(y = \sin x\) 在点 \(\left( {\frac{\pi }{6},\frac{1}{2}}\right)\) 处的切线方程和法线方程.
+
+\item 已知曲线 \(y = {x}^{3} + {3x}\) ,求这条曲线平行于直线 \(y = {15x} + 2\) 的切线的方程.
+
+\item 已知曲线 \(y = 2{x}^{3} + 3{x}^{2} - {12x} + 1\) ,求这条曲线的与 \(x\) 轴平行的切线的方程.
+
+\item 已知曲线 \(y = {x}^{3} + {x}^{2} - 1\) ,在曲线上哪一点处作切线,它的倾斜角等于 \({45}^{ \circ }\) ? 求在这点处的切线和法线的方程.
+
+\item 已知函数 \(f\left( x\right) = {x}^{2}\left( {x - 1}\right)\) 当 \(x = {x}_{0}\) 时有 \({f}^{\prime }\left( {x}_{0}\right) = f\left( {x}_{0}\right)\) , 求 \({x}_{0}\) 的值.
+
+\item 已知两个作直线运动的物体的运动方程 \({s}_{1}\left( t\right) = \frac{1}{3}{t}^{3}\) 及 \({s}_{2}\left( t\right) = {20t} - 4{t}^{2}\;\left( {t \geq 0}\right)\) ,在什么时刻它们运动的速度相等?
+
+\item 在直线轨道上运行的一列火车, 从刹车到停车这段时间内,测得刹车后 \(t\) 秒内列车前进的距离 \(s = {27t} - {0.45}{t}^{2}\) (单位是米). 这列车在刹车后几秒钟才停车? 刹车后又运行了多少米?
+
+\item 求下列函数的导数:
+
+(1) \(y = {x}^{2}\sqrt{x} - 3\sqrt{x} + \frac{1}{x\sqrt{x}}\) ;
+
+(2) \(y = \frac{3{x}^{3} - {x}^{2} + {5x} - 2}{\sqrt[3]{x}}\) .
+
+\item 把下列函数看成由一些比较简单的函数复合而成的, 写出它们的复合过程:
+
+(1) \(y = \frac{1}{\sqrt[5]{1 + {3x}}}\) (2) \(y = \arcsin \frac{1 - x}{1 + x}\)
+
+(3) \({}^{1}y = \lg \sin \sqrt{x}\) ; (4) \(y = \sqrt{3 + \cos {2x}}\) .
+
+\item 对下列函数, 先设中间变量, 然后求导:
+
+(1) \(y = {\left( ax + b\right) }^{n}\) ; (2) \(y = \sqrt{2 - {x}^{2}}\) ;
+
+(3) \(y = {\sin }^{3}\left( {{4x} + 3}\right)\) .
+
+\item 求下列函数的导数:
+
+(1) \(y = {\left( 2x - 1\right) }^{2}{\left( 2 - 3x\right) }^{3}\) ; (2) \(y = \frac{1}{{\left( a + b{x}^{2}\right) }^{3}}\) ;
+
+(3) \(y = \frac{x}{\sqrt{1 + x}}\) (4) \(y = 2{\sin }^{2}\frac{x}{2} - \sqrt{x}\) ;
+
+(5) \(y = \sqrt[3]{1 + {x}^{2}}\sin {5x}\) ; (6) \(y = {\left( \frac{x}{1 + x}\right) }^{5}\) ;
+
+(7) \(y = \frac{x}{2}\sqrt{{a}^{2} - {x}^{2}}\) ; (8) \(y = \frac{x}{\sqrt{{x}^{2} - {a}^{2}}}\) .
+
+\item 求下列曲线在指定点 \(M\) 处的切线和法线的方程:
+
+(1) \(y = \frac{3}{5}\sqrt{{25} - {x}^{2}}\) ,点 \(M\left( {4,\frac{9}{5}}\right)\) ;
+
+(2) \(y = {x}^{2} - 4\sqrt{x}\) ,点 \(M\left( {1, - 3}\right)\) .
+
+\item 把 \(y = \frac{u}{v}\) (其中 \(u,v\) 都是 \(x\) 的函数, \(v \neq 0\) ) 改写成 \(y =\) \(u{v}^{-1}\) ,利用积的求导法则和复合函数的求导法则,导出商的求导法则 \({\left( \frac{u}{v}\right) }^{\prime } = \frac{{u}^{\prime }v - u{v}^{\prime }}{{v}^{2}}\) .
+
+\end{problemset}
+
+\section{三角函数的导数}
+
+1. \({\left( \sin x\right) }^{\prime } = \cos x\)
+
+这一公式根据定义已证明.
+
+现在, 利用复合函数求导法则以及和、差、积、商的求导法则, 可以简便地推导出余弦函数、正切函数及余切函数的导数公式.
+
+2. \({\left( \cos x\right) }^{\prime } = - \sin x\)
+
+证明: \({\left( \cos x\right) }^{\prime } = {\left\lbrack \sin \left( \frac{\pi }{2} - x\right) \right\rbrack }^{\prime }\)
+
+\[
+= - \cos \left( {\frac{\pi }{2} - x}\right) = - \sin x\text{. }
+\]
+
+3. \({\left( \operatorname{tg}x\right) }^{\prime } = {\sec }^{2}x\)
+
+证明: \({\left( \operatorname{tg}x\right) }^{\prime } = {\left( \frac{\sin x}{\cos x}\right) }^{\prime }\)
+
+\[
+= \frac{\cos x\cos x - \sin x\left( {-\sin x}\right) }{{\cos }^{2}x}
+\]
+
+\[
+= \frac{1}{{\cos }^{2}x} = {\sec }^{2}x\text{. }
+\]
+
+4. \({\left( \operatorname{ctg}x\right) }^{\prime } = - {\csc }^{2}x\)
+
+这个公式由同学自己证明.
+
+例 1 求证:
+
+\[
+{\left( \sec x\right) }^{\prime } = \sec x\operatorname{tg}x
+\]
+
+\[
+{\left( \csc x\right) }^{\prime } = - \csc x\operatorname{ctg}x\text{. }
+\]
+
+证明: \({\left( \sec x\right) }^{\prime } = {\left\lbrack {\left( \cos x\right) }^{-1}\right\rbrack }^{\prime }\)
+
+\[
+= - {\left( \cos x\right) }^{-2}\left( {-\sin x}\right)
+\]
+
+\[
+= \frac{1}{\cos x} \cdot \frac{\sin x}{\cos x}
+\]
+
+\[
+= \sec x\operatorname{tg}x
+\]
+
+\[
+{\left( \csc x\right) }^{\prime } = {\left\lbrack {\left( \sin x\right) }^{-1}\right\rbrack }^{\prime }
+\]
+
+\[
+= - {\left( \sin x\right) }^{-2} \cdot \cos x
+\]
+
+\[
+= - \frac{1}{\sin x} \cdot \frac{\cos x}{\sin x}
+\]
+
+\[
+= - \csc x\operatorname{ctg}x\text{.}
+\]
+
+例 2 求 \(y = \sin {nx}{\sin }^{n}x\) 的导数.
+
+解: \({y}^{\prime } = n\cos {nx} \cdot \sin {}^{n}x + \sin {nx} \cdot n\sin {}^{n - 1}x\cos x\)
+
+\[
+= n{\sin }^{n - 1}x\left( {\cos {nx}\sin x + \sin {nx}\cos x}\right)
+\]
+
+\[
+= n{\sin }^{n - 1}x\sin \left( {n + 1}\right) x\text{. }
+\]
+
+例 3 求 \(y = \sin \left( {x + \alpha }\right) \sin \left( {x - \alpha }\right)\) 的导数.
+
+解: \(y = - \frac{1}{2}\left( {\cos {2x} - \cos {2\alpha }}\right)\) .
+
+\[
+{y}^{\prime } = - \frac{1}{2}\left( {-\sin {2x} \cdot 2}\right) = \sin {2x}.
+\]
+
+例 4 求 \(y = \operatorname{tg}\sqrt{1 - x}\) 的导数.
+
+解: \({y}^{\prime } = {\sec }^{2}\sqrt{1 - x} \cdot {\left( \sqrt{1 - x}\right) }^{\prime }\)
+
+\[
+= {\sec }^{2}\sqrt{1 - x} \cdot \frac{-1}{2\sqrt{1 - x}}
+\]
+
+\[
+= - \frac{{\sec }^{2}\sqrt{1 - x}}{2\sqrt{1 - x}}
+\]
+
+\begin{problemset}[练习]
+
+\item 求下列函数的导数:
+
+(1) \(f\left( \theta \right) = \frac{1 + \cos \theta }{1 - \cos \theta }\) (2) \(y = \cos {x}^{2} - \sin \sqrt{x}\) ;
+
+(3) \(f\left( \theta \right) = \operatorname{tg}\theta - \theta\) ; (4) \(y = \operatorname{tg}\frac{x}{2} - \operatorname{ctg}\frac{x}{2}\) .
+
+\end{problemset}
+
+\section{反三角函数的导数}
+
+反正弦函数与正弦函数互为反函数. 已知正弦函数的导数, 能否从而求出反正弦函数的导数呢?
+
+下面, 我们先来研究互为反函数的两个函数的导数之间的关系.
+
+\section*{1. 反函数的导数}
+
+我们来看一个例子. 设
+
+\[
+y = {2x} - 3,
+\]
+
+则
+
+\[
+{y}_{x}^{\prime } = {\left( 2x - 3\right) }_{x}^{\prime } = 2.
+\]
+
+\(y = {2x} - 3\) 的反函数是 \(x = \frac{y + 3}{2}\) (这里 \(y\) 是自变量, \(x\) 是 \(y\) 的函数),
+
+\[
+{x}_{y}^{\prime } = {\left( \frac{y + 3}{2}\right) }_{y}^{\prime } = \frac{1}{2}
+\]
+
+因此, 在本例中我们有
+
+\[
+{y}_{x}^{\prime } = \frac{1}{{x}_{y}^{\prime }}.
+\]
+
+一般地,如果函数 \(y = f\left( x\right)\) 与 \(x = \varphi \left( y\right)\) 互为反函数,它们的导数是不是也有上述关系呢?
+
+设已知函数 \(y = f\left( x\right)\) 是 \(x = \varphi \left( y\right)\) 的反函数, \(y = f\left( x\right)\) 在点 \(x\) 处连续, \(x = \varphi \left( y\right)\) 在对应点 \(y\) 处的导数不等于零. 给 \(x\) 以改变量 \({\Delta x}\) ,相应地 \(y = f\left( x\right)\) 就有改变量
+
+\[
+{\Delta y} = f\left( {x + {\Delta x}}\right) - f\left( x\right) .
+\]
+
+当 \({\Delta x} \neq 0\) 时,一定有 \({\Delta y} \neq 0\) ,否则不等的两个值 \(x\) 与 \(x + {\Delta x}\) 将对应同一函数值 \(y\) ,这和 “ \(y = f\left( x\right)\) 与 \(x = \varphi \left( y\right)\) 互为反函数” 矛盾. 因此
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{1}{\frac{\Delta x}{\Delta y}}
+\]
+
+由于 \(y = f\left( x\right)\) 在点 \(x\) 处连续,即当 \({\Delta x} \rightarrow 0\) 时, \({\Delta y} \rightarrow 0\) ,又由于 \(x = \varphi \left( y\right)\) 在对应点 \(y\) 处有不等于零的导数,所以
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta y} \rightarrow 0}}\frac{1}{\frac{\Delta x}{\Delta y}} = \frac{1}{\mathop{\lim }\limits_{{{\Delta y} \rightarrow 0}}\frac{\Delta x}{\Delta y}} = \frac{1}{{x}_{y}^{\prime }},
+\]
+
+即有
+
+\[
+{y}_{x}^{\prime } = \frac{1}{{x}_{y}^{\prime }}.
+\]
+
+于是, 我们得到反函数的求导法则如下:
+
+已知函数 \(y = f\left( x\right)\) 是函数 \(x = \varphi \left( y\right)\) 的反函数, \(y = f\left( x\right)\) 在点 \(x\) 处连续, \(x = \varphi \left( y\right)\) 在对应点 \(y\) 处的导数不等于零,那么, \(y = f\left( x\right)\) 在点 \(x\) 处有导数,且
+
+\[
+{y}_{x}^{\prime } = \frac{1}{{x}_{y}^{\prime }}\text{.}
+\]
+
+或记作
+
+\[
+{f}^{\prime }\left( x\right) = \frac{1}{{\varphi }^{\prime }\left( y\right) }
+\]
+
+\section*{2. 反三角函数的导数}
+
+根据反函数的求导法则, 我们可以得出反三角函数的导数公式如下:
+
+(1) \({\left( \arcsin x\right) }^{\prime } = \frac{1}{\sqrt{1 - {x}^{2}}}\)
+
+证明: 设 \(y = \arcsin x\left( {-1 \leq x \leq 1}\right)\) ,则
+
+\[
+x = \sin y\left( {-\frac{\pi }{2} \leq y \leq \frac{\pi }{2}}\right) .
+\]
+
+\(y = \arcsin x\) 在 \(\left( {-1 < x < 1}\right)\) 上连续,且当 \(- \frac{\pi }{2} < y < \frac{\pi }{2}\) 时, \({x}_{y}^{\prime } = \cos y > 0\) ,这时,由反函数的求导法则,有
+
+\[
+{y}_{x}^{\prime } = \frac{1}{{x}_{y}^{\prime }} = \frac{1}{{\left( \sin y\right) }^{\prime }}
+\]
+
+\[
+= \frac{1}{\cos y} = \frac{1}{\sqrt{1 - {\sin }^{2}y}} = \frac{1}{\sqrt{1 - {x}^{2}}}
+\]
+
+即
+
+\[
+{\left( \arcsin x\right) }^{\prime } = \frac{1}{\sqrt{1 - {x}^{2}}}
+\]
+
+注意: 公式只在 \(- 1 < x < 1\) 时成立. 当 \(x = \pm 1\) 时,对应的 \(y\) 值是 \(\pm \frac{\pi }{2}\) ,这时 \({x}_{y}^{\prime } = \cos y = 0\) ,不满足反函数求导法则要求的条件.
+
+(2) \({\left( \arccos x\right) }^{\prime } = - \frac{1}{\sqrt{1 - {x}^{2}}}\)
+
+这个公式由同学自己证明.
+
+(3) \({\left( \operatorname{arctg}x\right) }^{\prime } = \frac{1}{1 + {x}^{2}}\)
+
+证明: 设 \(y = \operatorname{arctg}x\left( {-\infty < x < + \infty }\right)\) ,则
+
+\[
+x = \operatorname{tg}y\;\left( {-\frac{\pi }{2} < y < \frac{\pi }{2}}\right) .
+\]
+
+容易验证它满足反函数求导法则要求的条件, 于是有
+
+\[
+{y}_{x}^{\prime } = \frac{1}{{x}_{y}^{\prime }} = \frac{1}{{\left( \operatorname{tg}y\right) }^{\prime }}
+\]
+
+\[
+= \frac{1}{{\sec }^{2}y} = \frac{1}{1 + {\operatorname{tg}}^{2}y} = \frac{1}{1 + {x}^{2}}
+\]
+
+即
+
+\[
+{\left( \operatorname{arctg}x\right) }^{\prime } = \frac{1}{1 + {x}^{2}}
+\]
+
+(4) \({\left( \operatorname{arcctg}x\right) }^{\prime } = - \frac{1}{1 + {x}^{2}}\)
+
+这个公式由同学自己证明.
+
+例 1 求 \(y = \arcsin \frac{x}{3}\) 的导数.
+
+解: \({y}^{\prime } = \frac{1}{\sqrt{1 - {\left( \frac{x}{3}\right) }^{2}}} \cdot {\left( \frac{x}{3}\right) }^{\prime } = \frac{1}{\sqrt{9 - {x}^{2}}}\) .
+
+例 2 求 \(y = \arcsin \frac{1 - {x}^{2}}{1 + {x}^{2}}\;\left( {x > 0}\right)\) 的导数.
+
+解:
+
+\[
+{y}^{\prime } = \frac{1}{\sqrt{1 - {\left( \frac{1 - {x}^{2}}{1 + {x}^{2}}\right) }^{2}}} \cdot {\left( \frac{1 - {x}^{2}}{1 + {x}^{2}}\right) }^{\prime }
+\]
+
+\[
+= \frac{1 + {x}^{2}}{2x} \cdot \frac{-{4x}}{{\left( 1 + {x}^{2}\right) }^{2}}
+\]
+
+\[
+= - \frac{2}{1 + {x}^{2}}
+\]
+
+例 3 求 \(y = \frac{\arccos x}{\sqrt{1 - {x}^{2}}}\) 的导数.
+
+解:
+
+\[
+{y}^{\prime } = \frac{-\frac{1}{\sqrt{1 - {x}^{2}}} \cdot \sqrt{1 - {x}^{2}} - \arccos x \cdot \frac{-x}{\sqrt{1 - {x}^{2}}}}{1 - {x}^{2}}
+\]
+
+\[
+= \frac{x\arccos x - \sqrt{1 - {x}^{2}}}{\sqrt{{\left( 1 - {x}^{2}\right) }^{3}}}.
+\]
+
+例 4 求 \(y = \operatorname{arctg}{2x}\) 的导数.
+
+解: \(\;{y}^{\prime } = \frac{1}{1 + {\left( 2x\right) }^{2}} \cdot {\left( 2x\right) }^{\prime } = \frac{2}{1 + 4{x}^{2}}\) .
+
+例 5 求 \(y = \operatorname{arctg}\frac{x}{1 - {x}^{2}}\) 的导数.
+
+解:
+
+\[
+{y}^{\prime } = \frac{1}{1 + {\left( \frac{x}{1 - {x}^{2}}\right) }^{2}} \cdot {\left( \frac{x}{1 - {x}^{2}}\right) }^{\prime }
+\]
+
+\[
+= \frac{{\left( 1 - {x}^{2}\right) }^{2}}{1 - {x}^{2} + {x}^{4}} \cdot \frac{1 + {x}^{2}}{{\left( 1 - {x}^{2}\right) }^{2}}
+\]
+
+\[
+= \frac{1 + {x}^{2}}{1 - {x}^{2} + {x}^{4}}
+\]
+
+\begin{problemset}[练习]
+
+\item 求下列函数的导数:
+
+(1) \(y = \arcsin \frac{x}{a}\left( {a > 0}\right)\) ; (2) \(y = x\arcsin x\) ;
+
+(3) \(y = 2\arcsin {x}^{2}\) ; (4) \(y = \arccos \frac{x}{2}\) ;
+
+(5) \(y = \operatorname{arctg}\frac{x}{a}\) ; (6) \(y = {\left( \operatorname{arcctg}x\right) }^{2}\) .
+
+\end{problemset}
+
+\section{对数函数的导数}
+
+1. \({\left( \ln x\right) }^{\prime } = \frac{1}{x}\)
+
+证明: \(y = f\left( x\right) = \ln x\) .
+
+\[
+{\Delta y} = \ln \left( {x + {\Delta x}}\right) - \ln x
+\]
+
+\[
+= \ln \frac{x + {\Delta x}}{x} = \ln \left( {1 + \frac{\Delta x}{x}}\right)
+\]
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{1}{\Delta x}\ln \left( {1 + \frac{\Delta x}{x}}\right)
+\]
+
+\[
+= \frac{1}{x} \cdot \frac{x}{\Delta x}\ln \left( {1 + \frac{\Delta x}{x}}\right)
+\]
+
+\[
+= \frac{1}{x}\ln {\left( 1 + \frac{\Delta x}{x}\right) }^{\frac{x}{\Delta x}}
+\]
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \frac{1}{x}\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\ln {\left( 1 + \frac{\Delta x}{x}\right) }^{\frac{x}{\Delta x}}.
+\]
+
+令 \(\alpha = \frac{\Delta x}{x}\) ,则当 \({\Delta x} \rightarrow 0\) 时, \(\alpha \rightarrow 0\) ,从而
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}{\left( 1 + \frac{\Delta x}{x}\right) }^{\frac{x}{\Delta x}} = \mathop{\lim }\limits_{{\alpha \rightarrow 0}}{\left( 1 + \alpha \right) }^{\frac{1}{\alpha }} = e.
+\]
+
+令 \({\left( 1 + \frac{\Delta x}{x}\right) }^{\frac{x}{\Delta x}} = u\) ,根据上式,当 \({\Delta x} \rightarrow 0\) 时, \(u \rightarrow e\) . 由于对
+
+数函数是连续函数, \(\ln u\) 在点 \(u = e\) 处连续,于是有
+
+\[
+\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\ln {\left( 1 + \frac{\Delta x}{x}\right) }^{\frac{x}{\Delta x}} = \mathop{\lim }\limits_{{u \rightarrow e}}\ln u = \ln e.
+\]
+
+所以
+
+\[
+{y}^{\prime } = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \frac{1}{x} \cdot \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\ln {\left( 1 + \frac{\Delta x}{x}\right) }^{\frac{x}{\Delta x}}
+\]
+
+\[
+= \frac{1}{x}\ln e = \frac{1}{x}
+\]
+
+2. \({\left( {\log }_{a}x\right) }^{\prime } = \frac{1}{x\ln a} = \frac{{\log }_{a}e}{x}\)
+
+证明: \({\left( {\log }_{a}x\right) }^{\prime } = {\left( \frac{\ln x}{\ln a}\right) }^{\prime }\)
+
+\[
+= \frac{1}{\ln a} \cdot \frac{1}{x} = \frac{1}{x\ln a}
+\]
+
+\[
+\ln a = \frac{{\log }_{a}a}{{\log }_{a}e} = \frac{1}{{\log }_{a}e}
+\]
+
+\(\therefore \;{\left( {\log }_{a}x\right) }^{\prime } = \frac{{\log }_{a}e}{x}\) .
+
+例 1 求 \(y = \ln \left( {2{x}^{2} + {3x} + 1}\right)\) 的导数.
+
+解: \({y}^{\prime } = \frac{1}{2{x}^{2} + {3x} + 1} \cdot {\left( 2{x}^{2} + 3x + 1\right) }^{\prime } = \frac{{4x} + 3}{2{x}^{2} + {3x} + 1}\) .
+
+例 2 求证 \({\left( \ln \left| x\right| \right) }^{\prime } = \frac{1}{x}\) .
+
+证明: 当 \(x > 0\) 时, \(y = \ln x\) ,
+
+\[
+{y}^{\prime } = \frac{1}{x}
+\]
+
+当 \(x < 0\) 时, \(y = \ln \left( {-x}\right)\) ,
+
+\[
+{y}^{\prime } = \frac{1}{-x} \cdot {\left( -x\right) }^{\prime } = \frac{1}{x}.
+\]
+
+所以,不论 \(x > 0\) 或 \(x < 0\) ,都有
+
+\[
+{\left( \ln \left| x\right| \right) }^{\prime } = \frac{1}{x}
+\]
+
+例 3 求 \(y = \lg \sqrt{1 - {x}^{2}}\) 的导数.
+
+解法 1: \({y}^{\prime } = \frac{\lg e}{\sqrt{1 - {x}^{2}}}{\left( \sqrt{1 - {x}^{2}}\right) }^{\prime } = \frac{\lg e}{\sqrt{1 - {x}^{2}}} \cdot \frac{-x}{\sqrt{1 - {x}^{2}}}\)
+
+\[
+= \frac{x\lg e}{{x}^{2} - 1}
+\]
+
+解法 2: \(y = \lg \sqrt{1 - {x}^{2}} = \frac{1}{2}\lg \left( {1 - {x}^{2}}\right)\) .
+
+\[
+{y}^{\prime } = \frac{1}{2} \cdot \frac{\lg e}{1 - {x}^{2}} \cdot {\left( 1 - {x}^{2}\right) }^{\prime } = \frac{x\lg e}{{x}^{2} - 1}.
+\]
+
+从例 3 可以看出, 求对数函数的导数, 有时先把所给对数函数变形, 然后再求导数, 做起来要简便一些.
+
+例 4 求 \(y = \ln \sqrt{\frac{1 + {x}^{2}}{1 - {x}^{2}}}\) 的导数.
+
+解: \(y = \ln \sqrt{\frac{1 + {x}^{2}}{1 - {x}^{2}}}\)
+
+\[
+= \frac{1}{2}\left\lbrack {\ln \left( {1 + {x}^{2}}\right) - \ln \left( {1 - {x}^{2}}\right) }\right\rbrack \text{.}
+\]
+
+\[
+{y}^{\prime } = \frac{1}{2}\left( {\frac{2x}{1 + {x}^{2}} - \frac{-{2x}}{1 - {x}^{2}}}\right) = \frac{2x}{1 - {x}^{4}}.
+\]
+
+例 5 求 \(y = \ln \operatorname{tg}\left( {\frac{t}{2} + \frac{\pi }{4}}\right)\) 的导数.
+
+解: \({y}^{\prime } = \frac{1}{\operatorname{tg}\left( {\frac{t}{2} + \frac{\pi }{4}}\right) }{\left\lbrack \operatorname{tg}\left( \frac{t}{2} + \frac{\pi }{4}\right) \right\rbrack }^{\prime }\)
+
+\[
+= \frac{1}{\operatorname{tg}\left( {\frac{t}{2} + \frac{\pi }{4}}\right) } \cdot \frac{1}{{\cos }^{2}\left( {\frac{t}{2} + \frac{\pi }{4}}\right) } \cdot \frac{1}{2}
+\]
+
+\[
+= \frac{1}{\sin \left( {t + \frac{\pi }{2}}\right) } = \frac{1}{\cos t} = \sec t.
+\]
+
+\begin{problemset}[练习]
+
+\item 求下列函数的导数:
+
+(1) \(y = x\ln x\) ; (2) \(y = \ln \frac{1 + 3{x}^{2}}{2 - {x}^{2}}\)
+
+(3) \(y = {\log }_{a}\left( {2{x}^{3} + 3{x}^{2}}\right)\) ; (4) \(y = \ln \sqrt{\frac{1 + x}{1 - x}}\)
+
+(5) \(y = \lg \left( {1 + \cos x}\right)\) ; (6) \(y = \ln \left( {\ln x}\right)\) .
+
+\end{problemset}
+
+\section{指数函数的导数}
+
+1. \({\left( {e}^{x}\right) }^{\prime } = {e}^{x}\)
+
+证明: 指数函数 \(y = {e}^{x}\) 与对数函数 \(x = \ln y\) 互为反函数.
+
+根据对数函数的导数公式, 有
+
+\[
+{x}_{y}^{\prime } = {\left( \ln y\right) }_{y}^{\prime } = \frac{1}{y}
+\]
+
+因此, 根据反函数的求导法则, 有
+
+\[
+{y}_{x}^{\prime } = \frac{1}{{x}_{y}^{\prime }} = y = {e}^{x}
+\]
+
+即
+
+\[
+{\left( {e}^{x}\right) }^{\prime } = {e}^{x}\text{. }
+\]
+
+2. \({\left( {a}^{x}\right) }^{\prime } = {a}^{x}\ln a\)
+
+证明: \(\because {a}^{x} = {\left( {e}^{\ln a}\right) }^{x} = {e}^{x\ln a}\) ,
+
+\(\therefore \;{\left( {a}^{x}\right) }^{\prime } = {\left( {e}^{x\ln a}\right) }^{\prime }\)
+
+\[
+= {e}^{x\ln a} \cdot {\left( x\ln a\right) }^{\prime }
+\]
+
+\[
+= {a}^{x}\ln a\text{. }
+\]
+
+例 1 求 \(y = {x}^{3}{e}^{x}\) 的导数.
+
+解: \(\;{y}^{\prime } = 3{x}^{2}{e}^{x} + {x}^{3}{e}^{x} = \left( {3 + x}\right) {x}^{2}{e}^{x}\) .
+
+例 2 求 \(y = {e}^{3x}\) 的导数.
+
+解: \(\;{y}^{\prime } = {e}^{3x} \cdot 3 = 3{e}^{3x}\) .
+
+例 3 求 \(y = {e}^{ax}\cos {bx}\) 的导数.
+
+\[
+\text{解:}\;{y}^{\prime } = {e}^{ax} \cdot a \cdot \cos {bx} + {e}^{ax}\left( {-\sin {bx} \cdot b}\right)
+\]
+
+\[
+= {e}^{ax}\left( {a\cos {bx} - b\sin {bx}}\right) \text{.}
+\]
+
+例 4 求 \(y = {a}^{5x}\) 的导数.
+
+解:
+
+\[
+{y}^{\prime } = {a}^{5x}\ln a \cdot {\left( 5x\right) }^{\prime }
+\]
+
+\[
+= 5{a}^{5x}\ln a\text{. }
+\]
+
+\begin{problemset}[练习]
+
+\item 求下列函数的导数:
+
+(1) \(y = {e}^{x}\sin x\) ; (2) \(y = \frac{{e}^{x} - 1}{{e}^{x} + 1}\)
+
+（3） \(y = {x}^{n}{e}^{-x}\) ; (4) \(y = \frac{a}{2}\left( {{e}^{\frac{x}{a}} - {e}^{-\frac{x}{a}}}\right)\) ;
+
+(5) \(y = {x}^{3} + {3}^{x}\) ; (6) \(y = {2}^{x}{e}^{x}\) ;
+
+(7) \(y = {e}^{2x}\ln x\) ; (8) \(y = {e}^{{x}^{2} + 1}\) .
+
+\end{problemset}
+
+\section{幂函数的导数}
+
+当 \(\alpha\) 为任意实数时,有公式
+
+\[
+{\left( {x}^{\alpha }\right) }^{\prime } = a{x}^{\alpha - 1}.
+\]
+
+证明: 当 \(\alpha\) 为任意实数时,我们只考虑 \(x > 0\) . 这时,
+
+\[
+{x}^{\alpha } = {\left( {e}^{\ln x}\right) }^{\alpha } = {e}^{\alpha \ln x}.
+\]
+
+\[
+{\left( {x}^{\alpha }\right) }^{\prime } = {\left( {e}^{\alpha \ln x}\right) }^{\prime }
+\]
+
+\[
+= {e}^{\alpha \ln x}{\left( \alpha \ln x\right) }^{\prime }
+\]
+
+\[
+= {e}^{\alpha \ln x} \cdot \alpha \cdot \frac{1}{x}
+\]
+
+\[
+= {x}^{\alpha } \cdot \alpha \cdot \frac{1}{x}
+\]
+
+\[
+= \alpha {x}^{\alpha - 1}\text{. }
+\]
+
+这就是一般幂函数的导数公式.
+
+例 1 求 \(y = {x}^{-\frac{1}{3}}\left( {1 - {x}^{\frac{8}{3}}}\right)\) 的导数.
+
+解: \(\;y = {x}^{-\frac{1}{3}} - {x}^{\frac{7}{3}}\) .
+
+\(\therefore \;{y}^{\prime } = - \frac{1}{3}{x}^{-\frac{4}{3}} - \frac{7}{3}{x}^{\frac{4}{3}}\) .
+
+例 2 求 \(y = \sqrt{{\left( {x}^{2} - {a}^{2}\right) }^{3}}\) 的导数.
+
+解: \(\;y = {\left( {x}^{2} - {a}^{2}\right) }^{\frac{3}{2}}\) .
+
+\[
+\therefore \;{y}^{\prime } = \frac{3}{2}{\left( {x}^{2} - {a}^{2}\right) }^{\frac{1}{2}} \cdot {2x}
+\]
+
+\[
+= {3x}\sqrt{{x}^{2} - {a}^{2}}\text{.}
+\]
+
+例 3 求 \(y = \sqrt[6]{\frac{x}{1 - x}}\) 的导数.
+
+解: \(y = {\left( \frac{x}{1 - x}\right) }^{\frac{1}{5}}\) .
+
+\[
+\therefore {y}^{\prime } = \frac{1}{5}{\left( \frac{x}{1 - x}\right) }^{-\frac{4}{5}} \cdot {\left( \frac{x}{1 - x}\right) }^{\prime }
+\]
+
+\[
+= \frac{1}{5}{\left( \frac{x}{1 - x}\right) }^{-\frac{4}{5}} \cdot \frac{1}{{\left( 1 - x\right) }^{2}}
+\]
+
+\[
+= \frac{1}{5}{x}^{-\frac{4}{5}}{\left( 1 - x\right) }^{-\frac{8}{5}}
+\]
+
+\section*{导数公式表}
+
+到目前为止, 我们已经学习了基本初等函数的导数公式、 求导数的四则运算法则以及复合函数的求导法则, 这样, 我们也就学会了求初等函数的导数的一般方法.
+
+为便于查阅和记忆, 我们把学过的导数公式列表如下:
+
+(1) \(y = C\) ,
+
+\[
+{y}^{\prime } = 0
+\]
+
+(2) \(y = {x}^{\alpha }\) ( \(\alpha\) 是实数),
+
+\[
+{y}^{\prime } = \alpha {x}^{\alpha - 1}
+\]
+
+(3) \(y = {\log }_{a}x\)
+
+\[
+{y}^{\prime } = \frac{1}{x\ln a} = \frac{{\log }_{a}e}{x}
+\]
+
+\[
+y = \ln x
+\]
+
+\[
+{y}^{\prime } = \frac{1}{x}
+\]
+
+(4) \(y = {a}^{x}\) ,
+
+\[
+{y}^{\prime } = {a}^{x}\ln a
+\]
+
+\(y = {e}^{x}\)
+
+\[
+{y}^{\prime } = {e}^{x}
+\]
+
+(5) \(y = \sin x\) ,
+
+\[
+{y}^{\prime } = \cos x
+\]
+
+(6) \(y = \cos x\) ,
+
+\[
+{y}^{\prime } = - \sin x
+\]
+
+(7) \(y = \operatorname{tg}x\) ,
+
+\[
+{y}^{\prime } = {\sec }^{2}x
+\]
+
+(8) \(y = \operatorname{ctg}x\)
+
+\[
+{y}^{\prime } = - {\csc }^{2}x
+\]
+
+(9) \(y = \arcsin x\)
+
+\[
+{y}^{\prime } = \frac{1}{\sqrt{1 - {x}^{2}}}
+\]
+
+(10) \(y = \arccos x\) ,
+
+\[
+{y}^{\prime } = - \frac{1}{\sqrt{1 - {x}^{2}}}
+\]
+
+(11) \(y = \operatorname{arctg}x\)
+
+\[
+{y}^{\prime } = \frac{1}{1 + {x}^{2}}
+\]
+
+(12) \(y = \operatorname{arcctg}x\) ,
+
+\[
+{y}^{\prime } = - \frac{1}{1 + {x}^{2}}
+\]
+
+\begin{problemset}[练习]
+
+\item 求下列函数的导数:
+
+(1) \(y = {x}^{3} - 2{x}^{-\frac{1}{2}} + 5{x}^{\frac{7}{6}}\) ; (2) \(y = {\left( \frac{1}{\sqrt[3]{{x}^{2}}} + \frac{1}{\sqrt{x}}\right) }^{2}\) ;
+
+(3) \(y = \sqrt[3]{{\left( 4 - 3{x}^{2}\right) }^{2}}\) ; (4) \(y = \sqrt[3]{\frac{x - a}{x + a}}\)
+
+\end{problemset}
+
+\begin{problemset}[习 题 六]
+
+\item 求下列函数的导数:
+
+(1) \(y = \frac{\sin x}{1 + \cos x}\) (2) \(y = \sin {3x}\cos {2x}\)
+
+(3) \(y = \frac{\sin \left( {{2x} - \frac{\pi }{4}}\right) }{\sin \left( {{2x} + \frac{\pi }{4}}\right) }\) (4) \(y = \frac{1}{3}{\operatorname{tg}}^{3}x - \operatorname{tg}x + x\) ;
+
+(5) \(y = \operatorname{tg}x - \sec x\) ; (6) \(y = \operatorname{ctg}x + \csc x\) ;
+
+(7) \(y = \operatorname{tg}\left( {\frac{\pi }{4} - \frac{x}{2}}\right)\) ; (8) \(y = \sin {}^{n}x\cos {nx}\) ;
+
+(9) \(y = \sqrt{\operatorname{tg}\frac{x}{2}}\) ; (10) \(y = {\sin }^{2}\sqrt{1 + {x}^{2}}\) .
+
+\item 先把下列函数变形成较易求导数的形式, 再求导数:
+
+(1) \(y = \sin {mx}\cos {nx} + \cos {mx}\sin {nx}\) ;
+
+(2) \(y = \frac{2\operatorname{tg}x}{1 - {\operatorname{tg}}^{2}x}\)
+
+(3) \(y = \frac{2\operatorname{tg}x}{1 + {\operatorname{tg}}^{2}x}\)
+
+(4) \(y = \frac{1 - {\operatorname{tg}}^{2}x}{1 + {\operatorname{tg}}^{2}x}\)
+
+(5) \(y = 1 - 4{\sin }^{2}x{\cos }^{2}x\) .
+
+\item 求正切曲线 \(y = \operatorname{tg}x\) 在点 \(M\left( {\frac{\pi }{4},1}\right)\) 处的切线方程和法线方程。
+
+\item 求下列函数的导数:
+
+(1) \(y = \frac{\arcsin x}{\sqrt{1 - {x}^{2}}}\)
+
+(2) \(y = \arccos \left( {1 - x}\right)\) ;
+
+(3) \(y = \left( {4 + {x}^{2}}\right) \operatorname{arctg}\frac{x}{2}\) ;
+
+(4) \(y = \operatorname{arcctg}{x}^{2}\) ;
+
+(5) \(y = x\sqrt{{a}^{2} - {x}^{2}} + {a}^{2}\arcsin \frac{x}{a}\;\left( {a > 0}\right)\) ;
+
+(6) \(y = x + \frac{8x}{{x}^{2} + 4} - 4\operatorname{arctg}\frac{x}{2}\) .
+
+\item 求下列函数的导数:
+
+(1) \(y = x{\ln }^{2}x\) ; (2) \(y = \frac{1 - \ln x}{1 + \ln x}\)
+
+(3) \(y = \ln \frac{1 - \sin x}{1 + \sin x}\)
+
+(4) \(y = x\operatorname{arctg}x - \frac{1}{2}\ln \left( {1 + {x}^{2}}\right)\) ;
+
+(5) \(y = x{\log }_{3}x\) ; (6) \(y = \lg \left( {x + \sqrt{1 + {x}^{2}}}\right)\) .
+
+\item 已知物体的运动方程是 \(s = {10}\ln \frac{4}{t + 4}\) ,求 \(t = 1\) 及 \(t = {10}\) 时的瞬时速度 ( \(s\) 的单位是米, \(t\) 的单位是秒).
+
+\item \(a\) 等于什么数时,曲线 \(y = \ln \left( {x - {7a}}\right) + \operatorname{arctg}{ax}\) 在点 \(x = 1\) 处的切线平行于 \(x\) 轴?
+
+\item 求下列函数的导数:
+
+(1) \(y = \frac{{e}^{x} - {e}^{-x}}{{e}^{x} + {e}^{-x}}\) (2) \(y = {x}^{n}{a}^{x}\) ;
+
+(3) \(y = {e}^{-{3x}}\sin {2x}\) ; (4) \(y = \frac{1 + x}{{2}^{x}}\)
+
+(5) \(y = {e}^{-\frac{1}{x}}\) ; (6) \(y = {a}^{2x}\) .
+
+\item 求下列函数的导数:
+
+(1) \(y = x\sqrt[5]{{6x} - 1}\) ; (2) \(y = \frac{x}{\sqrt{{x}^{2} + x + 1}}\) ;
+
+（3） \(y = {x}^{a} + {a}^{x}\) ; (4) \(y = \sqrt{\frac{{a}^{2} - {x}^{2}}{{a}^{2} + {x}^{2}}}\)
+
+(5) \(y = \frac{{2a} - x}{\sqrt[3]{a - x}}\) (6) \(y = \sqrt[3]{\frac{x + 1}{x + 4}}\) .
+
+\end{problemset}
+
+\section{隐函数的导数}
+
+如果要求椭圆 \(\frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}} = 1\) 上一点 \(\left( {x,y}\right)\) 处的切线的方程, 就要求出切线的斜率 \({y}_{x}^{\prime }\) . 当然我们可以从方程中解出 \(y =\) \(\pm \frac{b}{a}\sqrt{{a}^{2} - {x}^{2}}\) ,再求 \({y}_{x}^{\prime }\) . 但是,有时解方程很麻烦,而且有些方程,例如 \({xy} - {e}^{x} + {e}^{y} = 0\) ,就不能用 \(x\) 的初等函数把 \(y\) 表示出来.
+
+如果变量 \(x,y\) 之间的函数关系是由某一方程
+
+\[
+F\left( {x,y}\right) = 0
+\]
+
+所确定,这样确定的函数叫做隐函数. 例如,由方程 \({y}^{2} - {2px}\) \(= 0,\frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}} = 1,{x}^{\frac{2}{3}} + {y}^{\frac{2}{3}} = {a}^{\frac{2}{3}}\) 等所确定的 \(x,y\) 之间的函数关系(有时所确定的是几个函数关系) 就是隐函数. 下面举例来说明求隐函数的导数的方法.
+
+例 1 (1) 已知 \({y}^{2} = {2px}\) ,求 \({y}_{x}^{\prime }\) .
+
+（2）求证抛物线 \({y}^{2} = {2px}\) 上点 \(\left( {{x}_{0},{y}_{0}}\right)\) 处的切线的方程为 \({y}_{0}y = p\left( {x + {x}_{0}}\right) .\)
+
+解: (1) 把 \(y\) 看成 \(x\) 的函数,则 \({y}^{2}\) 是 \(x\) 的复合函数,运用复合函数的求导法则,在方程两边同时对 \(x\) 求导:
+
+\[
+{\left( {y}^{2}\right) }_{x}^{\prime } = {\left( 2px\right) }_{x}^{\prime },
+\]
+
+\[
+{2y} \cdot {y}_{x}^{\prime } = {2p}
+\]
+
+\[
+{y}_{x}^{\prime } = \frac{p}{y}
+\]
+
+这里的 \(y\) 仍由方程 \({y}^{2} = {2px}\) 确定.
+
+(上式在分母不等于零的条件下成立, 以后不再一一注明. )
+
+（2）当 \(x = {x}_{0},y = {y}_{0} \neq 0\) 时, \({y}_{x}^{\prime } = \frac{p}{{y}_{0}}\) ,所以所求的切线的方程为
+
+\[
+y - {y}_{0} = \frac{p}{{y}_{0}}\left( {x - {x}_{0}}\right)
+\]
+
+即
+
+\[
+{y}_{0}y - {y}_{0}^{2} = {px} - p{x}_{0}
+\]
+
+\(\because\)
+
+\[
+{y}_{0}^{2} = {2p}{x}_{0}
+\]
+
+所求的切线的方程为
+
+\[
+{y}_{0}y - {2p}{x}_{0} = {px} - p{x}_{0}
+\]
+
+即
+
+\[
+{y}_{0}y = p\left( {x + {x}_{0}}\right) .
+\]
+
+当 \({y}_{0} = 0\) 时, \({x}_{0} = \frac{{y}_{0}^{2}}{2p} = 0\) . 抛物线 \({y}^{2} = {2px}\) 在点 \(\left( {0,0}\right)\) 处的切线为 \(y\) 轴,它的方程 \(x = 0\) 是方程 \({y}_{0}y = p\left( {x + {x}_{0}}\right)\) 的特殊形式:
+
+例 2 求证椭圆 \(\frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}} = 1\) 上点 \(\left( {{x}_{0},{y}_{0}}\right)\) 处的切线的方
+
+程为
+
+\[
+\frac{{x}_{0}x}{{a}^{2}} + \frac{{y}_{0}y}{{b}^{2}} = 1
+\]
+
+证明:
+
+\[
+{\left( \frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}}\right) }_{x}^{\prime } = {\left( 1\right) }_{x}^{\prime }
+\]
+
+\[
+\frac{2x}{{a}^{2}} + \frac{2y}{{b}^{2}}{y}_{x}^{\prime } = 0
+\]
+
+\(\therefore\)
+
+\[
+{y}_{x}^{\prime } = - \frac{{b}^{2}x}{{a}^{2}y}
+\]
+
+\({y}_{0} \neq 0\) 时,在点 \(\left( {{x}_{0},{y}_{0}}\right)\) 处的切线的方程为
+
+\[
+y - {y}_{0} = - \frac{{b}^{2}{x}_{0}}{{a}^{2}{y}_{0}}\left( {x - {x}_{0}}\right)
+\]
+
+即
+
+\[
+{b}^{2}{x}_{0}x + {a}^{2}{y}_{0}y = {b}^{2}{x}_{0}^{2} + {a}^{2}{y}_{0}^{2}.
+\]
+
+\(\because\) 点 \(\left( {{x}_{0},{y}_{0}}\right)\) 在椭圆 \(\frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}} = 1\) 上,
+
+\(\therefore\)
+
+\[
+\frac{{x}_{0}^{2}}{{a}^{2}} + \frac{{y}_{0}^{2}}{{b}^{2}} = 1
+\]
+
+\[
+{b}^{2}{x}_{0}^{2} + {a}^{2}{y}_{0}^{2} = {a}^{2}{b}^{2}.
+\]
+
+所求的切线的方程为
+
+\[
+{b}^{2}{x}_{0}x + {a}^{2}{y}_{0}y = {a}^{2}{b}^{2},
+\]
+
+即
+
+\[
+\frac{{x}_{0}x}{{a}^{2}} + \frac{{y}_{0}y}{{b}^{2}} = 1\text{. }
+\]
+
+在点 \(\left( {-a,0}\right)\) 和点 \(\left( {a,0}\right)\) 处,切线的方程分别为 \(x = - a\) ,
+
+\(x = a\) ,它们是方程 \(\frac{{x}_{0}x}{{a}^{2}} + \frac{{y}_{0}y}{{b}^{2}} = 1\) 的特殊形式.
+
+请同学们证明,双曲线 \(\frac{{x}^{2}}{{a}^{2}} - \frac{{y}^{2}}{{b}^{2}} = 1\) 上点 \(\left( {{x}_{0},{y}_{0}}\right)\) 处的切线的方程为 \(\frac{{x}_{0}x}{{a}^{2}} - \frac{{y}_{0}y}{{b}^{2}} = 1\) .
+
+\begin{problemset}[练习]
+
+\item 求曲线 \({x}^{2} + {2xy} - {y}^{2} = {2x}\) 在点 \(\left( {2,4}\right)\) 处的切线的方程.
+
+\item 求曲线 \(\sqrt{x} + \sqrt{y} = 3\) 在点 \(\left( {1,4}\right)\) 处的切线和法线方程.
+
+\item (1) 写出椭圆 \(9{x}^{2} + {y}^{2} = {25}\) 在点 \(P\left( {-1, - 4}\right)\) 处的切线和法线方程;
+
+（2）写出双曲线 \(\frac{{x}^{2}}{18} - \frac{{y}^{2}}{4} = 1\) 在点 \(P\left( {6,2}\right)\) 处的切线和法线方程.
+
+\item 求过点 \(P\left( {2,\sqrt{3}}\right)\) 且与椭圆 \(\frac{{x}^{2}}{4} + \frac{{y}^{2}}{9} = 1\) 相切的切线方程时,直接利用公式 \(\frac{{x}_{0}x}{{a}^{2}} + \frac{{y}_{0}y}{{b}^{2}} = 1\) ,得出切线方程为 \(\frac{2x}{4} +\) \(\frac{\sqrt{3}y}{9} = 1\) . 这个结果对不对? 为什么?
+
+\end{problemset}
+
+\section{二阶导数}
+
+我们知道,函数 \(y = f\left( x\right)\) 的导数 \({f}^{\prime }\left( x\right)\) 仍旧是 \(x\) 的函数. 如果 \({f}^{\prime }\left( x\right)\) 可导,那么它的导数 \({\left( {f}^{\prime }\left( x\right) \right) }^{\prime }\) 叫做 \(f\left( x\right)\) 的二阶导数,记作 \({f}^{\prime \prime }\left( x\right)\) 或 \({y}^{\prime \prime }\) .
+
+速度 \(v\) 是位移函数 \(s = s\left( t\right)\) 对于时间 \(t\) 的一阶导数: \(v\) \(= {s}^{\prime }\left( t\right)\) . 加速度 \(a\) 是速度 \(v = v\left( t\right)\) 对于时间 \(t\) 的一阶导数: \(a = {v}^{\prime }\left( t\right)\) . 所以,加速度 \(a\) 是位移函数 \(s = s\left( t\right)\) 对于时间 \(t\) 的二阶导数:
+
+\[
+a = {v}^{\prime }\left( t\right) = {\left( {s}^{\prime }\left( t\right) \right) }^{\prime } = {s}^{\prime \prime }\left( t\right) .
+\]
+
+例 1 设 \(y = 2{x}^{3} - {x}^{2} + 1\) ,求 \({y}^{\prime \prime }\) .
+
+解: \(\;{y}^{\prime } = 6{x}^{2} - {2x}\) ,
+
+\(\therefore \;{y}^{\prime \prime } = {12x} - 2\) .
+
+例 2 设 \(y = {e}^{x}\cos x\) ,求 \({\left. {y}^{\prime }\right| }_{x = 0},{\left. {y}^{\prime \prime }\right| }_{x = 0}\) .
+
+解: \({y}^{\prime } = {e}^{x}\cos x + {e}^{x}\left( {-\sin x}\right)\)
+
+\[
+= {e}^{x}\left( {\cos x - \sin x}\right) ,
+\]
+
+\[
+{y}^{\prime \prime } = {e}^{x}\left( {\cos x - \sin x}\right) + {e}^{x}\left( {-\sin x - \cos x}\right)
+\]
+
+\[
+= - 2{e}^{x}\sin x\text{.}
+\]
+
+\[
+\therefore {\left. {y}^{\prime }\right| }_{x = 0} = 1,{\left. \;{y}^{\prime \prime }\right| }_{x = 0} = 0\text{. }
+\]
+
+\(f\left( x\right)\) 的二阶导数的导数叫做 \(f\left( x\right)\) 的三阶导数,记作 \({f}^{\prime \prime \prime }\left( x\right)\) 或 \({y}^{\prime \prime \prime }\) . 一般地, \(f\left( x\right)\) 的 \(n - 1\) 阶导数的导数叫做 \(f\left( x\right)\) 的 \(n\) 阶导数. \(y = f\left( x\right)\) 的 \(n\) 阶导数记作 \({f}^{\left( n\right) }\left( x\right)\) .
+
+\begin{problemset}[练习]
+
+\item 某运动方程为 \(s = 2{t}^{3} - \frac{1}{2}g{t}^{2}\) ,求 \(t = 2\) 时的加速度.
+
+\item 求下列函数的二阶导数:
+
+(1) \(y = a{x}^{2} + {bx} + c\) ; (2) \(y = x\ln x\) ;
+
+(3) \(y = \operatorname{tg}x\) ; (4) \(y = \left( {1 + {x}^{2}}\right) \operatorname{arctg}x\) .
+
+\end{problemset}
+
+\begin{problemset}[习 题 七]
+
+\item 写出椭圆 \(4{x}^{2} + 9{y}^{2} = {36}\) 在下列点处的切线方程:
+
+(1) \({M}_{1}\left( {1,\frac{4}{3}\sqrt{2}}\right)\) (2) \({M}_{2}\left( {\frac{3}{2}, - \sqrt{3}}\right)\) .
+
+\item 写出双曲线 \(3{x}^{2} - {y}^{2} = 1\) 在下列点处的切线方程:
+
+(1) \({M}_{1}\left( {1, - \sqrt{2}}\right)\) ; (2) \({M}_{2}\left( {\sqrt{3},2\sqrt{2}}\right)\) .
+
+\item 求圆 \({\left( x - 1\right) }^{2} + {\left( y - 2\right) }^{2} = {25}\) 在点 \(P\left( {5,5}\right)\) 处的切线和法线的方程.
+
+\item 求证曲线 \(a{x}^{2} + {2hxy} + b{y}^{2} = 1\) 上点 \(M\left( {{x}_{0},{y}_{0}}\right)\) 处的切线的方程为 \(a{x}_{0}x + h\left( {{y}_{0}x + {x}_{0}y}\right) + b{y}_{0}y = 1\) .
+
+\item 求下列函数的二阶导数:
+
+(1) \(y = x\sqrt{1 + {x}^{2}}\) ;
+
+(2) \(y = {e}^{-{x}^{2}}\) ;
+
+(3) \(y = x\left\lbrack {\sin \left( {\ln x}\right) + \cos \left( {\ln x}\right) }\right\rbrack\) ;
+
+(4) \(y = 4\left( {x - 2}\right) {e}^{x} + \left( {x - 1}\right) {e}^{2x}\) .
+
+\item 如果物体的运动方程为 \(s = t + \frac{1}{4}{t}^{3}\) ( \(s\) 的单位是米),求这一物体的初速度,并求出 \(t = 3\) 秒时,物体运动的速度及加速度。
+
+\item 一物体的运动方程为 \(s = a{e}^{t} + b{e}^{-t}\) ,求这个物体运动的加速度。
+
+\item 质点 \(M\) 作简谐运动,运动规律为
+
+\[
+x = A\sin {\omega t}\left( {A,\omega \text{ 是常数 }}\right) ,
+\]
+
+求质点 \(M\) 的速度和加速度,并求质点 \(M\) 到达点 \(x = A\) 和点 \(x = - A\) 时的速度和加速度。
+
+\end{problemset}
+
+\section*{微 分}
+
+\section{微分概念}
+
+在实际问题中, 有时需要考虑: 当自变量有较小的改变时, 函数改变多少. 如果函数很复杂, 计算函数的改变量也就会很复杂. 能不能找到一个既简便而又具有较好精确度的计算函数改变量的近似值的方法呢? 下面先来分析一个实例.
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_110_353714.jpg}
+\end{center}
+
+图 2-4
+
+设有边长为 \(x\) 的正方形铁片,加热后边长增加了 \({\Delta x}\) (图 2-4), 求铁片的面积约增加多少.
+
+加热前铁片的面积为 \(y = f\left( x\right) = {x}^{2}\) ,当边长增加了 \({\Delta x}\) ,铁片面积的增加量就是函数 \(f\left( x\right)\) 的改变量
+
+\[
+{\Delta y} = {\left( x + \Delta x\right) }^{2} - {x}^{2}
+\]
+
+\[
+= {x}^{2} + {2x} \cdot {\Delta x} + {\left( \Delta x\right) }^{2} - {x}^{2}
+\]
+
+\[
+= {2x} \cdot {\Delta x} + {\left( \Delta x\right) }^{2}\text{.} \tag{1}
+\]
+
+\({\Delta y}\) 由两部分组成: 一部分是 \({\Delta x}\) 的线性函数 \({2x} \cdot {\Delta x}\) (图 2-4 中单线阴影部分的面积); 另一部分是 \({\left( \Delta x\right) }^{2}\) (图 2-4 中双线阴影部分的面积).
+
+如果以 \({2x} \cdot {\Delta x}\) 作为 \({\Delta y}\) 的近似值,其误差为
+
+\[
+{\Delta y} - {2x} \cdot {\Delta x} = {\left( \Delta x\right) }^{2}.
+\]
+
+这个误差 \({\left( \Delta x\right) }^{2}\) 显然随着 \(\left| {\Delta x}\right|\) (在这个实际问题中, \({\Delta x} > 0\) ,可以去掉绝对值符号)的减小而减小,而且, \({\left( \Delta x\right) }^{2}\) 要比 \(\left| {\Delta x}\right|\) 减小得更快些 (例如, \(\left| {\Delta x}\right|\) 从 0.1 减小到 0.01, \({\left( \Delta x\right) }^{2}\) 就相应地从 0.01 减小到 0.0001 ),当 \(\left| {\Delta x}\right|\) 很小时, \({\left( \Delta x\right) }^{2}\) 比 \(\left| {\Delta x}\right|\) 要小得多 (例如 \(\left| {\Delta x}\right| = {10}^{-5}\) ,则 \({\left( \Delta x\right) }^{2} = {10}^{-{10}}\) ). 因此式子 \({\Delta y} = {2x} \cdot {\Delta x} + {\left( \Delta x\right) }^{2}\) 右边的两项中,第一项 \({2x} \cdot {\Delta x}\) 是主要部分. 当 \(\left| {\Delta x}\right|\) 很小时,可认为铁片面积增加量
+
+\[
+{\Delta y} \approx {2x} \cdot {\Delta x}.
+\]
+
+这样我们可以用计算 \({2x\Delta x}\) 来代替计算 \(y = {x}^{2}\) 的改变量 \({\Delta y}\) ,这比计算 \({\Delta y}\) 来得简便,且有一定的精确度.
+
+由 \({2x} = {\left( {x}^{2}\right) }^{\prime } = {f}^{\prime }\left( x\right)\) ,于是在上例中有
+
+\[
+{\Delta y} \approx {f}^{\prime }\left( x\right) \cdot {\Delta x}.
+\]
+
+\[
+\left( {1}^{\prime }\right)
+\]
+
+一般地,设函数 \(y = f\left( x\right)\) 在点 \(x\) 处可导,则 \(y = f\left( x\right)\) 在点 \(x\) 处的导数 \({f}^{\prime }\left( x\right)\) 与自变量的改变量 \({\Delta x}\) 的积叫做函数 \(y\) \(= f\left( x\right)\) 在点 \(x\) 处关于改变量 \({\Delta x}\) 的微分,简称函数 \(y\) 的微分, 记作 \({dy}\) ,即
+
+\[
+{dy} = {f}^{\prime }\left( x\right) {\Delta x}. \tag{2}
+\]
+
+因此,在 \(y = {x}^{2}\) 时,
+
+\[
+{\Delta y} \approx {f}^{\prime }\left( x\right) {\Delta x} = {dy}.
+\]
+
+\[
+\left( {2}^{\prime }\right)
+\]
+
+即函数的改变量 \({\Delta y}\) 可用它的微分近似地表示出来. 对于一般的可导函数也有同样的结果, 我们就不证了. 这样, 就可以把计算较为复杂的 \({\Delta y}\) 转化为计算 \({dy}\) ,即只要求出导数值 \({f}^{\prime }\left( x\right)\) 再乘以 \({\Delta x}\) 就行了.
+
+例 半径为 \({10}\mathrm{\;{cm}}\) 的金属圆片加热后,半径伸长了 \({0.05}\mathrm{\;{cm}}\) ,求此时刻面积的微分 \({dA}\) 与 \({\Delta A} - {dA}\) 的值.
+
+解: 以 \(A\) 表示圆片的面积, \(r\) 表示圆片的半径,则
+
+\[
+A = \pi {r}^{2}.
+\]
+
+根据题意,取 \(r = {10},{\Delta r} = {0.05}\) . 这时,
+
+\[
+{dA} = {2\pi r} \cdot {\Delta r}
+\]
+
+\[
+= {2\pi } \times {10} \times {0.05} = \pi \left( {\mathrm{{cm}}}^{2}\right) \text{.}
+\]
+
+\(\because \;{\Delta A} = \pi {\left( r + \Delta r\right) }^{2} - \pi {r}^{2} = {2\pi r} \cdot {\Delta r} + \pi {\left( \Delta r\right) }^{2},\)
+
+\[
+\therefore \;{\Delta A} - {dA} = {2\pi r} \cdot {\Delta r} + \pi {\left( \Delta r\right) }^{2} - {2\pi r} \cdot {\Delta r} = \pi {\left( \Delta r\right) }^{2}
+\]
+
+\[
+= \pi {\left( {0.05}\right) }^{2}
+\]
+
+\[
+= {0.0025\pi }\left( {\mathrm{{cm}}}^{2}\right) \text{.}
+\]
+
+答: 面积的微分 \({dA}\) 为 \(\pi {\mathrm{{cm}}}^{2},{\Delta A} - {dA}\) 为 \({0.0025\pi }{\mathrm{{cm}}}^{2}\) .
+
+在本例中, 如果“加热”改为“冷却”, “伸长”改为“缩短”, 这时,可取 \(r = {10},{\Delta r} = - {0.05}\) ,于是 \({dA}\) 为 \(- \pi {\mathrm{{cm}}}^{2},{\Delta A} - {dA}\) 为 \(- {0.0025\pi }{\mathrm{{cm}}}^{2}\) .
+
+通常把自变量的改变量 \({\Delta x}\) 记作 \({dx}\) ,即 \({dx} = {\Delta x}\) ,称为自变量的微分. 于是函数 \(y = f\left( x\right)\) 的微分也可以写成
+
+\[
+{dy} = {f}^{\prime }\left( x\right) {dx}. \tag{3}
+\]
+
+在 (3) 式两边同时除以 \({dx}\) ,得到 \({f}^{\prime }\left( x\right) = \frac{dy}{dx}\) . 这样,函数 \(y = f\left( x\right)\) 的导数 \({f}^{\prime }\left( x\right)\) 就等于函数的微分 \({dy}\) 与自变量的微分 \({dx}\) 的商,所以导数也叫做微商. 今后,我们也采用记号 \(\frac{dy}{dx}\) 来表示函数 \(y = f\left( x\right)\) 的导数 \({f}^{\prime }\left( x\right)\) ,即
+
+\[
+\frac{dy}{dx} = {f}^{\prime }\left( x\right) = {y}_{x}^{\prime } = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}.
+\]
+
+我们还采用记号 \(\frac{{d}^{2}y}{d{x}^{2}}\) 来表示二阶导数 \({f}^{\prime \prime }\left( x\right) ,\cdots \cdots\) ,采用记号 \(\frac{{d}^{n}y}{d{x}^{n}}\) 来表示 \(n\) 阶导数 \({f}^{\left( n\right) }\left( x\right)\) 等等.
+
+下面我们来说明函数的微分的几何意义.
+
+设函数 \(y = f\left( x\right)\) 在点 \(x\) 处可导,如图 2-5,在 \(y = f\left( x\right)\) 所表示的曲线上取点 \(P\left( {x,y}\right)\) 及它邻近的点 \({P}^{\prime }\left( {x + {\Delta x},y + {\Delta y}}\right)\) ,过点 \(P\) 及 \({P}^{\prime }\) 作 \({MP}\) 及 \({M}^{\prime }{P}^{\prime }\) 垂直于 \(x\) 轴,分别交 \(x\) 轴于点 \(M\) 及 \({M}^{\prime }\) ,过点 \(P\) 作平行于 \(x\) 轴的直线交 \({M}^{\prime }{P}^{\prime }\) 于点 \(N\) ,又作曲线 \(y = f\left( x\right)\) 在点 \(P\) 处的切线,交 \({M}^{\prime }{P}^{\prime }\) 于点 \(T\) ,则
+
+\[
+{PN} = {\Delta x},\;N{P}^{\prime } = {\Delta y},
+\]
+
+\[
+{NT} = {f}^{\prime }\left( x\right) {\Delta x} = {dy}.
+\]
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_113_880246.jpg}
+\end{center}
+
+图 2-5
+
+所以,当自变量的改变量为 \({\Delta x}\) 时, \({\Delta y}\) 就是曲线的纵坐标的改变量, \({dy}\) 就是切线的纵坐标的改变量,这就是函数的微分的几何意义. \({\Delta y}\) 与 \({dy}\) 的差的绝对值在图形上是 \(\left| {T{P}^{\prime }}\right|\) ,一般地,它是随着 \(\left| {\Delta x}\right|\) 减小而减小,而且要比 \(\left| {\Delta x}\right|\) 减小得更快些. 所以,当 \(\left| {\Delta x}\right|\) 很小时, \({\Delta y} \approx {dy}\) . 这时,可以用切线的纵坐标的改变量来代替曲线的纵坐标的改变量. 用 \({dy}\) 近似表示 \({\Delta y}\) , 相当于在点 \(P\left( {x,y}\right)\) 附近用切线段 \({PT}\) 近似地代替曲线段 \(P{P}^{\prime }\) . 这种在一定条件下以直代曲的方法是微分和积分中常用的典型方法.
+
+\section{微分的运算}
+
+由微分的表示式 \({dy} = {f}^{\prime }\left( x\right) {dx}\) 知道,已知函数求微分时, 只要求出函数的导数再乘以自变量的微分. 计算微分或导数的方法也叫做微分法.
+
+例 1 求 \(y = \sin x\) 的微分.
+
+\[
+\text{解:}\;{dy} = {\left( \sin x\right) }^{\prime }{dx} = \cos {xdx}\text{.}
+\]
+
+例 2 求 \(y = \operatorname{arctg}x\) 的微分.
+
+解: \(\;{dy} = {\left( \operatorname{arctg}x\right) }^{\prime }{dx} = \frac{dx}{1 + {x}^{2}}\) .
+
+根据导数的基本公式,利用 \({dy} = {f}^{\prime }\left( x\right) {dx}\) 我们就可求出相应的微分公式.
+
+\section*{微分公式表}
+
+(1) \(d\left( C\right) = 0\) ; (7) \(d\left( {\operatorname{tg}x}\right) = {\sec }^{2}{xdx}\) ;
+
+(2) \(d\left( {x}^{\alpha }\right) = \alpha {x}^{\alpha - 1}{dx}\) ; (8) \(d\left( {\operatorname{ctg}x}\right) = - {\csc }^{2}{xdx}\) ;
+
+(3) \(d\left( {{\log }_{a}x}\right) = \frac{dx}{x\ln a}\) ; (9) \(d\left( {\arcsin x}\right) = \frac{dx}{\sqrt{1 - {x}^{2}}}\) ;
+
+\(d\left( {\ln x}\right) = \frac{dx}{x}\) (10) \(d\left( {\arccos x}\right) = - \frac{dx}{\sqrt{1 - {x}^{2}}}\) ;
+
+(4) \(d\left( {a}^{x}\right) = {a}^{x}\ln {adx}\) ; (11) \(d\left( {\operatorname{arctg}x}\right) = \frac{dx}{1 + {x}^{2}}\) ;
+
+\[
+d\left( {e}^{x}\right) = {e}^{x}{dx}
+\]
+
+(5) \(d\left( {\sin x}\right) = \cos {xdx}\) ; (12) \(d\left( {\operatorname{arcctg}x}\right) = - \frac{dx}{1 + {x}^{2}}\) .
+
+(6) \(d\left( {\cos x}\right) = - \sin {xdx}\) ;
+
+同样, 由求导数的四则运算法则, 可以得出相应的求微分的四则运算法则:
+
+(1) \(d\left( {u \pm v}\right) = {du} \pm {dv}\) .
+
+(2) \(d\left( {uv}\right) = {udv} + {vdu}\) .
+
+请同学们自己证明(1)、(2)。
+
+(3) \(d\left( \frac{u}{v}\right) = \frac{{vdu} - {udv}}{{v}^{2}}\) .
+
+证明: \(d\left( \frac{u}{v}\right) = {\left( \frac{u}{v}\right) }^{\prime }{dx} = \frac{v{u}^{\prime } - u{v}^{\prime }}{{v}^{2}}{dx}\)
+
+\[
+= \frac{v\left( {{u}^{\prime }{dx}}\right) - u\left( {{v}^{\prime }{dx}}\right) }{{v}^{2}} = \frac{{vdu} - {udv}}{{v}^{2}}.
+\]
+
+例 3 求 \(y = {e}^{ax}\sin {bx}\) 的微分.
+
+\[
+\text{解:}\;{dy} = {e}^{ax}d\left( {\sin {bx}}\right) + \sin {bxd}\left( {e}^{ax}\right)
+\]
+
+\[
+= {e}^{ax} \cdot b\cos {bxdx} + \sin {bx} \cdot a{e}^{ax}{dx}
+\]
+
+\[
+= {e}^{ax}\left( {b\cos {bx} + a\sin {bx}}\right) {dx}\text{.}
+\]
+
+\begin{problemset}[练习]
+
+\item 对于函数 \(y = {x}^{3} - x\) 和下列的 \({\Delta x}\) 的值,求点 \(x = 2\) 处的 \({\Delta y}\) 和 \({dy}\) :
+
+(1) \({\Delta x} = 1\) ; (2) \({\Delta x} = {0.1}\) ;
+
+(3) \({\Delta x} = {0.01}\) ; (4) \({\Delta x} = {0.001}\) .
+
+\item 求下列函数的微分:
+
+(1) \(y = 3{x}^{4} - 5{x}^{2} + 1\) ; (2) \(y = \left( {2{x}^{2} - 3}\right) \left( {{3x} + 4}\right)\) ;
+
+(3) \(y = \frac{1 - {x}^{2}}{1 + {x}^{2}}\) (4) \(y = \frac{1}{3}{\operatorname{tg}}^{3}\theta + \operatorname{tg}\theta\) ;
+
+(5) \(y = {e}^{2x}\sin {5x}\) ; (6) \(y = \operatorname{arctg}\left( {\ln x}\right)\) .
+
+\item 函数 \(y = f\left( x\right)\) 的微分 \({dy}\) 依赖于哪两个量?
+
+\item 边长 \(4\mathrm{\;{cm}}\) 的正方形铁皮,在加热中边长增加了 \({0.001}\mathrm{\;{cm}}\) , 求此时刻面积的微分 \({dS}\) 与 \({\Delta S} - {dS}\) 的值.
+
+\item 半径 \(R\) 为 \({10}\mathrm{\;{cm}}\) 的球,在冷却中 \(R\) 缩短了 \({0.001}\mathrm{\;{cm}}\) ,求此
+
+时刻体积的微分 \({dV}\) 与 \({\Delta V} - {dV}\) 的值.
+
+\item 求证 \(\frac{d\left( {\sin x}\right) }{d\left( {\cos x}\right) } = - \operatorname{ctg}x\) .
+
+\end{problemset}
+
+\section{近似计算}
+
+我们知道,当 \(\left| {\Delta x}\right|\) 很小时,可以用微分 \({dy}\) 近似代替函数 \(y = f\left( x\right)\) 的改变量 \({\Delta y}\) . 由于在点 \({x}_{0}\) 处,
+
+\[
+{dy} = {f}^{\prime }\left( {x}_{0}\right) {\Delta x}
+\]
+
+\[
+{\Delta y} = f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) ,
+\]
+
+于是有
+
+\[
+f\left( {{x}_{0} + {\Delta x}}\right) - f\left( {x}_{0}\right) \approx {f}^{\prime }\left( {x}_{0}\right) {\Delta x},
+\]
+
+改写一下, 得
+
+\[
+f\left( {{x}_{0} + {\Delta x}}\right) \approx f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) {\Delta x}. \tag{1}
+\]
+
+如果把 \({x}_{0} + {\Delta x}\) 记作 \(x\) ,那么 \({\Delta x} = x - {x}_{0}\) ,于是 (1)式也可写成
+
+\[
+f\left( x\right) \approx f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right) . \tag{2}
+\]
+
+如果我们要求函数 \(y = f\left( x\right)\) 在某一点 \(x\) 处的值,但这点的值不易求出,而在 \(x\) 附近的 \({x}_{0}\) 处, \(f\left( {x}_{0}\right)\) 和 \({f}^{\prime }\left( {x}_{0}\right)\) 的值都容易求出,这时,我们可以利用 (2) 式 (或 (1) 式) 来求 \(f\left( x\right)\) 的近似值. 要注意的是这里要求 \(\left| {x - {x}_{0}}\right| = \left| {\Delta x}\right|\) 很小, \(\left| {x - {x}_{0}}\right|\) 越小, 近似程度越好.
+
+例 1 不查表,求 \(\sin {46}^{ \circ }\) 的近似值.
+
+解: 令 \(y = \sin x\) ,由 (2) 式,
+
+\[
+\sin x \approx \sin {x}_{0} + \cos {x}_{0} \cdot \left( {x - {x}_{0}}\right) .
+\]
+
+因为 \({46}^{ \circ } = {45}^{ \circ } + {1}^{ \circ } = \left( {\frac{\pi }{4} + \frac{\pi }{180}}\right)\) 弧度,
+
+取 \({x}_{0} = \frac{\pi }{4},x = \frac{\pi }{4} + \frac{\pi }{180}\) ,于是 \(x - {x}_{0} = \frac{\pi }{180}\) ,代入上式得
+
+\[
+\sin {46}^{ \circ } = \sin \left( {\frac{\pi }{4} + \frac{\pi }{180}}\right)
+\]
+
+\[
+\approx \sin \frac{\pi }{4} + \cos \frac{\pi }{4} \cdot \frac{\pi }{180}
+\]
+
+\[
+= \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{\pi }{180}
+\]
+
+\[
+\approx {0.7071} + {0.0123}
+\]
+
+\[
+= {0.7194}\text{.}
+\]
+
+如果把 (2) 式中的 \(x\) 看成变量,(2) 式右边就是 \(x\) 的一次函数. 也就是说,当 \(\left| {x - {x}_{0}}\right|\) 很小时,可以用一次函数 \(y = f\left( {x}_{0}\right)\) \(+ {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right)\) 来近似表示函数 \(y = f\left( x\right)\) ; 从几何上看,也就是在点 \(\left( {{x}_{0},{y}_{0}}\right)\) 附近,用曲线 \(y = f\left( x\right)\) 上点 \(\left( {{x}_{0},{y}_{0}}\right)\) 处的切线 \(y - {y}_{0} = {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right)\) 来近似表示曲线 \(y = f\left( x\right)\) .
+
+当 \({x}_{0} = 0\) 时,(2)式变为
+
+\[
+f\left( x\right) \approx f\left( 0\right) + {f}^{\prime }\left( 0\right) x. \tag{3}
+\]
+
+利用(3)式,当 \(\left| x\right|\) 充分小时,可以导出常用的一些近似公式:
+
+\[
+\sqrt{1 + x} \approx 1 + \frac{x}{2}
+\]
+
+\[
+\left( {1}^{ \circ }\right)
+\]
+
+\[
+\ln \left( {1 + x}\right) \approx x
+\]
+
+\[
+\left( {2}^{ \circ }\right)
+\]
+
+\[
+{e}^{x} \approx 1 + x
+\]
+
+\[
+\left( {3}^{ \circ }\right)
+\]
+
+\[
+\operatorname{tg}x \approx x\text{.}
+\]
+
+\[
+\left( {4}^{ \circ }\right)
+\]
+
+下面写出这些近似公式的导出过程.
+
+\(\left( {1}^{ \circ }\right)\) 取 \(f\left( x\right) = \sqrt{1 + x}\) ,则
+
+\[
+{f}^{\prime }\left( x\right) = \frac{1}{2\sqrt{1 + x}}
+\]
+
+于是
+
+\[
+f\left( 0\right) = 1,{f}^{\prime }\left( 0\right) = \frac{1}{2}.
+\]
+
+由 \(\left( 3\right)\) 式,得
+
+\[
+\sqrt{1 + x} = f\left( x\right) \approx f\left( 0\right) + {f}^{\prime }\left( 0\right) x
+\]
+
+\[
+= 1 + \frac{x}{2}
+\]
+
+即
+
+\[
+\sqrt{1 + x} \approx 1 + \frac{x}{2}
+\]
+
+\(\left( {2}^{ \circ }\right)\) 取 \(f\left( x\right) = \ln \left( {1 + x}\right)\) ,则
+
+\[
+{f}^{\prime }\left( x\right) = \frac{1}{1 + x}
+\]
+
+于是
+
+\[
+f\left( 0\right) = 0,{f}^{\prime }\left( 0\right) = 1\text{. }
+\]
+
+由 \(\left( 3\right)\) 式,得
+
+\[
+\ln \left( {1 + x}\right) \approx x\text{. }
+\]
+
+\begin{itemize}
+\item \(\left( {3}^{ \circ }\right)\) 取 \(f\left( x\right) = {e}^{x}\) ,则
+\end{itemize}
+
+\[
+{f}^{\prime }\left( x\right) = {e}^{x}
+\]
+
+于是
+
+\[
+f\left( 0\right) = 1,{f}^{\prime }\left( 0\right) = 1\text{. }
+\]
+
+由 \(\left( 3\right)\) 式,得
+
+\[
+{e}^{x} \approx 1 + x\text{. }
+\]
+
+\(\left( {4}^{ \circ }\right)\) 取 \(f\left( x\right) = \operatorname{tg}x\) ,则
+
+\[
+{f}^{\prime }\left( x\right) = {\sec }^{2}x
+\]
+
+于是
+
+\[
+f\left( 0\right) = 0,{f}^{\prime }\left( 0\right) = 1\text{. }
+\]
+
+由 \(\left( 3\right)\) 式,得
+
+\[
+\operatorname{tg}x \approx x\text{.}
+\]
+
+例 2 根据导出的近似公式, 求下列各式的近似值:
+
+(1) \(\sqrt{4.01},\sqrt{8.997}\) ; (2) \(\ln {1.002},\ln {0.998}\) ;
+
+(3) \({e}^{0.01},{e}^{-{0.02}}\) .
+
+解: (1) \(\sqrt{4.01} = \sqrt{4\left( {1 + \frac{0.01}{4}}\right) } = 2\sqrt{1 + \frac{0.01}{4}}\) . 利用公式 \(\left( {1}^{ \circ }\right)\) ,取 \(x = \frac{0.01}{4}\) ,得
+
+\[
+\sqrt{4.01} \approx 2\left( {1 + \frac{0.01}{2 \times 4}}\right) = {2.0025}.
+\]
+
+\[
+\sqrt{8.997} = \sqrt{9\left( {1 - \frac{0.003}{9}}\right) } = 3\sqrt{1 - \frac{0.003}{9}}\text{. 利用公式}\left( {1}^{ \circ }\right) \text{,}
+\]
+
+取 \(x = - \frac{0.003}{9}\) ,得
+
+\[
+\sqrt{8.997} \approx 3\left( {1 - \frac{0.003}{2 \times 9}}\right) = {2.9995}.
+\]
+
+（2）利用公式 \(\left( {2}^{ \circ }\right)\) . 取 \(x = {0.002}\) ,得
+
+\[
+\ln {1.002} = \ln \left( {1 + {0.002}}\right) \approx {0.002}\text{.}
+\]
+
+取 \(x = - {0.002}\) ,得
+
+\[
+\ln {0.998} = \ln \left( {1 - {0.002}}\right) \approx - {0.002}.
+\]
+
+（3）利用公式 \(\left( {3}^{ \circ }\right)\) ,取 \(x = {0.01}\) ,得
+
+\[
+{e}^{0.01} \approx 1 + {0.01} = {1.01}.
+\]
+
+取 \(x = - {0.02}\) ,得
+
+\[
+{e}^{-{0.02}} \approx 1 - {0.02} = {0.98}.
+\]
+
+例 3 如图 2-6, 加工锥形工件时, 已知工件两头直径分
+
+别为 \({d}_{1},{d}_{2}\) ,长度为 \(l\) ,当斜角 \(\alpha\) 很小时,导出近似关系式:
+
+\[
+\alpha \approx {28.6}^{ \circ } \times \frac{{d}_{1} - {d}_{2}}{l}.
+\]
+
+\begin{center}
+\includegraphics[max width=0.5\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_120_883650.jpg}
+\end{center}
+
+图 2-6
+
+解: 由图,
+
+\[
+\operatorname{tg}\alpha = \frac{{d}_{1} - {d}_{2}}{2l}.
+\]
+
+当 \(\alpha\) 很小时,根据公式 \(\left( {4}^{ \circ }\right)\) ,
+
+\[
+\operatorname{tg}\alpha \approx \alpha ,
+\]
+
+\[
+\therefore \;\alpha \approx \frac{{d}_{1} - {d}_{2}}{2l}\text{. }
+\]
+
+又
+
+\[
+\text{1 弧度} = {\left( \frac{180}{\pi }\right) }^{ \circ } \approx {57.3}^{ \circ }\text{,}
+\]
+
+\(\therefore \;\alpha \approx {57.3}^{ \circ } \times \frac{{d}_{1} - {d}_{2}}{2l} \approx {28.6}^{ \circ } \times \frac{{d}_{1} - {d}_{2}}{l}\) .
+
+\begin{problemset}[练习]
+
+\item 在例 1 中, \(x - {x}_{0} = \frac{\pi }{180}\) ,是用弧度为单位,为什么? 如果用度为单位,取 \(x - {x}_{0} = 1\) ,得出的结果对不对?
+
+\item 已知 \(\ln {10} = {2.3026}\) ,利用 \(f\left( x\right) \approx f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right)\) 求 \(\ln {10.012}\) 的近似值.
+
+\item 当 \(\left| x\right|\) 很小时,导出下列近似公式:
+
+(1) \(\sqrt[n]{1 + x} \approx 1 + \frac{x}{n}\)\(\left( {5}^{ \circ }\right)\)
+
+(2) \(\sin x \approx x\) .\(\left( {6}^{ \circ }\right)\)
+
+\item 计算下列各式的近似值:
+
+(1) \(\sqrt[5]{1.02}\) ; (2) \(\sqrt[3]{0.998}\) ;
+
+(3) \({e}^{-{0.1}}\) (4) \(\operatorname{tg}{0.01}\) ;
+
+(5) \(\sin {0.1}^{ \circ }\) ; (6) \(\ln {1.0021}\) .
+
+\end{problemset}
+
+\begin{problemset}[习 题 八]
+
+\item (1) 在下列图形中,标出相应的 \({\Delta y}\) 和 \({dy}\) 。
+
+\begin{center}
+\includegraphics[max width=0.8\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_121_587843.jpg}
+\end{center}
+
+(第 1 (1) 题)
+
+（2）自变量 \(x\) 的微分 \({dx}\) 是否一定为正? 当 \({dx}\) 为正时, 函数 \(y = f\left( x\right)\) 的微分 \({dy}\) 是否一定为正?
+
+\item 求下列函数的微分:
+
+(1) \(y = a{x}^{3} + b{x}^{2} + {cx} + d\) ; (2) \(y = {\left( {a}^{2} - {x}^{2}\right) }^{5}\) ;
+
+(3) \(y = \frac{\left( {x - 1}\right) \left( {x - 2}\right) }{\left( {x + 1}\right) \left( {x + 2}\right) }\) (4) \(r = \left( {1 + {\theta }^{2}}\right) \operatorname{tg}\theta\) ;
+
+(5) \(y = {e}^{-x}\ln x\) ;
+
+(6) \(y = \arcsin {3x} + {3x}\sqrt{1 - 9{x}^{2}}\) ;
+
+(7) \(y = \frac{{x}^{2n}}{{\left( 1 + {x}^{2}\right) }^{n}}\) ; (8) \(y = t - \frac{{e}^{t} - {e}^{-t}}{{e}^{t} + {e}^{-t}}\) .
+
+\item 求函数 \(y = {x}^{3}\) 在自变量的值由 \(x = 1\) 变为 \(x + {\Delta x} = {1.01}\) 时的改变量 \({\Delta y}\) 及 \({dy}\) . 用 \({dy}\) 来近似地代替 \({\Delta y}\) 的误差是多少?
+
+\item 某运动方程为
+
+\[
+s = 4{t}^{2}
+\]
+
+其中 \(t\) 的单位是秒, \(s\) 的单位是米,求 \(t = 2\) 秒, \({\Delta t} = {0.001}\) 秒时路程的改变量 \({\Delta s}\) 及路程的微分 \({ds}\) ,并加以比较.
+
+\item 一金属圆管的内半径为 \({10}\mathrm{\;{cm}}\) ,厚度为 \({0.05}\mathrm{\;{cm}}\) ,求圆管的横截面积的近似值.
+
+\item 球壳的外直径是 \({30}\mathrm{\;{cm}}\) ,厚度是 \({0.1}\mathrm{\;{cm}}\) ,求球壳体积的近似值.
+
+\item 要在直径为 \({50}\mathrm{\;{cm}}\) 的半球面形锅的内侧镀锌 (锌的比重为 \(7\mathrm{\;g}/{\mathrm{{cm}}}^{3}\) ),镀层厚 \({0.005}\mathrm{\;{cm}}\) ,约需用锌多少克?
+
+\item 计算下列各式的近似值:
+
+(1) \(\sqrt{9.01}\) ; (2) \(\sqrt{15.98}\) ;
+
+(3) \(\sqrt[3]{1.004}\) (4) \(\sqrt[3]{0.982}\) ;
+
+(5) \({e}^{-{0.03}}\) (6) \({\left( {1.002}\right) }^{5}\) ;
+
+(7) \(\ln {1.01}\) ; (8) \(\ln {0.97}\) ;
+
+(9) \(\sin {0.016}\) ; (10) \(\operatorname{tg}{0.025}\) ;
+
+\item 当 \(\left| x\right|\) 很小时,导出近似公式:
+
+\[
+{\left( 1 + x\right) }^{\alpha } \approx 1 + {\alpha x}\;\left( {\alpha \text{ 为实数 }}\right) ,
+\]
+
+\[
+\left( {7}^{ \circ }\right)
+\]
+
+并求 \({1.001}^{0.13}\) 的近似值.
+
+\end{problemset}
+
+\chapter*{小 结}
+\markboth{小 结}{小 结}
+
+一、本章主要内容是导数和微分的概念、求导数和求微分的方法以及微分在近似计算上的某些应用.
+
+二、导数概念是微积分学的基本概念之一. 函数 \(y = f\left( x\right)\)
+
+的导数 \({f}^{\prime }\left( x\right)\) ,就是函数的改变量 \({\Delta y}\) 与自变量的改变量 \({\Delta x}\) 的比 \(\frac{\Delta y}{\Delta x}\) 当 \({\Delta x} \rightarrow 0\) 时的极限,即
+
+\[
+{f}^{\prime }\left( x\right) = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x} = \mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{f\left( {x + {\Delta x}}\right) - f\left( x\right) }{\Delta x},
+\]
+
+它表示在点 \(x\) 处函数 \(y\) 对自变量的变化率,它的几何意义是曲线 \(y = f\left( x\right)\) 在点 \(\left( {x,f\left( x\right) }\right)\) 处的切线的斜率.
+
+如果 \({f}^{\prime }\left( {x}_{0}\right)\) 存在,曲线 \(y = f\left( x\right)\) 上点 \(\left( {{x}_{0},{y}_{0}}\right)\) 处的切线的方程为
+
+\[
+y - {y}_{0} = {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right)
+\]
+
+法线的方程 (当 \({f}^{\prime }\left( {x}_{0}\right) \neq 0\) 时) 为
+
+\[
+y - {y}_{0} = - \frac{1}{{f}^{\prime }\left( {x}_{0}\right) }\left( {x - {x}_{0}}\right) .
+\]
+
+三、函数 \(y = f\left( x\right)\) 的微分 \({dy}\) 就是函数的导数 \({f}^{\prime }\left( x\right)\) 与自变量的微分 \({dx}\left( {{dx} = {\Delta x} \neq 0}\right)\) 的积,即
+
+\[
+{dy} = {f}^{\prime }\left( x\right) {dx}.
+\]
+
+求函数 \(y = f\left( x\right)\) 的导数 \({f}^{\prime }\left( x\right)\) 与求函数的微分 \({f}^{\prime }\left( x\right) {dx}\) 是互通的, 即
+
+\[
+\frac{dy}{dx} = {f}^{\prime }\left( x\right) \Leftrightarrow {dy} = {f}^{\prime }\left( x\right) {dx},
+\]
+
+所以导数也叫做微商.
+
+四、求函数的导数或微分的方法叫做微分法. 根据定义求导数是最基本的方法. 对初等函数来说, 只要根据定义先求得一些基本初等函数的导数, 再利用求导数 (或微分) 的四则运算法则以及复合函数、反函数的求导 (或微分) 法则, 就可以求出任一初等函数的导数 (或微分). 这里, 复合函数的求导法则特别重要, 应切实掌握.
+
+五、根据微分的定义及其几何意义, 有下列近似公式:
+
+\[
+{\Delta y} \approx {f}^{\prime }\left( {x}_{0}\right) {\Delta x}\;\left( {\left| {\Delta x}\right| \text{ 很小 }}\right) ,
+\]
+
+\[
+f\left( x\right) \approx f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right) \;\left( {\left| {x - {x}_{0}}\right| \text{ 很小 }}\right) .
+\]
+
+利用这些公式, 可以求出函数的改变量或在某一点处的函数值的近似值.
+
+特别当 \({x}_{0} = 0\) 时,有
+
+\[
+f\left( x\right) \approx f\left( 0\right) + {f}^{\prime }\left( 0\right) x\;\left( {\left| x\right| \text{ 很小 }}\right) .
+\]
+
+由此可以导出一些常用的近似公式, 从而使实际问题中的一些计算大为简化.
+
+\chapter*{复习参考题二}
+\markboth{复习参考题二}{复习参考题二}
+
+\section*{\(A\) 组}
+
+1. (1) 在导数的定义中, \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}\) 的 \({\Delta x}\) 是正的还是负的? 还
+
+是可正可负? \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 + }}\frac{\Delta y}{\Delta x}\) 的 \({\Delta x}\) 呢? \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}\) 的 \({\Delta x}\) 呢?
+
+\(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0}}\frac{\Delta y}{\Delta x}\) 与 \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 + }}\frac{\Delta y}{\Delta x}\) 及 \(\mathop{\lim }\limits_{{{\Delta x} \rightarrow 0 - }}\frac{\Delta y}{\Delta x}\) 之间有什么关系?
+
+（2） \({f}^{\prime }\left( x\right)\) 和 \({f}^{\prime }\left( {x}_{0}\right)\) 有什么不同? \({f}^{\prime }\left( {x}_{0}\right)\) 与 \({\left\lbrack f\left( {x}_{0}\right) \right\rbrack }^{\prime }\) 有什么不同?
+
+2. 一质点沿 \({OA}\) 轴运动,在时刻 \(t\) (秒)时,质点的位置 \(s = {6t} - {t}^{2}\) (米).
+
+（1）求 \(t = 0,2,3,6,7\) 时质点的位置. 当 8 取负值时意
+
+味着什么?
+
+（2）求速度 \(v\left( {\text{米}/\text{秒}}\right)\) 的表示式,并求 \(t = 0,2,3,6,7\) 时的 \(v\) 值. \(v\) 值为负时意味着什么?
+
+（3）什么时刻以后, 质点改变运动的方向?
+
+3. 在受到制动后的 \(t\) 秒钟内飞轮转过的角度(弧度)由函数 \(\varphi \left( t\right) = {4t} - {0.3}{t}^{2}\) 给出,求:
+
+(1) \(t = 2\) (秒) 时,飞轮转过的角度;
+
+（2）飞轮停止旋转的时刻.
+
+4. 假设 1 公斤的铁从 \({0}^{ \circ }\mathrm{C}\) 加热到 \({t}^{ \circ }\mathrm{C}\left( {0 \leq t \leq {200}}\right)\) 时,所吸收的热量 \(Q\left( \text{千卡 }\right)\) 由公式 \(Q\left( t\right) = {0.1053t} + {0.000071}{t}^{2}\) 确定,求 \(t = {50}\) 时铁的比热 \(C\) .
+
+(提示: 比热 \(C = {Q}^{\prime }\left( t\right)\) 千卡/公斤. 度. )
+
+5. 已知抛物线 \(y = {x}^{2} - 4\) 及直线 \(y = x + 2\) ,求直线与抛物线在交点处的切线的交角.
+
+6. 已知两曲线 \(y = {x}^{2} - 1\) 与 \(y = 1 - {x}^{3}\) .
+
+（1）这两曲线在横坐标为 \({x}_{0}\) 的点处的切线互相平行,求 \({x}_{0}\) 的值;
+
+（2）这两曲线在横坐标为 \({x}_{1}\) 的点处的切线互相垂直,求 \({x}_{1}\) 的值.
+
+7. 按定义求 \(y = \operatorname{tg}x\) 的导数.
+
+8. 求下列函数的导数:
+
+(1) \(y = \left( {{x}^{2} - 1}\right) \left( {{x}^{2} - 3}\right) \left( {{x}^{2} - 5}\right)\) ; (2) \(y = \frac{{x}^{2}}{{\left( {x}^{2} - 1\right) }^{3}}\) ;
+
+(3) \(y = \frac{\sin {2x}}{1 + x}\) (4) \(y = \frac{\sec x}{1 + \operatorname{tg}x}\)
+
+(5) \(y = {\sin }^{4}{3x}{\cos }^{3}{4x}\) ; (6) \(y = 2\left( {{e}^{\frac{x}{2}} + {e}^{-\frac{x}{2}}}\right)\) ;
+
+(7) \(y = x\arcsin \frac{x}{2} + \sqrt{4 - {x}^{2}}\) ; (8) \(y = {a}^{{2x} + 1}\) ;
+
+(9) \(y = \arccos \frac{x - 3}{3} - 2\sqrt{\frac{6 - x}{x}}\)
+
+(10) \(y = \frac{x\ln x}{x + 1} - \ln \left( {x + 1}\right)\) ; (11) \(y = \lg \left( {{x}^{2} + x + 1}\right)\) ;
+
+(12) \(y = \ln \left( {{\cos }^{2}x}\right) + {2x}\operatorname{tg}x - {x}^{2}\) .
+
+9. 求下列函数的导数:
+
+(1) \(y = \frac{x - a}{\sqrt{{x}^{2} - {2ax}}}\) ; (2) \(y = \operatorname{arctg}\frac{x - a}{x + a}\)
+
+(3) \(y = \frac{x}{2}\sqrt{{x}^{2} + {a}^{2}} + \frac{{a}^{2}}{2}\ln \frac{x + \sqrt{{x}^{2} + {a}^{2}}}{a}\) ;
+
+(4) \(y = \operatorname{arctg}\left( {\sec x + \operatorname{tg}x}\right)\) ;
+
+(5) \(y = \ln \left( {\ln x}\right) - \frac{1}{\ln x}\) ; (6) \(y = \ln \left( {\operatorname{tg}\left( {\frac{\pi }{4} - \frac{x}{2}}\right) }\right)\) ;
+
+(7) \(y = {e}^{\arcsin \sqrt{x}}\) ; (8) \(y = \lg \left( {{a}^{x} + {b}^{x}}\right)\) ;
+
+(9) \(y = {a}^{\operatorname{tg}x}\) ;
+
+(10) \(y = \arcsin \frac{2}{{e}^{x} + {e}^{-x}}\left( {x > 0}\right)\) ;
+
+(11) \(y = \sqrt{\left( {x - a}\right) \left( {x - b}\right) \left( {x - c}\right) }\) ;
+
+(12) \(y = \ln \left( {\csc x - \operatorname{ctg}x}\right)\) .
+
+10. 一金属圆盘受热膨胀, 它的半径以 0.01 厘米/秒 的速度均匀增大, 当它的半径等于 2 厘米时, 它的面积的增大速度是多少?
+
+(提示: 圆面积 \(S = \pi {r}^{2}\) ,把 \(S\) 和 \(r\) 都看成 \(t\) 的函数.)
+
+11. 求证抛物线 \(\sqrt{x} + \sqrt{y} = \sqrt{a}\) 上任意一点处的切线在两坐标轴上截距的和等于 \(a\) .
+
+12. 求垂直于直线 \({2x} + {4y} - 3 = 0\) 并与双曲线 \(\frac{{x}^{2}}{2} - \frac{{y}^{2}}{7} = 1\) 相切的直线的方程。
+
+13. 某运动物体由点 \(O\) 开始作直线运动,经过 \(t\) 秒后它和点 \(O\) 的距离为
+
+\[
+s = \frac{1}{4}{t}^{4} - 4{t}^{3} + {16}{t}^{2}
+\]
+
+（1）此物体什么时刻在 \(O\) 点 \(\left( {\text{即}s = 0}\right)\) ?
+
+（2）什么时刻它的速度为 0 ?
+
+（3）什么时刻它的加速度值为 11 ?
+
+14. 求下列函数的二阶导数:
+
+(1) \(y = \sin {ax} + \cos {bx}\) ; (2) \(y = {e}^{\sqrt{x}} + {e}^{-\sqrt{x}}\)
+
+(3) \(y = \frac{{x}^{2} + 1}{{\left( x + 1\right) }^{3}}\) (4) \(y = \operatorname{arctg}\frac{{e}^{x} - {e}^{-x}}{2}\) .
+
+15. 求下列函数 \(y\) 在指定点处的一阶导数及二阶导数:
+
+(1) \(y = \sqrt{3x} + \frac{13}{\sqrt{3x}}\) ,点 \(x = 3\) ;
+
+（2） \(y = x\sqrt{{x}^{2} - {16}}\) ,点 \(x = 5\) .
+
+16. 一物体作阻尼运动, 运动规律为
+
+\[
+x = {e}^{-{2t}}\sin \left( {{3t} + \frac{\pi }{6}}\right)
+\]
+
+求运动物体的速度和加速度。
+
+17. 求下列函数的微分:
+
+(1) \(y = {\left( 2{x}^{3} - 3{x}^{2} + 6x\right) }^{2}\) ;
+
+(2) \(y = {\left( {e}^{x} + {e}^{-x}\right) }^{2}\) ; (3) \(y = \frac{\ln x}{\sqrt{x}}\)
+
+(4) \(y = \operatorname{arctg}\frac{1 - {x}^{2}}{1 + {x}^{2}}\) .
+
+18. 设 \(y = {\cos }^{2}\varphi\) ,当 \(\varphi\) 从 \({60}^{ \circ }\) 变到 \({60}^{ \circ }{30}^{\prime }\) 时,求函数 \(y\) 的微分.
+
+19. 单摆的周期 \(T\) (秒) 与单摆的长度 \(l\) (厘米)之间,有关系 \(T = {2\pi }\sqrt{\frac{l}{980}}\) . 长度为 20 厘米的单摆加长 1 厘米后,它的周期大约增加多少?
+
+20. 利用近似公式 \(f\left( x\right) \approx f\left( {x}_{0}\right) + {f}^{\prime }\left( {x}_{0}\right) \left( {x - {x}_{0}}\right)\) 求下列各式的近似值:
+
+(1) \(\sin {29}^{ \circ }\) ; (2) \(\operatorname{arctg}{0.97}\) .
+
+21. 当 \(\left| x\right|\) 很小时,导出下列近似公式:
+
+(1) \(\frac{1}{1 + x} \approx 1 - x\) ;\(\left( {8}^{ \circ }\right)\)
+
+(2) \(\operatorname{arctg}x \approx x\) .\(\left( {9}^{ \circ }\right)\)
+
+22. 计算下列各式的近似值:
+
+(1) \(\sqrt[8]{1.02}\) ; (2) \(\frac{1}{\sqrt{99.5}}\) (3) \({\log }_{1.01}{0.997}\) .
+
+23. 已知 \(f\left( x\right) = \frac{x}{\sqrt{{x}^{2} + 9}}\) ,求 \(f\left( {0.03}\right)\) 的近似值.
+
+\begin{center}
+\includegraphics[max width=0.4\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_128_440234.jpg}
+\end{center}
+
+(第 24 题)
+
+24. 如图,一透镜的凸面半径是 \(R\) , 四径是 \({2h}\) ( \(h\) 比 \(R\) 小得多),厚度是 \(\delta\) . 导出近似关系式:
+
+\[
+\delta \approx \frac{{h}^{2}}{2R}
+\]
+
+\section*{\(B\) 组}
+
+25. 证明双曲线 \({xy} = a(a\) 为不等于零的常数) 上任意一点处的切线和坐标轴所构成的三角形的面积等于 \(2\left| a\right|\) .
+
+26. 设函数
+
+\[
+f\left( x\right) = \left\{ \begin{array}{ll} {x}^{2}, & x \leq 1; \\ {ax} + b, & x > 1. \end{array}\right.
+\]
+
+为了使 \(f\left( x\right)\) 在点 \(x = 1\) 处连续而且可导,应该怎样选取系数 \(a,b\) ?
+
+27. 把 \(y = \arcsin x\) 变形为 \(x = \sin y\) ,利用隐函数的求导法则, 证明:
+
+\[
+{\left( \arcsin x\right) }^{\prime } = \frac{1}{\sqrt{1 - {x}^{2}}}
+\]
+
+\begin{center}
+\includegraphics[max width=0.2\textwidth]{images/01912c18-5c3f-733d-b775-749ba9897a9d_129_320008.jpg}
+\end{center}
+
+(第 28 题)
+
+28. 一质量为 3 公斤的物体挂于弹簧的下端,在 \(O\) 点上下振动,振动规律为 \(x = {10}\sin t\) . 求振动过程中的最大动能.
+
+(位移单位为厘米, 时间单位为秒.)
+
+29. 一倒置圆锥形的容器, 它的轴截面是一等边三角形. 以每秒 100 立方厘米的速度往容器内加水, 求当水面高度为 20 厘米时水面上升的速度. (提示: 先写出容器内水的体积与水面高度的函数关系.)
+
+30. 从上口直径为 12 厘米, 深为 18 厘米的锥形漏斗中流出溶液, 当液面高度从 10 厘米下降到 9.8 厘米时, 求流出溶液的容积的近似值。
+
 
 \subsection{在线使用模板}
 
