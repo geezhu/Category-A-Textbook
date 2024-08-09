@@ -1,12 +1,12 @@
 # 下载链接
 
-[微积分和平面解析几何](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1)
+[微积分和平面解析几何(无排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1)
 
 [微积分(Elegantbook重排版)，初步排版](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.2)
 
-[化学全三册甲种本](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1c)
+[化学全三册甲种本(无排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1c)
 
-[物理全两册乙种本](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1p)
+[物理全两册乙种本(无排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1p)
 
 
 # 项目由来
