@@ -2,7 +2,7 @@
 
 [微积分和平面解析几何(基础排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1)
 
-[微积分(Elegantbook重排版)，初步排版](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.2)
+[微积分(Elegantbook重排版)，正式版本](https://github.com/geezhu/Category-A-Textbook/releases/tag/v1.0)
 
 [化学全三册甲种本(基础排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1c)
 
