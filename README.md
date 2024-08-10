@@ -8,6 +8,9 @@
 
 [物理全两册乙种本(基础排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1p)
 
+其他
+
+[影印版甲(乙)种本(包含教师用书)](https://pan.quark.cn/s/d6e43ee688bc)
 
 # 项目由来
 
