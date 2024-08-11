@@ -1,9 +1,7 @@
 # 下载链接
 
-[微积分和平面解析几何(基础排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1)
-
 [微积分(Elegantbook重排版)，正式版本](https://github.com/geezhu/Category-A-Textbook/releases/tag/v1.0)
-
+[平面解析几何(Elegantbook重排版)，正式版本](https://github.com/geezhu/Category-A-Textbook/releases/tag/v1.0g)
 [化学全三册甲种本(基础排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1c)
 
 [物理全两册乙种本(基础排版)](https://github.com/geezhu/Category-A-Textbook/releases/tag/v0.1p)
@@ -33,7 +31,7 @@ geezhu 2024.08.07
 | 序号 | 书名         | 进度                  |
 |:--:|:-----------|:--------------------|
 | 1  | 微积分初步      | 已完成 (2024-08-07 ~ 2024-08-10) |
-| 2  | 平面解析几何     | 待修复 (2024-08-07 ~ )  |
+| 2  | 平面解析几何     | 待修复 (2024-08-07 ~ 2024-08-11)  |
 | 3  | 化学I        | 待修复 (2024-08-07 ~ )  |
 | 4  | 化学II       | 待修复 (2024-08-07 ~ )  |
 | 5  | 化学III      | 待修复 (2024-08-07 ~ )  |
@@ -42,7 +40,7 @@ geezhu 2024.08.07
 
 **更新Notes**：
 * **20240809**,使用Elegant模板对《微积分初步》初步完成排版，后续将进行问题修复，以及排版优化（加入定义框啥的）
-
+* **20240811**,使用Elegant模板对《平面解析几何》初步完成排版，后续将进行问题修复，以及排版优化（加入定义框啥的）
 # 相关工作
 
 鉴于 [fanhongtao](https://github.com/fanhongtao/ebooks)已经完成了或处理如下工作
