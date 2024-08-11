@@ -15,6 +15,11 @@
 \usepackage{esint}
 \usepackage{xeCJK}
 \usepackage{adjustbox}
+\usepackage{caption}
+
+\captionsetup[figure]{labelformat=empty}
+\captionsetup[figure]{labelsep=space}
+
 \newcommand{\HRule}{\begin{center}\rule{0.5\linewidth}{0.2mm}\end{center}}
 \newcommand{\customfootnote}[1]{
   \let\thefootnote\relax\footnotetext{#1}
@@ -41,7 +46,7 @@
 \newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
 
 % 修改标题页的橙色带
-\definecolor{customcolor}{RGB}{32,178,170}
+\definecolor{customcolor}{RGB}{184,41,255}
 \colorlet{coverlinecolor}{customcolor}
 \usepackage{cprotect}
 
@@ -77,9 +82,8 @@
 
 \mainmatter
 
-\chapter{Elegant\LaTeX{} 系列模板介绍}
-
-\section*{引 言}
+\chapter*{引 言}
+\markboth{引 言}{引 言}
 
 我们在平面几何和立体几何里, 所用的研究方法是以公理为基础, 直接依据图形的点、线、面的关系来研究图形的性质. 在将要学习的平面解析几何里, 所用的研究方法和平面几何、立体几何不同, 它是在坐标系的基础上, 用坐标表示点, 用方程表示曲线 (包括直线), 通过研究方程的特征间接地来研究曲线的性质. 因此可以说, 解析几何是用代数方法来研究几何问题的一门数学学科.
 
@@ -93,41 +97,49 @@
 
 在十七世纪, 法国数学家笛卡儿创始了解析几何. 解析几何的产生对数学发展, 特别是对微积分的出现起了促进作用; 恩格斯对笛卡儿的这一发现给予了高度的评价.
 
-\section*{第一章 直 线}
+\chapter{直 线}
 
 \section*{一 有向线段、定比分点}
 
-\section*{1.1 有向线段、两点的距离}
+\section{有向线段、两点的距离}
 
 在初中, 我们学过数轴, 它是规定了原点、正方向和长度单位的直线. 任意一条直线, 都可以规定两个相反的方向. 如果把其中一个作为正方向, 那么相反的方向就是负方向. 规定了正方向的直线叫做有向直线. 在图中,有向直线 \(l\) 的正方向用箭头表示 (图 1-1). 例如, 初中学过的直角坐标系中的 \(x\) 轴、 \(y\) 轴都是有向直线.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_7_968321.jpg}
-\end{center}
+  \caption{图 1-1}
+\end{figure}
 
-图 1-1
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_7_264987.jpg}
-\end{center}
+  \caption{图 1-2}
+\end{figure}
 
-图 1-2
+
 
 一条线段也可以规定两个相反的方向. 如图 1-2 中的线段 \({AB}\) ,如果以 \(A\) 为起点、 \(B\) 为终点,那么,它的方向是从 \(A\) 到 \(B\) ; 相反,如果以 \(B\) 为起点、 \(A\) 为终点,它的方向就是从 \(B\) 到 \(A\) . 规定了方向,即规定了起点和终点的线段叫做有向线段. 表示有向线段时, 要将表示起点的字母写在前面, 表示终点的字母写在后面. 如以 \(A\) 为起点、 \(B\) 为终点的有向线段记作 \(\overline{AB}\) . 图 1-2 中,点 \(C\) 是线段 \({AB}\) 上的一点, \(\overline{AB}\) 和 \(\overline{AC}\) 是方向相同的有向线段, \(\overline{AB}\) 和 \(\overline{BC}\) 是方向相反的有向线段.
 
 选定一条线段作为长度单位, 我们可以量得一条线段的长度,线段 \({AB}\) 的长度,就是有向线段 \(\overline{AB}\) 的长度,记作 \(\left| {AB}\right|\) . 如图 1-3,设线段 \(e\) 是长度单位,那么 \(\left| {AB}\right| = 3\) . 因为有向线段的长度与它的方向无关,所以 \(\left| {AB}\right| = \left| {BA}\right|\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_8_197225.jpg}
-\end{center}
+  \caption{图 1-3}
+\end{figure}
 
-图 1-3
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_8_589831.jpg}
-\end{center}
+  \caption{图 1-4}
+\end{figure}
 
-图 1-4
+
 
 如果有向线段在有向直线 \(l\) 上或与 \(l\) 平行,那么,它的方向与 \(l\) 的正方向可能相同或相反. 例如图 1-4 中的 \(\overline{AB}\) 与 \(l\) 的方向相同,而 \(\overline{BA}\) 与 \(l\) 的方向相反.
 
@@ -139,19 +151,20 @@
 
 数轴 \({Ox}\) 是有向直线,数轴上点 \(P\) 的坐标 \({x}_{0}\) 实际上是以有向线段的数量来定义的. 点 \(P\) 的坐标 \({x}_{0}\) 是以原点 \(O\) 为起点、 \(P\) 为终点的有向线段 \(\overline{OP}\) 的数量, \({OP} = {x}_{0}\) . 例如,点 \(A\text{、}B\) 的坐标分别是有向线段 \(\overline{OA}\text{、}\overline{OB}\) 的数量, \({OA} = 3\text{、}{OB} = - 2\) (图 1-5).
 
+\customfootnote{
+	
+	* 在引入有向直线以后,线段 \({AB}\) 的长度一律用 \(\left| {AB}\right|\) 表示.
+	
+}
+
 现在我们来研究, 对于数轴上任意一条有向线段, 怎样用它的起点坐标和终点坐标表示它的数量.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_8_647013.jpg}
-\end{center}
+  \caption{图 1-5}
+\end{figure}
 
-图 1-5
-
-\customfootnote{
-
-  * 在引入有向直线以后,线段 \({AB}\) 的长度一律用 \(\left| {AB}\right|\) 表示.
-
-}
 
 设 \(\overline{AB}\) 是 \(x\) 轴上的任意一条有向线段, \(O\) 是原点. 先讨论两点 \(A\text{、}B\) 与 \(O\) 都不重合的情形. 如图 1-6,它们的位置关系只可能有六种不同情形. 点 \(A\text{、}B\) 的坐标分别用 \({x}_{1}\) 和 \({x}_{2}\) 表示,那么 \({OA} = {x}_{1},{OB} = {x}_{2}\) .
 
@@ -171,11 +184,13 @@
     {AB} = {x}_{2} - {x}_{1}\text{. }
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_9_561693.jpg}
-\end{center}
+  \caption{图 1-6}
+\end{figure}
 
-图 1-6
+
 
 在图 1-6(2)中, \({AB} = \left| {AB}\right| ,{OA} = - \left| {OA}\right| ,{OB} = \left| {OB}\right|\) ,
 
@@ -207,11 +222,13 @@
 
 在直角坐标系中,已知两点 \({P}_{1}\left( {{x}_{1},{y}_{1}}\right) \text{、}{P}_{2}\left( {{x}_{2},{y}_{2}}\right)\) (图 1-7). 从 \({P}_{1}\text{、}{P}_{2}\) 分别向 \(x\) 轴和 \(y\) 轴作垂线 \({P}_{1}{M}_{1}\text{、}{P}_{1}{N}_{1}\) 和 \({P}_{2}{M}_{2}\text{、}{P}_{2}{N}_{2}\) ,垂足分别为 \({M}_{1}\left( {{x}_{1},0}\right)\) 、 \({N}_{1}\left( {0,{y}_{1}}\right) \text{、}{M}_{2}\left( {{x}_{2},0}\right) \text{、}{N}_{2}\left( {0,{y}_{2}}\right)\) ,其中直线 \({P}_{1}{N}_{1}\) 和 \({P}_{2}{M}_{2}\) 相交于点 \(Q\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_10_261177.jpg}
-\end{center}
+  \caption{图 1-7}
+\end{figure}
 
-图 1-7
+
 
 在 \({Rt}\bigtriangleup {P}_{1}Q{P}_{2}\) 中,
 
@@ -237,11 +254,13 @@
 
 例 1 已知数轴上三点 \(A\text{、}B\text{、}C\) 的坐标分别是 4、 -2 、 -6. 求 \(\overline{AB}\text{、}\overline{BC}\text{、}\overline{CA}\) 的数量和长度 (图 1-8).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_10_794091.jpg}
-\end{center}
+  \caption{图 1-8}
+\end{figure}
 
-图 1-8
+
 
 解: \({AB} = \left( {-2}\right) - 4 = - 6,\;\left| {AB}\right| = \left| {-6}\right| = 6\) ;
 
@@ -277,21 +296,23 @@
     {\left| AO\right| }^{2} + {\left| OC\right| }^{2} = {a}^{2} + {b}^{2} + {c}^{2}.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_11_761140.jpg}
-\end{center}
+  \caption{图 1-9}
+\end{figure}
 
-图 1-9
+
 
 \(\therefore {\left| AB\right| }^{2} + {\left| AC\right| }^{2} = 2\left( {{\left| AO\right| }^{2} + {\left| OC\right| }^{2}}\right)\) .
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 数轴上点 \(A\) 的坐标为 2,点 \(B\) 的坐标为 -3 . 验证公式 \({AB} = {x}_{2} - {x}_{1}.\)
+\item 数轴上点 \(A\) 的坐标为 2,点 \(B\) 的坐标为 -3 . 验证公式 \({AB} = {x}_{2} - {x}_{1}.\)
 
-2. 已知数轴 \(x\) 上的点 \(A\text{、}B\text{、}C\) 的坐标分别为 \(1\text{、}2\text{、}3\) . (1) 求 \(\overline{AB}\text{、}\overline{CB}\) 的数量; (2) 如果在 \(x\) 轴上还有两个点 \(D\text{、}E\) ,且 \({AD} = {2.5},{CE} = - 3\) . 求点 \(D\text{、}E\) 的坐标.
+\item 已知数轴 \(x\) 上的点 \(A\text{、}B\text{、}C\) 的坐标分别为 \(1\text{、}2\text{、}3\) . (1) 求 \(\overline{AB}\text{、}\overline{CB}\) 的数量; (2) 如果在 \(x\) 轴上还有两个点 \(D\text{、}E\) ,且 \({AD} = {2.5},{CE} = - 3\) . 求点 \(D\text{、}E\) 的坐标.
 
-3. 求有下列坐标的两点距离:
+\item 求有下列坐标的两点距离:
 
 (1) \(\left( {6,0}\right) \text{、}\left( {-2,0}\right)\) ; (2) \(\left( {0, - 4}\right) \text{、}\left( {0, - 1}\right)\) ;
 
@@ -301,9 +322,11 @@
 
 (6) \(\left( {a{b}^{2},{2abc}}\right) \text{、}\left( {a{c}^{2},0}\right)\) .
 
-4. 已知点 \(A\left( {a, - 5}\right)\) 和 \(B\left( {0,{10}}\right)\) 的距离是 17,求 \(a\) 的值.
+\item 已知点 \(A\left( {a, - 5}\right)\) 和 \(B\left( {0,{10}}\right)\) 的距离是 17,求 \(a\) 的值.
 
-\section*{1.2 线段的定比分点}
+\end{problemset}
+
+\section{线段的定比分点}
 
 有向直线 \(l\) 上的一点 \(P\) ,把 \(l\) 上的有向线段 \(\overline{{P}_{1}{P}_{2}}\) 分成两条有向线段 \(\overline{{P}_{1}P}\) 和 \(\overline{P{P}_{2}}.\overline{{P}_{1}P}\) 和 \(\overline{P{P}_{2}}\) 数量的比叫做点 \(P\) 分 \(\overline{{\mathbf{P}}_{1}{\mathbf{P}}_{2}}\) 所成的比,通常用字母 \(\lambda\) 来表示这个比值,
 
@@ -315,11 +338,13 @@
 
 如果点 \(P\) 在线段 \({P}_{1}{P}_{2}\) 上 (图 1-10 甲),点 \(P\) 叫做 \(\overline{{P}_{1}{P}_{2}}\) 的内分点. 这时,无论 \(l\) 的方向如何, \(\overline{{P}_{1}P}\) 和 \(\overline{P{P}_{2}}\) 的方向都相同,它们的数量的符号也相同,所以 \(\lambda\) 为正值. 如果点 \(P\) 在线段 \({P}_{2}{P}_{1}\) 或 \({P}_{1}{P}_{2}\) 的延长线上 (图 1-10乙、丙),点 \(P\) 叫做 \(\overline{{P}_{1}{P}_{2}}\) 的外分点. 这时无论 \(l\) 的方向如何, \(\overline{{P}_{1}P}\) 和 \(\overline{P{P}_{2}}\) 的方向都相反, 它们的数量的符号也相反,所以 \(\lambda\) 为负值.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_12_791347.jpg}
-\end{center}
+  \caption{图 1-10}
+\end{figure}
 
-图 1-10
+
 
 由于点 \(P\) 分 \(\overline{{P}_{1}{P}_{2}}\) 所成的比与它们所在的直线 \(l\) 的方向无关,为了简便起见,在以后谈到点 \(P\) 分 \(\overline{{P}_{1}{P}_{2}}\) 所成的比时,一般不提它所在的有向直线的方向.
 
@@ -349,11 +374,13 @@
   \therefore \lambda = \frac{x - {x}_{1}}{{x}_{2} - x}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_13_700827.jpg}
-\end{center}
+  \caption{图 1-11}
+\end{figure}
 
-图 1-11
+
 
 即 \(\left( {1 + \lambda }\right) x = {x}_{1} + \lambda {x}_{2}\) ,当 \(\lambda \neq - 1\) 时,
 
@@ -393,11 +420,13 @@
   y = \frac{{y}_{1} + \lambda {y}_{2}}{1 + \lambda } = \frac{-6 + \left( {-\frac{1}{4}}\right) \cdot 0}{1 + \left( {-\frac{1}{4}}\right) } = - 8.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_14_690449.jpg}
-\end{center}
+  \caption{图 1-12}
+\end{figure}
 
-图 1-12
+
 
 点 \(P\) 分 \({\overline{{P}_{1}P}}_{2}\) 所成的比是 \(- \frac{1}{4}\) ,点 \(P\) 的纵坐标是 \(- 8\) (图 1-12).
 
@@ -421,11 +450,13 @@
   y = \frac{{y}_{1} + 2 \times \frac{{y}_{2} + {y}_{3}}{2}}{1 + 2}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_15_210180.jpg}
-\end{center}
+  \caption{图 1-13}
+\end{figure}
 
-图 1-13
+
 
 整理后得重心 \(G\) 的坐标
 
@@ -433,11 +464,11 @@
   x = \frac{{x}_{1} + {x}_{2} + {x}_{3}}{3},\;y = \frac{{y}_{1} + {y}_{2} + {y}_{3}}{3}.
 \]
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 已知两点 \({P}_{1}\left( {3, - 2}\right) \text{、}{P}_{2}\left( {-9,4}\right)\) . 求点 \(P\left( {x,0}\right)\) 分 \(\overline{{P}_{1}{P}_{2}}\) 所成的比 \(\lambda\) 及 \(x\) 的值.
+\item 已知两点 \({P}_{1}\left( {3, - 2}\right) \text{、}{P}_{2}\left( {-9,4}\right)\) . 求点 \(P\left( {x,0}\right)\) 分 \(\overline{{P}_{1}{P}_{2}}\) 所成的比 \(\lambda\) 及 \(x\) 的值.
 
-2. 点 \(M\) 分有向线段 \(\overline{{M}_{1}{M}_{2}}\) 的比为 \(\lambda\) ,求点 \(M\) 的坐标 \(\left( {x,y}\right)\) :
+\item 点 \(M\) 分有向线段 \(\overline{{M}_{1}{M}_{2}}\) 的比为 \(\lambda\) ,求点 \(M\) 的坐标 \(\left( {x,y}\right)\) :
 
 (1) 已知: \({M}_{1}\left( {1,5}\right) \text{、}{M}_{2}\left( {2,3}\right) ,\lambda = \frac{1}{3}\) ;
 
@@ -445,19 +476,23 @@
 
 (3) 已知: \({M}_{1}\left( {1,5}\right) \text{、}{M}_{2}\left( {2, - 3}\right) ,\lambda = - 2\) .
 
-3. 已知 \(\bigtriangleup {ABC}\) 的顶点 \(A\left( {2,3}\right) \text{、}B\left( {8, - 4}\right)\) 和重心 \(G\left( {2, - 1}\right)\) . 求点 \(C\) 的坐标 \(\left( {x,y}\right)\) .
+\item 已知 \(\bigtriangleup {ABC}\) 的顶点 \(A\left( {2,3}\right) \text{、}B\left( {8, - 4}\right)\) 和重心 \(G\left( {2, - 1}\right)\) . 求点 \(C\) 的坐标 \(\left( {x,y}\right)\) .
 
-\section*{习 题 一}
+\end{problemset}
 
-1. 如图, 数轴上每一格等于一个长度单位,说出有向线段 \(\overline{AB}\) 、
+\begin{problemset}[习 题 一]
 
-\begin{center}
+\item 如图, 数轴上每一格等于一个长度单位,说出有向线段 \(\overline{AB}\) 、
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_15_328018.jpg}
-\end{center}
+  \caption{}
+\end{figure}
 
 \(\overline{BC}\text{、}\overline{CD}\) 和 \(\overline{EA}\) 的长度和数量. (第 1 题)
 
-2. 已知数轴上 \(A\text{、}B\) 两点的坐标 \({x}_{1}\text{、}{x}_{2}\) 分别是:
+\item 已知数轴上 \(A\text{、}B\) 两点的坐标 \({x}_{1}\text{、}{x}_{2}\) 分别是:
 
 (1) \({x}_{1} = 8,{x}_{2} = 6\) ; (2) \({x}_{1} = 5,{x}_{2} = - 3\) ;
 
@@ -469,21 +504,21 @@
 
 求 \(\overline{AB}\) 和 \(\overline{BA}\) 的数量.
 
-3. \(A\text{、}B\) 是数轴上两点,点 \(B\) 的坐标是 \({x}_{2}\) . 根据下列条件, 求点 \(A\) 的坐标 \({x}_{1}\) :
+\item \(A\text{、}B\) 是数轴上两点,点 \(B\) 的坐标是 \({x}_{2}\) . 根据下列条件, 求点 \(A\) 的坐标 \({x}_{1}\) :
 
 (1) \({x}_{2} = 3,{AB} = 5\) ; (2) \({x}_{2} = - 5,{BA} = - 3\) ;
 
 (3) \({x}_{2} = 0,\left| {AB}\right| = 2\) ; (4) \({x}_{2} = - 5,\left| {AB}\right| = 2\) .
 
-4. 已知某零件一个面上有 3 个孔, 孔中心的坐标分别为: \(A\left( {-{10},{30}}\right) \text{、}B\left( {-2,3}\right) \text{、}C\left( {0, - 1}\right)\) . 求每两孔中心的距离.
+\item 已知某零件一个面上有 3 个孔, 孔中心的坐标分别为: \(A\left( {-{10},{30}}\right) \text{、}B\left( {-2,3}\right) \text{、}C\left( {0, - 1}\right)\) . 求每两孔中心的距离.
 
-5. 已知点 \(P\left( {x,2}\right) \text{、}Q\left( {-2, - 3}\right) \text{、}M\left( {1,1}\right)\) ,且 \(\left| {PQ}\right| = \left| {PM}\right|\) . 求 \(x\) .
+\item 已知点 \(P\left( {x,2}\right) \text{、}Q\left( {-2, - 3}\right) \text{、}M\left( {1,1}\right)\) ,且 \(\left| {PQ}\right| = \left| {PM}\right|\) . 求 \(x\) .
 
-6. (1) 求在 \(x\) 轴上与点 \(A\left( {5,{12}}\right)\) 的距离为 13 的点的坐标;
+\item (1) 求在 \(x\) 轴上与点 \(A\left( {5,{12}}\right)\) 的距离为 13 的点的坐标;
 
 （2）已知点 \(P\) 的横坐标是 7,点 \(P\) 到点 \(N\left( {-1,5}\right)\) 的距离等于 10,求点 \(P\) 的纵坐标.
 
-7. 设线段 \({P}_{1}{P}_{2}\) 长 \(5\mathrm{\;{cm}}\) ,写出点 \(P\) 分 \(\overline{{P}_{1}{P}_{2}}\) 所成的比 \(\lambda\) :
+\item 设线段 \({P}_{1}{P}_{2}\) 长 \(5\mathrm{\;{cm}}\) ,写出点 \(P\) 分 \(\overline{{P}_{1}{P}_{2}}\) 所成的比 \(\lambda\) :
 
 （1）点 \(P\) 在 \({P}_{1}{P}_{2}\) 上, \(\left| {{P}_{1}P}\right| = 1\mathrm{\;{cm}}\) ;
 
@@ -491,7 +526,7 @@
 
 （3）点 \(P\) 在 \({P}_{2}{P}_{1}\) 的延长线上, \(\left| {P{P}_{1}}\right| = 1\mathrm{\;{cm}}\) .
 
-8. 求连结下列两点的线段的长度和中点坐标:
+\item 求连结下列两点的线段的长度和中点坐标:
 
 (1) \(A\left( {7,4}\right) \text{、}B\left( {3,2}\right)\) ; (2) \({P}_{1}\left( {6, - 4}\right) \text{、}{P}_{2}\left( {-2, - 2}\right)\) ;
 
@@ -499,7 +534,7 @@
 
 (4) \(E\left( {-{2.8},{6.4}}\right) \text{、}F\left( {-{2.8},{7.2}}\right)\) .
 
-9. 一条线段的两个端点 \({P}_{1}\text{、}{P}_{2}\) 的坐标及点 \(P\) 分 \(\overline{{P}_{1}{P}_{2}}\) 所成的比如下,求分点 \(P\) 的坐标:
+\item 一条线段的两个端点 \({P}_{1}\text{、}{P}_{2}\) 的坐标及点 \(P\) 分 \(\overline{{P}_{1}{P}_{2}}\) 所成的比如下,求分点 \(P\) 的坐标:
 
 (1) \(\left( {2,1}\right) \text{、}\left( {3, - 9}\right) ,\lambda = 4\) ;
 
@@ -509,13 +544,13 @@
 
 (4) \(\left( {8,5}\right) \text{、}\left( {-{13}, - 2}\right) ,\lambda = - \frac{4}{3}\) .
 
-10. (1) 一条线段的两个端点坐标如下, 求这条线段的两个三等分点的坐标: (i) \(\left( {-1,2}\right) \text{、}\left( {-{10}, - 1}\right)\) ; (ii) \(\left( {7,8}\right) \text{、}\left( {1, - 6}\right)\) .
+\item (1) 一条线段的两个端点坐标如下, 求这条线段的两个三等分点的坐标: (i) \(\left( {-1,2}\right) \text{、}\left( {-{10}, - 1}\right)\) ; (ii) \(\left( {7,8}\right) \text{、}\left( {1, - 6}\right)\) .
 
 （2）已知点 \(A\left( {1, - 1}\right) \text{、}B\left( {-4,5}\right)\) . 将线段 \({AB}\) 延长至 \(C\) , 使 \(\left| {AC}\right| = 3\left| {AB}\right|\) . 求点 \(C\) 的坐标.
 
-11. 三角形的三个顶点是 \(A\left( {2,1}\right) \text{、}B\left( {-2,3}\right) \text{、}C\left( {0, - 1}\right)\) . 求三条中线的长度.
+\item 三角形的三个顶点是 \(A\left( {2,1}\right) \text{、}B\left( {-2,3}\right) \text{、}C\left( {0, - 1}\right)\) . 求三条中线的长度.
 
-12. 已知点 \({P}_{1}\) 和 \({P}_{2}\) 的坐标分别是 \(\left( {4, - 3}\right)\) 和 \(\left( {-2,6}\right)\) ,求适合下列条件的点 \(P\) 的坐标:
+\item 已知点 \({P}_{1}\) 和 \({P}_{2}\) 的坐标分别是 \(\left( {4, - 3}\right)\) 和 \(\left( {-2,6}\right)\) ,求适合下列条件的点 \(P\) 的坐标:
 
 (1) \(\frac{\left| {P}_{1}P\right| }{\left| P{P}_{2}\right| } = 2\) ,点 \(P\) 在线段 \({P}_{1}{P}_{2}\) 上;
 
@@ -523,27 +558,30 @@
 
 （3） \(\frac{\left| {P}_{1}P\right| }{\left| P{P}_{2}\right| } = \frac{4}{5}\) ,点 \(P\) 在线段 \({P}_{2}{P}_{1}\) 的延长线上.
 
-13. (1) 已知三点 \(A\left( {x,5}\right) \text{、}B\left( {-2,y}\right) \text{、}C\left( {1,1}\right)\) ,且点 \(C\) 平分线段 \({AB}\) . 求 \(x\text{、}y\) .
+\item (1) 已知三点 \(A\left( {x,5}\right) \text{、}B\left( {-2,y}\right) \text{、}C\left( {1,1}\right)\) ,且点 \(C\) 平分线段 \({AB}\) . 求 \(x\text{、}y\) .
 
 (2) 已知两点 \(A\left( {3, - 1}\right) \text{、}B\left( {2,1}\right)\) ,求点 \(A\) 关于点 \(B\) 的对称点的坐标.
 
-14. 已知三点 \(A\left( {1, - 1}\right) \text{、}B\left( {3,3}\right) ,C\left( {4,5}\right)\) . 求证: 三点在一条直线上.
+\item 已知三点 \(A\left( {1, - 1}\right) \text{、}B\left( {3,3}\right) ,C\left( {4,5}\right)\) . 求证: 三点在一条直线上.
 
-15. (1) 证明: 直角三角形斜边的中点到三个顶点的距离相等;
+\item (1) 证明: 直角三角形斜边的中点到三个顶点的距离相等;
 
 (2) 证明: 三角形中位线等于底边的一半.
+\end{problemset}
 
-\section*{二 直线的方程}
+\section*{直线的方程}
 
-\section*{1.3 一次函数的图象与直线的方程}
+\section{一次函数的图象与直线的方程}
 
 初中研究一次函数时, 在直角坐标系中, 画出的一次函数图象是一条直线. 例如函数 \(y = {2x} + 1\) 的图象是直线 \(l\) (图 1-14). 这时,满足函数式 \(y = {2x} + 1\) 的每一对 \(x\text{、}y\) 的值都是直线 \(l\) 上的点的坐标,如数对 \(\left( {0,1}\right)\) 满足函数式,在直线 \(l\) 上就有一点 \(A\) ,它的坐标是 \((0\) , 1); 而直线 \(l\) 上每一点的坐标都满足函数式,如直线 \(l\) 上点 \(P\) 的坐标是 \(\left( {1,3}\right)\) ,数对 \(\left( {1,3}\right)\) 就满足函数式.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_18_311691.jpg}
-\end{center}
+  \caption{图 1-14}
+\end{figure}
 
-图 1-14
+
 
 一般地,一次函数 \(y = {kx} + b\) 的图象是一条直线,它是以满足 \(y = {kx} + b\) 的每一对 \(x\text{、}y\) 的值为坐标的点构成的. 由于函数 \(y = {kx} + b\) 也可以看作二元一次方程,因此,我们也可以说, 这个方程的解和直线上的点也存在这样的一一对应关系.
 
@@ -551,29 +589,32 @@
 
 在解析几何里研究直线时, 就是利用直线与方程的这种关系, 建立直线的方程, 并通过方程来研究直线的有关问题.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 在坐标平面上, 画出下列方程的直线:
+\item 在坐标平面上, 画出下列方程的直线:
 
 (1) \(y = x\) ; (2) \({2x} + {3y} = 6\) ;
 
 (3) \({2x} + {3y} + 6 = 0\) ; (4) \({2x} - {3y} + 6 = 0\) .
 
-2. (1) 用量角器测量上题中各直线向上的方向与 \(x\) 轴的正方向所成的角的度数;
+\item (1) 用量角器测量上题中各直线向上的方向与 \(x\) 轴的正方向所成的角的度数;
 
 (2) 量出各直线与 \(x\) 轴、 \(y\) 轴交点的坐标,并代入方程, 看它们是不是方程的解.
+\end{problemset}
 
-\section*{1. 4 直线的倾斜角和斜率}
+\section{直线的倾斜角和斜率}
 
 为了建立直角坐标系中的直线方程, 需要研究直线的倾斜角和斜率.
 
 一条直线 \(l\) 向上的方向与 \(x\) 轴的正方向所成的最小正角叫做这条直线的倾斜角,如图 1-15 中的 \(\alpha\) . 特别地,当直线 \(l\) 和 \(x\) 轴平行时,我们规定它的倾斜角为 \({0}^{ \circ }\) . 因此,倾斜角的取值范围是 \({0}^{ \circ } \leq \alpha < {180}^{ \circ }\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.9\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_19_823562.jpg}
-\end{center}
+  \caption{图 1-15}
+\end{figure}
 
-图 1-15
+
 
 倾斜角不是 \({90}^{ \circ }\) 的直线,它的倾斜角的正切叫做这条直线的斜率. 直线的斜率常用 \(k\) 表示,即
 
@@ -591,11 +632,13 @@
   \alpha = \angle Q{P}_{1}{P}_{2}\text{ (图 1-16 甲),}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.8\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_20_458905.jpg}
-\end{center}
+  \caption{图 1-16}
+\end{figure}
 
-图 1-16
+
 
 或 \(\alpha = \angle P{P}_{1}{P}_{2}\) (图 1-16 乙).
 
@@ -623,11 +666,13 @@
   \mathbf{k} = \frac{{\mathbf{y}}_{2} - {\mathbf{y}}_{1}}{{\mathbf{x}}_{2} - {\mathbf{x}}_{1}}.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_21_706247.jpg}
-\end{center}
+  \caption{图 1-17}
+\end{figure}
 
-图 1-17
+
 
 例 1 如图 1-17,直线 \({l}_{1}\) 的倾斜角 \({\alpha }_{1} = {30}^{ \circ }\) ,直线 \({l}_{2} \bot {l}_{1}\) . 求 \({l}_{1}\text{、}{l}_{2}\) 的斜率.
 
@@ -663,15 +708,15 @@
 
 因此,这条直线的斜率是 -1,倾斜角是 \({135}^{ \circ }\) .
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 已知直线的倾斜角, 讨论这条直线的斜率的值:
+\item 已知直线的倾斜角, 讨论这条直线的斜率的值:
 
 (1) \(\alpha = {0}^{ \circ }\) ; (2) \({0}^{ \circ } < \alpha < {90}^{ \circ }\) ;
 
 (3) \(\alpha = {90}^{ \circ }\) ; (4) \({90}^{ \circ } < \alpha < {180}^{ \circ }\) .
 
-2. 求经过下列每两个点的直线的斜率和倾斜角:
+\item 求经过下列每两个点的直线的斜率和倾斜角:
 
 (1) \(C\left( {{10},8}\right) \text{、}D\left( {4, - 4}\right)\) ;
 
@@ -679,15 +724,16 @@
 
 (3) \(M\left( {-\sqrt{3},\sqrt{2}}\right) \text{、}N\left( {-\sqrt{2},\sqrt{3}}\right)\) .
 
-3. 已知: \(a\text{、}b\text{、}c\) 是两两不等的实数. 求经过下列每两个点的直线的倾斜角:
+\item 已知: \(a\text{、}b\text{、}c\) 是两两不等的实数. 求经过下列每两个点的直线的倾斜角:
 
 (1) \(A\left( {a,c}\right) \text{、}B\left( {b,c}\right)\) ; (2) \(C\left( {a,b}\right) \text{、}D\left( {a,c}\right)\) ;
 
 (3) \(P\left( {b,b + c}\right) \text{、}Q\left( {a,c + a}\right)\) .
 
-4. 证明: 已知三点 \(A\text{、}B\text{、}C\) . 如果直线 \({AB}\text{、}{AC}\) 的斜率相同. 那么这三点在同一条直线上.
+\item 证明: 已知三点 \(A\text{、}B\text{、}C\) . 如果直线 \({AB}\text{、}{AC}\) 的斜率相同. 那么这三点在同一条直线上.
+\end{problemset}
 
-\section*{1.5 直线方程的几种形式}
+\section{直线方程的几种形式}
 
 一条直线在直角坐标平面内的位置, 可以由不同的条件来确定. 下面, 我们来研究怎样根据所给的条件, 求出直线的方程.
 
@@ -707,17 +753,21 @@
   y - {y}_{1} = k\left( {x - {x}_{1}}\right) .
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_23_507928.jpg}
-\end{center}
+  \caption{图 1-18}
+\end{figure}
 
-图 1-18
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_23_669751.jpg}
-\end{center}
+  \caption{图 1-19}
+\end{figure}
 
-图 1-19
+
 
 可以验证,直线 \(l\) 上的每个点的坐标都是这个方程的解; 反过来,以这个方程的解为坐标的点都在直线 \(l\) 上,所以这个方程就是过点 \({P}_{1}\) 、斜率为 \(k\) 的直线 \(l\) 的方程.
 
@@ -737,17 +787,19 @@
   x = {x}_{1}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_24_697633.jpg}
-\end{center}
+  \caption{图 1-20}
+\end{figure}
 
-图 1-20
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_24_594823.jpg}
-\end{center}
+  \caption{图 1-21}
+\end{figure}
 
-图 1-21
 
 例 1 一条直线经过点 \({P}_{1}\left( {-2,3}\right)\) ,倾斜角 \(\alpha = {45}^{ \circ }\) . 求这条直线的方程, 并画出图形.
 
@@ -785,9 +837,9 @@
 
 这个方程是由直线 \(l\) 的斜率和它在 \(y\) 轴上的截距确定的, 所以叫做直线方程的斜截式.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 写出下列直线的点斜式方程, 并画出图形:
+\item 写出下列直线的点斜式方程, 并画出图形:
 
 (1) 经过点 \(A\left( {2,5}\right)\) ,斜率是 4 ;
 
@@ -799,7 +851,7 @@
 
 (5) 经过点 \(E\left( {4, - 2}\right)\) ,倾斜角是 \({120}^{ \circ }\) .
 
-2. 已知下列直线的点斜式方程, 求各直线经过的已知点、直线的斜率和倾斜角:
+\item 已知下列直线的点斜式方程, 求各直线经过的已知点、直线的斜率和倾斜角:
 
 \begin{itemize}
   \item (1) \(y - 2 = x - 1\) ; (2) \(y - 3 = \sqrt{3}\left( {x - 4}\right)\) ;
@@ -807,11 +859,12 @@
 
 (3) \(y + 3 = - \left( {x - 1}\right)\) ; (4) \(y + 2 = - \frac{\sqrt{3}}{3}\left( {x + 1}\right)\) .
 
-3. 写出下列直线的斜截式方程:
+\item 写出下列直线的斜截式方程:
 
 （1）斜率是 \(\frac{\sqrt{3}}{2},y\) 轴上的截距是 -2 ;
 
 （2）倾斜角是 \({135}^{ \circ },y\) 轴上的截距是 3 。
+\end{problemset}
 
 \section*{2. 两点式}
 
@@ -855,11 +908,13 @@
   \frac{y - 0}{-3 - 0} = \frac{x - \left( {-5}\right) }{3 - \left( {-5}\right) }
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_26_981074.jpg}
-\end{center}
+  \caption{图 1-22}
+\end{figure}
 
-图 1-22
+
 
 即
 
@@ -903,13 +958,13 @@
 
 这就是直线 \({AC}\) 的方程.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 在什么情况下直线方程可以表示成下列形式:
+\item 在什么情况下直线方程可以表示成下列形式:
 
 (1) 点斜式; (2) 斜截式; (3) 两点式; (4) 截距式.
 
-2. 求过下列两点的直线的两点式方程, 再化成斜截式方程:
+\item 求过下列两点的直线的两点式方程, 再化成斜截式方程:
 
 (1) \({P}_{1}\left( {2,1}\right) \text{、}{P}_{2}\left( {0, - 3}\right)\) ;
 
@@ -917,7 +972,7 @@
 
 (3) \(C\left( {-4, - 5}\right) \text{、}D\left( {0,0}\right)\) .
 
-3. 写出下列直线的截距式方程, 并根据截距式方程作出直线:
+\item 写出下列直线的截距式方程, 并根据截距式方程作出直线:
 
 (1) \(x\) 轴上的截距是 \(2,y\) 轴上的截距是 3 ;
 
@@ -926,8 +981,9 @@
 (3) \(x\) 轴上的截距是 \(4,y\) 轴上的截距是 -3 ;
 
 (4) \(x\) 轴上的截距和 \(y\) 轴上的截距都是 \(- \frac{1}{2}\) .
+\end{problemset}
 
-\section*{1.6 直线方程的一般形式}
+\section{直线方程的一般形式}
 
 上一节我们学习了直线方程的几种特殊形式, 它们都是二元一次方程. 下面我们来进一步研究直线和二元一次方程的关系.
 
@@ -1015,11 +1071,13 @@
 
 即直线 \(l\) 在 \(x\) 轴上的截距是 -6 .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_30_525610.jpg}
-\end{center}
+  \caption{图 1-23}
+\end{figure}
 
-图 1-23
+
 
 画一条直线时, 只要找出这条直线上的任意两点就可以了. 通常是找出直线与两个坐标轴的交点. 上面已经求得直线 \(l\) 与 \(x\) 轴、 \(y\) 轴的交点:
 
@@ -1029,9 +1087,9 @@
 
 过点 \(A\text{、}B\) 作直线,就得直线 \(l\) (如图 1-23).
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 由下列各条件, 写出直线的方程, 并且化成一般式:
+\item 由下列各条件, 写出直线的方程, 并且化成一般式:
 
 (1) 斜率是 \(- \frac{1}{2}\) ,经过点 \(A\left( {8, - 2}\right)\) ;
 
@@ -1045,13 +1103,13 @@
 
 (6) \(x\) 轴上的截距是 -7,倾斜角是 \({45}^{ \circ }\) .
 
-2. 已知直线 \({Ax} + {By} + C = 0\) ,
+\item 已知直线 \({Ax} + {By} + C = 0\) ,
 
 (1) 当 \(B \neq 0\) 时,斜率是多少? 当 \(B = 0\) 时呢?
 
 (2) 系数为什么值时, 方程表示通过坐标原点的直线.
 
-3. 求下列直线的斜率和在 \(y\) 轴上的截距,并画出图形:
+\item 求下列直线的斜率和在 \(y\) 轴上的截距,并画出图形:
 
 (1) \({3x} + y - 5 = 0\) ; (2) \(\frac{x}{4} - \frac{y}{5} = 1\) ;
 
@@ -1059,7 +1117,9 @@
 
 (5) \({2y} - 7 = 0\) .
 
-\section*{*1. 7 二元一次不等式表示的区域}
+\end{problemset}
+
+\section{*二元一次不等式表示的区域}
 
 前面, 我们研究了二元一次方程和直线的关系, 用同样的方法, 也可以研究二元一次不等式和以它的解为坐标的点的集合 (图形) 的关系.
 
@@ -1085,11 +1145,13 @@
   P = \{ M \mid y > {2x} + 1\}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_32_144093.jpg}
-\end{center}
+  \caption{图 1-24}
+\end{figure}
 
-图 1-24
+
 
 是直线 \(l\) 上方的半平面所有的点, 也就是图 1-24 中阴影所表示的平面部分, 但不包括边界直线. 这种情况,直线 \(l\) 在图中一般画成虚线.
 
@@ -1111,11 +1173,13 @@
   y < - {2x} + 3 \tag{2}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_33_345679.jpg}
-\end{center}
+  \caption{图 1-25}
+\end{figure}
 
-图 1-25
+
 
 的解集的并集, 所以它们表示的区域是由 (1)、(2) 的图形合成的.
 
@@ -1145,11 +1209,13 @@
 
 代入 \(\left( 1\right)\) 式,得 \(- {10} < 0,\left( 1\right)\) 式成立. 所以坐标原点所在的半平面是不等式 (1) 表示的区域, 即直线 \(l\) 下方的半平面,如图 1-26 的阴影部分, 但不包括直线 \(l\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_34_186358.jpg}
-\end{center}
+  \caption{图 1-26}
+\end{figure}
 
-图 1-26
+
 
 例 2 也可以用如下解法:
 
@@ -1175,11 +1241,13 @@
 
 的直线. 如图 1-27.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_35_684997.jpg}
-\end{center}
+  \caption{图 1-27}
+\end{figure}
 
-图 1-27
+
 
 因为要截得的两种毛坯数的和必须是正整数, 所以以 (1) 的解为坐标的点一定是第一象限内的网格的交点.
 
@@ -1199,9 +1267,9 @@
 
 答: 把每根条钢截成 2 根 60 厘米长和 3 根 42 厘米长的零件毛坯是最佳的下料方案. 材料利用率为 \({98.4}\%\) .
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求下列不等式表示的区域:
+\item 求下列不等式表示的区域:
 
 (1) \(y < - {2x} - 1\) ; (2) \(y \geq - x + 3\) ; (3) \(x + {2y} - 5 < 0\) ;
 
@@ -1209,11 +1277,13 @@
 
 (7) \(y \leq {3x}\) ; (8) \(x \leq - {2y}\) ; (9) \({3x} + {2y} < 0\) .
 
-2. 已知 \(y < {kx} + b\) 表示直线 \(y = {kx} + b\) 下方的半平面,说明当 \(B < 0\) 时,不等式 \({Ax} + {By} + C > 0\) 表示的区域是直 线 \({Ax} + {By} + C = 0\) 下方的半平面.
+\item 已知 \(y < {kx} + b\) 表示直线 \(y = {kx} + b\) 下方的半平面,说明当 \(B < 0\) 时,不等式 \({Ax} + {By} + C > 0\) 表示的区域是直 线 \({Ax} + {By} + C = 0\) 下方的半平面.
 
-3. 已知每袋面粉 50 斤, 每袋大米 210 斤, 用栽重量是 530 斤的小推车运输, 找出车运效率最高的装车方案.
+\item 已知每袋面粉 50 斤, 每袋大米 210 斤, 用栽重量是 530 斤的小推车运输, 找出车运效率最高的装车方案.
 
-\section*{*1. 8 直线型经验公式}
+\end{problemset}
+
+\section{* 直线型经验公式}
 
 在生产和科学实验中, 常常需要根据观察或实验所得的两个变量的一些对应的近似值 (叫做实验数据), 来求出这两个变量之间的函数关系的解析式. 这样通过实验数据得到的两个变量的关系式叫做经验公式. 如果所求得的经验公式是一次方程, 它就叫做直线型经验公式.
 
@@ -1245,11 +1315,13 @@
   \frac{y - {197}}{{283} - {197}} = \frac{x - {46.7}}{{84.0} - {46.7}}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_37_976668.jpg}
-\end{center}
+  \caption{图 1-28}
+\end{figure}
 
-图 1-28
+
 
 化简后, 就得经验公式
 
@@ -1293,9 +1365,9 @@
   y = {2.27x} + {92.9}.
 \]
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 丙烯腈是合成人造羊毛的原料. 在研究它的比重 \(D\) 和温度 \(T\left( {{}^{ \circ }\mathrm{C}}\right)\) 的关系时,通过实验得到的数据如下:
+\item 丙烯腈是合成人造羊毛的原料. 在研究它的比重 \(D\) 和温度 \(T\left( {{}^{ \circ }\mathrm{C}}\right)\) 的关系时,通过实验得到的数据如下:
 
 \begin{center}
   \adjustbox{max width=\textwidth}{
@@ -1311,7 +1383,7 @@
 
 用选点法求出 \(D\) 与 \(T\) 之间的经验公式.
 
-2. 根据下列实验数据,用平均值法求关于 \(m\text{、}p\) 的经验公式:
+\item 根据下列实验数据,用平均值法求关于 \(m\text{、}p\) 的经验公式:
 
 \begin{center}
   \adjustbox{max width=\textwidth}{
@@ -1325,11 +1397,13 @@
   }
 \end{center}
 
-\section*{习 题 二}
+\end{problemset}
 
-1. 四边形 \({ABCD}\) 的四个顶点是 \(A\left( {2,3}\right) \text{、}B\left( {1, - 1}\right) \text{、}C( - 1\) , \(- 2)\text{、}D\left( {-2,2}\right)\) . 求四边所在直线的倾斜角和斜率.
+\begin{problemset}[习 题 二]
 
-2. 根据下列条件写出直线的方程:
+\item 四边形 \({ABCD}\) 的四个顶点是 \(A\left( {2,3}\right) \text{、}B\left( {1, - 1}\right) \text{、}C( - 1\) , \(- 2)\text{、}D\left( {-2,2}\right)\) . 求四边所在直线的倾斜角和斜率.
+
+\item 根据下列条件写出直线的方程:
 
 （1）斜率是 \(\frac{\sqrt{3}}{3}\) ,经过点 \(A\left( {8, - 2}\right)\) ;
 
@@ -1345,41 +1419,41 @@
   \item (6) 在 \(x\) 轴、 \(y\) 轴上的截距分别是 4 与 -3 .
 \end{itemize}
 
-3. 已知直线的斜率 \(k = 2,{P}_{1}\left( {3,5}\right) \text{、}{P}_{2}\left( {{x}_{2},7}\right) \text{、}{P}_{3}\left( {-1,{y}_{3}}\right)\) 是这条直线上的三个点. 求 \({x}_{2}\) 和 \({y}_{8}\) .
+\item 已知直线的斜率 \(k = 2,{P}_{1}\left( {3,5}\right) \text{、}{P}_{2}\left( {{x}_{2},7}\right) \text{、}{P}_{3}\left( {-1,{y}_{3}}\right)\) 是这条直线上的三个点. 求 \({x}_{2}\) 和 \({y}_{8}\) .
 
-4. 已知两点 \(M\left( {2,2}\right)\) 和 \(N\left( {5, - 2}\right)\) ,点 \(P\) 在 \(x\) 轴上,且 \(\angle {MPN} = {Rt}\angle\) . 求点 \(P\) 的坐标.
+\item 已知两点 \(M\left( {2,2}\right)\) 和 \(N\left( {5, - 2}\right)\) ,点 \(P\) 在 \(x\) 轴上,且 \(\angle {MPN} = {Rt}\angle\) . 求点 \(P\) 的坐标.
 
-5. 设 \(A\text{、}B\) 两点的坐标分别是 \(\left( {{x}_{1},{y}_{1}}\right)\) 和 \(\left( {{x}_{2},{y}_{2}}\right)\) ,直线 \({AB}\) 的倾斜角是 \(\alpha\) . 求证:
+\item 设 \(A\text{、}B\) 两点的坐标分别是 \(\left( {{x}_{1},{y}_{1}}\right)\) 和 \(\left( {{x}_{2},{y}_{2}}\right)\) ,直线 \({AB}\) 的倾斜角是 \(\alpha\) . 求证:
 
 \[
   \left| {{x}_{1} - {x}_{2}}\right| = \sqrt{{\left( {x}_{2} - {x}_{1}\right) }^{2} + {\left( {y}_{2} - {y}_{1}\right) }^{2}}\left| {\cos \alpha }\right| .
 \]
 
-6. 一条直线经过点 \(A\left( {2, - 3}\right)\) ,它的倾斜角等于直线 \(y = \frac{1}{\sqrt{3}}x\) 的倾斜角的 2 倍,求这条直线的方程.
+\item 一条直线经过点 \(A\left( {2, - 3}\right)\) ,它的倾斜角等于直线 \(y = \frac{1}{\sqrt{3}}x\) 的倾斜角的 2 倍,求这条直线的方程.
 
-7. 一根弹簧, 挂 4 公斤的物体时, 长 20 厘米, 在弹性限度内, 所挂物体的重量每增加 1 公斤, 弹簧伸长 1.5 厘米. 利用点斜式写出弹簧的长度 \(l\) (厘米) 和所挂物体重量 \(\mathbf{F}\) (公斤) 之间关系的方程.
+\item 一根弹簧, 挂 4 公斤的物体时, 长 20 厘米, 在弹性限度内, 所挂物体的重量每增加 1 公斤, 弹簧伸长 1.5 厘米. 利用点斜式写出弹簧的长度 \(l\) (厘米) 和所挂物体重量 \(\mathbf{F}\) (公斤) 之间关系的方程.
 
-8. 一条直线和 \(y\) 轴相交于点 \(P\left( {0,2}\right)\) ,它的倾斜角的正弦是 \(\frac{4}{5}\) . 求这条直线的方程. 这样的直线有几条?
+\item 一条直线和 \(y\) 轴相交于点 \(P\left( {0,2}\right)\) ,它的倾斜角的正弦是 \(\frac{4}{5}\) . 求这条直线的方程. 这样的直线有几条?
 
-9. 证明: 三点 \(A\left( {1,3}\right) \text{、}B\left( {5,7}\right) \text{、}C\left( {{10},{12}}\right)\) 在同一条直线上.
+\item 证明: 三点 \(A\left( {1,3}\right) \text{、}B\left( {5,7}\right) \text{、}C\left( {{10},{12}}\right)\) 在同一条直线上.
 
-10. (1) 已知三角形的顶点是 \(A\left( {8,5}\right) \text{、}B\left( {4, - 2}\right) \text{、}C\left( {-6,3}\right)\) , 求经过每两边中点的三条直线的方程.
+\item (1) 已知三角形的顶点是 \(A\left( {8,5}\right) \text{、}B\left( {4, - 2}\right) \text{、}C\left( {-6,3}\right)\) , 求经过每两边中点的三条直线的方程.
 
 (2) \(\bigtriangleup {ABC}\) 的顶点是 \(A\left( {0,5}\right) \text{、}B\left( {1, - 2}\right) \text{、}C\left( {-6,4}\right)\) , 求 \({BC}\) 边上的中线所在直线的方程.
 
-11. 一根铁棒在 \({40}^{ \circ }\mathrm{C}\) 时长 12.506 米,在 \({80}^{ \circ }\mathrm{C}\) 时长 12.512 米, 已知长度 \(l\) (米) 和温度 \(t\left( {{}^{ \circ }\mathrm{C}}\right)\) 的关系可以用直线方程来表示, 用两点式表示这个方程, 并且根据这个方程, 求这根铁棒在 \({100}^{ \circ }\mathrm{C}\) 时的长度.
+\item 一根铁棒在 \({40}^{ \circ }\mathrm{C}\) 时长 12.506 米,在 \({80}^{ \circ }\mathrm{C}\) 时长 12.512 米, 已知长度 \(l\) (米) 和温度 \(t\left( {{}^{ \circ }\mathrm{C}}\right)\) 的关系可以用直线方程来表示, 用两点式表示这个方程, 并且根据这个方程, 求这根铁棒在 \({100}^{ \circ }\mathrm{C}\) 时的长度.
 
-12. 菱形的两条对角线长分别等于 8 和 6,并且分别放置在 \(x\) 轴和 \(y\) 轴上. 求菱形各边所在的直线的方程.
+\item 菱形的两条对角线长分别等于 8 和 6,并且分别放置在 \(x\) 轴和 \(y\) 轴上. 求菱形各边所在的直线的方程.
 
-13. 求过点 \(P\left( {2,3}\right)\) ,并且在两轴上的截距相等的直线方程.
+\item 求过点 \(P\left( {2,3}\right)\) ,并且在两轴上的截距相等的直线方程.
 
-14. 油槽储油 20 立方米, 从一管道等速流出, 50 分钟流 完. 用截距式写出关于油槽里剩余的油量 \(Q\) (立方米) 和流出的时间 \(t\) (分) 的方程,并且画出图形 (注意: \(0 \leq t \leq {50}\) ).
+\item 油槽储油 20 立方米, 从一管道等速流出, 50 分钟流 完. 用截距式写出关于油槽里剩余的油量 \(Q\) (立方米) 和流出的时间 \(t\) (分) 的方程,并且画出图形 (注意: \(0 \leq t \leq {50}\) ).
 
-15. 直线方程 \({Ax} + {By} + C = 0\) 的系数 \(A\text{、}B\text{、}C\) 满足什么关系时,这条直线 (1) 与坐标轴都相交; (2) 只与 \(x\) 轴相交; （3）只与 \(y\) 轴相交; (4) 是 \(x\) 轴; (5) 是 \(y\) 轴.
+\item 直线方程 \({Ax} + {By} + C = 0\) 的系数 \(A\text{、}B\text{、}C\) 满足什么关系时,这条直线 (1) 与坐标轴都相交; (2) 只与 \(x\) 轴相交; （3）只与 \(y\) 轴相交; (4) 是 \(x\) 轴; (5) 是 \(y\) 轴.
 
-16. 设点 \(P\left( {{x}_{0},{y}_{0}}\right)\) 在直线 \({Ax} + {By} + C = 0\) 上. 求证: 这条直线的方程可以写成 \(A\left( {x - {x}_{0}}\right) + B\left( {y - {y}_{0}}\right) = 0\) .
+\item 设点 \(P\left( {{x}_{0},{y}_{0}}\right)\) 在直线 \({Ax} + {By} + C = 0\) 上. 求证: 这条直线的方程可以写成 \(A\left( {x - {x}_{0}}\right) + B\left( {y - {y}_{0}}\right) = 0\) .
 
-*17. 求下列不等式表示的区域:
+\item * 求下列不等式表示的区域:
 
 (1) \(y \geq x\) ; (2) \(x < {2y}\) ;
 
@@ -1387,9 +1461,9 @@
 
 (5) \({3x} - {5y} + {10} > 0\) ; (6) \({2x} + {3y} - 4 \geq 0\) .
 
-*18. 某同学拿 5 元钱买纪念邮票, 票面 4 分钱的每套 5 张, 8 分钱的每套 4 张. 如果每种至少买一套, 共有几种买法, 能否恰好将钱用完, 怎样买剩钱最少?
+\item * 某同学拿 5 元钱买纪念邮票, 票面 4 分钱的每套 5 张, 8 分钱的每套 4 张. 如果每种至少买一套, 共有几种买法, 能否恰好将钱用完, 怎样买剩钱最少?
 
-*19. 有一滑轮组,举起的物重 \(W\) 与需用的力 \(F\) 之间的关系,由实验所得的数据如下表:
+\item * 有一滑轮组,举起的物重 \(W\) 与需用的力 \(F\) 之间的关系,由实验所得的数据如下表:
 
 \begin{center}
   \adjustbox{max width=\textwidth}{
@@ -1405,7 +1479,7 @@
 
 求适合以上关系的直线型经验公式.
 
-*20. 一个弹簧的长度 \(l\) 和它悬挂的重量 \(W\) 间关系的实验数据如下:
+\item * 一个弹簧的长度 \(l\) 和它悬挂的重量 \(W\) 间关系的实验数据如下:
 
 \begin{center}
   \adjustbox{max width=\textwidth}{
@@ -1421,9 +1495,11 @@
 
 分别用选点法和平均值法求关于 \(l\text{、}W\) 的经验公式,并算出当 \(l = {9.2}\) 时, \(W\) 的值.
 
+\end{problemset}
+
 \section*{三 两条直线的位置关系}
 
-\section*{1.9 两条直线的平行与垂直}
+\section{两条直线的平行与垂直}
 
 在平面几何中, 我们研究过平面上两条直线互相平行或垂直的位置关系. 现在我们研究怎样通过直线的方程来判定两条直线平行或垂直.
 
@@ -1451,11 +1527,13 @@
 
 反过来,如果两条直线的斜率相等, \({k}_{1} = {k}_{2}\) ,也就是 \(\operatorname{tg}{\alpha }_{1}\) \(= \operatorname{tg}{\alpha }_{2}\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_42_859750.jpg}
-\end{center}
+  \caption{图 1-29}
+\end{figure}
 
-图 1-29
+
 
 由于 \({0}^{ \circ } \leq {\alpha }_{1} < {180}^{ \circ }\) ,
 
@@ -1529,11 +1607,13 @@
     {\alpha }_{1} = {90}^{ \circ } + {\alpha }_{2}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.9\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_44_991124.jpg}
-\end{center}
+  \caption{图 1-30}
+\end{figure}
 
-图 1-30
+
 
 因为 \({l}_{1}\text{、}{l}_{2}\) 的斜率是 \({k}_{1}\text{、}{k}_{2}\) ,即 \({\alpha }_{1} \neq {90}^{ \circ }\) ,所以 \({\alpha }_{2} \neq {0}^{ \circ }\) .
 
@@ -1605,9 +1685,9 @@
   x - {2y} = 0.
 \]
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 判别下列各对不重合的直线是否平行或垂直:
+\item 判别下列各对不重合的直线是否平行或垂直:
 
 (1) \(y = {3x} + 4\) 与 \({2y} - {6x} + 1 = 0\) ;
 
@@ -1617,15 +1697,16 @@
 
 (4) \(\sqrt{3}x - y - 1 = 0\) 与 \(\sqrt{3}x + {3y} + 6 = 0\) .
 
-2. 求过点 \(A\left( {2,3}\right)\) ,且分别适合下列条件的直线方程:
+\item 求过点 \(A\left( {2,3}\right)\) ,且分别适合下列条件的直线方程:
 
 （1）平行于直线 \({2x} + y - 5 = 0\) ;
 
 (2) 垂直于直线 \(x - y - 2 = 0\) .
 
-3. 已知两条直线 \({l}_{1}\text{、}{l}_{2}\) ,其中一条没有斜率. 这两条直 线什么时候 (1) 平行; (2) 垂直. 逆命题成立吗?
+\item 已知两条直线 \({l}_{1}\text{、}{l}_{2}\) ,其中一条没有斜率. 这两条直 线什么时候 (1) 平行; (2) 垂直. 逆命题成立吗?
+\end{problemset}
 
-\section*{1. 10 两条直线所成的角}
+\section{两条直线所成的角}
 
 两条直线 \({l}_{1}\) 和 \({l}_{2}\) 相交构成四个角,它们是两对对顶角. 为了区别这些角,我们把直线 \({l}_{1}\) 依逆时针方向旋转到与 \({l}_{2}\) 重合时所转的角,叫做 \({l}_{1}\) 到 \({l}_{2}\) 的角,图 1-31 中,直线 \({l}_{1}\) 到 \({l}_{2}\) 的角是 \({\theta }_{1},{l}_{2}\) 到 \({l}_{1}\) 的角是 \({\theta }_{2}\left( {{\theta }_{1} + {\theta }_{2} = {180}^{ \circ }}\right)\) .
 
@@ -1639,11 +1720,13 @@
     {l}_{2} : y = {k}_{2}x + {b}_{2}.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_46_107087.jpg}
-\end{center}
+  \caption{图 1-31}
+\end{figure}
 
-图 1-31
+
 
 如果 \(1 + {k}_{1}{k}_{2} = 0\) ,那么 \(\theta = {90}^{ \circ }\) .
 
@@ -1663,11 +1746,13 @@
 
 或 \(\operatorname{tg}\theta = \operatorname{tg}\left\lbrack {\pi + \left( {{\alpha }_{2} - {\alpha }_{1}}\right) }\right\rbrack = \operatorname{tg}\left( {{\alpha }_{2} - {\alpha }_{1}}\right)\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.8\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_47_848929.jpg}
-\end{center}
+  \caption{图 1-32}
+\end{figure}
 
-图 1-32
+
 
 可得
 
@@ -1767,23 +1852,24 @@
 
 这就是直线 \({l}_{3}\) 的方程.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求下列直线 \({l}_{1}\) 到 \({l}_{2}\) 的角与 \({l}_{2}\) 到 \({l}_{1}\) 的角:
+\item 求下列直线 \({l}_{1}\) 到 \({l}_{2}\) 的角与 \({l}_{2}\) 到 \({l}_{1}\) 的角:
 
 (1) \({l}_{1} : y = \frac{1}{2}x + 2,\;{l}_{2} : y = {3x} + 7\) ;
 
 (2) \({l}_{1} : x - y = 5,\;{l}_{2} : x + {2y} - 3 = 0\) .
 
-2. 求下列直线的夹角:
+\item 求下列直线的夹角:
 
 (1) \(y = {3x} - 1,\;y = - \frac{1}{3}x + 4\) ;
 
 (2) \(x - y = 5,\;y = 4\) ;
 
 (3) \({5x} - {3y} = 9,\;{6x} + {10y} + 7 = 0\) .
+\end{problemset}
 
-\section*{1. 11 两条直线的交点}
+\section{两条直线的交点}
 
 设两条直线的方程是
 
@@ -1887,11 +1973,13 @@
     {l}_{2} : {2x} + y + 2 = 0.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_52_702387.jpg}
-\end{center}
+  \caption{图 1-33}
+\end{figure}
 
-图 1-33
+
 
 解: 解方程组
 
@@ -1945,15 +2033,15 @@
 
 (iii) 当 \(m = 3\) 时, \(\frac{{A}_{1}}{{A}_{2}} = \frac{{B}_{1}}{{B}_{2}} = \frac{{C}_{1}}{{C}_{2}}\) ,方程组有无穷多解, \({l}_{1}\) 与 \({l}_{2}\) 重合.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求下列各对直线的交点, 并画图:
+\item 求下列各对直线的交点, 并画图:
 
 (1) \({l}_{1} : {2x} + {3y} = {12},{l}_{2} : x - {2y} = 4\) ;
 
 (2) \({l}_{1} : x = 2\) , \(\;{l}_{2} : {3x} + {2y} - {12} = 0\) .
 
-2. 判定下列各对直线的位置关系. 如果相交, 则求出交点的坐标:
+\item 判定下列各对直线的位置关系. 如果相交, 则求出交点的坐标:
 
 (1) \({l}_{1} : {2x} - y = 7,{l}_{2} : {4x} + {2y} = 1\) ;
 
@@ -1961,19 +2049,23 @@
 
 (3) \({l}_{1} : \left( {\sqrt{2} - 1}\right) x + y = 3,{l}_{2} : x + \left( {\sqrt{2} + 1}\right) y = 2\) .
 
-3. \(A\) 和 \(C\) 取什么值时,直线 \({Ax} - {2y} - 1 = 0\) 和直线 \({6x} - {4y}\) \(+ C = 0\left( 1\right)\) 平行; (2) 重合; (3) 相交.
+\item \(A\) 和 \(C\) 取什么值时,直线 \({Ax} - {2y} - 1 = 0\) 和直线 \({6x} - {4y}\) \(+ C = 0\left( 1\right)\) 平行; (2) 重合; (3) 相交.
 
-\section*{1.12 点到直线的距离}
+\end{problemset}
+
+\section{点到直线的距离}
 
 已知点 \(P\left( {{x}_{0},{y}_{0}}\right)\) 和直线 \(l : {Ax} + {By} + C = 0\) ,怎样求点 \(P\) 到直线 \(l\) 的距离呢?
 
 根据定义,点 \(P\) 到直线 \(l\) 的距离是点 \(P\) 到直线 \(l\) 的垂线段的长(图 1-34).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.9\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_54_863018.jpg}
-\end{center}
+  \caption{图 1-34}
+\end{figure}
 
-图 1-34
+
 
 设点 \(P\) 到直线 \(l\) 的垂线为 \({l}^{\prime }\) ,垂足为 \(Q\) . 由 \({l}^{\prime } \bot l\) 可知 \({l}^{\prime }\) 的斜率为 \(\frac{B}{A}\left( {A \neq 0}\right)\) ,根据点斜式可写出 \({l}^{\prime }\) 的方程,并由 \(l\) 与 \({l}^{\prime }\) 的方程求出点 \(Q\) 的坐标; 由此即可根据两点距离公式求出 \(\left| {PQ}\right|\) ,这就是点 \(P\) 到直线 \(l\) 的距离.
 
@@ -2069,11 +2161,13 @@
 
 的距离.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_56_427717.jpg}
-\end{center}
+  \caption{图 1-35}
+\end{figure}
 
-图 1-35
+
 
 因此,
 
@@ -2085,13 +2179,13 @@
   = \frac{14}{\sqrt{53}} = \frac{{14}\sqrt{53}}{53}
 \]
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求坐标原点到下列直线的距离:
+\item 求坐标原点到下列直线的距离:
 
 (1) \({3x} + {2y} - {26} = 0\) ; (2) \(x = y\) .
 
-2. 求下列点到直线的距离:
+\item 求下列点到直线的距离:
 
 (1) \(A\left( {-2,3}\right)\) , \({3x} + {4y} + 3 = 0\) ;
 
@@ -2099,15 +2193,17 @@
 
 (3) \(C\left( {1, - 2}\right) ,\;{4x} + {3y} = 0\) .
 
-3. 求下列两条平行线的距离:
+\item 求下列两条平行线的距离:
 
 (1) \({2x} + {3y} - 8 = 0,{2x} + {3y} + {18} = 0\) ;
 
 (2) \({3x} + {4y} = {10},{3x} + {4y} = 0\) .
 
-\section*{习 题 三}
+\end{problemset}
 
-1. 已知直线分别满足下列条件, 求直线的方程:
+\begin{problemset}[习 题 三]
+
+\item 已知直线分别满足下列条件, 求直线的方程:
 
 （1）经过点 \(A\left( {3,2}\right)\) ,且与直线 \({4x} + y - 2 = 0\) 平行;
 
@@ -2115,11 +2211,11 @@
 
 （3）经过点 \(C\left( {2, - 3}\right)\) ,且平行于过两点 \(M\left( {1,2}\right)\) 和 \(N( - 1\) , \(- 5)\) 的直线.
 
-2. 设有两点 \(A\left( {7, - 4}\right) \text{、}B\left( {-5,6}\right)\) ,求线段 \({AB}\) 的垂直平分线的方程.
+\item 设有两点 \(A\left( {7, - 4}\right) \text{、}B\left( {-5,6}\right)\) ,求线段 \({AB}\) 的垂直平分线的方程.
 
-3. 三角形三个顶点是 \(A\left( {4,0}\right) \text{、}B\left( {6,7}\right) \text{、}C\left( {0,3}\right)\) . 求这个三角形的三条高所在直线的方程.
+\item 三角形三个顶点是 \(A\left( {4,0}\right) \text{、}B\left( {6,7}\right) \text{、}C\left( {0,3}\right)\) . 求这个三角形的三条高所在直线的方程.
 
-4. 已知直线分别满足下列条件, 求直线的方程:
+\item 已知直线分别满足下列条件, 求直线的方程:
 
 （1）斜率为 -2,且过两条直线 \({3x} - y + 4 = 0\) 和 \(x + y - 4\) . \(= 0\) 的交点;
 
@@ -2131,15 +2227,15 @@
 
 (5) 经过直线 \(y = {2x} + 3\) 和 \({3x} - y + 2 = 0\) 的交点,且垂直. 于第一条直线.
 
-5. 直线 \({ax} + {2y} + 8 = 0,{4x} + 3\dot{y} = {10}\) 和 \({2x} - y = {10}\) 相交于一点. 求 \(a\) 的值.
+\item 直线 \({ax} + {2y} + 8 = 0,{4x} + 3\dot{y} = {10}\) 和 \({2x} - y = {10}\) 相交于一点. 求 \(a\) 的值.
 
-6. 不解方程组, 判定下列两个方程的直线的位置关系.
+\item 不解方程组, 判定下列两个方程的直线的位置关系.
 
 (i) \(\left\{ \begin{array}{l} {2x} + y = {11} \\ x + {3y} = {18} \end{array}\right.\) (2) \(\left\{ \begin{array}{l} {2x} - {3y} = 4 \\ {4x} - {6y} = 8 \end{array}\right.\)
 
 (3) \(\left\{ \begin{array}{l} {3x} + {10y} = {16} \\ {6x} + {20y} = 7 \end{array}\right.\) (4) \(\left\{ \begin{array}{l} {4x} + {10y} = {12} \\ {6x} - {15y} = {18} \end{array}\right.\)
 
-7. 已知两条直线
+\item 已知两条直线
 
 \({l}_{1};\;\left( {3 + m}\right) x + {4y} = 5 - {3m},\)
 
@@ -2147,27 +2243,30 @@
 
 \(m\) 为何值时, \({l}_{1}\) 与 \({l}_{2}\left( 1\right)\) 相交; (2) 平行; (3) 重合.
 
-8. 讨论两条直线 \({l}_{1} : {A}_{1}x + {B}_{1}y + {C}_{1} = 0,{l}_{2} : {A}_{2}x + {B}_{2}y + {C}_{2}\) \(= 0\) 的位置关系: (1) 当 \({B}_{1} = 0,{B}_{2} \neq 0\) 时; (2) 当 \({B}_{1} = {B}_{2}\) \(= 0\) 时.
+\item 讨论两条直线 \({l}_{1} : {A}_{1}x + {B}_{1}y + {C}_{1} = 0,{l}_{2} : {A}_{2}x + {B}_{2}y + {C}_{2}\) \(= 0\) 的位置关系: (1) 当 \({B}_{1} = 0,{B}_{2} \neq 0\) 时; (2) 当 \({B}_{1} = {B}_{2}\) \(= 0\) 时.
 
-9. 三角形的三个顶点是 \(A\left( {6,3}\right) \text{、}B\left( {9,3}\right) \text{、}C\left( {3,6}\right)\) . 求它的三个内角的度数.
+\item 三角形的三个顶点是 \(A\left( {6,3}\right) \text{、}B\left( {9,3}\right) \text{、}C\left( {3,6}\right)\) . 求它的三个内角的度数.
 
-10. 已知直线 \(l\) 经过点 \(P\left( {2,1}\right)\) ,且和直线 \({5x} + {2y} + 3 = 0\) 的夹角等于 \({45}^{ \circ }\) . 求直线 \(l\) 的方程.
+\item 已知直线 \(l\) 经过点 \(P\left( {2,1}\right)\) ,且和直线 \({5x} + {2y} + 3 = 0\) 的夹角等于 \({45}^{ \circ }\) . 求直线 \(l\) 的方程.
 
-11. 光线从点 \(M\left( {-2,3}\right)\) 射到 \(x\) 轴上一点 \(P\left( {1,0}\right)\) 后被 \(x\) 轴反射. 求反射光线所在直线的方程.
+\item 光线从点 \(M\left( {-2,3}\right)\) 射到 \(x\) 轴上一点 \(P\left( {1,0}\right)\) 后被 \(x\) 轴反射. 求反射光线所在直线的方程.
 
-12. 求点 \(P\left( {-5,7}\right)\) 到直线 \({12x} + {5y} - 3 = 0\) 的距离.
+\item 求点 \(P\left( {-5,7}\right)\) 到直线 \({12x} + {5y} - 3 = 0\) 的距离.
 
-13. 点 \(A\left( {a,6}\right)\) 到直线 \({3x} - {4y} = 2\) 的距离 (1) 等于 4 ; (2) 大于 4. 分别求 \(a\) 的值.
+\item 点 \(A\left( {a,6}\right)\) 到直线 \({3x} - {4y} = 2\) 的距离 (1) 等于 4 ; (2) 大于 4. 分别求 \(a\) 的值.
 
-14. 求证: 两条平行线 \({Ax} + {By} + {C}_{1} = 0\) 与 \({Ax} + {By} + {C}_{2} = 0\) 的距离是
+\item 求证: 两条平行线 \({Ax} + {By} + {C}_{1} = 0\) 与 \({Ax} + {By} + {C}_{2} = 0\) 的距离是
 
 \[
   d = \frac{\left| {C}_{1} - {C}_{2}\right| }{\sqrt{{A}^{2} + {B}^{2}}}
 \]
 
-15. 求两条平行线 \({3x} - {2y} - 1 = 0\) 和 \({6x} - {4y} + 2 = 0\) 的距离.
+\item 求两条平行线 \({3x} - {2y} - 1 = 0\) 和 \({6x} - {4y} + 2 = 0\) 的距离.
 
-\section*{小 结}
+\end{problemset}
+
+\chapter*{小 结}
+\markboth{小 结}{小 结}
 
 一、在这一章里, 我们首先研究了有向线段、两点的距离及线段的定比分点; 接着又研究了直线方程的各种形式, 并利用这些方程讨论了两条直线的位置关系和两条直线所成的角、点到直线的距离. 这种通过方程研究图形性质的方法就是解析法. 解析法揭示了数学中“数”和“形”的内在联系.
 
@@ -2183,7 +2282,8 @@
 
 六、在研究了直线方程的各种形式之后, 本章还研究了两条直线的交点、夹角以及点到直线的距离等问题. 我们除了要掌握这些问题的结论外, 还应注意学习通过代数方程研究几何性质的方法.
 
-\section*{复习参考题一}
+\chapter*{复习参考题一}
+\markboth{复习参考题一}{复习参考题一}
 
 \section*{A 组}
 
@@ -2299,19 +2399,22 @@
 
 21. 山顶上有高 \(h\) 的塔 \({BC}\) ,从塔顶 \(B\) 测得地面上一点 \(A\) 的俯角是 \(\alpha\) ,从塔底 \(C\) 测得点 \(A\) 的俯角是 \(\beta\) ,用解析法求山高 \(H\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_64_551024.jpg}
-\end{center}
+  \caption{(第 21题)}
+\end{figure}
 
-(第 21题)
+
 
 22. 过两点 \(A\left( {-3,2}\right)\) 和 \(B\left( {6,1}\right)\) 的直线与直线 \(x + {3y} - 6 = 0\) 交于点 \(P\) . 求点 \(P\) 分 \(\overline{AB}\) 所成的比.
 
-\section*{第二章 圆 锥 曲 线}
+
+\chapter{圆 锥 曲 线}
 
 \section*{一 曲线和方程}
 
-\section*{2.1 曲线和方程}
+\section{曲线和方程}
 
 在第一章里, 我们研究过直线的各种方程, 讨论了直线和二元一次方程的关系. 下面, 我们进一步研究一般曲线 (包括直线) 和方程的关系.
 
@@ -2355,11 +2458,13 @@
   \sqrt{{x}_{0}^{2} + {y}_{0}^{2}} = 5\text{.}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_66_677276.jpg}
-\end{center}
+  \caption{图 2-1}
+\end{figure}
 
-图 2-1
+
 
 即点 \(M\left( {{x}_{0},{y}_{0}}\right)\) 到坐标原点的距离等于 5,点 \(M\left( {{x}_{0},{y}_{0}}\right)\) 是这个圆上的点.
 
@@ -2367,9 +2472,11 @@
     {x}^{2} + {y}^{2} = {25}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_66_273685.jpg}
-\end{center}
+  \caption{图片}
+\end{figure}
 
 圆心, 半径等
 
@@ -2377,23 +2484,27 @@
 
 把 \({M}_{2}\left( {-2\sqrt{5},2}\right)\) 的坐标代入方程 \({x}^{2} + {y}^{2} = {25}\) ,左右两边不等, \(\left( {-2\sqrt{5},2}\right)\) 不是方程的解,所以点 \({M}_{2}\) 不在这个圆上 (如图 2-1).
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 到两坐标轴距离相等的点组成的直线的方程是 \(x - y = 0\) 吗? 为什么?
+\item 到两坐标轴距离相等的点组成的直线的方程是 \(x - y = 0\) 吗? 为什么?
 
-2. 已知等腰三角形三个顶点的坐标是 \(A\left( {0,3}\right) ,B\left( {-2,0}\right)\) , \(C\left( {2,0}\right)\) . 中线 \({AO}\) 的方程是 \(x = 0\) 吗? 为什么?
+\item 已知等腰三角形三个顶点的坐标是 \(A\left( {0,3}\right) ,B\left( {-2,0}\right)\) , \(C\left( {2,0}\right)\) . 中线 \({AO}\) 的方程是 \(x = 0\) 吗? 为什么?
 
-\section*{2.2 求曲线的方程}
+\end{problemset}
+
+\section{求曲线的方程}
 
 我们先看两个例子.
 
 例 1 设 \(A\text{、}B\) 两点的坐标是 \(\left( {-1, - 1}\right) \text{、}\left( {3,7}\right)\) ,求线段 \({AB}\) 的垂直平分线的方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_67_837628.jpg}
-\end{center}
+  \caption{图 2-2}
+\end{figure}
 
-图 2-2
+
 
 解: 设 \(M\left( {x,y}\right)\) 是线段 \({AB}\) 的垂直平分线上任意一点 (图 2-2), 也就是点 \(M\) 属于集合
 
@@ -2469,11 +2580,13 @@
 
 例 2 点 \(M\) 与两条互相垂直的直线的距离的积是常数 \(k\left( {k > 0}\right)\) ,求点 \(M\) 的轨迹方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_68_272250.jpg}
-\end{center}
+  \caption{图 2-3}
+\end{figure}
 
-图 2-3
+
 
 解: 取已知两条互相垂直的直线为坐标轴, 建立直角坐标系(图 2-3).
 
@@ -2545,11 +2658,13 @@
   \sqrt{{x}^{2} + {\left( y - 2\right) }^{2}} - y = 2. \tag{1}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_70_664169.jpg}
-\end{center}
+  \caption{图 2-4}
+\end{figure}
 
-图 2-4
+
 
 将 (1) 式移项后再两边平方, 得
 
@@ -2567,13 +2682,15 @@
 
 求出曲线方程以后, 我们就可以根据曲线的方程, 来研究曲线的几何性质, 这个问题, 我们将在后面结合各种具体的曲线方程来说明.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求到坐标原点的距离等于 2 的点的轨迹方程.
+\item 求到坐标原点的距离等于 2 的点的轨迹方程.
 
-2. 已知点 \(M\) 与 \(x\) 轴的距离和它与点 \(F\left( {0,4}\right)\) 的距离相等,求点 \(M\) 的轨迹方程。
+\item 已知点 \(M\) 与 \(x\) 轴的距离和它与点 \(F\left( {0,4}\right)\) 的距离相等,求点 \(M\) 的轨迹方程。
 
-\section*{2.3 充要条件}
+\end{problemset}
+
+\section{充要条件}
 
 从 2.1 节我们知道, \(y = a{x}^{2}\) 是一条抛物线的方程。这就是说,如果点 \(M\) 的坐标是方程 \(y = a{x}^{2}\) 的解,那么点 \(M\) 一定是这条抛物线上的点.
 
@@ -2625,27 +2742,30 @@
 
 充要条件是进一步学习时常用的数学概念之一.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. “ \(b = 0\) ” 是 “直线 \(y = {kx} + b\) 过原点” 的什么条件,为什么?
+\item “ \(b = 0\) ” 是 “直线 \(y = {kx} + b\) 过原点” 的什么条件,为什么?
 
-2. “四边相等”是 “一个四边形是正方形” 的什么条件, 为什么?
+\item “四边相等”是 “一个四边形是正方形” 的什么条件, 为什么?
 
-3. “ \(x - 1 = 0\) ” 是 “ \({x}^{2} - 1 = 0\) ” 的什么条件,为什么?
+\item “ \(x - 1 = 0\) ” 是 “ \({x}^{2} - 1 = 0\) ” 的什么条件,为什么?
 
-4. “两条直线不相交”是“这两条直线异面”的什么条件, 为什么?
+\item “两条直线不相交”是“这两条直线异面”的什么条件, 为什么?
+\end{problemset}
 
-\section*{2.4 曲线的交点}
+\section{曲线的交点}
 
 由曲线方程的定义可知, 两条曲线交点的坐标应该是两个曲线方程的公共实数解, 即两个曲线方程组成的方程组的实数解; 反过来, 方程组有几个实数解, 两条曲线就有几个交点, 方程组没有实数解, 两条曲线就没有交点. 即两条曲线有交点的充要条件是它们的方程所组成的方程组有实数解. 可见, 求曲线的交点的问题, 就是求由它们的方程所组成的方程组的实数解的问题.
 
 例 1 求直线 \(y = x + \frac{3}{2}\) 被曲线 \(y = \frac{1}{2}{x}^{2}\) 截得的线段的长.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_74_639219.jpg}
-\end{center}
+  \caption{图 2-5}
+\end{figure}
 
-图 2-5
+
 
 解: 先求交点.
 
@@ -2669,11 +2789,13 @@
 
 例 2 已知某圆的方程是 \({x}^{2} + {y}^{2} = 2\) . 当 \(b\) 为何值时,直线 \(y = x + b\) 与圆有两个交点; 两个交点重合为一点; 没有交点?
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_75_443692.jpg}
-\end{center}
+  \caption{图 2-6}
+\end{figure}
 
-图 2-6
+
 
 解: 解方程组
 
@@ -2713,13 +2835,14 @@
 
 实际上, 上述三种情况, 就是直线与圆相交、相切、相离 (图 2-6).
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-求直线 \({2x} - {5y} + 5 = 0\) 与曲线 \(y = - \frac{10}{x}\) 的交点.
+\item 求直线 \({2x} - {5y} + 5 = 0\) 与曲线 \(y = - \frac{10}{x}\) 的交点.
+\end{problemset}
 
-\section*{习 题 四}
+\begin{problemset}[习 题 四]
 
-1. 点 \(A\left( {1, - 2}\right) \text{、}B\left( {2, - 3}\right) \text{、}C\left( {3,{10}}\right)\) 是否在方程
+\item 点 \(A\left( {1, - 2}\right) \text{、}B\left( {2, - 3}\right) \text{、}C\left( {3,{10}}\right)\) 是否在方程
 
 \[
     {x}^{2} - {xy} + {2y} + 1 = 0
@@ -2727,29 +2850,31 @@
 
 的图形上?
 
-2. (1) 在什么情况下,方程 \(y = a{x}^{2} + {bx} + c\) 的曲线经过原点?
+\item (1) 在什么情况下,方程 \(y = a{x}^{2} + {bx} + c\) 的曲线经过原点?
 
 (2) 在什么情况下,方程 \({\left( x - a\right) }^{2} + {\left( y - b\right) }^{2} = {r}^{2}\) 的曲线经过原点?
 
-3. 已知点 \(M\) 到 \(x\) 轴、 \(y\) 轴的距离的乘积等于 1 . 求点 \(M\) 的轨迹方程.
+\item 已知点 \(M\) 到 \(x\) 轴、 \(y\) 轴的距离的乘积等于 1 . 求点 \(M\) 的轨迹方程.
 
-4. 点 \(M\) 到点 \(A\left( {4,0}\right)\) 和点 \(B\left( {-4,0}\right)\) 的距离的和为 12,求点 \(M\) 的轨迹方程.
+\item 点 \(M\) 到点 \(A\left( {4,0}\right)\) 和点 \(B\left( {-4,0}\right)\) 的距离的和为 12,求点 \(M\) 的轨迹方程.
 
-5. 一个点到点 \(\left( {4,0}\right)\) 的距离等于它到 \(y\) 轴的距离,求这个点的轨迹方程.
+\item 一个点到点 \(\left( {4,0}\right)\) 的距离等于它到 \(y\) 轴的距离,求这个点的轨迹方程.
 
-6. 两个定点的距离为 6,点 \(M\) 到这两个定点的距离的平方和为 26,求点 \(M\) 的轨迹方程.
+\item 两个定点的距离为 6,点 \(M\) 到这两个定点的距离的平方和为 26,求点 \(M\) 的轨迹方程.
 
-7. 求与点 \(O\left( {0,0}\right)\) 和 \(A\left( {c,0}\right)\) 的距离的平方差为常数 \(c\) 的点的轨迹方程.
+\item 求与点 \(O\left( {0,0}\right)\) 和 \(A\left( {c,0}\right)\) 的距离的平方差为常数 \(c\) 的点的轨迹方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_76_433068.jpg}
-\end{center}
+  \caption{(第 8 题)}
+\end{figure}
 
-(第 8 题)
 
-8. 两根杆分别绕着定点 \(A\) 和 \(B\left( {{AB} = {2a}}\right)\) 在平面内转动, 并且转动时两杆保持相互垂直, 求杆的交点 \(P\) 的轨迹方程.
 
-9. 在下列括弧中填写: “充分条件”或“必要条件” 或 “充要条件”:
+\item 两根杆分别绕着定点 \(A\) 和 \(B\left( {{AB} = {2a}}\right)\) 在平面内转动, 并且转动时两杆保持相互垂直, 求杆的交点 \(P\) 的轨迹方程.
+
+\item 在下列括弧中填写: “充分条件”或“必要条件” 或 “充要条件”:
 
 (1) “ \(m\) 是有理数” 是 “ \(m\) 是实数” 的 ( );
 
@@ -2765,23 +2890,26 @@
 
 (7) “两边和夹角对应相等”是 “三角形全等” 的 ( ).
 
-10. 求直线 \({4x} - {3y} = {20}\) 和圆 \({x}^{2} + {y}^{2} = {25}\) 的交点.
+\item 求直线 \({4x} - {3y} = {20}\) 和圆 \({x}^{2} + {y}^{2} = {25}\) 的交点.
 
-11. 求经过两条曲线 \({x}^{2} + {y}^{2} + {3x} - y = 0\) 和 \(3{x}^{2} + 3{y}^{2} + {2x} + y\) \(= 0\) 交点的直线的方程.
+\item 求经过两条曲线 \({x}^{2} + {y}^{2} + {3x} - y = 0\) 和 \(3{x}^{2} + 3{y}^{2} + {2x} + y\) \(= 0\) 交点的直线的方程.
+\end{problemset}
 
 \section*{二 圆}
 
-\section*{2.5 圆的标准方程}
+\section{圆的标准方程}
 
 我们知道, 平面内与定点距离等于定长的点的集合 (轨迹) 是圆. 定点就是圆心, 定长就是半径.
 
 根据圆的定义, 我们来求圆心是 \(C\left( {a,b}\right)\) ,半径是 \(r\) 的圆的方程 (图 2-7).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_77_682858.jpg}
-\end{center}
+  \caption{图 2-7}
+\end{figure}
 
-图 2-7
+
 
 设 \(M\left( {x,y}\right)\) 是圆上任意一点,根据定义,点 \(M\) 到圆心 \(C\) 的距离等于 \(r\) . 圆就是集合
 
@@ -2873,11 +3001,13 @@
   \therefore \;k = - \frac{{x}_{0}}{{y}_{0}}\text{. }
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_79_916236.jpg}
-\end{center}
+  \caption{图 2-8}
+\end{figure}
 
-图 2-8
+
 
 经过点 \(M\) 的切线方程是
 
@@ -2905,11 +3035,13 @@
     {x}^{2} + {\left( y - b\right) }^{2} = {r}^{2}.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_80_540621.jpg}
-\end{center}
+  \caption{图 2-9}
+\end{figure}
 
-图 2-9
+
 
 下面用待定系数法来确定 \(b\) 和 \(r\) 的值.
 
@@ -2957,9 +3089,9 @@
 
 答: 支柱 \({A}_{2}{P}_{2}\) 的长度约为 3.86 米.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 写出下列各圆的方程:
+\item 写出下列各圆的方程:
 
 （1）圆心在原点, 半径是 3 ;
 
@@ -2967,19 +3099,21 @@
 
 (3) 经过点 \(P\left( {5,1}\right)\) ,圆心在点 \(C\left( {8, - 3}\right)\) .
 
-2. 一个圆过点 \(P\left( {{12},0}\right)\) ,且与 \(y\) 轴切于原点. 求这个圆的方程,并判断点 \(A\left( {6, - 6}\right) \text{、}B\left( {5, - 5}\right) \text{、}C\left( {{2.5},5}\right)\) 是在圆内, 在圆外, 还是在圆上.
+\item 一个圆过点 \(P\left( {{12},0}\right)\) ,且与 \(y\) 轴切于原点. 求这个圆的方程,并判断点 \(A\left( {6, - 6}\right) \text{、}B\left( {5, - 5}\right) \text{、}C\left( {{2.5},5}\right)\) 是在圆内, 在圆外, 还是在圆上.
 
-3. 已知一个圆的圆心在原点,并与直线 \({4x} + {3y} - {70} = 0\) 相切. 求圆的方程.
+\item 已知一个圆的圆心在原点,并与直线 \({4x} + {3y} - {70} = 0\) 相切. 求圆的方程.
 
-4. 写出过圆 \({x}^{2} + {y}^{2} = {10}\) 上一点 \(M\left( {2,\sqrt{6}}\right)\) 的切线的方程.
+\item 写出过圆 \({x}^{2} + {y}^{2} = {10}\) 上一点 \(M\left( {2,\sqrt{6}}\right)\) 的切线的方程.
 
-5. 已知圆的方程是 \({x}^{2} + {y}^{2} = 1\) . 求:
+\item 已知圆的方程是 \({x}^{2} + {y}^{2} = 1\) . 求:
 
 （1）斜率等于 1 的切线方程;
 
 （2）在 \(y\) 轴上截距是 \(\sqrt{2}\) 的切线方程。
 
-\section*{2. 6 圆的一般方程}
+\end{problemset}
+
+\section{圆的一般方程}
 
 把圆的标准方程
 
@@ -3075,11 +3209,13 @@
   \frac{{x}^{2} + {y}^{2}}{{\left( x - 3\right) }^{2} + {y}^{2}} = \frac{1}{4}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_84_125563.jpg}
-\end{center}
+  \caption{图 2-10}
+\end{figure}
 
-图 2-10
+
 
 化简得
 
@@ -3097,21 +3233,22 @@
 
 所以方程 (2) 的曲线是以 \(C\left( {-1,0}\right)\) 为圆心, \(r = 2\) 为半径的圆, 它的图形如图 2-10.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 下列方程各表示什么图形?
+\item 下列方程各表示什么图形?
 
 (1) \({x}^{2} + {y}^{2} = 0\) ; (2) \({x}^{2} + {y}^{2} - {2x} + {4y} - 6 = 0\) ;
 
 (3) \({x}^{2} + {y}^{2} + {2ax} - {b}^{2} = 0\) .
 
-2. 求下列各圆的半径和圆心坐标:
+\item 求下列各圆的半径和圆心坐标:
 
 (1) \({x}^{2} + {y}^{2} - {6x} = 0\) ; (2) \({x}^{2} + {y}^{2} + {2by} = 0\) .
+\end{problemset}
 
-\section*{习 题 五}
+\begin{problemset}[习 题 五]
 
-1. 求下列各圆的方程, 并画出它的图形:
+\item 求下列各圆的方程, 并画出它的图形:
 
 (1) 过点 \(C\left( {-1,1}\right)\) 和 \(D\left( {1,3}\right)\) ,圆心在 \(x\) 轴上;
 
@@ -3121,65 +3258,70 @@
 
 （4）过点 \(A\left( {5,2}\right)\) 和 \(B\left( {3, - 2}\right)\) ,圆心在直线 \({2x} - y = 3\) 上.
 
-2. 求下列条件所决定的圆的方程:
+\item 求下列条件所决定的圆的方程:
 
 （1）圆心为 \(C\left( {3, - 5}\right)\) ,并且与直线 \(x - {7y} + 2 = 0\) 相切;
 
 （2）过点 \(A\left( {3,2}\right)\) ,圆心在直线 \(y = {2x}\) 上,且与直线 \(y = {2x}\) +5 相切.
 
-3. 已知: 一个圆的直径端点是 \(A\left( {{x}_{1},{y}_{1}}\right) \text{、}B\left( {{x}_{2},{y}_{2}}\right)\) . 证明: 圆的方程是 \(\left( {x - {x}_{1}}\right) \left( {x - {x}_{2}}\right) + \left( {y - {y}_{1}}\right) \left( {y - {y}_{2}}\right) = 0\) .
+\item 已知: 一个圆的直径端点是 \(A\left( {{x}_{1},{y}_{1}}\right) \text{、}B\left( {{x}_{2},{y}_{2}}\right)\) . 证明: 圆的方程是 \(\left( {x - {x}_{1}}\right) \left( {x - {x}_{2}}\right) + \left( {y - {y}_{1}}\right) \left( {y - {y}_{2}}\right) = 0\) .
 
-4. 一个等腰三角形底边上的高等于 5 , 底边两端点的坐标是 \(\left( {-4,0}\right)\) 和 \(\left( {4,0}\right)\) . 求它的外接圆的方程.
+\item 一个等腰三角形底边上的高等于 5 , 底边两端点的坐标是 \(\left( {-4,0}\right)\) 和 \(\left( {4,0}\right)\) . 求它的外接圆的方程.
 
-5. 赵州桥的 跨度是 37.4 米, 圆拱高约为 7.2 米. 求 这座圆拱桥的拱圆的方程.
+\item 赵州桥的 跨度是 37.4 米, 圆拱高约为 7.2 米. 求 这座圆拱桥的拱圆的方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_85_663180.jpg}
-\end{center}
+  \caption{(第 6 题)}
+\end{figure}
 
-(第 6 题)
 
-6. 某工件尺寸如图所示, 它的外缘由四段圆弧连接而成. 求各段圆弧所在的圆的方程.
 
-7. 求通过点 \(A\left( {1,2}\right)\) ,且与两坐标轴同时相切的圆的方程.
+\item 某工件尺寸如图所示, 它的外缘由四段圆弧连接而成. 求各段圆弧所在的圆的方程.
 
-8. 过点 \(A\left( {0,\sqrt{10}}\right)\) 向圆 \({x}^{2} + {y}^{2} = 5\) 引两条切线. 求它们的方程.
+\item 求通过点 \(A\left( {1,2}\right)\) ,且与两坐标轴同时相切的圆的方程.
 
-9. 求下列各圆的一般方程:
+\item 过点 \(A\left( {0,\sqrt{10}}\right)\) 向圆 \({x}^{2} + {y}^{2} = 5\) 引两条切线. 求它们的方程.
+
+\item 求下列各圆的一般方程:
 
 (1) 过点 \(A\left( {5,1}\right)\) ,圆心在点 \(C\left( {8, - 3}\right)\) ;
 
 (2) 过三点 \(A\left( {-1,5}\right) \text{、}B\left( {5,5}\right) \text{、}C\left( {6, - 2}\right)\) .
 
-10. 求下列各圆的圆心坐标和半径, 并画出它们的图形:
+\item 求下列各圆的圆心坐标和半径, 并画出它们的图形:
 
 (1) \({x}^{2} + {y}^{2} - {2x} - 5 = 0\) ; (2) \({x}^{2} + {y}^{2} + {2x} - {4y} - 4 = 0\) ;
 
 (3) \({x}^{2} + {y}^{2} + {2ax} = 0\) ; (4) \({x}^{2} + {y}^{2} - {2by} - 2{b}^{2} = 0\) .
 
-11. 求证: 两圆 \({x}^{2} + {y}^{2} - {4x} - {6y} + 9 = 0\) 和 \({x}^{2} + {y}^{2} + {12x} + {6y}\) \(- {19} = 0\) 相外切.
+\item 求证: 两圆 \({x}^{2} + {y}^{2} - {4x} - {6y} + 9 = 0\) 和 \({x}^{2} + {y}^{2} + {12x} + {6y}\) \(- {19} = 0\) 相外切.
 
-12. 求直线 \({4x} - {3y} = {50}\) 和圆 \({x}^{2} + {y}^{2} = {100}\) 的交点,说明它们的位置关系.
+\item 求直线 \({4x} - {3y} = {50}\) 和圆 \({x}^{2} + {y}^{2} = {100}\) 的交点,说明它们的位置关系.
 
-13. 求经过两圆 \({x}^{2} + {y}^{2} + {6x} - 4 = 0\) 和 \({x}^{2} + {y}^{2} + {6y} - {28} = 0\) 的交点,并且圆心在直线 \(x - y - 4 = 0\) 上的圆的方程.
+\item 求经过两圆 \({x}^{2} + {y}^{2} + {6x} - 4 = 0\) 和 \({x}^{2} + {y}^{2} + {6y} - {28} = 0\) 的交点,并且圆心在直线 \(x - y - 4 = 0\) 上的圆的方程.
 
-14. 等腰三角形的顶点是 \(A\left( {4,2}\right)\) ,底边一个端点是 \(B\left( {3,5}\right)\) . 求另一个端点的轨迹方程, 并说明它的轨迹是什么.
+\item 等腰三角形的顶点是 \(A\left( {4,2}\right)\) ,底边一个端点是 \(B\left( {3,5}\right)\) . 求另一个端点的轨迹方程, 并说明它的轨迹是什么.
 
-15. 一条线段 \({AB}\left( {{AB} = {2a}}\right)\) 的两个端点 \(A\) 和 \(B\) 分别在 \(x\) 轴和 \(y\) 轴上滑动. 求线段 \({AB}\) 的中点 \(M\) 的轨迹方程.
+\item 一条线段 \({AB}\left( {{AB} = {2a}}\right)\) 的两个端点 \(A\) 和 \(B\) 分别在 \(x\) 轴和 \(y\) 轴上滑动. 求线段 \({AB}\) 的中点 \(M\) 的轨迹方程.
+\end{problemset}
 
 \section*{三 椭 圆}
 
-\section*{2.7 椭圆及其标准方程}
+\section{ 椭圆及其标准方程}
 
 椭圆是一种常见的曲线, 如汽车油罐横截面的轮廓, 天体中一些行星和卫星运行的轨道. 在立体几何中画直观图时, 圆的一种直观图也是椭圆.
 
 取一条一定长的细绳, 把它的两端固定在画图板上的 \({F}_{1}\) 和 \({F}_{2}\) 两点 (图 2-11),当绳长大于 \({F}_{1}\) 和 \({F}_{2}\) 的距离时,用铅笔尖把绳子拉紧, 使笔尖在图板上慢慢移动, 就可以画出一个椭圆.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_86_465051.jpg}
-\end{center}
+  \caption{图 2-11}
+\end{figure}
 
-图 2-11
+
 
 从上面的画图过程,我们可以看出,椭圆是由与点 \({F}_{1}\) 和 \({F}_{2}\) 的距离的和等于这条绳长的点组成的.
 
@@ -3187,11 +3329,13 @@
 
 根据椭圆的定义, 我们来求椭圆的方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_87_155934.jpg}
-\end{center}
+  \caption{图 2-12}
+\end{figure}
 
-图 2-12
+
 
 取过焦点 \({F}_{1}\text{、}{F}_{2}\) 的直线为 \(x\) 轴,线段 \({F}_{1}{F}_{2}\) 的垂直平分线为 \(y\) 轴,建立直角坐标系 (图 2-12).
 
@@ -3257,11 +3401,13 @@
   \frac{{y}^{2}}{{a}^{2}} + \frac{{x}^{2}}{{b}^{2}} = 1\;\left( {a > b > 0}\right) .
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_88_686468.jpg}
-\end{center}
+  \caption{图 2-13}
+\end{figure}
 
-图 2-13
+
 
 这个方程也是椭圆的标准方程.
 
@@ -3297,21 +3443,23 @@
 
 画法: (1) 作线段 \({F}_{1}{F}_{2}\) ,使 \(\left| {{F}_{1}{F}_{2}}\right| = {2c}\) . 设 \({F}_{1}{F}_{2}\) 的中点为 \(O\) ,在 \({F}_{1}{F}_{2}\) 和 \({F}_{2}{F}_{1}\) 的延长线上,分别取点 \(A\text{、}{A}^{\prime }\) ; 使 \({OA}\) \(= O{A}^{\prime } = a\) (图 2-14).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_89_799031.jpg}
-\end{center}
+  \caption{图 2-14}
+\end{figure}
 
-图 2-14
+
 
 （2）在线段 \({F}_{1}{F}_{2}\) 上任取一点 \({M}_{1}\) ,分别以点 \({F}_{1}\text{、}{F}_{2}\) 为圆心, \({A}^{\prime }{M}_{1}\text{、}A{M}_{1}\) 为半径画弧,交于点 \({P}_{1}\text{、}{P}_{1}^{\prime }\) . 改变 \({M}_{1}\) 的位置, 例如 \({M}_{2},{M}_{3},\cdots\) ,用同样方法作出点 \({P}_{2}\text{、}{P}_{2}^{\prime }\text{、}{P}_{3}\text{、}{P}_{3}^{\prime },\cdots\) .
 
 （3）把 \({A}^{\prime }\text{、}{P}_{1}\text{、}{P}_{2}\text{、}\cdots \text{、}A\text{、}\cdots \text{、}{P}_{2}^{\prime }\text{、}{P}_{1}^{\prime }\text{、}{A}^{\prime }\) 顺次连成光滑曲线, 就得到所求的椭圆.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 说明例 2 中椭圆画法的依据.
+\item 说明例 2 中椭圆画法的依据.
 
-2. 写出适合下列条件的椭圆的标准方程:
+\item 写出适合下列条件的椭圆的标准方程:
 
 (1) \(a = 4,b = 1\) ,焦点在 \(x\) 轴上;
 
@@ -3323,11 +3471,13 @@
   P\left( {\frac{5}{2}, - \frac{3}{2}}\right)
 \]
 
-3. 已知 \(\bigtriangleup {ABC}\) 的一边 \({BC}\) 长为 6,周长为 16 . 求顶点 \(A\) 的
+\item 已知 \(\bigtriangleup {ABC}\) 的一边 \({BC}\) 长为 6,周长为 16 . 求顶点 \(A\) 的
+
+\end{problemset}
 
 \section*{轨迹方程}
 
-\section*{2.8 椭圆的几何性质}
+\section{椭圆的几何性质}
 
 我们根据椭圆的标准方程
 
@@ -3345,11 +3495,13 @@
   \frac{{x}^{2}}{{a}^{2}} \leq 1,\;\frac{{y}^{2}}{{b}^{2}} \leq 1,
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_90_426128.jpg}
-\end{center}
+  \caption{图 2-15}
+\end{figure}
 
-图 2-15
+
 
 即 \(\;{x}^{2} \leq {a}^{2},\;{y}^{2} \leq {b}^{2}\) ,
 
@@ -3403,23 +3555,29 @@
 
 在第一象限 \(x \leq 5\) 的范围内算出几个点的坐标 \(\left( {x,y}\right)\) :
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.7\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_92_362735.jpg}
-\end{center}
+  \caption{图片}
+\end{figure}
 
 先描点画出椭圆在第一象限内的图形, 再利用椭圆的对称性就画出整个椭圆(图 2-16).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_92_523518.jpg}
-\end{center}
+  \caption{图 2-16}
+\end{figure}
 
-图 2-16
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_92_511935.jpg}
-\end{center}
+  \caption{图 2-17}
+\end{figure}
 
-图 2-17
+
 
 例2 我国发射的第一颗人造地球卫星的运行轨道, 是以地球的中心为一个焦点的椭圆,近地点 \(A\) 距地面 439 公里,远地点 \(B\) 距地面 2384 公里,地球半径约为 6371 公里. 求卫星的轨道方程.
 
@@ -3459,11 +3617,13 @@
   P = \left\{ {M\left| {\;\frac{\left| MF\right| }{d} = \frac{c}{a}}\right. }\right\}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_93_181051.jpg}
-\end{center}
+  \caption{图 2-18}
+\end{figure}
 
-图 2-18
+
 
 由此得
 
@@ -3489,39 +3649,43 @@
 
 对于椭圆 \(\frac{{x}^{2}}{{a}^{2}} + \frac{{y}^{2}}{{b}^{2}} = 1\) ,相应于焦点 \(F\left( {c,0}\right)\) 的准线方程是 \(x = \frac{{a}^{2}}{c}\) . 根据椭圆的对称性,相应于焦点 \({F}^{\prime }\left( {-c,0}\right)\) 的准线方程是 \(x = - \frac{{a}^{2}}{c}\) ,所以椭圆有两条准线.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 说出椭圆 \(\frac{{y}^{2}}{{a}^{2}} + \frac{{x}^{2}}{{b}^{2}} = 1\) 的焦点和顶点的坐标.
+\item 说出椭圆 \(\frac{{y}^{2}}{{a}^{2}} + \frac{{x}^{2}}{{b}^{2}} = 1\) 的焦点和顶点的坐标.
 
-2. 求下列各椭圆的长轴和短轴的长、离心率、焦点坐标、顶点坐标和准线方程, 并画出草图:
+\item 求下列各椭圆的长轴和短轴的长、离心率、焦点坐标、顶点坐标和准线方程, 并画出草图:
 
 (1) \(\frac{{x}^{2}}{25} + \frac{{y}^{2}}{9} = 1\) ; (2) \(9{x}^{2} + {y}^{2} = {81}\) ;
 
 (3) \({x}^{2} + 4{y}^{2} = {16}\) ; (4) \(2{x}^{2} = 1 - {y}^{2}\) .
 
-3. 求适合下列条件的椭圆的标准方程:
+\item 求适合下列条件的椭圆的标准方程:
 
 (1) \(a = 6,e = \frac{1}{3}\) ,焦点在 \(x\) 轴上;
 
 (2) \(c = 3,e = \frac{3}{5}\) ,焦点在 \(y\) 轴上.
 
-\section*{习 题 六}
+\end{problemset}
 
-\begin{center}
+\begin{problemset}[习 题 六]
+
+\item \begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_94_706053.jpg}
-\end{center}
+  \caption{(第 1 题)}
+\end{figure}
 
-(第 1 题)
 
-1. 如图,椭圆上的点中, \({A}_{1}\) 与焦点 \({F}_{1}\) 的距离最小, \(\left| {{A}_{1}{F}_{1}}\right|\) \(= 2,{A}_{2}\) 与 \({F}_{1}\) 的距离最大, \(\left| {{A}_{2}{F}_{1}}\right| = {14}\) ,求椭圆的标准方程。
 
-2. 已知椭圆的面积公式是 \(S = {\pi ab}\) ,其中 \(a\text{、}b\) 分别是椭圆长半轴和短半轴的长. 利用这个公式, 求下列椭圆的面积:
+\item 如图,椭圆上的点中, \({A}_{1}\) 与焦点 \({F}_{1}\) 的距离最小, \(\left| {{A}_{1}{F}_{1}}\right|\) \(= 2,{A}_{2}\) 与 \({F}_{1}\) 的距离最大, \(\left| {{A}_{2}{F}_{1}}\right| = {14}\) ,求椭圆的标准方程。
+
+\item 已知椭圆的面积公式是 \(S = {\pi ab}\) ,其中 \(a\text{、}b\) 分别是椭圆长半轴和短半轴的长. 利用这个公式, 求下列椭圆的面积:
 
 (1) \(9{x}^{2} + {y}^{2} = 8\) ; (2) \(9{x}^{2} + {25}{y}^{2} = {100}\) .
 
-3. 求椭圆 \(\frac{{x}^{2}}{16} + \frac{{y}^{2}}{25} = 1\) 上一点 \({M}_{1}\left( {{2.4},4}\right)\) 与焦点的距离.
+\item 求椭圆 \(\frac{{x}^{2}}{16} + \frac{{y}^{2}}{25} = 1\) 上一点 \({M}_{1}\left( {{2.4},4}\right)\) 与焦点的距离.
 
-4. 求适合下列条件的椭圆的标准方程:
+\item 求适合下列条件的椭圆的标准方程:
 
 （1）椭圆经过两点 \(P\left( {-2\sqrt{2},0}\right) \text{、}Q\left( {0,\sqrt{5}}\right)\) ;
 
@@ -3535,51 +3699,55 @@
 
 （4）离心率等于 0.8 , 焦距是 8 .
 
-5. 讨论下列椭圆的范围, 并描点画出图形:
+\item 讨论下列椭圆的范围, 并描点画出图形:
 
 (1) \(4{x}^{2} + {y}^{2} = {16}\) ; (2) \(5{x}^{2} + 9{y}^{2} = {100}\) ;
 
 (3) \(2{x}^{2} = 1 - {y}^{2}\) .
 
-6. 我国发射的科学实验人造地球卫星的运行轨道是以地球的中心为一个焦点的椭圆, 近地点距地面 266 公里, 远地点距地面 1826 公里. 求这颗卫星的轨道方程.
+\item 我国发射的科学实验人造地球卫星的运行轨道是以地球的中心为一个焦点的椭圆, 近地点距地面 266 公里, 远地点距地面 1826 公里. 求这颗卫星的轨道方程.
 
-7. 彗星“紫金山一号”是南京天文台发现的. 它的运行轨道是以太阳为一个焦点的椭圆. 测得轨道的近日点距太阳中心 1.486 天文单位, 远日点距太阳中心 5.563 天文单位 (1 天文单位是太阳到地球的平均距离, 约 1.5 亿公里), 求椭圆的方程.
+\item 彗星“紫金山一号”是南京天文台发现的. 它的运行轨道是以太阳为一个焦点的椭圆. 测得轨道的近日点距太阳中心 1.486 天文单位, 远日点距太阳中心 5.563 天文单位 (1 天文单位是太阳到地球的平均距离, 约 1.5 亿公里), 求椭圆的方程.
 
-8. 已知地球运行的轨道是长半轴长 \(a = {1.50} \times {10}^{8}\mathrm{\;{km}}\) ,离心率 \(e = {0.0192}\) 的椭圆. 太阳在这个椭圆的一个焦点上. 求地球到太阳最大和最小的距离.
+\item 已知地球运行的轨道是长半轴长 \(a = {1.50} \times {10}^{8}\mathrm{\;{km}}\) ,离心率 \(e = {0.0192}\) 的椭圆. 太阳在这个椭圆的一个焦点上. 求地球到太阳最大和最小的距离.
 
-9. 求下列椭圆的离心率:
+\item 求下列椭圆的离心率:
 
 （1）从焦点看短轴两端点的视角为 \({60}^{ \circ }\) ;
 
 （2）从短轴的一个端点看两焦点的视角为直角.
 
-10. 点 \(P\) 与一定点 \(F\left( {2,0}\right)\) 的距离和它到一定直线 \(x = 8\) 的距离的比是 1:2. 求点 \(P\) 的轨迹方程,并说明轨迹是什么图形.
+\item 点 \(P\) 与一定点 \(F\left( {2,0}\right)\) 的距离和它到一定直线 \(x = 8\) 的距离的比是 1:2. 求点 \(P\) 的轨迹方程,并说明轨迹是什么图形.
 
-11. \(\bigtriangleup {ABC}\) 的一边的两顶点是 \(B\left( {0,6}\right)\) 和 \(C\left( {0, - 6}\right)\) ,另两边的斜率的乘积是 \(- \frac{4}{9}\) ,求顶点 \(A\) 的轨迹.
+\item \(\bigtriangleup {ABC}\) 的一边的两顶点是 \(B\left( {0,6}\right)\) 和 \(C\left( {0, - 6}\right)\) ,另两边的斜率的乘积是 \(- \frac{4}{9}\) ,求顶点 \(A\) 的轨迹.
 
-12. 点 \(M\) 与椭圆 \(\frac{{x}^{2}}{{13}^{2}} + \frac{{y}^{2}}{{12}^{2}} = 1\) 的左焦点和右焦点的距离的比为 2:3. 求点 \(M\) 的轨迹方程,并画出图形.
+\item 点 \(M\) 与椭圆 \(\frac{{x}^{2}}{{13}^{2}} + \frac{{y}^{2}}{{12}^{2}} = 1\) 的左焦点和右焦点的距离的比为 2:3. 求点 \(M\) 的轨迹方程,并画出图形.
 
-13. 已知直线和椭圆的方程如下, 求它们的交点坐标:
+\item 已知直线和椭圆的方程如下, 求它们的交点坐标:
 
 (1) \({3x} + {10y} - {25} = 0,\frac{{x}^{2}}{25} + \frac{{y}^{2}}{4} = 1\) ;
 
 (2) \({3x} - y + 2 = 0,\frac{{x}^{2}}{16} + \frac{{y}^{2}}{4} = 1\) .
 
-14. 求证两椭圆 \({b}^{2}{x}^{2} + {a}^{2}{y}^{2} - {a}^{2}{b}^{2} = 0,{a}^{2}{x}^{2} + {b}^{2}{y}^{2} - {a}^{2}{b}^{2} = 0\) 的交点在以原点为中心的圆周上, 并求这个圆的方程.
+\item 求证两椭圆 \({b}^{2}{x}^{2} + {a}^{2}{y}^{2} - {a}^{2}{b}^{2} = 0,{a}^{2}{x}^{2} + {b}^{2}{y}^{2} - {a}^{2}{b}^{2} = 0\) 的交点在以原点为中心的圆周上, 并求这个圆的方程.
 
-\section*{四双曲线}
+\end{problemset}
 
-\section*{2.9 双曲线及其标准方程}
+\section*{四 双曲线}
+
+\section{双曲线及其标准方程}
 
 我们知道, 与两定点的距离的和为常数的点的轨迹是椭圆, 那么与两定点的距离的差为常数的点的轨迹又是怎样的曲线: 这就是我们下面要讨论的问题.
 
 平面内与两个定点 \({F}_{1}\text{、}{F}_{2}\) 的距离的差的绝对值是常数 (小于 \(\left| {{F}_{1}{F}_{2}}\right|\) ) 的点的轨迹叫做双曲线. 这两个定点叫做双曲线的焦点, 两焦点的距离叫做焦距.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_97_983208.jpg}
-\end{center}
+  \caption{图 2-19}
+\end{figure}
 
-图 2-19
+
 
 取过焦点 \({F}_{1}\text{、}{F}_{2}\) 的直线为 \(x\) 轴,线段 \({F}_{1}{F}_{2}\) 的垂直平分线为 \(y\) 轴 (图 2-19).
 
@@ -3627,11 +3795,13 @@
   \frac{{y}^{2}}{{a}^{2}} - \frac{{x}^{2}}{{b}^{2}} = 1
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_98_269004.jpg}
-\end{center}
+  \caption{图 2-20}
+\end{figure}
 
-图 2-20
+
 
 这个方程也是双曲线的标准方程.
 
@@ -3649,17 +3819,19 @@
   \frac{{x}^{2}}{{3}^{2}} - \frac{{y}^{2}}{{4}^{2}} = 1\text{,即 }\frac{{x}^{2}}{9} - \frac{{y}^{2}}{16} = 1\text{. }
 \]
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求适合下列条件的双曲线的标准方程:
+\item 求适合下列条件的双曲线的标准方程:
 
 (1) \(a = 4,b = 3\) ,焦点在 \(x\) 轴上;
 
 (2) \(a = 2\sqrt{5}\) ,经过点 \(A\left( {2, - 5}\right)\) ,焦点在 \(y\) 轴上.
 
-2. 证明: 椭圆 \(\frac{{x}^{2}}{25} + \frac{{y}^{2}}{9} = 1\) 与双曲线 \({x}^{2} - {15}{y}^{2} = {15}\) 的焦点相同。
+\item 证明: 椭圆 \(\frac{{x}^{2}}{25} + \frac{{y}^{2}}{9} = 1\) 与双曲线 \({x}^{2} - {15}{y}^{2} = {15}\) 的焦点相同。
 
-\section*{2.10 双曲线的几何性质}
+\end{problemset}
+
+\section{双曲线的几何性质}
 
 我们根据双曲线的标准方程
 
@@ -3685,11 +3857,13 @@
 
 在标准方程中,令 \(y = 0\) ,得 \(x = \pm a\) ,因此双曲线和 \(x\) 轴有两个交点 \({A}_{1}\left( {-a,0}\right) \text{、}{A}_{2}\left( {a,0}\right)\) . 因为 \(x\) 轴是双曲线的对称轴, 所以双曲线和它的对称轴有两个交点, 它们叫做双曲线的顶点.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_99_697647.jpg}
-\end{center}
+  \caption{图 2-21}
+\end{figure}
 
-图 2-21
+
 
 令 \(x = 0\) ,得 \({y}^{2} = - {b}^{2}\) ,这个方程没有实数根, 说明双曲线和 \(y\) 轴没有交点,但我们也把 \({B}_{1}\left( {0, - b}\right) \text{、}{B}_{2}\left( {0,b}\right)\) 画在 \(y\) 轴上(图 2-21).
 
@@ -3699,11 +3873,13 @@
 
 经过 \({A}_{2}\text{、}{A}_{1}\) 作 \(y\) 轴的平行线 \(x = \pm a\) ,经过 \({B}_{2}\text{、}{B}_{1}\) 作 \(x\) 轴的平行线 \(y = \pm b\) ,四条直线围成一个矩形(图 2-22). 矩形的两条对角线所在直线的方程是 \(y = \pm \frac{b}{a}x\) ,从图 2-22 可以看出,双曲线 \(\frac{{x}^{2}}{{a}^{2}} - \frac{{y}^{2}}{{b}^{2}} = 1\) 的各 支向外延伸时, 与这两条直线逐渐接近.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_100_513224.jpg}
-\end{center}
+  \caption{图 2-22}
+\end{figure}
 
-图 2-22
+
 
 下面, 我们来证明这个事实.
 
@@ -3773,11 +3949,13 @@
 
 例 2 双曲线型自然通风塔的外形, 是双曲线的一部分绕其虚轴旋转所成的曲面 (图 2-23), 它的最小半径为 12 米, 上口半径为 13 米, 下口半径为 25 米, 高 55 米. 在所给的坐标系中求此双曲线的方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.7\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_102_919231.jpg}
-\end{center}
+  \caption{图 2-23}
+\end{figure}
 
-图 2-23
+
 
 解: 在图 2-23 的坐标系中, 双曲线有标准方程
 
@@ -3837,11 +4015,13 @@
   \frac{{x}^{2}}{{a}^{2}} - \frac{{y}^{2}}{{b}^{2}} = 1
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_104_706159.jpg}
-\end{center}
+  \caption{图 2-24}
+\end{figure}
 
-图 2-24
+
 
 根据定义, 它的共轭双曲线的方程是
 
@@ -3877,9 +4057,11 @@
 
 例 4 点 \(M\left( {x,y}\right)\) 到定点 \(F\left( {c,0}\right)\) 的距离和它到定直线 \(l : x = \frac{{a}^{2}}{c}\) 的距离的比是常数 \(\frac{c}{a}\) \(\left( {c > a > 0}\right)\) . 求点 \(M\) 的轨迹 (图 \(2 - {25})\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_104_910731.jpg}
-\end{center}
+  \caption{图 2 - 25}
+\end{figure}
 
 解: 设 \(d\) 是点 \(M\) 到直线 \(l\) 的
 
@@ -3913,15 +4095,15 @@
 
 对于双曲线 \(\frac{{x}^{2}}{{a}^{2}} - \frac{{y}^{2}}{{b}^{2}} = 1\) ,相应于焦点 \(F\left( {c,0}\right)\) 的准线方程是 \(x = \frac{{a}^{2}}{c}\) . 根据双曲线的对称性,相应于焦点 \({F}^{\prime }\left( {-c,0}\right)\) 的准线方程是 \(x = - \frac{{a}^{2}}{c}\) . 所以双曲线有两条准线.
 
-\section*{练习}
+\begin{problemset}[练习]
 
-1. 求下列双曲线的实轴和虚轴的长、顶点和焦点坐标、离心率、渐近线方程和准线方程:
+\item 求下列双曲线的实轴和虚轴的长、顶点和焦点坐标、离心率、渐近线方程和准线方程:
 
 (1) \({x}^{2} - 8{y}^{2} = {32}\) ; (2) \(9{x}^{2} - {y}^{2} = {81}\)
 
 (3) \({x}^{2} - {y}^{2} = - 4\) ; (4) \(\frac{{x}^{2}}{49} - \frac{{y}^{2}}{25} = - 1\) .
 
-2. 求适合下列条件的双曲线的标准方程:
+\item 求适合下列条件的双曲线的标准方程:
 
 (1) 顶点在 \(x\) 轴上,两顶点的距离是 8, \(e = \frac{5}{4}\) ;
 
@@ -3929,11 +4111,13 @@
 
 （3）一条渐近线的方程是 \({3x} - {2y} = 0\) ,实轴长为 8 .
 
-3. 等轴双曲线的一个焦点是 \({F}_{1}\left( {-6,0}\right)\) ,求它的标准方程和渐近线方程.
+\item 等轴双曲线的一个焦点是 \({F}_{1}\left( {-6,0}\right)\) ,求它的标准方程和渐近线方程.
 
-\section*{习 题 七}
+\end{problemset}
 
-1. 根据下列条件, 求双曲线的标准方程:
+\begin{problemset}[习 题 七]
+
+\item 根据下列条件, 求双曲线的标准方程:
 
 (1) 焦点的坐标是 \(\left( {-6,0}\right) \text{、}\left( {6,0}\right)\) ,并且经过点
 
@@ -3941,15 +4125,15 @@
 
 （2）经过点 \(P\left( {-3,2\sqrt{7}}\right)\) 和 \(Q\left( {-6\sqrt{2}, - 7}\right)\) ,焦点在 \(y\) 轴上.
 
-2. 参考椭圆的画法, 根据双曲线的定义, 研究一下怎样用直尺和圆规作点画出双曲线.
+\item 参考椭圆的画法, 根据双曲线的定义, 研究一下怎样用直尺和圆规作点画出双曲线.
 
-3. 已知双曲线的方程是:
+\item 已知双曲线的方程是:
 
 (1) \({16}{x}^{2} - 9{y}^{2} = {144}\) ; (2) \({16}{x}^{2} - 9{y}^{2} = - {144}\) ,
 
 求它的焦点坐标、离心率、渐近线方程。
 
-4. 求双曲线的标准方程:
+\item 求双曲线的标准方程:
 
 （1）实轴的长是 10,虚轴的长是 8,焦点在 \(x\) 轴上;
 
@@ -3959,41 +4143,43 @@
 
 （4）两条渐近线的方程是 \(y = \pm \frac{2}{3}x\) ,经过点 \(M\left( {\frac{9}{2}, - 1}\right)\) .
 
-5. 求与椭圆 \(\frac{{x}^{2}}{49} + \frac{{y}^{2}}{24} = 1\) 有公共焦点,且离心率 \(e = \frac{5}{4}\) 的双曲线方程.
+\item 求与椭圆 \(\frac{{x}^{2}}{49} + \frac{{y}^{2}}{24} = 1\) 有公共焦点,且离心率 \(e = \frac{5}{4}\) 的双曲线方程.
 
-6. 求以椭圆 \(\frac{{x}^{2}}{8} + \frac{{y}^{2}}{5} = 1\) 的焦点为顶点,而以椭圆的顶点为焦点的双曲线方程.
+\item 求以椭圆 \(\frac{{x}^{2}}{8} + \frac{{y}^{2}}{5} = 1\) 的焦点为顶点,而以椭圆的顶点为焦点的双曲线方程.
 
-7. 求与双曲线 \(\frac{{x}^{2}}{9} - \frac{{y}^{2}}{16} = 1\) 有共同的渐近线,且经过点 \(A( - 3\) , \(2\sqrt{3}\) ) 的双曲线方程.
+\item 求与双曲线 \(\frac{{x}^{2}}{9} - \frac{{y}^{2}}{16} = 1\) 有共同的渐近线,且经过点 \(A( - 3\) , \(2\sqrt{3}\) ) 的双曲线方程.
 
-8. 求经过点 \(A\left( {3, - 1}\right)\) ,并且对称轴都在坐标轴上的等轴双曲线的方程.
+\item 求经过点 \(A\left( {3, - 1}\right)\) ,并且对称轴都在坐标轴上的等轴双曲线的方程.
 
-9. 证明: 等轴双曲线的离心率是 \(\sqrt{2}\) .
+\item 证明: 等轴双曲线的离心率是 \(\sqrt{2}\) .
 
-10. 在相距 1400 米的 \(A\text{、}B\) 两哨所,听到炮弹爆炸声的时间相差 3 秒, 已知声速是 340 米/秒. 炮弹爆炸点在怎样的曲线上?
+\item 在相距 1400 米的 \(A\text{、}B\) 两哨所,听到炮弹爆炸声的时间相差 3 秒, 已知声速是 340 米/秒. 炮弹爆炸点在怎样的曲线上?
 
-11. 通过双曲线 \(\frac{{x}^{2}}{144} - \frac{{y}^{2}}{25} = 1\) 的一个焦点,作 \(x\) 轴的垂线,求垂线与双曲线的交点与两焦点的距离.
+\item 通过双曲线 \(\frac{{x}^{2}}{144} - \frac{{y}^{2}}{25} = 1\) 的一个焦点,作 \(x\) 轴的垂线,求垂线与双曲线的交点与两焦点的距离.
 
-12. 证明从双曲线的一个焦点到一条渐近线的距离等于虚半轴长.
+\item 证明从双曲线的一个焦点到一条渐近线的距离等于虚半轴长.
 
-13. 求下列直线和双曲线的交点坐标:
+\item 求下列直线和双曲线的交点坐标:
 
 (1) \({2x} - y - {10} = 0,\;\frac{{x}^{2}}{20} - \frac{{y}^{2}}{5} = 1\) ;
 
 (2) \({4x} - {3y} - {16} = 0,\;\frac{{x}^{2}}{25} - \frac{{y}^{2}}{16} = 1\) .
 
-14. 证明椭圆 \(\frac{{x}^{2}}{20} + \frac{{y}^{2}}{5} = 1\) 与双曲线 \(\frac{{x}^{2}}{12} - \frac{{y}^{2}}{3} = 1\) 的交点是一矩形的顶点.
+\item 证明椭圆 \(\frac{{x}^{2}}{20} + \frac{{y}^{2}}{5} = 1\) 与双曲线 \(\frac{{x}^{2}}{12} - \frac{{y}^{2}}{3} = 1\) 的交点是一矩形的顶点.
 
-15. 求与定点 \(A\left( {5,0}\right)\) 及定直线 \(l : x = \frac{16}{5}\) 的距离比是 5:4 的点的轨迹方程.
+\item 求与定点 \(A\left( {5,0}\right)\) 及定直线 \(l : x = \frac{16}{5}\) 的距离比是 5:4 的点的轨迹方程.
 
-16. \(\bigtriangleup {ABC}\) 一边的两个端点是 \(B\left( {0,6}\right)\) 和 \(C\left( {0, - 6}\right)\) ,另两边斜率的积是 \(\frac{4}{9}\) ,求顶点 \(A\) 的轨迹.
+\item \(\bigtriangleup {ABC}\) 一边的两个端点是 \(B\left( {0,6}\right)\) 和 \(C\left( {0, - 6}\right)\) ,另两边斜率的积是 \(\frac{4}{9}\) ,求顶点 \(A\) 的轨迹.
 
-17. 判定当 \(\left( 1\right) k < 4;\left( 2\right) 4 < k < 9\) 时,方程 \(\frac{{x}^{2}}{9 - k} + \frac{{y}^{2}}{4 - k} = 1\) 分别表示什么曲线.
+\item 判定当 \(\left( 1\right) k < 4;\left( 2\right) 4 < k < 9\) 时,方程 \(\frac{{x}^{2}}{9 - k} + \frac{{y}^{2}}{4 - k} = 1\) 分别表示什么曲线.
 
-18. 当 \(\alpha\) 从 \({0}^{ \circ }\) 到 \({180}^{ \circ }\) 变化时,曲线 \({x}^{2} + {y}^{2}\cos \alpha = 1\) 怎样变化?
+\item 当 \(\alpha\) 从 \({0}^{ \circ }\) 到 \({180}^{ \circ }\) 变化时,曲线 \({x}^{2} + {y}^{2}\cos \alpha = 1\) 怎样变化?
+
+\end{problemset}
 
 \section*{五 抛 物 线}
 
-\section*{2.11 抛物线及其标准方程}
+\section{抛物线及其标准方程}
 
 我们知道, 与一个定点的距离和一条定直线的距离的比是常数 \(e\) 的点的轨迹,当 \(e < 1\) 时,是椭圆,当 \(e > 1\) 时,是双曲线. 那么,当 \(e = 1\) 时,它又是什么曲线?
 
@@ -4023,11 +4209,13 @@
   \therefore \;\sqrt{{\left( x - \frac{p}{2}\right) }^{2} + {y}^{2}} = \left| {x + \frac{p}{2}}\right| \text{. }
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_109_844881.jpg}
-\end{center}
+  \caption{图 2-26}
+\end{figure}
 
-图 2-26
+
 
 将上式两边平方, 并化简得
 
@@ -4077,17 +4265,21 @@
 
 3. 过 \(O\text{、}{A}_{1}\text{、}{A}_{2}\text{、}\cdots\) 作直线 \({OH}\text{、}{A}_{1}{A}_{1}^{\prime }\text{、}{A}_{2}{A}_{2}^{\prime }\text{、}\cdots\) 平行于 \({DA}\) , 交 \({AB}\) 于 \(H\text{、}{A}_{1}^{\prime }\text{、}{A}_{2}^{\prime }\text{、}\cdots\) . 连结 \(O{B}_{1}\text{、}O{B}_{2}\text{、}\cdots\) 分别交 \({A}_{1}{A}_{1}^{\prime }\text{、}{A}_{2}{A}_{2}^{\prime }\) 、 \(\cdots\) 于 \({P}_{1}\text{、}{P}_{2}\text{、}\cdots\) . 把 \(O\text{、}{P}_{1}\text{、}{P}_{2}\text{、}\cdots \text{、}A\) 各点连成光滑曲线,就得到拱形的一半.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_111_931321.jpg}
-\end{center}
+  \caption{图 2-27}
+\end{figure}
 
-图 2-27
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_111_586312.jpg}
-\end{center}
+  \caption{图 2-28}
+\end{figure}
 
-图 2-28
+
 
 4. 用同样方法画出另一半.
 
@@ -4107,11 +4299,11 @@
 
 这就是说,点 \({P}_{k}\) 的坐标 \(x\text{、}y\) 满足抛物线方程,所以所画的拱形是一段抛物线.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 根据抛物线的定义, 仿照椭圆和双曲线的画法, 利用直尺和圆规作点画出焦点到准线的距离等于 \(p\) 的抛物线.
+\item 根据抛物线的定义, 仿照椭圆和双曲线的画法, 利用直尺和圆规作点画出焦点到准线的距离等于 \(p\) 的抛物线.
 
-2. 根据下列所给的条件, 写出抛物线的标准方程:
+\item 根据下列所给的条件, 写出抛物线的标准方程:
 
 (1) 焦点是 \(F\left( {3,0}\right)\) ;
 
@@ -4119,13 +4311,15 @@
 
 (3) 焦点到准线的距离是 2 .
 
-3. 求下列抛物线的焦点坐标和准线方程:
+\item 求下列抛物线的焦点坐标和准线方程:
 
 (1) \({y}^{2} = {20x}\) ; (2) \({x}^{2} = \frac{1}{2}y\) ;
 
 (3) \(2{y}^{2} + {5x} = 0\) ; (4) \({x}^{2} + {8y} = 0\) .
 
-\section*{2. 12 抛物线的几何性质}
+\end{problemset}
+
+\section{抛物线的几何性质}
 
 我们根据抛物线的标准方程
 
@@ -4179,23 +4373,29 @@
 
 将已知方程变形为 \(y = \pm 2\sqrt{x}\) ,根据 \(y = 2\sqrt{x}\) 计算抛物线在第一象限内的几个点的坐标, 得
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.6\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_114_150048.jpg}
-\end{center}
+  \caption{图片}
+\end{figure}
 
 描点画出抛物线在第一象限内的一部分, 再利用对称性, 就可以画出抛物线的另一部分 (图 2-29).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_114_824804.jpg}
-\end{center}
+  \caption{图 2-29}
+\end{figure}
 
-图 2-29
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_114_351126.jpg}
-\end{center}
+  \caption{图 2-30}
+\end{figure}
 
-图 2-30
+
 
 例 2 探照灯 反射镜的纵断面是抛物线的一部分. 灯口直径是 \({60}\mathrm{\;{cm}}\) ,灯深 \({40}\mathrm{\;{cm}}\) . 求抛物线的标准方程和焦点的位置.
 
@@ -4215,9 +4415,9 @@
 
 所以抛物线的方程是 \({y}^{2} = \frac{45}{2}x\) ,焦点坐标是 \(\left( {\frac{45}{8},0}\right)\) .
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求适合下列条件的抛物线方程:
+\item 求适合下列条件的抛物线方程:
 
 （1）顶点在原点,关于 \(x\) 轴对称,并且经过点 \(M\left( {5, - 4}\right)\) ;
 
@@ -4227,79 +4427,91 @@
 
 （4）焦点是 \(F\left( {0, - 8}\right)\) ,准线是 \(y = 8\) .
 
-2. 一条隧道的顶部是抛物拱形, 拱高是 1.1 米, 跨度是 2.2 米. 求拱形的抛物线方程.
+\item 一条隧道的顶部是抛物拱形, 拱高是 1.1 米, 跨度是 2.2 米. 求拱形的抛物线方程.
 
-3. 证明: 与抛物线的轴平行的直线和抛物线只有一个交点.
+\item 证明: 与抛物线的轴平行的直线和抛物线只有一个交点.
 
-\section*{习 题 八}
+\end{problemset}
 
-1. 抛物线 \({y}^{2} = {2px}\left( {p > 0}\right)\) 上一点 \(M\) 到焦点的距离是 \(a\) \(\left( {a > \frac{p}{2}}\right)\) ,点 \(M\) 到准线的距离是多少? 点 \(M\) 的横坐标是多少?
+\begin{problemset}[习 题 八]
 
-2. 取经过焦点 \(F\) 且垂直于准线 \(l\) 的直线为 \(y\) 轴,推导抛物线的标准方程.
+\item 抛物线 \({y}^{2} = {2px}\left( {p > 0}\right)\) 上一点 \(M\) 到焦点的距离是 \(a\) \(\left( {a > \frac{p}{2}}\right)\) ,点 \(M\) 到准线的距离是多少? 点 \(M\) 的横坐标是多少?
 
-3. 求下列抛物线的焦点坐标和准线方程:
+\item 取经过焦点 \(F\) 且垂直于准线 \(l\) 的直线为 \(y\) 轴,推导抛物线的标准方程.
+
+\item 求下列抛物线的焦点坐标和准线方程:
 
 (1) \({x}^{2} = {2y}\) ; (2) \(4{x}^{2} + {3y} = 0\) ;
 
 (3) \(2{y}^{2} + {5x} = 0\) ; (4) \({y}^{2} - {6x} = 0\) .
 
-4. 根据下列条件, 求抛物线的方程, 并描点画出图形:
+\item 根据下列条件, 求抛物线的方程, 并描点画出图形:
 
 （1）顶点在原点,对称轴是 \(x\) 轴,并且顶点与焦点的距离等于6;
 
 （2）顶点在原点,对称轴是 \(y\) 轴,并经过点 \(P\left( {-6, - 3}\right)\) .
 
-5. 经过抛物线 \({y}^{2} = {2px}\) 的焦点 \(F\) ,作一条直线垂直于它的对称轴,和抛物线相交于 \({P}_{1}\text{、}{P}_{2}\) 两点,线段 \({P}_{1}{P}_{2}\) 叫做抛物线的通径. 求通径 \({P}_{1}{P}_{2}\) 的长.
+\item 经过抛物线 \({y}^{2} = {2px}\) 的焦点 \(F\) ,作一条直线垂直于它的对称轴,和抛物线相交于 \({P}_{1}\text{、}{P}_{2}\) 两点,线段 \({P}_{1}{P}_{2}\) 叫做抛物线的通径. 求通径 \({P}_{1}{P}_{2}\) 的长.
 
-6. 在抛物线 \({y}^{2} = {12x}\) 上,求和焦点的距离等于 9 的点的坐标.
+\item 在抛物线 \({y}^{2} = {12x}\) 上,求和焦点的距离等于 9 的点的坐标.
 
-7. 有一正三角形的两个顶点在抛物线 \({y}^{2} = {2px}\) 上,另一顶点在原点. 求这个三角形的边长.
+\item 有一正三角形的两个顶点在抛物线 \({y}^{2} = {2px}\) 上,另一顶点在原点. 求这个三角形的边长.
 
-8. 过抛物线 \({y}^{2} = {2px}\) 的焦点的一条直线和这抛物线相交,两个交点的纵坐标为 \({y}_{1}\text{、}{y}_{2}\) . 求证: \({y}_{1}{y}_{2} = - {p}^{2}\) .
+\item 过抛物线 \({y}^{2} = {2px}\) 的焦点的一条直线和这抛物线相交,两个交点的纵坐标为 \({y}_{1}\text{、}{y}_{2}\) . 求证: \({y}_{1}{y}_{2} = - {p}^{2}\) .
 
-9. 吊车梁的鱼腹部分 \({AOB}\) 是一段抛物线,宽为 7 米,高为 0.7 米, 求这条抛物线的方程。
+\item 吊车梁的鱼腹部分 \({AOB}\) 是一段抛物线,宽为 7 米,高为 0.7 米, 求这条抛物线的方程。
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_116_689484.jpg}
-\end{center}
+  \caption{(第 9 题)}
+\end{figure}
 
-(第 9 题)
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_116_944899.jpg}
-\end{center}
+  \caption{(第10题)}
+\end{figure}
 
-(第10题)
 
-10. 图中是抛物线形拱桥,当水面在 \(l\) 时,拱顶离水面 2 米, 水面宽 4 米. 水下降 1 米后, 水面宽多少?
 
-11. 抛物线的顶点是双曲线 \({16}{x}^{2} - 9{y}^{2} = {144}\) 的中心,而焦点是双曲线的左顶点. 求抛物线的方程.
+\item 图中是抛物线形拱桥,当水面在 \(l\) 时,拱顶离水面 2 米, 水面宽 4 米. 水下降 1 米后, 水面宽多少?
 
-12. 已知两抛物线的顶点在原点,而焦点分别在点 \({F}_{1}\left( {2,0}\right)\) 和点 \({F}_{2}\left( {0,2}\right)\) . 求它们的交点.
+\item 抛物线的顶点是双曲线 \({16}{x}^{2} - 9{y}^{2} = {144}\) 的中心,而焦点是双曲线的左顶点. 求抛物线的方程.
 
-13. 过抛物线焦点的一条直线与它交于两点 \(P\text{、}{Q}_{8}\) . 通过点 \(P\)
+\item 已知两抛物线的顶点在原点,而焦点分别在点 \({F}_{1}\left( {2,0}\right)\) 和点 \({F}_{2}\left( {0,2}\right)\) . 求它们的交点.
+
+\item 过抛物线焦点的一条直线与它交于两点 \(P\text{、}{Q}_{8}\) . 通过点 \(P\)
 
 和抛物线顶点的直线交准线于点 \(M\) ,求证: 直线 \({MQ}\) 平行于抛物线的对称轴.
 
-14. 点 \(M\) 与点 \(F\left( {4,0}\right)\) 的距离比它到直线 \(x + 5 = 0\) 的距离小 1,求点 \(M\) 的轨迹方程,并且画出图形.
+\item 点 \(M\) 与点 \(F\left( {4,0}\right)\) 的距离比它到直线 \(x + 5 = 0\) 的距离小 1,求点 \(M\) 的轨迹方程,并且画出图形.
 
-\section*{*2. 13 圆锥曲线的切线和法线}
+\end{problemset}
+
+\section{*圆锥曲线的切线和法线}
 
 圆、椭圆、双曲线和抛物线统称圆锥曲线. 圆锥曲线的切线和法线的性质, 在光学上有很多应用. 为了研究它们的性质, 我们来研究什么叫圆锥曲线的切线和法线, 并求出它们的方程.
 
 设直线 \({l}^{\prime }\) 与圆锥曲线相交于 \(P\text{、}Q\) 两点 (图 2-31). 将直线 \({l}^{\prime }\) 绕点 \(P\) 旋转,使点 \(Q\) 逐渐靠近点 \(P\) ,当 \({l}^{\prime }\) 转到直线 \(l\) 的位置时,点 \(Q\) 与点 \(P\) 重合,这时,直线 \(l\) 叫做圆锥曲线在点 \(P\) 的切线, \(P\) 叫切点. 经过点 \(P\) 与切线垂直的直线叫做圆锥曲线在点 \(P\) 的法线.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_117_209153.jpg}
-\end{center}
+  \caption{图 2-31}
+\end{figure}
 
-图 2-31
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_117_627681.jpg}
-\end{center}
+  \caption{图 2-32}
+\end{figure}
 
-图 2-32
+
 
 根据圆锥曲线切线的定义, 先求抛物线的切线方程.
 
@@ -4537,11 +4749,13 @@
 
 例 4 如图 2-33,设 \(F\) 是抛物线的焦点, \(M\) 是抛物线上的任一点, \({MT}\) 是抛物线在点 \(M\) 的切线, \({MN}\) 是法线, \({ME}\) 是平行于抛物线的轴的直线. 求证: 法线 \({MN}\) 必平分 \(\angle {FME}\) , 即 \({\varphi }_{1} = {\varphi }_{2}\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_122_544824.jpg}
-\end{center}
+  \caption{图 2-33}
+\end{figure}
 
-图 2-33
+
 
 证明: 取坐标系如图 2-33. 这时, 抛物线方程为
 
@@ -4569,17 +4783,21 @@
   \left| {FM}\right| = {x}_{0} + \frac{p}{2}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_123_742628.jpg}
-\end{center}
+  \caption{图 2-34}
+\end{figure}
 
-图 2-34
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_123_478254.jpg}
-\end{center}
+  \caption{图 2-35}
+\end{figure}
 
-图 2-35
+
 
 所以
 
@@ -4599,15 +4817,17 @@
 
 椭圆和双曲线也有类似的光学性质, 不过, 在旋转椭圆面的一个焦点发出的光线投射到曲面上, 经过曲面反射后, 都通过另一个焦点; 而在旋转双曲面的一个焦点发出的光线投射到曲面上, 经过曲面反射, 会使光线散开, 而且这些光线就好象是从另一个焦点发出的一样 (图 2-36). 利用这些性质, 可以制造电影放映机上的聚光灯的反射镜面和反射式望远镜中的反射镜等.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.6\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_124_448954.jpg}
-\end{center}
+  \caption{图 2-36}
+\end{figure}
 
-图 2-36
 
-\section*{练 习}
 
-1. 已知下列曲线上一点的坐标, 求在这点的切线和法线方程:
+\begin{problemset}[练习]
+
+\item 已知下列曲线上一点的坐标, 求在这点的切线和法线方程:
 
 (1) \({y}^{2} - {2x} = 0,\;\left( {{18}, - 6}\right)\) ;
 
@@ -4615,35 +4835,39 @@
 
 (3) \(\frac{{x}^{2}}{18} - \frac{{y}^{2}}{4} = 1,\;\left( {6,2}\right)\) .
 
-2. 过点 \(P\left( {-3,5}\right)\) 作抛物线 \({y}^{2} = {8x}\) 的切线. 求切线的方程。
+\item 过点 \(P\left( {-3,5}\right)\) 作抛物线 \({y}^{2} = {8x}\) 的切线. 求切线的方程。
 
-\section*{习 题 九}
+\end{problemset}
 
-1. 求下列曲线在已知点的切线的斜率:
+\begin{problemset}[习 题 九]
+
+\item 求下列曲线在已知点的切线的斜率:
 
 (1) \({y}^{2} = {10x},\;P\left( {{3.6},6}\right)\) ;
 
 (2) \({x}^{2} - {y}^{2} = 1,Q\left( {2, - \sqrt{3}}\right)\) .
 
-2. 求经过点 \(P\left( {-2, - 1}\right)\) 的椭圆 \(5{x}^{2} + {y}^{2} = 5\) 的切线方程.
+\item 求经过点 \(P\left( {-2, - 1}\right)\) 的椭圆 \(5{x}^{2} + {y}^{2} = 5\) 的切线方程.
 
-3. 已知双曲线 \(\frac{{x}^{2}}{10} - \frac{{y}^{2}}{6} = 1\) 的一条切线的斜率等于 2 . 求这条切线的方程.
+\item 已知双曲线 \(\frac{{x}^{2}}{10} - \frac{{y}^{2}}{6} = 1\) 的一条切线的斜率等于 2 . 求这条切线的方程.
 
-4. 双曲线 \(\frac{{x}^{2}}{4} - \frac{{y}^{2}}{5} = 1\) 的切线平行于直线 \({3x} - {2y} = 0\) ,求切线的方程.
+\item 双曲线 \(\frac{{x}^{2}}{4} - \frac{{y}^{2}}{5} = 1\) 的切线平行于直线 \({3x} - {2y} = 0\) ,求切线的方程.
 
-5. \(k\) 为何值时,直线 \({kx} - y - 1 = 0\) 与抛物线 \({x}^{2} = {4y}\left( 1\right)\) 相交; (2) 相切; (3) 相离?
+\item \(k\) 为何值时,直线 \({kx} - y - 1 = 0\) 与抛物线 \({x}^{2} = {4y}\left( 1\right)\) 相交; (2) 相切; (3) 相离?
 
-6. 已知经过抛物线 \({y}^{2} = {2px}\) 上两点 \({P}_{1}\left( {{x}_{1},{y}_{1}}\right)\) 和 \({P}_{2}\left( {{x}_{2},{y}_{2}}\right)\) 的两条切线相交于点 \(M\left( {{x}_{0},{y}_{0}}\right)\) . 求证: \({x}_{0} = \frac{{y}_{1}{y}_{2}}{2p}\) , \({y}_{0} = \frac{{y}_{1} + {y}_{2}}{2}\)
+\item 已知经过抛物线 \({y}^{2} = {2px}\) 上两点 \({P}_{1}\left( {{x}_{1},{y}_{1}}\right)\) 和 \({P}_{2}\left( {{x}_{2},{y}_{2}}\right)\) 的两条切线相交于点 \(M\left( {{x}_{0},{y}_{0}}\right)\) . 求证: \({x}_{0} = \frac{{y}_{1}{y}_{2}}{2p}\) , \({y}_{0} = \frac{{y}_{1} + {y}_{2}}{2}\)
 
-7. 求抛物线 \({y}^{2} = {9x}\) 和圆 \({x}^{2} + {y}^{2} = {36}\) 在交点处的切线方程, 并求出这两条切线的夹角.
+\item 求抛物线 \({y}^{2} = {9x}\) 和圆 \({x}^{2} + {y}^{2} = {36}\) 在交点处的切线方程, 并求出这两条切线的夹角.
 
-8. 椭圆 \({x}^{2} + 4{y}^{2} = 4\) 的一条切线经过点 \(P\left( {-\sqrt{2},\frac{\sqrt{2}}{2}}\right)\) ,求焦点到这条切线的距离.
+\item 椭圆 \({x}^{2} + 4{y}^{2} = 4\) 的一条切线经过点 \(P\left( {-\sqrt{2},\frac{\sqrt{2}}{2}}\right)\) ,求焦点到这条切线的距离.
 
-9. 防空探照灯的反射镜与过轴的截面的交线是一条抛物线. 已知灯 \(\mu\) 直径是 \({2000}\mathrm{\;{mm}}\) ,深度是 \({800}\mathrm{\;{mm}}\) . 光源应放在什么位置?
+\item 防空探照灯的反射镜与过轴的截面的交线是一条抛物线. 已知灯 \(\mu\) 直径是 \({2000}\mathrm{\;{mm}}\) ,深度是 \({800}\mathrm{\;{mm}}\) . 光源应放在什么位置?
 
-10. 有一条光线从抛物线 \({y}^{2} = {4x}\) 的焦点射出,射到抛物线上的点 \(P\left( {9,6}\right)\) ,求入射光线和反射光线所在的直线的方程.
+\item 有一条光线从抛物线 \({y}^{2} = {4x}\) 的焦点射出,射到抛物线上的点 \(P\left( {9,6}\right)\) ,求入射光线和反射光线所在的直线的方程.
+\end{problemset}
 
-\section*{小 结}
+\chapter*{小 结}
+\markboth{小 结}{小 结}
 
 一、本章在第一章直线方程的基础上, 研究了直角坐标系中曲线和方程之间的一一对应关系, 然后根据所求曲线的定义, 得出了几种圆锥曲线的方程, 并通过方程讨论了圆、椭圆、双曲线和抛物线的性质及应用.
 
@@ -4701,23 +4925,28 @@
 
 （3）从天体运行的轨道看: 天体运动的轨道是这四种曲线, 例如, 人造卫星、行星、彗星等由于运动的速度的不同, 它们的轨道是圆、椭圆、抛物线或双曲线 (图 2-37).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_128_103138.jpg}
-\end{center}
+  \caption{图 2-37}
+\end{figure}
 
-图 2-37
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_128_628194.jpg}
-\end{center}
+  \caption{图 2-38}
+\end{figure}
 
-图 2-38
+
 
 （4）四种曲线又可以看作不同的平面截圆锥面所得到的截线, 如图 2-38. 因此, 它们又统称圆锥曲线.
 
 *六、圆锥曲线的切线定义和切线方程的求法, 都是初等的. 要注意这个方法不完全适用于一般曲线. 一般曲线的切线定义和切线方程的求法, 将在高中三年级的微积分课程中学习.
 
-\section*{复习参考题二}
+\chapter*{复习参考题二}
+\markboth{复习参考题二}{复习参考题二}
 
 \section*{A 组}
 
@@ -4763,11 +4992,13 @@
 
 12. 如图,从椭圆上一点 \(P\) 向 \(x\) 轴作垂线, 恰好通过椭圆的一个焦点, 这时椭圆的长轴的端点 \(A\) 和短轴的端点 \(B\) 的连线平行于 \({OP}\) . 求椭圆的离心率.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_130_291818.jpg}
-\end{center}
+  \caption{(第 12 题)}
+\end{figure}
 
-(第 12 题)
+
 
 13. 已知中心在原点的双曲线的一个焦点是 \({F}_{1}\left( {-4,0}\right)\) ,一条渐近线的方程是 \({3x} - {2y} = 0\) . 求双曲线的方程.
 
@@ -4813,19 +5044,21 @@
 
 *29. 点 \(P\) 与两定点 \({F}_{1}\left( {-a,0}\right) \text{、}{F}_{2}\left( {a,0}\right)\) 连线的斜率的乘积是常数 \(k\) ,求点 \(P\) 的轨迹方程. 讨论当 \(k\) 的值变化时,轨迹都是什么曲线, 并在同一坐标系中画出它们的图形.
 
-\section*{第三章 坐 标 变 换}
+\chapter{坐 标 变 换}
 
 \section*{一 平移和旋转}
 
-\section*{3. 1 坐标轴的平移}
+\section{坐标轴的平移}
 
 点的坐标和曲线的方程是对一定的坐标系来说的. 例如, 图 3-1 中 \(\odot {O}^{\prime }\) 的圆心 \({O}^{\prime }\) ,在坐标系 \({xOy}\) 中的坐标是 \(\left( {3,2}\right)\) , \(\odot {O}^{\prime }\) 的方程是 \({\left( x - 3\right) }^{2} + {\left( y - 2\right) }^{2} = {5}^{2}\) ; 如果取坐标系 \({x}^{\prime }{O}^{\prime }{y}^{\prime }\) \(\left( {{O}^{\prime }{x}^{\prime }//{Ox},{O}^{\prime }{y}^{\prime }//{Oy}}\right)\) ,那么在这个坐标系中, 它们就分别变成 \(\left( {0,0}\right)\) 和 \({x}^{\prime 2} + {y}^{\prime 2} = {5}^{2}\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_133_858738.jpg}
-\end{center}
+  \caption{图 3-1}
+\end{figure}
 
-图 3-1
+
 
 这就是说, 对于同一点或者同一曲线, 由于选取的坐标系不同, 点的坐标或曲线的方程也不同. 从上面例子我们看出, 把一个坐标系变换为另一个适当的坐标系, 可以使曲线的方程简化, 便于我们研究曲线的性质.
 
@@ -4851,11 +5084,13 @@
   = k + {y}^{\prime }\text{. }
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_134_803889.jpg}
-\end{center}
+  \caption{图 3-2}
+\end{figure}
 
-图 3-2
+
 
 因此,点 \(M\) 的原坐标、新坐标之间, 有下面的关系:
 
@@ -4873,11 +5108,13 @@
 
 例 1 平移坐标轴, 把原点移到 \({O}^{\prime }\left( {3, - 4}\right)\) (图 3-3),求下列各点的新坐标: \(O\left( {0,0}\right)\) 、 \(A\left( {3, - 4}\right) \text{、}B\left( {5,2}\right) \text{、}C\left( {3, - 2}\right)\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_134_527625.jpg}
-\end{center}
+  \caption{图 3-3}
+\end{figure}
 
-图 3-3
+
 
 解: 把已知各点的原坐标分别代入
 
@@ -4907,11 +5144,13 @@
 
 代入原方程, 就得到新方程:
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_135_995645.jpg}
-\end{center}
+  \caption{图 3-4}
+\end{figure}
 
-图 3-4
+
 
 (1) \({x}^{\prime } = 0\) ;
 
@@ -4921,17 +5160,19 @@
 
 新坐标轴和曲线如图 3-4.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 平移坐标轴,把原点移到 \({O}^{\prime }\left( {4,5}\right)\) . 求下列各点的新坐标, 并画出新坐标轴和各点:
+\item 平移坐标轴,把原点移到 \({O}^{\prime }\left( {4,5}\right)\) . 求下列各点的新坐标, 并画出新坐标轴和各点:
 
 \[
   A\left( {3, - 6}\right) \text{、}B\left( {7,0}\right) \text{、}C\left( {-4,5}\right) \text{、}D\left( {0, - 8}\right) .
 \]
 
-2. 平移坐标轴,把原点移到 \({O}^{\prime }\left( {2, - 3}\right)\) . 求 \({x}^{2} + {y}^{2} - {4x} + {6y}\) \(- 3 = 0\) 在新坐标系中的方程,并画出新坐标轴和图形.
+\item 平移坐标轴,把原点移到 \({O}^{\prime }\left( {2, - 3}\right)\) . 求 \({x}^{2} + {y}^{2} - {4x} + {6y}\) \(- 3 = 0\) 在新坐标系中的方程,并画出新坐标轴和图形.
 
-\section*{3.2 利用坐标轴的平移化简二元二次方程}
+\end{problemset}
+
+\section{利用坐标轴的平移化简二元二次方程}
 
 在前一节我们已看到, 适当地平移坐标轴可以化简曲线的方程. 现在, 我们研究如何选择新坐标系来化简方程. 先看下面例子。
 
@@ -4969,11 +5210,13 @@
     {2k} + {14} = 0\text{.}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_136_802845.jpg}
-\end{center}
+  \caption{图 3-5}
+\end{figure}
 
-图 3-5
+
 
 解得 \(h = - 4,k = - 7\) . 代入方程 (1), 得
 
@@ -5029,23 +5272,27 @@
 
 因此,二次函数 \(y = a{x}^{2} + {bx} + c\) 的图形是以 \({O}^{\prime }\left( {-\frac{b}{2a}}\right.\) , \(\left. \frac{{4ac} - {b}^{2}}{4a}\right)\) 为顶点,对称轴平行于 \(y\) 轴的抛物线. 当 \(a > 0\) 时, 开口向上; 当 \(a < 0\) 时,开口向下. 图形如图 3-6.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.6\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_137_787676.jpg}
-\end{center}
+  \caption{图 3-6}
+\end{figure}
 
-图 3-6
+
 
 注意,在初中研究二次函数 \(y = a{x}^{2} + {bx} + c\) 的图象时,为使画图方便,我们是先画 \(y = a{x}^{2}\) 的图象,然后将图象平移,使它的顶点移到 \({O}^{\prime }\left( {-\frac{b}{2a},\frac{{4ac} - {b}^{2}}{4a}}\right)\) ,得到 \(y = a{x}^{2} + {bx} + c\) 的图象. 现在正好相反, 在利用坐标法研究图形性质时, 为使方程简单,不移动图形,而是把坐标原点移到 \({O}^{\prime }\left( {-\frac{b}{2a},\frac{{4ac} - {b}^{2}}{4a}}\right)\) , 得到新方程 \({y}^{\prime } = a{x}^{\prime 2}\) ,从而容易知道它的性质.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 经过怎样的平移变换,可以把方程 \({x}^{2} + {y}^{2} - {6x} + {12y} - 4\) \(= 0\) 化为没有一次项的新方程?
+\item 经过怎样的平移变换,可以把方程 \({x}^{2} + {y}^{2} - {6x} + {12y} - 4\) \(= 0\) 化为没有一次项的新方程?
 
-2. 化简方程 \(y = \frac{1}{2}{x}^{2} + x + \frac{5}{2}\) ,并画出它的图形.
+\item 化简方程 \(y = \frac{1}{2}{x}^{2} + x + \frac{5}{2}\) ,并画出它的图形.
 
-\section*{习 题 十}
+\end{problemset}
 
-1. (1) 平移坐标轴, 把原点分别移到何处, 点的坐标变化如下:
+\begin{problemset}[习 题 十]
+
+\item (1) 平移坐标轴, 把原点分别移到何处, 点的坐标变化如下:
 
 \[
   A\left( {1,0}\right) \rightarrow A\left( {4,3}\right) ;B\left( {2,4}\right) \rightarrow B\left( {2, - 3}\right) .
@@ -5053,7 +5300,7 @@
 
 （2）经过坐标轴平移,把原点移到 \({O}^{\prime }\left( {3, - 2}\right)\) 后, \(A\text{、}B\text{、}C\) 、 \(D\) 各点的新坐标分别是 \(\left( {0,2}\right) \text{、}\left( {-3,0}\right) \text{、}\left( {-1,3}\right)\) 、 \(\left( {1,1}\right)\) ,求它们的原坐标,并画出新坐标轴和各点.
 
-2. 平移坐标轴,把原点移到 \({O}^{\prime }\) ,求下列各曲线的新方程,并画出新坐标轴和图形.
+\item 平移坐标轴,把原点移到 \({O}^{\prime }\) ,求下列各曲线的新方程,并画出新坐标轴和图形.
 
 (1) \(y = 3,{O}^{\prime }\left( {-2,1}\right)\) ;
 
@@ -5063,7 +5310,7 @@
 
 (4) \({x}^{2} + {6x} - y + {11} = 0,{O}^{\prime }\left( {-3,2}\right)\) .
 
-3. 平移坐标轴化简方程:
+\item 平移坐标轴化简方程:
 
 (1) \({x}^{2} + {y}^{2} + {4x} + {8y} - 5 = 0\) ;
 
@@ -5073,7 +5320,7 @@
 
 (4) \({x}^{2} - {4x} - y + 5 = 0\) .
 
-4. 求下列各曲线的焦点坐标和对称轴方程:
+\item 求下列各曲线的焦点坐标和对称轴方程:
 
 (1) \(2{x}^{2} + {y}^{2} - {4x} - {2y} = 0\) ;
 
@@ -5081,7 +5328,7 @@
 
 (3) \({x}^{2} - {4x} + {4y} = 0\) .
 
-5. 求适合下列条件的曲线方程:
+\item 求适合下列条件的曲线方程:
 
 （1）中心为 \({O}^{\prime }\left( {-2,1}\right)\) ,长半轴长为 10,焦距为 12,焦点在平行于 \(x\) 轴的直线上的椭圆;
 
@@ -5089,7 +5336,9 @@
 
 （3）焦点是 \(F\left( {3, - 3}\right)\) ,准线是 \(y = 1\) 的抛物线.
 
-\section*{*3. 3 坐标轴的旋转}
+\end{problemset}
+
+\section{* 坐标轴的旋转}
 
 前面我们学过坐标轴的平移. 现在来讨论坐标轴旋转时, 同一点的坐标间的关系.
 
@@ -5109,11 +5358,13 @@
     {y}^{\prime } = \left| {OM}\right| \sin \alpha \text{.}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_140_958258.jpg}
-\end{center}
+  \caption{图 3-7}
+\end{figure}
 
-图 3-7
+
 
 所以
 
@@ -5219,11 +5470,13 @@
   + {\left( \frac{\sqrt{3}}{2}{x}^{\prime } + \frac{1}{2}{y}^{\prime }\right) }^{2} = {10}.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_142_291960.jpg}
-\end{center}
+  \caption{图 3-8}
+\end{figure}
 
-图 3-8
+
 
 化简, 得标准方程
 
@@ -5233,13 +5486,13 @@
 
 它是一个椭圆, 画出图形如图 3-8.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 设旋转角 \(\theta = - \frac{\pi }{4}\) ,求新坐标系中的两点 \(A\left( {-3,2}\right) ,B(1\) , 0) 在原坐标系的坐标.
+\item 设旋转角 \(\theta = - \frac{\pi }{4}\) ,求新坐标系中的两点 \(A\left( {-3,2}\right) ,B(1\) , 0) 在原坐标系的坐标.
 
-2. 设旋转角 \(\theta = \frac{\pi }{6}\) ,求原坐标系中的两点 \(C\left( {2, - 1}\right) ,D\left( {0,1}\right)\) 在新坐标系的坐标.
+\item 设旋转角 \(\theta = \frac{\pi }{6}\) ,求原坐标系中的两点 \(C\left( {2, - 1}\right) ,D\left( {0,1}\right)\) 在新坐标系的坐标.
 
-3. 按所给的角 \(\theta\) 旋转坐标轴,变换下列各方程:
+\item 按所给的角 \(\theta\) 旋转坐标轴,变换下列各方程:
 
 (1) \(x + y = 0,\;\left( {\theta = \frac{\pi }{4}}\right)\) ;
 
@@ -5249,7 +5502,9 @@
 
 (4) \({x}^{2} - 2\sqrt{3}{xy} + 3{y}^{2} = 8,\;\left( {\theta = - \frac{\pi }{3}}\right)\) .
 
-\section*{*3. 4 利用坐标轴的旋转化简二元二次方程}
+\end{problemset}
+
+\section{* 利用坐标轴的旋转化简二元二次方程}
 
 从上一节的例 2 我们看到, 把坐标轴旋转一个适当的角度, 可以化简二元二次方程
 
@@ -5349,7 +5604,7 @@
   \cos \theta = \sqrt{\frac{1 - \frac{1}{2}}{2}} = \frac{1}{2}
 \]
 
-\section*{这样就可直接写出旋转公式}
+这样就可直接写出旋转公式
 
 \[
   x = \frac{1}{2}{x}^{\prime } - \frac{\sqrt{3}}{2}{y}^{\prime },
@@ -5411,11 +5666,13 @@
   \frac{{x}^{\prime 2}}{\frac{11}{3}} + \frac{{y}^{\prime 2}}{22} = 1
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_146_713854.jpg}
-\end{center}
+  \caption{图 3-9}
+\end{figure}
 
-图 3-9
+
 
 根据 \(\sin \theta = \frac{2}{\sqrt{5}}\) ,得旋转角 \(\theta \approx {63}^{ \circ }{26}^{\prime }\) . 方程表示的曲线是长轴长是 \(2\sqrt{22}\) ,短轴长是 \(\frac{2}{3}\sqrt{33}\) 的椭圆. 画出图形, 如图 3-9.
 
@@ -5465,37 +5722,42 @@
     {x}^{\prime 2} + 2{y}^{\prime } = 0\text{. }
 \]
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-化简下列方程, 并画图形:
+\item 化简下列方程, 并画图形:
 
 (1) \({x}^{2} - {2xy} + {y}^{2} = {12}\) ;
 
 (2) \(4{x}^{2} + {8xy} - 2{y}^{2} - 7 = 0\) .
 
-\section*{*习 题 十一}
+\end{problemset}
 
-1. 把点 \(A\left( {4,3}\right)\) 的坐标变成 \(\left( {3,4}\right)\) ,坐标轴应旋转多大角度?
 
-2. 坐标轴旋转多大角度,才能使点 \(M\left( {1,2 + \sqrt{3}}\right)\) 的横、纵坐标相等? 求出点 \(M\) 的新坐标.
+\begin{problemset}[习题十一]
 
-3. 将坐标轴旋转 \(\frac{\pi }{3}\) 后,点 \(M\) 的坐标变为 \(\left( {1,2}\right)\) . 求点 \(M\) 在原坐标系的坐标.
+\item 把点 \(A\left( {4,3}\right)\) 的坐标变成 \(\left( {3,4}\right)\) ,坐标轴应旋转多大角度?
 
-4. 将坐标轴旋转 \(- \frac{\pi }{2}\) ,求椭圆 \({x}^{2} + \frac{{y}^{2}}{2} = 1\) 在新坐标系中的方程.
+\item 坐标轴旋转多大角度,才能使点 \(M\left( {1,2 + \sqrt{3}}\right)\) 的横、纵坐标相等? 求出点 \(M\) 的新坐标.
 
-5. 将坐标轴旋转 \(\frac{\pi }{2}\) ,求抛物线 \({y}^{2} = {2px}\) 在新坐标系中的方程.
+\item 将坐标轴旋转 \(\frac{\pi }{3}\) 后,点 \(M\) 的坐标变为 \(\left( {1,2}\right)\) . 求点 \(M\) 在原坐标系的坐标.
 
-6. 证明: 不论坐标轴旋转多大角度,方程 \({x}^{2} + {y}^{2} = {r}^{2}\) 的形式不变.
+\item 将坐标轴旋转 \(- \frac{\pi }{2}\) ,求椭圆 \({x}^{2} + \frac{{y}^{2}}{2} = 1\) 在新坐标系中的方程.
 
-7. 利用坐标轴旋转, 化简下列方程, 并画出图形:
+\item 将坐标轴旋转 \(\frac{\pi }{2}\) ,求抛物线 \({y}^{2} = {2px}\) 在新坐标系中的方程.
+
+\item 证明: 不论坐标轴旋转多大角度,方程 \({x}^{2} + {y}^{2} = {r}^{2}\) 的形式不变.
+
+\item 利用坐标轴旋转, 化简下列方程, 并画出图形:
 
 (1) \({x}^{2} + {4xy} + {y}^{2} = {16}\) ;
 
 (2) \({21}{x}^{2} - {10}\sqrt{3}{xy} + {31}{y}^{2} = {144}\) .
 
+\end{problemset}
+
 \section*{*二 一般二元二次方程的讨论}
 
-\section*{3.5 化一般二元二次方程为标准式}
+\section{化一般二元二次方程为标准式}
 
 我们已经知道, 坐标轴旋转适当的角度, 可以化简二元二
 
@@ -5549,11 +5811,13 @@
     {y}^{\prime \prime } = {y}^{\prime } + \frac{\sqrt{2}}{2}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_149_308229.jpg}
-\end{center}
+  \caption{图 3-10}
+\end{figure}
 
-图 3-10
+
 
 代入上式得 \(2{x}^{\prime \prime 2} = \sqrt{2}{y}^{\prime \prime }\) ,即
 
@@ -5635,13 +5899,15 @@
 
 因为它们的斜率相等, 但截距不同, 所以方程表示两条平行直线.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 化简方程 \(3{x}^{2} - {10xy} + 3{y}^{2} + {26x} - {22y} + {35} = 0\) .
+\item 化简方程 \(3{x}^{2} - {10xy} + 3{y}^{2} + {26x} - {22y} + {35} = 0\) .
 
-2. 化简方程 \({4xy} - 3{x}^{2} + 4 = 0\) ,画出它的图形.
+\item 化简方程 \({4xy} - 3{x}^{2} + 4 = 0\) ,画出它的图形.
 
-\section*{3. 6 一般二元二次方程的讨论}
+\end{problemset}
+
+\section{一般二元二次方程的讨论}
 
 我们知道, 一般二元二次方程, 经过坐标轴的旋转和平移, 可以化成圆锥曲线的标准方程, 从而知道它所表示的曲线的形状和位置. 但是, 化简过程常常是很繁的. 现在, 我们研究一下化简前后方程的系数之间的关系, 找出直接由方程的系数判别方程类型的方法.
 
@@ -5871,9 +6137,9 @@
 
 所以这个方程的图形是一个点, 就是移轴后的坐标原点 \({O}^{\prime }\) . 对于原坐标系来说,方程的图形是点 \({O}^{\prime }\left( {1, - 2}\right)\) .
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-判别下列方程的类型:
+\item 判别下列方程的类型:
 
 1. \(3{x}^{2} - {7xy} + 5{y}^{2} + x - {3y} - 3 = 0\) ;
 
@@ -5883,19 +6149,21 @@
 
 4. \({x}^{2} + {2xy} + {y}^{2} + {2x} + {2y} - 4 = 0\) .
 
-\section*{习 题 十 二}
+\end{problemset}
 
-1. 化下列方程为标准形式, 并画出图形:
+\begin{problemset}[习 题 十 二]
+
+\item 化下列方程为标准形式, 并画出图形:
 
 (1) \(5{x}^{2} + {6xy} + 5{y}^{2} + {22x} - {6y} + {21} = 0\) ;
 
 (2) \(9{x}^{2} - {24xy} + {16}{y}^{2} - {20x} - {140y} + {200} = 0\) .
 
-2. 化简方程 \({x}^{2} - {2xy} + {y}^{2} = {12}\) ,并画出图形。
+\item 化简方程 \({x}^{2} - {2xy} + {y}^{2} = {12}\) ,并画出图形。
 
-3. 求双曲线 \({xy} = {32}\) 的顶点坐标.
+\item 求双曲线 \({xy} = {32}\) 的顶点坐标.
 
-4. 判别下列二次方程的类型:
+\item 判别下列二次方程的类型:
 
 (1) \({x}^{2} - {y}^{2} - {4x} - {2y} + 1 = 0\) ;
 
@@ -5907,11 +6175,11 @@
 
 (5) \(9{x}^{2} - {30xy} + {25}{y}^{2} + {8x} - {15y} = 0\) .
 
-5. 方程 \(2{x}^{2} + {\lambda xy} + 4{y}^{2} - {7x} + {\lambda }^{2}y + 3 = 0\) 中, \(\lambda\) 取什么值时,
+\item 方程 \(2{x}^{2} + {\lambda xy} + 4{y}^{2} - {7x} + {\lambda }^{2}y + 3 = 0\) 中, \(\lambda\) 取什么值时,
 
 方程是: (1) 椭圆型; (2) 双曲线型; (3) 抛物线型?
 
-6. 判断下列方程有没有中心, 如果有, 求出中心坐标:
+\item 判断下列方程有没有中心, 如果有, 求出中心坐标:
 
 (1) \(5{x}^{2} - {26xy} + 5{y}^{2} - {16x} - {16y} - {52} = 0\) ;
 
@@ -5921,7 +6189,10 @@
 
 (4) \({x}^{2} + {2xy} + {y}^{2} + {2x} + {2y} - 3 = 0\) .
 
-\section*{小 结}
+\end{problemset}
+
+\chapter*{小 结}
+\markboth{小 结}{小 结}
 
 一、坐标变换是解析几何的一种重要工具. 在本 章 里, 介绍了直角坐标系的坐标轴平移变换, 给出了变换公式, 并研究了利用移轴化简缺 \({xy}\) 项的二元二次方程. 作为选学内容, 介绍了坐标轴旋转变换, 利用移轴和转轴化简一般二元二次方程, 并通过对一般二元二次方程的讨论, 总结出利用判别式 \({B}^{2} - {4AC}\) 判别方程类型的一种方法.
 
@@ -5945,7 +6216,8 @@
 
 在一般情况下它表示一个圆. 因此确定一个圆的方程只要三个独立条件就够了.
 
-\section*{复习参考题三}
+\chapter*{复习参考题三}
+\markboth{复习参考题三}{复习参考题三}
 
 \section*{A 组}
 
@@ -6027,11 +6299,11 @@
 
 *17. 已知双曲线的两个焦点是 \({F}_{1}\left( {4, - 4}\right) \text{、}{F}_{2}\left( {-2,2}\right)\) ,两条渐近线互相垂直. 求双曲线的方程.
 
-\section*{第四章 参数方程、极坐标}
+\chapter{参数方程与极坐标}
 
 \section*{一 参 数 方 程}
 
-\section*{4.1 曲线的参数方程}
+\section{曲线的参数方程}
 
 前面我们所研究过的曲线方程 \(F\left( {x,y}\right) = 0\) ,都是表示曲线上任意一点 \(x\text{、}y\) 之间的直接关系的. 但是在解决某些问题时,对于曲线上任意点,它们的坐标 \(x\text{、}y\) 的这种关系往往不容易发现,而通过另一个变数间接地表示 \(x\text{、}y\) 之间的关系却比较方便. 下面我们看一个例子.
 
@@ -6045,11 +6317,13 @@
   \left\{ \begin{array}{l} x = {v}_{0}\cos \alpha \cdot t, \\ y = {v}_{0}\sin \alpha \cdot t - \frac{1}{2}g{t}^{2}, \end{array}\right. \tag{1}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_161_743039.jpg}
-\end{center}
+  \caption{图 4-1}
+\end{figure}
 
-图 4-1
+
 
 \(g\) 是重力加速度 (取 9.8 米/秒 \({}^{2}\) ).
 
@@ -6077,11 +6351,13 @@
   y = {NM} = \left| {OB}\right| \sin \phi .
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_163_552087.jpg}
-\end{center}
+  \caption{图 4-2}
+\end{figure}
 
-图 4-2
+
 
 也就是
 
@@ -6103,11 +6379,13 @@
 
 当 \(\overline{{M}_{0}M}\) 与 \(l\) 反方向时, \({M}_{0}M\text{、}{M}_{0}Q\text{、}{QM}\) 同时改变符号, 上式仍然成立.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_163_731859.jpg}
-\end{center}
+  \caption{图 4-3}
+\end{figure}
 
-图 4-3
+
 
 设 \({M}_{0}M = t\) ,取 \(t\) 为参数.
 
@@ -6133,21 +6411,25 @@
 
 这就是所求直线 \(l\) 的参数方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_164_216541.jpg}
-\end{center}
+  \caption{(第 1 题)}
+\end{figure}
 
-(第 1 题)
 
-\section*{练 习}
 
-1. 求半径为 \(r\) 、圆心在原点 \(O\) 的圆的参数方程.
+\begin{problemset}[练习]
+
+\item 求半径为 \(r\) 、圆心在原点 \(O\) 的圆的参数方程.
 
 (提示: 以 \(\phi\) 为参数,如图.)
 
-2. 已知一条直线上两点 \({M}_{1}\left( {{x}_{1},{y}_{1}}\right) \text{、}{M}_{2}\left( {{x}_{2},{y}_{2}}\right)\) ,以分点 \(M\) \(\left( {x,y}\right)\) 分 \(\overline{{M}_{1}{M}_{2}}\) 所成的比 \(\lambda\) 为参数,写出参数方程.
+\item 已知一条直线上两点 \({M}_{1}\left( {{x}_{1},{y}_{1}}\right) \text{、}{M}_{2}\left( {{x}_{2},{y}_{2}}\right)\) ,以分点 \(M\) \(\left( {x,y}\right)\) 分 \(\overline{{M}_{1}{M}_{2}}\) 所成的比 \(\lambda\) 为参数,写出参数方程.
 
-\section*{4.2 参数方程和普通方程的互化}
+\end{problemset}
+
+\section{参数方程和普通方程的互化}
 
 参数方程和普通方程是曲线方程的不同形式, 它们都是表示曲线上点的坐标之间关系的. 一般情况下, 我们可以通过消去参数方程中参数,得出直接表示 \(x\text{、}y\) 之间关系的普通方程; 也可以选择一个参数将普通方程变成参数方程的形式, 如果参数选择得适当, 方程可能比较简单或者较明显地反映出物理、几何意义.
 
@@ -6229,47 +6511,55 @@
 
 这就是经过点 \({P}_{0}\left( {{x}_{0},{y}_{0}}\right)\) ,倾斜角为 \(\alpha\) 的直线的参数方程.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 把下列参数方程 \(\left( {\phi \text{、}t\text{是参数}}\right)\) 化成普通方程,并说明它们各表示什么曲线:
+\item 把下列参数方程 \(\left( {\phi \text{、}t\text{是参数}}\right)\) 化成普通方程,并说明它们各表示什么曲线:
 
 (1) \(\left\{ \begin{array}{l} x = \cos \phi \\ y = \sin \phi \end{array}\right.\) (2) \(\left\{ {\begin{array}{l} x = {2p}{t}^{2}, \\ y = {2pt}; \end{array}\left( {p > 0}\right) }\right.\)
 
 (3) \(\left\{ \begin{array}{l} x = {x}_{1} + {at}, \\ y = {y}_{1} + {bt}. \end{array}\right.\)
 
-2. 根据所给条件, 把下列各方程化成参数方程:
+\item 根据所给条件, 把下列各方程化成参数方程:
 
 (1) \({xy} = {a}^{2}\) ,设 \(x = a\operatorname{tg}\phi ,\phi\) 是参数;
 
 (2) \(\frac{{x}^{2}}{{a}^{2}} - \frac{{y}^{2}}{{b}^{2}} = 1\) ,设 \(y = b\operatorname{tg}\phi ,\phi\) 是参数.
 
-\section*{4.3 圆的渐开线、*摆线}
+\end{problemset}
+
+\section{圆的渐开线、*摆线}
 
 一些机器零件常用某些特殊曲线作外形线. 例如, 大多
 
 数齿轮都采用渐开线齿形 (图 4-4), 也有采用摆线齿形或其他齿形的. 用渐开线齿形或摆线齿形的齿轮磨损少, 传动平稳, 具有省力、耐用和噪音小的特点. 这两种曲线用参数方程来表示比较方便. 下面我们来求这两种曲线的参数方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_167_367398.jpg}
-\end{center}
+  \caption{图 4-4}
+\end{figure}
 
-图 4-4
+
 
 \section*{1. 圆的渐开线}
 
 如图 4-5, 把一条没有弹性的细绳绕在一个固定的圆盘的侧面上, 将铅笔系在绳的外端, 把绳拉紧逐渐地展开(这时绳的拉直部分和圆保持相切), 铅笔所画出的曲线, 即绳的外端的轨迹叫做圆的渐开线. 这个圆叫做渐开线的基圆.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_167_188524.jpg}
-\end{center}
+  \caption{图 4-5}
+\end{figure}
 
-图 4-5
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.5\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_167_197390.jpg}
-\end{center}
+  \caption{图 4-6}
+\end{figure}
 
-图 4-6
+
 
 下面我们来推导圆的渐开线的参数方程.
 
@@ -6309,37 +6599,45 @@
   \left\{ \begin{array}{l} x = r\left( {\cos \phi + \phi \sin \phi }\right) \\ y = r\left( {\sin \phi - \phi \cos \phi }\right) \end{array}\right.
 \]
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-\begin{center}
+\item \begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_168_702682.jpg}
-\end{center}
+  \caption{(第 2 题)}
+\end{figure}
 
-(第 2 题)
 
-1. 将圆的渐开线中的基圆换为正方形就得到正方形的渐开线. 用刻度尺、圆规画出边长为 \(1\mathrm{\;{cm}}\) 的正方形的渐开 线.
 
-2. 如图, 有一标准的渐开线齿轮, 齿轮的齿廓线的基圆直径是 \({225}\mathrm{\;{mm}}\) ,求齿廓线 \({AB}\) 所在渐开线的参数方程.
+\item 将圆的渐开线中的基圆换为正方形就得到正方形的渐开线. 用刻度尺、圆规画出边长为 \(1\mathrm{\;{cm}}\) 的正方形的渐开 线.
+
+\item 如图, 有一标准的渐开线齿轮, 齿轮的齿廓线的基圆直径是 \({225}\mathrm{\;{mm}}\) ,求齿廓线 \({AB}\) 所在渐开线的参数方程.
+
+\end{problemset}
 
 \section*{*2. 摆线}
 
 一个圆沿着一条定直线滚动时,圆周上的一个定点 \(M\) 的轨迹叫做摆线, 又叫旋轮线 (图 4-7).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.7\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_169_676481.jpg}
-\end{center}
+  \caption{图 4-7}
+\end{figure}
 
-图 4-7
+
 
 下面我们求摆线的参数方程.
 
 设圆的半径为 \(a\) ,取圆滚动所沿的直线为 \(x\) 轴,圆上定点 \(M\) 落在直线上的一个位置为原点,建立直角坐标系 (图 4-8). 圆滚动 \(\phi\) 角后圆心在点 \(B\) ,并与 \(x\) 轴相切于点 \(A\) . 作 \({MD}\)
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.8\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_169_875701.jpg}
-\end{center}
+  \caption{图 4-8}
+\end{figure}
 
-图 4-8
+
 
 \(\bot {Ox},{MC} \bot {BA}\) ,垂足分别为 \(D\text{、}C\) . 用 \(\left( {x,y}\right)\) 表示点 \(M\) 的坐标,取 \(\phi\) 作参数,那么, \({OA}\) 的长等于 \(\overset{⏜}{MA}\) 的长,得
 
@@ -6361,31 +6659,37 @@
 
 摆线有一些重要的性质,例如,物体在重力作用下从点 \(A\) 滑落到点 \(B\) (无摩擦),物体滑落所需时间最短的路线,不是沿点 \(A\) 到点 \(B\) 的直线,而是沿从 \(A\) 到 \(B\) 的一段摆线,如图 4-9. 因此摆线又叫最速降线.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_170_643449.jpg}
-\end{center}
+  \caption{图 4-9}
+\end{figure}
 
-图 4-9
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_170_567819.jpg}
-\end{center}
+  \caption{图 4-10}
+\end{figure}
 
-图 4-10
+
 
 又如普通单摆的周期与振幅的大小有关. 如果在摆的摆动平面内做两个如图 4-10 那样的摆线形挡板; 在挡板的限制下, 单摆的周期就与振幅的大小无关了, 这时摆的运动轨迹也是一段摆线. 摆线的名称就是由这个性质得到的.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求摆线 \(\left\{ \begin{array}{l} x = \phi - \sin \phi , \\ y = 1 - \cos \phi \end{array}\right.\) 上 \({2\pi } \leq \phi \leq {4\pi }\) 这一段与直线
+\item 求摆线 \(\left\{ \begin{array}{l} x = \phi - \sin \phi , \\ y = 1 - \cos \phi \end{array}\right.\) 上 \({2\pi } \leq \phi \leq {4\pi }\) 这一段与直线
 
 \(y = \frac{3}{2}\) 的交点的坐标.
 
-2. 有一轮子, 沿着直线轨道滚动, 轮子的半径是 \(a\) ,在轮辐上有一点 \(M\) ,与轮子中心的距离是 \(b\left( {b < a}\right)\) . 点 \(M\) 的轨迹叫短摆线, 求它的参数方程.
+\item 有一轮子, 沿着直线轨道滚动, 轮子的半径是 \(a\) ,在轮辐上有一点 \(M\) ,与轮子中心的距离是 \(b\left( {b < a}\right)\) . 点 \(M\) 的轨迹叫短摆线, 求它的参数方程.
 
-\section*{习 题 十 三}
+\end{problemset}
 
-1. 已知弹道曲线的参数方程为
+\begin{problemset}[习 题 十 三]
+
+\item 已知弹道曲线的参数方程为
 
 \[
   \left\{ \begin{array}{l} x = {v}_{0}t\cos \alpha \\ y = {v}_{0}t\sin \alpha - \frac{1}{2}g{t}^{2} \end{array}\right.
@@ -6395,35 +6699,37 @@
 
 （2）设 \({v}_{0}\) 是定值, \(\alpha\) 可以变动. 求证: 当 \(\alpha = \frac{\pi }{4}\) 时射程最大.
 
-2. 把下列参数方程化成普通方程 (其中 \(t\text{、}\phi\) 是参数),并说明各表示什么曲线:
+\item 把下列参数方程化成普通方程 (其中 \(t\text{、}\phi\) 是参数),并说明各表示什么曲线:
 
 (1) \(\left\{ \begin{array}{l} x = 3 - {2t} \\ y = - 1 - {4t} \end{array}\right.\) (2) \(\left\{ \begin{array}{l} x = 4\cos \phi \\ y = 3\sin \phi \end{array}\right.\)
 
 (3) \(\left\{ \begin{array}{l} x = \frac{a}{2}\left( {t + \frac{1}{t}}\right) \\ y = \frac{b}{2}\left( {t - \frac{1}{t}}\right) \end{array}\right.\)
 
-3. 根据所给的条件,化下列方程成参数方程 \((t\) 和 \(\phi\) 是参数):
+\item 根据所给的条件,化下列方程成参数方程 \((t\) 和 \(\phi\) 是参数):
 
 (1) \({y}^{2} = 4{x}^{2} - 5{x}^{3},\;y = {tx}\) ;
 
 (2) \(4{x}^{2} + {y}^{2} - {16x} + {12} = 0,\;y = 2\sin \phi\) .
 
-4. 设 \(x = 2\cos \phi ,\phi\) 是参数,求椭圆 \(4{x}^{2} + {y}^{2} = {16}\) 的参数方程.
+\item 设 \(x = 2\cos \phi ,\phi\) 是参数,求椭圆 \(4{x}^{2} + {y}^{2} = {16}\) 的参数方程.
 
-5. 动点 \(M\) 作等速直线运动,它在 \(x\) 轴和 \(y\) 轴方向的分速度分别为 9 和 12,运动开始时,点 \(M\) 位于 \(A\left( {1,1}\right)\) ,求点 \(M\) 的轨迹的参数方程.
+\item 动点 \(M\) 作等速直线运动,它在 \(x\) 轴和 \(y\) 轴方向的分速度分别为 9 和 12,运动开始时,点 \(M\) 位于 \(A\left( {1,1}\right)\) ,求点 \(M\) 的轨迹的参数方程.
 
-6. (1) 写出经过点 \(M\left( {1,5}\right)\) ,倾斜角是 \(\frac{\pi }{3}\) 的直线的参数方程.
+\item (1) 写出经过点 \(M\left( {1,5}\right)\) ,倾斜角是 \(\frac{\pi }{3}\) 的直线的参数方程.
 
 （2）利用这个参数方程,求这条直线和直线 \(x - y - 2\sqrt{3}\) \(= 0\) 的交点到点 \(M\) 的距离;
 
 （3）求这条直线和圆 \({x}^{2} + {y}^{2} = {16}\) 的两个交点到点 \(M\) 的距离的和与积.
 
-7. 椭圆规是用来画椭圆的一种器械, 它的构造如图所示.
+\item 椭圆规是用来画椭圆的一种器械, 它的构造如图所示.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=1.0\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_172_463830.jpg}
-\end{center}
+  \caption{(第 7 题)}
+\end{figure}
 
-(第 7 题)
+
 
 在一个十字形的金属板上有两条互相垂直的槽, 在直尺上有两个固定滑块 \(A\text{、}B\) ,它们可分别在纵槽和横槽中滑动,在直尺上的点 \(M\) 用套管装上铅笔; 使直尺转动一周就画出一个椭圆. 说明椭圆规构造的原理.
 
@@ -6431,37 +6737,43 @@
 
 出点 \(M\) 轨迹的参数方程.)
 
-8. 一颗人造地球卫星的运行轨道是一个椭圆, 长轴长为 15565 公里, 短轴长为 15443 公里, 取椭圆中心为坐标原点, 求卫星轨道的参数方程.
+\item 一颗人造地球卫星的运行轨道是一个椭圆, 长轴长为 15565 公里, 短轴长为 15443 公里, 取椭圆中心为坐标原点, 求卫星轨道的参数方程.
 
-9. (1) 物体从高处以初速 \({v}_{0}\) 米/秒沿水平方向抛出. 以抛出点为原点,过抛出点的水平直线为 \(x\) 轴,写出物体所经路线的参数方程.
+\item (1) 物体从高处以初速 \({v}_{0}\) 米/秒沿水平方向抛出. 以抛出点为原点,过抛出点的水平直线为 \(x\) 轴,写出物体所经路线的参数方程.
 
 （2）作水平飞行的飞机的速度 \(v = {150}\) 米 \(/\) 秒,若在飞行高度 \(H = {600}\) 米时投弹,求 (i) 炸弹离开飞机后的轨迹方程; (ii) 飞机在离目标多远 (水平距离) 的地方投弹才能命中目标?
 
-*10. 一个圆沿一条直线滚动时,点 \(M\) 是圆的一条半径延长线上的一点. 求点 \(M\) 的轨迹的参数方程.
+\item *一个圆沿一条直线滚动时,点 \(M\) 是圆的一条半径延长线上的一点. 求点 \(M\) 的轨迹的参数方程.
 
-\section*{二极坐标}
+\end{problemset}
 
-\section*{4.4 极坐标系}
+\section*{二 极坐标}
+
+\section{极坐标系}
 
 前面我们所使用的平面坐标系是直角坐标系, 它是最简单和最常用的一种坐标系, 但不是唯一的坐标系. 有时利用别的坐标系比较方便. 例如, 炮兵射击时是以大炮为基点, 利用目标的方位角及目标与大炮的距离来确定目标的位置的. 在航空、航海中也常使用类似的方法. 下面研究如何利用角和距离来建立坐标系.
 
 在平面内取一个定点 \(O\) ,叫做极点,引一条射线 \({Ox}\) ,叫做极轴, 再选定一个长度单位和角度的正方向 (通常取逆时针方向) (图 4-11). 对于平面内任意一点 \(M\) ,用 \(\rho\) 表示线段 \({OM}\) 的长度, \(\theta\) 表示从 \({Ox}\) 到 \({OM}\) 的角度, \(\rho\) 叫做点 \(M\) 的极径, \(\theta\) 叫做点 \(M\) 的极角,有序数对 \(\left( {\rho ,\theta }\right)\) 就叫做点 \(M\) 的极坐标. 这样建立的坐标系叫做极坐标系. 极坐标为 \(\rho ,\theta\) 的点 \(M\) ,可表示为 \(M\) \(\left( {\rho ,\theta }\right)\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_174_107083.jpg}
-\end{center}
+  \caption{图 4-11}
+\end{figure}
 
-图 4-11
+
 
 当点 \(M\) 在极点时,它的极坐标 \(\rho = 0,\theta\) 可以取任意值.
 
 如图 4-12, 在极坐标系中, \(A\text{、}B\text{、}C\text{、}D\text{、}E\text{、}F\text{、}G\) 各点的极坐标分别是 (4, 0)、 \(\left( {2,\frac{\pi }{4}}\right) \text{、}\left( {3,\frac{\pi }{2}}\right) \text{、}(1\) , \(\left. \frac{5\pi }{6}\right) \text{、}\left( {{3.5},\pi }\right) \text{、}\left( {6,\frac{4\pi }{3}}\right)\) \(\left( {5,\frac{5\pi }{3}}\right)\) . 角也可以取负值,例如点 \(B\text{、}D\text{、}F\) 的坐标也可以写作 \(\left( {2, - \frac{7\pi }{4}}\right)\) 、
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.6\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_174_893988.jpg}
-\end{center}
+  \caption{图 4-12}
+\end{figure}
 
-图 4-12
+
 
 \(\left( {1, - \frac{7\pi }{6}}\right) \text{、}\left( {6, - \frac{2\pi }{3}}\right)\)
 
@@ -6469,11 +6781,13 @@
 
 当 \(\rho < 0\) 时,点 \(M\left( {\rho ,\theta }\right)\) 的位置可以按下列规则确定: 作射线 \({OP}\) ,使 \(\angle {xOP} = \theta\) ,在 \({OP}\) 的反向延长线上取一点 \(M\) ,使 \(\left| {OM}\right| = \left| \rho \right|\) . 点 \(M\) 就是坐标为 \(\left( {\rho ,\theta }\right)\) 的点 (图 4-13).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_175_174903.jpg}
-\end{center}
+  \caption{图 4-13}
+\end{figure}
 
-图 4-13
+
 
 例如图 4-14 中, 当极径取作负值时,点 \(A\text{、}B\text{、}C\text{、}D\text{、}E\) 的坐标写作 \(\left( {-3,\frac{\pi }{6}}\right) \text{、}( - 4\) ,
 
@@ -6481,25 +6795,29 @@
 
 建立极坐标系后, 给定 \(\rho\) 和 \(\theta\) ,就可以在平面内确定唯一点 \(M\) ; 反过来, 给定平面内一点, 也可以找到它的极坐标 \(\left( {\rho ,\theta }\right)\) . 但和直角坐标系不同的是, 平面内一个点的极坐标可以有无数种表示法. 这是因为 \((\rho\) , \(\theta )\) 和 \(\left( {-\rho ,\theta + \pi }\right)\) 是同一点的坐标, 而且一个角加 \({2n\pi }\) ( \(n\) 是任意整数) 后都是和原角终边相同的角. 比如, \(\left( {6,\frac{\pi }{6}}\right) \text{、}\left( {-6,\frac{\pi }{6} + \pi }\right)\) 以及 \(\left( {6,\frac{\pi }{6} + {2\pi }}\right) \text{、}\left( {6,\frac{\pi }{6} - {2\pi }}\right)\) 、 \(\left( {-6,\frac{\pi }{6} + {3\pi }}\right) \text{、}\left( {-6,\frac{\pi }{6} - \pi }\right)\) 等等,都是同一点的极坐标.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.6\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_175_124693.jpg}
-\end{center}
+  \caption{图 4-14}
+\end{figure}
 
-图 4-14
+
 
 一般地,如果 \(\left( {\rho ,\theta }\right)\) 是一个点的极坐标,那么 \(\left( {\rho ,\theta + {2n\pi }}\right)\) 、 \(\left\lbrack {-\rho ,\theta + \left( {{2n} + 1}\right) \pi }\right\rbrack\) 都可以作为它的极坐标 (这里 \(n\) 是任意整数). 但如果限定 \(\rho > 0,0 \leq \theta < {2\pi }\) 或 \(- \pi < \theta \leq \pi\) ,那么除极点外, 平面内的点和极坐标就可以一一对应了. 以下, 在不作特殊说明时,认为 \(\rho \geq 0\) .
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 写出图中 \(A\text{、}B\text{、}C\text{、}D\text{、}E\text{、}F\text{、}G\) 各点的极坐标 \((\rho > 0,0 \leq \theta\) \(< {2\pi })\) .
+\item 写出图中 \(A\text{、}B\text{、}C\text{、}D\text{、}E\text{、}F\text{、}G\) 各点的极坐标 \((\rho > 0,0 \leq \theta\) \(< {2\pi })\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.7\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_176_941562.jpg}
-\end{center}
+  \caption{(第 1 题)}
+\end{figure}
 
-(第 1 题)
 
-2. 在极坐标系中, 作出下列各点:
+
+\item 在极坐标系中, 作出下列各点:
 
 (1) \(A\left( {2,\frac{\pi }{6}}\right) \text{、}B\left( {6, - {120}^{ \circ }}\right) \text{、}C\left( {1,\frac{\pi }{3}}\right) \text{、}D\left( {4, - \frac{3\pi }{4}}\right)\) 、
 
@@ -6513,11 +6831,13 @@
 
 \(E\left( {{4.55},\frac{\pi }{6}}\right)\) ,并说明这五个点有什么关系.
 
-3. 在极坐标系中,画出点 \(A\left( {5,\frac{\pi }{3}}\right)\) 以及点 \(B\left( {5, - \frac{\pi }{3}}\right)\) 、
+\item 在极坐标系中,画出点 \(A\left( {5,\frac{\pi }{3}}\right)\) 以及点 \(B\left( {5, - \frac{\pi }{3}}\right)\) 、
 
 \(C\left( {-5, - \frac{\pi }{3}}\right) ,D\left( {-5,\frac{\pi }{3}}\right)\) ,并说明点 \(A\) 和 \(B\text{、}C\text{、}D\) 分别有. 怎样的相互位置关系.
 
-\section*{4.5 曲线的极坐标方程}
+\end{problemset}
+
+\section{曲线的极坐标方程}
 
 \section*{1. 曲线的极坐标方程}
 
@@ -6539,11 +6859,13 @@
   \theta = \frac{\pi }{4} \tag{1}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_178_107936.jpg}
-\end{center}
+  \caption{图 4-15}
+\end{figure}
 
-图 4-15
+
 
 这就是所求的射线的极坐标方程. 方程中不含 \(\rho\) ,说明射线上点的极坐标中的 \(\rho\) ,无论取任何正值, \(\theta\) 的对应值都是 \(\frac{\pi }{4}\) .
 
@@ -6553,11 +6875,13 @@
 
 解: 由已知条件,圆心在极轴上,圆经过极点 \(O\) . 设圆和极轴的另一个交点是 \(A\) (图 4-16), 那么 \({OA} = {2a}\) .
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_178_274440.jpg}
-\end{center}
+  \caption{图 4-16}
+\end{figure}
 
-图 4-16
+
 
 设 \(M\left( {\rho ,\theta }\right)\) 是圆上任意一点, 则 \({OM} \bot {AM}\) ,可得
 
@@ -6573,29 +6897,33 @@
 
 这就是所求的圆的极坐标方程.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求适合下列条件的直线的极坐标方程:
+\item 求适合下列条件的直线的极坐标方程:
 
 （1）过极点，倾斜角是 \(\frac{\pi }{6}\) ;
 
 （2）过点 \(A\left( {8,0}\right)\) ,并且和极轴垂直.
 
-2. 求适合下列条件的圆的极坐标方程:
+\item 求适合下列条件的圆的极坐标方程:
 
 （1）圆心在极点, 半径为 3 ;
 
 （2）圆心在点 \(A\left( {a,\frac{\pi }{2}}\right)\) ,半径为 \(a\) .
 
+\end{problemset}
+
 \section*{2. 三种圆锥曲线的统一的极坐标方程}
 
 在第二章里我们曾经讲过, 椭圆、双曲线、抛物线可以统一定义为: 与一个定点 (焦点) 的距离和一条定直线 (准线) 的距离的比等于常数 \(e\) 的点的轨迹,当 \(0 < e < 1\) 时是椭圆; \(e > 1\) 是双曲线; \(e = 1\) 是抛物线. 现在我们根据这个定义来求这三种圆锥曲线统一的极坐标方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_179_840621.jpg}
-\end{center}
+  \caption{图 4-17}
+\end{figure}
 
-图 4-17
+
 
 过点 \(F\) 作准线 \(l\) 的垂线, 垂足为 \(K\) ,以焦点 \(F\) 为极点, \({FK}\) 的反向延长线 \({Fx}\) 为极轴, 建立极坐标系 (图 4-17).
 
@@ -6619,15 +6947,17 @@
 
 这就是椭圆、双曲线、抛物线的统一的极坐标方程. 当 \(0 < e < 1\) 时,方程表示椭圆,定点 \(F\) 是它的左焦点,定直 线 \(l\) 是它的左准线. \(e = 1\) 时,方程表示开口向右的抛物线; \(e > 1\) 时,方程只表示双曲线右支,定点 \(F\) 是它的右焦点,定直线 \(l\) 是它的右准线,如果允许 \(\rho < 0\) ,方程就表示整个双曲线 (图 4-18).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.6\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_180_582043.jpg}
-\end{center}
+  \caption{图 4-18}
+\end{figure}
 
-图 4-18
 
-\section*{练 习}
 
-1. 以圆锥曲线的焦点为极点, 焦点到准线的垂线的反向延长线为极轴, 写出下列圆锥曲线的极坐标方程:
+\begin{problemset}[练习]
+
+\item 以圆锥曲线的焦点为极点, 焦点到准线的垂线的反向延长线为极轴, 写出下列圆锥曲线的极坐标方程:
 
 （1）焦点到准线的距离是 5 , 离心率等于 2 ;
 
@@ -6635,7 +6965,7 @@
 
 （3）焦点到准线的距离是 4.5, 离心率等于 1 .
 
-2. 判定下列圆锥曲线的极坐标方程表示什么曲线, 再画出
+\item 判定下列圆锥曲线的极坐标方程表示什么曲线, 再画出
 
 图形:
 
@@ -6643,7 +6973,9 @@
 
 (3) \(\rho = \frac{4}{2 - 2\cos \theta }\) .
 
-\section*{4.6 极坐标和直角坐标的互化}
+\end{problemset}
+
+\section{极坐标和直角坐标的互化}
 
 极坐标系和直角坐标系是两种不同的坐标系. 同一个点可以有极坐标, 也可以有直角坐标; 同一条曲线可以有极坐标方程, 也可以有直角坐标方程. 为了研究问题方便, 有时需要把在一种坐标系中的方程化为在另一种坐标系中的方程.
 
@@ -6653,11 +6985,13 @@
   x = \rho \cos \theta ,\;y = \rho \sin \theta . \tag{1}
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_181_622758.jpg}
-\end{center}
+  \caption{图 4-19}
+\end{figure}
 
-图 4-19
+
 
 由关系式 (1), 可以得出下面的关系式:
 
@@ -6717,35 +7051,39 @@
 
 这就是所求的直角坐标方程. 但是,在将 \(\sqrt{{x}^{2} + {y}^{2}} = e(x\) \(+ p)\) 两边平方时,对于 \(e > 1\) 的情形,方程产生增根,这时方程表示整个双曲线,它相当于原极坐标方程允许 \(\rho < 0\) 的情形.
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 已知各点的极坐标为 \(\left( {4,\frac{\pi }{4}}\right) ,\left( {2,\frac{4\pi }{3}}\right) ,\left( {-7,\pi }\right) ,\left( {5,\frac{\pi }{2}}\right)\) 、
+\item 已知各点的极坐标为 \(\left( {4,\frac{\pi }{4}}\right) ,\left( {2,\frac{4\pi }{3}}\right) ,\left( {-7,\pi }\right) ,\left( {5,\frac{\pi }{2}}\right)\) 、
 
 \(\left( {-2, - \frac{\pi }{6}}\right)\) ,求它们的直角坐标.
 
-2. 已知各点的直角坐标为 \(\left( {-1, - 1}\right) \text{、}\left( {4, - 4\sqrt{3}}\right) \text{、}( - 3\) , \(4)\text{、}\left( {0, - 4}\right)\) ,求它们的极坐标.
+\item 已知各点的直角坐标为 \(\left( {-1, - 1}\right) \text{、}\left( {4, - 4\sqrt{3}}\right) \text{、}( - 3\) , \(4)\text{、}\left( {0, - 4}\right)\) ,求它们的极坐标.
 
-3. 把下列直角坐标方程化成极坐标方程:
+\item 把下列直角坐标方程化成极坐标方程:
 
 (1) \(x = 5\) ; (2) \(y + 4 = 0\) ;
 
 (3) \({2x} - {5y} = 0\) ; (4) \({x}^{2} + {y}^{2} = {25}\) .
 
-4. 把下列极坐标方程化成直角坐标方程:
+\item 把下列极坐标方程化成直角坐标方程:
 
 (1) \(\rho = 7\) ; (2) \(\theta = \frac{\pi }{4}\) ( \(\rho\) 可取负值);
 
 (3) \(\rho = 4\cos \theta\) ; (4) \({\rho }^{2}\cos {2\theta } = {16}\) .
 
-\section*{4.7 等速螺线}
+\end{problemset}
+
+\section{等速螺线}
 
 在机械传动中, 常常需要把旋转运动变成直线运动. 图 4-20 中的凸轮装置就是借助凸轮绕定轴旋转推动从动杆作上、下往复直线运动. 在设计中, 根据对从动杆运动的要求不同, 需要设计不同的凸轮轮廓线. 如果需要从动杆作等速运动, 凸轮的轮廓线就要用等速螺线。
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.2\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_183_371452.jpg}
-\end{center}
+  \caption{图 4-20}
+\end{figure}
 
-图 4-20
+
 
 什么是等速螺线呢? 如图 4-21,从点 \(O\) 出发的射线 \(l\) ,绕点 \(O\) 作等角速度的转动,同时点 \(M\) 沿 \(l\) 作等速直线运动,点 \(M\) 的轨迹叫做等速螺线或阿基米德螺线.
 
@@ -6759,11 +7097,13 @@
   \rho - {\rho }_{0} = {vt},\;\theta = {\omega t}.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_184_980930.jpg}
-\end{center}
+  \caption{图 4-21}
+\end{figure}
 
-图 4-21
+
 
 这是以时间 \(t\) 为参数的极坐标参数方程. 消去参数 \(t\) ,得
 
@@ -6809,17 +7149,21 @@
 
 如果 \(\rho\) 允许取负值,当 \(\rho \text{、}\theta\) 是方程 \(\rho = {a\theta }\) 的解时, \(- \rho\) 、 \(- \theta\) 也是方程的解. 因为以 \(\left( {\rho ,\theta }\right)\) 和 \(\left( {-\rho , - \theta }\right)\) 为坐标的点,关于过极点垂直于极轴的直线对称,所以 \(\rho = {a\theta }\) 的图形也关于该直线对称. 图 4-22 中的实线表示 \(\rho \text{、}\theta\) 取正值时的螺线部分, 虚线表示 \(\rho \text{、}\theta\) 取负值时的螺线部分.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_185_467039.jpg}
-\end{center}
+  \caption{图 4-22}
+\end{figure}
 
-图 4-22
 
-\begin{center}
+
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_185_356725.jpg}
-\end{center}
+  \caption{图 4-23}
+\end{figure}
 
-图 4-23
+
 
 例 2 由于某种需要, 设计一个凸轮, 轮廓线如图 4-23. 要求如下:
 
@@ -6881,29 +7225,33 @@
   \rho = {48.8} - \frac{22.4}{\pi }\theta \left( {\frac{11}{8}\pi \leq \theta \leq {2\pi }}\right) .
 \]
 
-\section*{练 习}
+\begin{problemset}[练习]
 
-1. 求证: 如果 \({M}_{1}\left( {{\rho }_{1},{\theta }_{1}}\right) \text{、}{M}_{2}\left( {{\rho }_{2},{\theta }_{2}}\right)\) 是等速螺线上的两点, 那么 \({\rho }_{2} - {\rho }_{1}\) 与 \({\theta }_{2} - {\theta }_{1}\) 成正比例.
+\item 求证: 如果 \({M}_{1}\left( {{\rho }_{1},{\theta }_{1}}\right) \text{、}{M}_{2}\left( {{\rho }_{2},{\theta }_{2}}\right)\) 是等速螺线上的两点, 那么 \({\rho }_{2} - {\rho }_{1}\) 与 \({\theta }_{2} - {\theta }_{1}\) 成正比例.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_187_391630.jpg}
-\end{center}
+  \caption{(第 2 题)}
+\end{figure}
 
-(第 2 题)
 
-2. 某自动机床上有一个凸轮, 它的轮廓线 \({ACB}\) 是一段等速螺线 (如图), \(A\) 点到旋转中心 \(O\) 的距离 \({\rho }_{0}\) \(= {60}\) 毫米,轴心角 \(\angle {AOB} = {30}^{ \circ }\) , 工作时曲线 \({ACB}\) 能把从动杆推出 5 毫米. 求这段等速螺线的极坐标方程.
 
-3. 当 \(0 \geq \theta \geq - \frac{5\pi }{8}\) 时,求本节例 2 中的曲线 \({ADC}\) 的方程.
+\item 某自动机床上有一个凸轮, 它的轮廓线 \({ACB}\) 是一段等速螺线 (如图), \(A\) 点到旋转中心 \(O\) 的距离 \({\rho }_{0}\) \(= {60}\) 毫米,轴心角 \(\angle {AOB} = {30}^{ \circ }\) , 工作时曲线 \({ACB}\) 能把从动杆推出 5 毫米. 求这段等速螺线的极坐标方程.
 
-\section*{习 题 十 四}
+\item 当 \(0 \geq \theta \geq - \frac{5\pi }{8}\) 时,求本节例 2 中的曲线 \({ADC}\) 的方程.
 
-1. 已知 \(A\left( {\rho ,\theta }\right) \text{、}B\left( {\rho , - \theta }\right) \text{、}C\left( {-\rho , - \theta }\right) \text{、}D\left( {-\rho ,\theta }\right)\) ,点 \(A\) 和 \(B\text{、}C\text{、}D\) 分别有怎样的相互位置关系?
+\end{problemset}
 
-2. 说明下列极坐标方程表示什么曲线, 并画图.
+\begin{problemset}[习 题 十 四]
+
+\item 已知 \(A\left( {\rho ,\theta }\right) \text{、}B\left( {\rho , - \theta }\right) \text{、}C\left( {-\rho , - \theta }\right) \text{、}D\left( {-\rho ,\theta }\right)\) ,点 \(A\) 和 \(B\text{、}C\text{、}D\) 分别有怎样的相互位置关系?
+
+\item 说明下列极坐标方程表示什么曲线, 并画图.
 
 (1) \(\rho = 3\) ; (2) \(\theta = \frac{\pi }{3}\) .
 
-3. 求下列各图形的极坐标方程:
+\item 求下列各图形的极坐标方程:
 
 （1）经过点 \(A\left( {3,\frac{\pi }{3}}\right)\) ,平行于极轴的直线;
 
@@ -6913,41 +7261,43 @@
 
 （4）经过点 \(A\left( {a,0}\right)\) 和极轴相交成 \(\alpha\) 角的直线.
 
-4. 画出下列极坐标方程的图形:
+\item 画出下列极坐标方程的图形:
 
 (1) \(\rho \cos \theta = 2\) ; (2) \(\rho = 6\cos \theta\) ;
 
 (3) \(\rho = {10}\sin \theta\) ; (4) \(\rho = {10}\left( {1 + \cos \theta }\right)\) .
 
-5. 从极点作圆 \(\rho = {2a}\cos \theta\) 的弦,求各个弦的中点的轨迹方程.
+\item 从极点作圆 \(\rho = {2a}\cos \theta\) 的弦,求各个弦的中点的轨迹方程.
 
-6. 从极点 \(O\) 作直线和直线 \(\rho \cos \theta = 4\) 相交于点 \(M\) ,在 \({OM}\) 上取一点 \(P\) ,使 \({OM} \cdot {OP} = {12}\) ,求 \(P\) 点的轨迹的方程,并且说明轨迹是什么曲线.
+\item 从极点 \(O\) 作直线和直线 \(\rho \cos \theta = 4\) 相交于点 \(M\) ,在 \({OM}\) 上取一点 \(P\) ,使 \({OM} \cdot {OP} = {12}\) ,求 \(P\) 点的轨迹的方程,并且说明轨迹是什么曲线.
 
-7. 一颗彗星的轨道是抛物线, 太阳位于这条抛物线的焦点上. 已知这颗彗星距太阳 \({1.6} \times {10}^{8}\) 公里时,极径和轨道的轴成 \(\frac{\pi }{3}\) 角. 求这颗彗星轨道的极坐标方程,并且求它的近日点离太阳的距离.
+\item 一颗彗星的轨道是抛物线, 太阳位于这条抛物线的焦点上. 已知这颗彗星距太阳 \({1.6} \times {10}^{8}\) 公里时,极径和轨道的轴成 \(\frac{\pi }{3}\) 角. 求这颗彗星轨道的极坐标方程,并且求它的近日点离太阳的距离.
 
-8. 把下列直角坐标方程化成极坐标方程:
+\item 把下列直角坐标方程化成极坐标方程:
 
 (1) \({x}^{2} + {y}^{2} = {16}\) ; (2) \({xy} = a\) ;
 
 (3) \({x}^{2} + {y}^{2} + {2y} = 0\) ; (4) \({x}^{2} - {y}^{2} = {a}^{2}\) .
 
-9. 把下列极坐标方程化成直角坐标方程:
+\item 把下列极坐标方程化成直角坐标方程:
 
 (1) \(\rho = 5\operatorname{tg}\theta\) ; (2) \(\rho = \frac{5}{\cos \theta }\) ; (3) \(\rho + 6\operatorname{ctg}\theta \cdot \csc \theta = 0\) ;
 
 (4) \(\rho \left( {2\cos \dot{\theta } - 5\sin \dot{\theta }}\right) - 3 = 0\) ; (5) \(\rho = \frac{\dot{\theta }}{1 - 2\cos \theta }\) .
 
-10. 已知一个圆的方程是 \(\rho = 5\sqrt{3}\cos \theta - 5\sin \theta\) ,求圆心和半径.
+\item 已知一个圆的方程是 \(\rho = 5\sqrt{3}\cos \theta - 5\sin \theta\) ,求圆心和半径.
 
-11. 长为 \({2a}\) 的线段,其端点在两个直角坐标轴上滑动,从原点作这条线段的垂线,垂足为 \(M\) ,求点 \(M\) 的轨迹的极坐标方程 ( \({Ox}\) 为极轴),再化为直角坐标方程.
+\item 长为 \({2a}\) 的线段,其端点在两个直角坐标轴上滑动,从原点作这条线段的垂线,垂足为 \(M\) ,求点 \(M\) 的轨迹的极坐标方程 ( \({Ox}\) 为极轴),再化为直角坐标方程.
 
-12. 一凸轮如图所示, 当它按箭头方向等速转动时, 要求:
+\item 一凸轮如图所示, 当它按箭头方向等速转动时, 要求:
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.4\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_189_903948.jpg}
-\end{center}
+  \caption{(第 12 题)}
+\end{figure}
 
-(第 12 题)
+
 
 （1）从动杆接触 \({ABC}\) 时, 从动杆不动;
 
@@ -6957,7 +7307,10 @@
 
 试按图中尺寸写出该凸轮轮廓线 \({ABC}\) 和 \({CDE}\) 的极坐标方程。
 
-\section*{小 结}
+\end{problemset}
+
+\chapter*{小 结}
+\markboth{小 结}{小 结}
 
 一、本章的主要内容是曲线的参数方程、极坐标系和曲线的极坐标方程, 以及应用的初步知识. 要注意, 不仅在直角坐标系里可建立曲线的参数方程, 在极坐标系里同样可以建立曲线的参数方程,不过这时是通过某个参数来表示 \(\rho\) 和 \(\theta\) 的关系.
 
@@ -6973,7 +7326,8 @@
   \left\{ {\begin{array}{l} x = \rho \cos \theta , \\ y = \rho \sin \theta ; \end{array}\;\left\{ \begin{array}{l} {\rho }^{2} = {x}^{2} + {y}^{2}, \\ \operatorname{tg}\theta = \frac{y}{x}\left( {x \neq 0}\right) . \end{array}\right. }\right.
 \]
 
-\section*{复习参考题四}
+\chapter*{复习参考题四}
+\markboth{复习参考题四}{复习参考题四}
 
 \section*{A 组}
 
@@ -7075,11 +7429,13 @@
 
 15. 如图, \({OB}\) 是机器上的曲柄,长是 \(r\) ,绕点 \(O\) 转动, \({AB}\) 是连杆, \(M\) 是 \({AB}\) 上一点, \({MA} = a,{MB} = b\) . 当点 \(A\) 在 \({Ox}\) 上作往返运动,点 \(B\) 绕着点 \(O\) 作圆运动时,求点 \(M\) 的轨迹的参数方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.7\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_194_704176.jpg}
-\end{center}
+  \caption{(第 15 题)}
+\end{figure}
 
-(第 15 题)
+
 
 16. 根据双曲线 \(\frac{{x}^{2}}{{a}^{2}} - \frac{{y}^{2}}{{b}^{2}} = 1\) 的图中所给出的 \(\phi\) ,说明它的参
 
@@ -7091,15 +7447,18 @@
 
 并研究根据不同的 \(\phi\) ,如何作出双曲线的一些点来画双曲线 (图中的大圆半径是 \(a\) ,小圆半径是 \(b\) ).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.6\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_194_893904.jpg}
-\end{center}
+  \caption{(第 16 题)}
+\end{figure}
 
-(第 16 题)
+
 
 17. 从圆周上定点 \(O\) 引直线 \({OS}\) ,交圆于 \(Q\) ,在 \({OS}\) 上取点 \(P\) , 使 \(\left| {QP}\right| = b\) (常数). 当 \({OS}\) 绕 \(O\) 旋转时; 点 \(P\) 的轨迹称为帕斯卡蚶线. 求它的极坐标方程。
 
-\section*{总复习参考题}
+\chapter*{总复习参考题}
+\markboth{总复习参考题}{总复习参考题}
 
 \section*{A 组}
 
@@ -7155,11 +7514,13 @@
 
 19. 如图,设基圆半径为 \(r\) ,渐开线的起点为 \(A\) ,取圆心 \(O\) 为极点,射线 \({OA}\) 为极轴. \(M\left( {\rho ,\theta }\right)\) 为渐开线上任一点,过 \(M\) 作基圆的切线 \({MB},B\) 是切点. 设 \(\angle {BOM} = \alpha\) . 试用 \(\alpha\) 做参数,写出渐开线在极坐标系中的参数方程.
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_198_666461.jpg}
-\end{center}
+  \caption{(第 19 题)}
+\end{figure}
 
-(第 19 题)
+
 
 20. 从极点 \(O\) 引一条直线和圆 \({\rho }^{2} - {2a\rho }\cos \theta + {a}^{2} - {r}^{2} = 0\) 相交于一点 \(Q\) ,点 \(P\) 分线段 \(\overline{OQ}\) 成比 \(m : n\) ,求点 \(Q\) 在圆上移动时,点 \(P\) 的轨迹方程,并画出图形.
 
@@ -7183,11 +7544,13 @@
 
 22. 图中表示凸模的一部分外形曲线,线段 \({OQ}\text{、}{MP}\) 分别和
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.7\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_198_969893.jpg}
-\end{center}
+  \caption{(第 22 题)}
+\end{figure}
 
-(第 22 题)
+
 
 圆弧 \(\overset{⏜}{QP}\) 切于 \(Q\text{、}P\) 两点,建立如图所示的坐标系,试根
 
@@ -7215,21 +7578,25 @@
   \left\{ \begin{array}{l} x = r\left( {3\cos \phi + \cos {3\phi }}\right) \\ y = r\left( {3\sin \phi - \sin {3\phi }}\right) \end{array}\right.
 \]
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.7\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_199_480645.jpg}
-\end{center}
+  \caption{(第 26 题)}
+\end{figure}
 
-(第 26 题)
+
 
 证明这个方程可以化成 \(\left\{ \begin{array}{l} x = {4r}{\cos }^{3}\phi , \\ y = {4r}{\sin }^{3}\phi , \end{array}\right.\) 并且求出它的普通方程.
 
 27. 如图, \({OA}\) 是定圆的直径,它的长是 \({2a}\) ,直线 \({OB}\) 和圆相交于点 \({M}_{1}\) ,和经过点 \(A\) 的切线相交于点 \(B.M{M}_{1} \bot {OA}\) , \({MB}//{OA},M{M}_{1}\) 与 \({MB}\) 相交于点 \(M\) . 以点 \(O\) 为原点, \({OA}\) 方向为 \(x\) 轴的正向,求点 \(M\) 的轨迹的参数方程 (以 \(\dot{\theta }\) 为参数).
 
-\begin{center}
+\begin{figure}[h]
+  \centering
   \includegraphics[max width=0.3\textwidth]{images/01912cc2-ffb6-728e-9ae7-b113ff05c64b_200_950262.jpg}
-\end{center}
+  \caption{(第 27 题)}
+\end{figure}
 
-(第 27 题)
+
 
 
 \end{document}
